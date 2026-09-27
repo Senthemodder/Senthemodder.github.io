@@ -703,7 +703,6 @@
       <nav class="nav-links">
         <a href="#about" class="nav-link-btn">About</a>
         <a href="#featured" class="nav-link-btn">Proud Works</a>
-        <a href="#vault" class="nav-link-btn">Lab & Repos</a>
         <a href="https://www.linkedin.com/in/minh-l%C3%AA-561867426/" target="_blank" class="nav-link-btn" style="border-color:#92c5fd; color:#0a66c2;">LinkedIn</a>
         <button class="toggle-leaves-btn" id="toggleLeavesBtn" title="Toggle autumn leaves animation">Leaves: ON</button>
       </nav>
@@ -915,27 +914,6 @@
       </div>
     </section>
 
-    <!-- ── Full GitHub Vault & Lab ── -->
-    <section id="vault" class="github-vault-section">
-      <div class="washi-tape"></div>
-      
-      <div class="section-header" style="margin-bottom:1.5rem;">
-        <h2 class="section-title">The Complete Vault</h2>
-        <p class="section-subtitle">28+ repositories, web utilities, research experiments & open source tools</p>
-      </div>
-
-      <div class="vault-controls">
-        <div class="filter-pills">
-          <button class="filter-btn active" onclick="applyFilter('all')">All (28)</button>
-          <button class="filter-btn" onclick="applyFilter('minecraft')">Minecraft & Addons</button>
-          <button class="filter-btn" onclick="applyFilter('tools')">Tools & Web</button>
-          <button class="filter-btn" onclick="applyFilter('original')">Original Works</button>
-        </div>
-        <input type="text" id="vaultSearch" class="vault-search" placeholder="🔍 Search projects..." oninput="handleSearch()">
-      </div>
-
-      <div class="vault-grid" id="vaultGrid"></div>
-    </section>
 
     <!-- ── Cozy Strawpage Footer ── -->
     <footer class="straw-footer">
@@ -944,7 +922,6 @@
       <div class="footer-links">
         <a href="https://www.linkedin.com/in/minh-l%C3%AA-561867426/" target="_blank" class="footer-link" style="color: #0a66c2;">LinkedIn (Minh Le) ↗</a>
         <a href="https://github.com/Senthemodder" target="_blank" class="footer-link">GitHub Profile ↗</a>
-        <a href="https://github.com/Senthemodder/Senthemodder.github.io" target="_blank" class="footer-link">Source Repo ↗</a>
         <a href="https://decayed-team.com" target="_blank" class="footer-link">Decayed Team ↗</a>
         <a href="https://wiki.pixelusion.net" target="_blank" class="footer-link">Pixelusion ↗</a>
       </div>
@@ -954,103 +931,7 @@
 
   <!-- ── Interactive Vault & Leaf Engine Scripts ── -->
   <script>
-    /* ── 1. GitHub Projects Data ── */
-    const ALL_PROJECTS = [
-      { name: 'Galacticraft', desc: 'The classic space mod rewritten for modern Minecraft versions. Complete interplanetary space travel.', lang: 'Java', type: 'minecraft', fork: true, url: 'https://github.com/Senthemodder/Galacticraft' },
-      { name: 'Realistic-Animals-Addon', desc: 'Wildcraft animal overhaul: birds, ducks, maternal nesting, and authentic incubation.', lang: 'JSON / Molang', type: 'minecraft', fork: true, url: 'https://github.com/Senthemodder/Realistic-Animals-Addon' },
-      { name: 'Gaia-Dimension', desc: 'A mystical shimmering dimension rich with lore, crystals, and custom worldgen.', lang: 'Java', type: 'minecraft', fork: true, url: 'https://github.com/Senthemodder/Gaia-Dimension' },
-      { name: 'gaia-dimension-be', desc: 'Bedrock Edition port of Gaia Dimension bringing the shiny realm to mobile & console.', lang: 'JavaScript', type: 'minecraft', fork: true, url: 'https://github.com/Senthemodder/gaia-dimension-be' },
-      { name: 'bedrock-fluids-generator', desc: 'Automated procedural generator tool for custom Minecraft Bedrock fluids.', lang: 'JavaScript', type: 'tools', fork: false, url: 'https://github.com/Senthemodder/bedrock-fluids-generator' },
-      { name: 'Teraphobia-Reloaded', desc: 'Intense Bedrock adventure map & custom mechanics system.', lang: 'mcfunction', type: 'minecraft', fork: false, url: 'https://github.com/Senthemodder/Teraphobia-Reloaded' },
-      { name: 'riscvmc2', desc: 'Addon precompiler that compiles RISC-V instructions directly into Minecraft Scripting API.', lang: 'Rust / JS', type: 'tools', fork: true, url: 'https://github.com/Senthemodder/riscvmc2' },
-      { name: 'Cosmos-Adventure', desc: 'Cosmos Adventure space and planetary quest project.', lang: 'JavaScript', type: 'minecraft', fork: true, url: 'https://github.com/Senthemodder/Cosmos-Adventure' },
-      { name: 'aquarium-of-gullibles', desc: 'Adversarial Autonomous Agent Benchmark & Invariant Simulation Lab [Verified Escrow].', lang: 'TypeScript', type: 'tools', fork: false, url: 'https://github.com/Senthemodder/aquarium-of-gullibles' },
-      { name: 'veridion', desc: 'AI-powered smart contract security platform analyzing contracts & audit reports on Stellar.', lang: 'Rust / TS', type: 'tools', fork: true, url: 'https://github.com/Senthemodder/veridion' },
-      { name: 'genshin-party-web', desc: 'Interactive party builder and team synergy calculator web app for Genshin Impact.', lang: 'TypeScript', type: 'tools', fork: true, url: 'https://github.com/Senthemodder/genshin-party-web' },
-      { name: 'DownGit', desc: 'Browser-based GitHub file & folder downloader without cloning full repositories.', lang: 'JavaScript', type: 'tools', fork: false, url: 'https://github.com/Senthemodder/DownGit' },
-      { name: 'UnitCalc', desc: 'Lightning-fast unit conversion utility with 41+ calculators. 100% serverless.', lang: 'JavaScript', type: 'tools', fork: false, url: 'https://github.com/Senthemodder/UnitCalc' },
-      { name: 'ConvertFast', desc: 'Zero-upload, client-side browser file conversion toolkit.', lang: 'HTML / JS', type: 'tools', fork: false, url: 'https://github.com/Senthemodder/ConvertFast' },
-      { name: 'pdf_docx_converter', desc: 'Lightweight client-side PDF and DOCX document converter tool.', lang: 'HTML', type: 'tools', fork: false, url: 'https://github.com/Senthemodder/pdf_docx_converter' },
-      { name: 'hybrid-yt-downloader', desc: 'Hybrid stream fetcher and audio extractor utility.', lang: 'JavaScript', type: 'tools', fork: false, url: 'https://github.com/Senthemodder/hybrid-yt-downloader' },
-      { name: 'lily-frontend', desc: 'Frontend dashboard and client interface for the Lily AI platform.', lang: 'TypeScript', type: 'tools', fork: true, url: 'https://github.com/Senthemodder/lily-frontend' },
-      { name: 'lily-backend', desc: 'High-concurrency backend services for the Lily ecosystem.', lang: 'TypeScript', type: 'tools', fork: true, url: 'https://github.com/Senthemodder/lily-backend' },
-      { name: 'lily-sdk', desc: 'Developer SDK client libraries for programmatic integration with Lily.', lang: 'TypeScript', type: 'tools', fork: true, url: 'https://github.com/Senthemodder/lily-sdk' },
-      { name: 'agentlily-runtime', desc: 'Execution sandbox runtime for autonomous Lily agent behaviors.', lang: 'TypeScript', type: 'tools', fork: true, url: 'https://github.com/Senthemodder/agentlily-runtime' },
-      { name: 'fluxer', desc: 'Open-source instant messaging and VoIP application built for communities.', lang: 'TypeScript', type: 'tools', fork: true, url: 'https://github.com/Senthemodder/fluxer' },
-      { name: 'zec-bounties', desc: 'Decentralized bounty platform featuring native Zcash (ZEC) escrow payments.', lang: 'TypeScript', type: 'tools', fork: true, url: 'https://github.com/Senthemodder/zec-bounties' },
-      { name: 'pay.ubq.fi', desc: 'Permit-based spender claim system utilizing EIP-2612 signatures.', lang: 'TypeScript', type: 'tools', fork: true, url: 'https://github.com/Senthemodder/pay.ubq.fi' },
-      { name: 'command-start-stop', desc: 'Workflow bot managing task assignment and unassignment commands.', lang: 'TypeScript', type: 'tools', fork: true, url: 'https://github.com/Senthemodder/command-start-stop' },
-      { name: 'text-conversation-rewards', desc: 'Conversation reward distribution and engagement engine.', lang: 'TypeScript', type: 'tools', fork: true, url: 'https://github.com/Senthemodder/text-conversation-rewards' },
-      { name: 'aseprite', desc: 'Animated sprite editor & pixel art tool for game sprites and textures.', lang: 'C++', type: 'tools', fork: true, url: 'https://github.com/Senthemodder/aseprite' },
-      { name: 'Titanium', desc: 'Core library and modding framework for modern Minecraft mod dependencies.', lang: 'Java', type: 'minecraft', fork: true, url: 'https://github.com/Senthemodder/Titanium' },
-      { name: 'Sendly-Test-Repo', desc: 'Webhook automated testing harness for GitHub agents.', lang: 'JavaScript', type: 'tools', fork: true, url: 'https://github.com/Senthemodder/Sendly-Test-Repo' }
-    ];
-
-    const LANG_COLORS = {
-      'Java': '#b07219',
-      'JavaScript': '#f1e05a',
-      'TypeScript': '#3178c6',
-      'HTML': '#e34c26',
-      'C++': '#f34b7d',
-      'mcfunction': '#259b24',
-      'Rust / JS': '#dea584',
-      'JSON / Molang': '#c94a6e'
-    };
-
-    let currentFilter = 'all';
-    let searchQuery = '';
-
-    function renderVault() {
-      const grid = document.getElementById('vaultGrid');
-      let list = ALL_PROJECTS;
-
-      if (currentFilter === 'minecraft') {
-        list = list.filter(p => p.type === 'minecraft');
-      } else if (currentFilter === 'tools') {
-        list = list.filter(p => p.type === 'tools');
-      } else if (currentFilter === 'original') {
-        list = list.filter(p => !p.fork);
-      }
-
-      if (searchQuery.trim() !== '') {
-        const q = searchQuery.toLowerCase();
-        list = list.filter(p => p.name.toLowerCase().includes(q) || (p.desc && p.desc.toLowerCase().includes(q)));
-      }
-
-      if (list.length === 0) {
-        grid.innerHTML = '<div style="grid-column: 1/-1; text-align: center; padding: 2rem; color: var(--text-muted);">No matching projects found in the vault.</div>';
-        return;
-      }
-
-      grid.innerHTML = list.map(p => `
-        <a class="vault-card" href="${p.url}" target="_blank">
-          <div class="vault-repo-name">
-            ${p.name}
-          </div>
-          <div class="vault-repo-desc">${p.desc || 'No description provided.'}</div>
-          <div class="vault-meta">
-            ${p.lang ? `<span><span class="lang-pip" style="background:${LANG_COLORS[p.lang] || '#8c5a6c'}"></span> ${p.lang}</span>` : ''}
-            <span style="margin-left:auto; font-size:0.75rem; color:var(--autumn-maple);">${p.fork ? 'Contributed' : 'Original'}</span>
-          </div>
-        </a>
-      `).join('');
-    }
-
-    function applyFilter(f) {
-      currentFilter = f;
-      document.querySelectorAll('.filter-btn').forEach(b => b.classList.remove('active'));
-      event.target.classList.add('active');
-      renderVault();
-    }
-
-    function handleSearch() {
-      searchQuery = document.getElementById('vaultSearch').value;
-      renderVault();
-    }
-
-    renderVault();
-
-    /* ── 2. Cozy Autumn Leaves Particle Physics ── */
+    /* ── Cozy Autumn Leaves Particle Physics ── */
     const canvas = document.getElementById('leafCanvas');
     const ctx = canvas.getContext('2d');
     let leavesActive = true;
