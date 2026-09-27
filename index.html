@@ -391,7 +391,6 @@
       margin-bottom: 0.6rem;
     }
     .project-icon-badge {
-      font-size: 2.2rem;
       width: 54px;
       height: 54px;
       display: flex;
@@ -401,6 +400,14 @@
       border-radius: 14px;
       border: 1.5px solid var(--card-border);
       box-shadow: 2px 3px 0px rgba(0,0,0,0.05);
+      overflow: hidden;
+      padding: 0;
+    }
+    .project-icon-badge img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      border-radius: 12px;
     }
     .stamp-pill {
       font-family: 'Space Mono', monospace;
@@ -691,14 +698,14 @@
     <!-- Floating Navigation Bar -->
     <header class="floating-nav">
       <a href="#" class="nav-brand">
-        <span>🍂</span> Designation Vee's Corner
+        Designation Vee's Corner
       </a>
       <nav class="nav-links">
-        <a href="#about" class="nav-link-btn">✨ About</a>
-        <a href="#featured" class="nav-link-btn">🍁 Proud Works</a>
-        <a href="#vault" class="nav-link-btn">📦 Lab & Repos</a>
-        <a href="https://www.linkedin.com/in/minh-l%C3%AA-561867426/" target="_blank" class="nav-link-btn" style="border-color:#92c5fd; color:#0a66c2;">💼 LinkedIn</a>
-        <button class="toggle-leaves-btn" id="toggleLeavesBtn" title="Toggle autumn leaves animation">🍃 Leaves: ON</button>
+        <a href="#about" class="nav-link-btn">About</a>
+        <a href="#featured" class="nav-link-btn">Proud Works</a>
+        <a href="#vault" class="nav-link-btn">Lab & Repos</a>
+        <a href="https://www.linkedin.com/in/minh-l%C3%AA-561867426/" target="_blank" class="nav-link-btn" style="border-color:#92c5fd; color:#0a66c2;">LinkedIn</a>
+        <button class="toggle-leaves-btn" id="toggleLeavesBtn" title="Toggle autumn leaves animation">Leaves: ON</button>
       </nav>
     </header>
 
@@ -715,18 +722,18 @@
         <div class="polaroid-subtitle">Designation Vee · @Senthemodder</div>
         
         <div class="polaroid-badges">
-          <span class="mini-badge">🎮 Bedrock & Java Modder</span>
-          <span class="mini-badge">🇻🇳 Vietnam</span>
-          <span class="mini-badge">👾 Pixelusion Contributor</span>
-          <span class="mini-badge">⚡ Story Mode Specialist</span>
+          <span class="mini-badge">Bedrock & Java Modder</span>
+          <span class="mini-badge">Vietnam</span>
+          <span class="mini-badge">Pixelusion Contributor</span>
+          <span class="mini-badge">Story Mode Specialist</span>
         </div>
 
         <div style="display:flex; gap:0.5rem; justify-content:center; margin-top:0.9rem;">
           <a href="https://www.linkedin.com/in/minh-l%C3%AA-561867426/" target="_blank" class="nav-link-btn" style="padding:0.3rem 0.75rem; font-size:0.8rem; border-color:#92c5fd; color:#0a66c2;">
-            💼 LinkedIn
+            LinkedIn
           </a>
           <a href="https://github.com/Senthemodder" target="_blank" class="nav-link-btn" style="padding:0.3rem 0.75rem; font-size:0.8rem;">
-            🐙 GitHub
+            GitHub
           </a>
         </div>
       </div>
@@ -737,7 +744,7 @@
         
         <div>
           <div class="story-greeting">
-            Hey there, wanderer! <span>🍁</span>
+            Hey there, wanderer!
           </div>
           <p class="story-bio">
             I'm <strong>Designation Vee</strong> (aka <strong>Senthemodder</strong>) :D I craft deep technical gameplay, boss systems, sub-dimensions, and simulation engines for <strong>Minecraft Bedrock & Java Edition</strong>.
@@ -745,27 +752,27 @@
           </p>
 
           <div class="quote-sticker">
-            <span>🌸</span>
-            <span>"kẻ lang thang" wandering through code, game physics, and limitless dimensions :D</span>
+            <span style="font-size:1.4rem; color:var(--pink-primary);">*</span>
+            <span>"ke lang thang" wandering through code, game physics, and limitless dimensions :D</span>
           </div>
         </div>
 
         <!-- Mini Bento Stats / Widgets -->
         <div class="story-grid">
           <div class="story-mini-card">
-            <div class="story-mini-label">🚀 Specialty</div>
+            <div class="story-mini-label">Specialty</div>
             <div class="story-mini-val">Custom Entities & Dimensions</div>
           </div>
           <div class="story-mini-card">
-            <div class="story-mini-label">💻 Tech Stack</div>
+            <div class="story-mini-label">Tech Stack</div>
             <div class="story-mini-val">Java, TypeScript, Bedrock Script API</div>
           </div>
           <div class="story-mini-card">
-            <div class="story-mini-label">⭐ Alliances</div>
+            <div class="story-mini-label">Alliances</div>
             <div class="story-mini-val">Pixelusion & Decayed Team</div>
           </div>
           <div class="story-mini-card">
-            <div class="story-mini-label">📦 GitHub Vault</div>
+            <div class="story-mini-label">GitHub Vault</div>
             <div class="story-mini-val">28+ Repos & Toolsets</div>
           </div>
         </div>
@@ -786,7 +793,7 @@
         <article class="showcase-card galacticraft">
           <div class="washi-tape left-corner"></div>
           <div class="card-top-row">
-            <div class="project-icon-badge">🚀</div>
+            <div class="project-icon-badge"><img src="https://avatars.githubusercontent.com/u/48632975?v=4" alt="Galacticraft"></div>
             <span class="stamp-pill stamp-galacticraft">Modern Space Mod</span>
           </div>
           <h3 class="project-name">Galacticraft</h3>
@@ -816,7 +823,7 @@
         <article class="showcase-card decayed-reality">
           <div class="washi-tape right-corner"></div>
           <div class="card-top-row">
-            <div class="project-icon-badge">🌪️</div>
+            <div class="project-icon-badge"><img src="https://custom-images.strikinglycdn.com/res/hrscywv4p/image/upload/c_limit,fl_lossy,h_64,w_64,q_auto/14340141/317607_954339.png" alt="Decayed Team"></div>
             <span class="stamp-pill stamp-decayed">Decayed Team</span>
           </div>
           <h3 class="project-name">Decayed Reality</h3>
@@ -849,7 +856,7 @@
         <article class="showcase-card wildcraft">
           <div class="washi-tape left-corner"></div>
           <div class="card-top-row">
-            <div class="project-icon-badge">🦊</div>
+            <div class="project-icon-badge"><img src="https://opengraph.githubassets.com/74f8d1cab956845293a547881fc953a778d6020310a7cd0926c5078946e8f898/Senthemodder/Realistic-Animals-Addon" alt="Wildcraft"></div>
             <span class="stamp-pill stamp-wildcraft">Bedrock Fauna Add-On</span>
           </div>
           <h3 class="project-name">Wildcraft</h3>
@@ -879,7 +886,7 @@
         <article class="showcase-card dimensional-backpack">
           <div class="washi-tape right-corner"></div>
           <div class="card-top-row">
-            <div class="project-icon-badge">🎒</div>
+            <div class="project-icon-badge"><img src="https://pixelusion.net/assets/medias/logo.png" alt="Pixelusion"></div>
             <span class="stamp-pill stamp-dimensional">Pixelusion Marketplace</span>
           </div>
           <h3 class="project-name">Dimensional Backpacks</h3>
@@ -932,10 +939,10 @@
 
     <!-- ── Cozy Strawpage Footer ── -->
     <footer class="straw-footer">
-      <div class="footer-stamp">🍁 Made with warmth & autumn leaves</div>
+      <div class="footer-stamp">Made with warmth and autumn leaves</div>
       <p class="footer-desc">Designation Vee (@Senthemodder) · 2026</p>
       <div class="footer-links">
-        <a href="https://www.linkedin.com/in/minh-l%C3%AA-561867426/" target="_blank" class="footer-link" style="color: #0a66c2;">💼 LinkedIn (Minh Lê) ↗</a>
+        <a href="https://www.linkedin.com/in/minh-l%C3%AA-561867426/" target="_blank" class="footer-link" style="color: #0a66c2;">LinkedIn (Minh Le) ↗</a>
         <a href="https://github.com/Senthemodder" target="_blank" class="footer-link">GitHub Profile ↗</a>
         <a href="https://github.com/Senthemodder/Senthemodder.github.io" target="_blank" class="footer-link">Source Repo ↗</a>
         <a href="https://decayed-team.com" target="_blank" class="footer-link">Decayed Team ↗</a>
@@ -1011,14 +1018,14 @@
       }
 
       if (list.length === 0) {
-        grid.innerHTML = '<div style="grid-column: 1/-1; text-align: center; padding: 2rem; color: var(--text-muted);">No matching projects found in the vault 🍃</div>';
+        grid.innerHTML = '<div style="grid-column: 1/-1; text-align: center; padding: 2rem; color: var(--text-muted);">No matching projects found in the vault.</div>';
         return;
       }
 
       grid.innerHTML = list.map(p => `
         <a class="vault-card" href="${p.url}" target="_blank">
           <div class="vault-repo-name">
-            <span>${p.type === 'minecraft' ? '⛏️' : '📁'}</span> ${p.name}
+            ${p.name}
           </div>
           <div class="vault-repo-desc">${p.desc || 'No description provided.'}</div>
           <div class="vault-meta">
@@ -1141,9 +1148,9 @@
       leavesActive = !leavesActive;
       if (!leavesActive) {
         ctx.clearRect(0, 0, canvas.width, canvas.height);
-        toggleBtn.textContent = '🍃 Leaves: OFF';
+        toggleBtn.textContent = 'Leaves: OFF';
       } else {
-        toggleBtn.textContent = '🍃 Leaves: ON';
+        toggleBtn.textContent = 'Leaves: ON';
       }
     });
   </script>
