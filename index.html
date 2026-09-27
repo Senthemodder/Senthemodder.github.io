@@ -704,7 +704,6 @@
         <a href="#about" class="nav-link-btn">About</a>
         <a href="#featured" class="nav-link-btn">Proud Works</a>
         <a href="https://www.linkedin.com/in/minh-l%C3%AA-561867426/" target="_blank" class="nav-link-btn" style="border-color:#92c5fd; color:#0a66c2;">LinkedIn</a>
-        <button class="toggle-leaves-btn" id="toggleLeavesBtn" title="Toggle autumn leaves animation">Leaves: ON</button>
       </nav>
     </header>
 
@@ -934,7 +933,6 @@
     /* ── Cozy Autumn Leaves Particle Physics ── */
     const canvas = document.getElementById('leafCanvas');
     const ctx = canvas.getContext('2d');
-    let leavesActive = true;
     let leaves = [];
     const LEAF_COUNT = 32;
 
@@ -1012,28 +1010,14 @@
     }
 
     function animateLeaves() {
-      if (leavesActive) {
-        ctx.clearRect(0, 0, canvas.width, canvas.height);
-        for (const leaf of leaves) {
-          leaf.update();
-          leaf.draw();
-        }
+      ctx.clearRect(0, 0, canvas.width, canvas.height);
+      for (const leaf of leaves) {
+        leaf.update();
+        leaf.draw();
       }
       requestAnimationFrame(animateLeaves);
     }
     animateLeaves();
-
-    /* Toggle leaves */
-    const toggleBtn = document.getElementById('toggleLeavesBtn');
-    toggleBtn.addEventListener('click', () => {
-      leavesActive = !leavesActive;
-      if (!leavesActive) {
-        ctx.clearRect(0, 0, canvas.width, canvas.height);
-        toggleBtn.textContent = 'Leaves: OFF';
-      } else {
-        toggleBtn.textContent = 'Leaves: ON';
-      }
-    });
   </script>
 </body>
 </html>
