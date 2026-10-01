@@ -944,19 +944,19 @@
         this.x = Math.random() * canvas.width;
         this.y = initial ? Math.random() * canvas.height : -30;
         this.size = 10 + Math.random() * 16;
-        this.speedY = 0.8 + Math.random() * 1.6;
-        this.speedX = -0.5 + Math.random() * 1.0;
+        this.speedY = 0.3 + Math.random() * 0.5;
+        this.speedX = -0.2 + Math.random() * 0.4;
         this.rotation = Math.random() * Math.PI * 2;
-        this.rotationSpeed = (Math.random() - 0.5) * 0.035;
+        this.rotationSpeed = (Math.random() - 0.5) * 0.015;
         this.color = LEAF_COLORS[Math.floor(Math.random() * LEAF_COLORS.length)];
         this.swayAngle = Math.random() * Math.PI * 2;
-        this.swaySpeed = 0.02 + Math.random() * 0.025;
+        this.swaySpeed = 0.01 + Math.random() * 0.015;
         this.opacity = 0.4 + Math.random() * 0.45;
         this.isMaple = Math.random() > 0.4;
       }
       update() {
         this.swayAngle += this.swaySpeed;
-        this.x += this.speedX + Math.sin(this.swayAngle) * 1.2;
+        this.x += this.speedX + Math.sin(this.swayAngle) * 0.8;
         this.y += this.speedY;
         this.rotation += this.rotationSpeed;
 
