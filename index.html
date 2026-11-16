@@ -4,10 +4,10 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="theme-color" id="themeColorMeta" content="#ffe5ec">
-  <title>Minh Lê (@Senthemodder) · Minecraft Marketplace &amp; Game Developer</title>
-  <meta name="description" content="Minh Lê (@Senthemodder) · Minecraft Marketplace add-on developer, Java & Bedrock mod porter, and custom world builder. Contract & studio work with Gamefam (Pickade Ltd), Pixelusion, Kirill Studios, CompyCraft, Decayed Team, and TeamGalacticraft.">
-  <meta property="og:title" content="Minh Lê (@Senthemodder) · Minecraft Marketplace & Game Developer">
-  <meta property="og:description" content="Official Marketplace add-ons, Java & Bedrock porting, and custom world builds. Worked with Gamefam (Pickade Ltd), Pixelusion, Kirill Studios, CompyCraft, Decayed Team, and TeamGalacticraft.">
+  <title>Minh Lê (@Senthemodder) · Software, Systems &amp; Game Engineer</title>
+  <meta name="description" content="Minh Lê (@Senthemodder) · Software and systems engineer specializing in full-stack web platforms, compilers, AI agent infrastructure, desktop networking tools, and commercial game architecture.">
+  <meta property="og:title" content="Minh Lê (@Senthemodder) · Software, Systems & Game Engineer">
+  <meta property="og:description" content="Full-stack platforms, systems & compilers, AI agent tooling, and commercial game engineering across global studios and millions of end users.">
   <meta property="og:image" content="https://senthemodder.github.io/img/builds/tower_lineup.webp">
   <meta property="og:type" content="website">
 
@@ -610,20 +610,21 @@
       margin-top: 0.2rem;
     }
 
-    /* ── Services Section ("What You Can Hire Me For") ── */
+    /* ── Engineering Capabilities & Skillset Section ── */
     .services-section {
       margin-bottom: 4.2rem;
     }
     .services-grid {
       display: grid;
-      grid-template-columns: repeat(3, 1fr);
+      grid-template-columns: repeat(2, 1fr);
       gap: 1.4rem;
+      margin-bottom: 1.4rem;
     }
     .service-card {
       background: rgba(255, 255, 255, 0.94);
       border: 2px solid var(--card-border);
       border-radius: 18px;
-      padding: 1.65rem 1.5rem 1.5rem;
+      padding: 1.65rem 1.55rem 1.5rem;
       box-shadow: var(--shadow-retro);
       position: relative;
       display: flex;
@@ -660,6 +661,48 @@
       line-height: 1.62;
       margin-bottom: 1.1rem;
       flex: 1;
+    }
+    .skills-matrix-card {
+      background: rgba(255, 255, 255, 0.94);
+      border: 2px solid var(--card-border);
+      border-radius: 18px;
+      padding: 1.45rem 1.6rem;
+      box-shadow: var(--shadow-retro);
+      position: relative;
+    }
+    .skills-matrix-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 0.75rem;
+      flex-wrap: wrap;
+      margin-bottom: 1rem;
+    }
+    .skills-matrix-title {
+      font-family: 'Space Mono', monospace;
+      font-size: 0.76rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.6px;
+      color: var(--accent-deep);
+    }
+    .skills-matrix-sub {
+      font-size: 0.8rem;
+      font-weight: 600;
+      color: var(--text-muted);
+    }
+    .skills-matrix-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 1rem 1.4rem;
+    }
+    .skill-group-label {
+      font-size: 0.76rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.4px;
+      color: var(--accent-secondary);
+      margin-bottom: 0.42rem;
     }
 
     /* ── Shipped Projects ("Proudly Worked On") ── */
@@ -1154,6 +1197,7 @@
       .giant-me-hero { grid-template-columns: 1fr; }
       .polaroid-card { max-width: 330px; margin: 0 auto; transform: none; }
       .services-grid { grid-template-columns: 1fr; }
+      .skills-matrix-grid { grid-template-columns: 1fr; }
       .contact-grid { grid-template-columns: 1fr; }
       .structure-gallery { grid-template-columns: 1fr; }
       .featured-grid { grid-template-columns: 1fr; }
@@ -1182,12 +1226,12 @@
     <header class="floating-nav">
       <div class="nav-brand-group">
         <a href="#" class="nav-brand">Minh Lê · @Senthemodder</a>
-        <span class="availability-pill"><span class="avail-dot"></span>Available for Studio Work</span>
+        <span class="availability-pill"><span class="avail-dot"></span>Open to Roles &amp; Contracts</span>
       </div>
       <nav class="nav-links">
-        <a href="#services" class="nav-link-btn">Services</a>
+        <a href="#services" class="nav-link-btn">Skills &amp; Stack</a>
         <a href="#featured" class="nav-link-btn">Shipped Work</a>
-        <a href="#builds" class="nav-link-btn">Builds</a>
+        <a href="#builds" class="nav-link-btn">3D &amp; Worlds</a>
         <a href="#contact" class="nav-link-btn">Contact</a>
         <a href="https://www.linkedin.com/in/minh-l%C3%AA-561867426/" target="_blank" class="nav-link-btn linkedin-pill">LinkedIn ↗</a>
       </nav>
@@ -1204,12 +1248,13 @@
             <img src="https://avatars.githubusercontent.com/u/120316848?v=4" alt="Minh Lê (@Senthemodder)">
           </div>
           <h1 class="polaroid-title">Minh Lê</h1>
-          <div class="polaroid-subtitle">Designation Vee · @Senthemodder</div>
+          <div class="polaroid-subtitle">Software &amp; Systems Engineer · @Senthemodder</div>
           
           <div class="polaroid-badges">
-            <span class="mini-badge">Marketplace Add-Ons</span>
-            <span class="mini-badge">Java &amp; Bedrock</span>
-            <span class="mini-badge">Custom Worlds</span>
+            <span class="mini-badge">Full-Stack &amp; Systems</span>
+            <span class="mini-badge">Compilers &amp; Tooling</span>
+            <span class="mini-badge">AI &amp; Automation</span>
+            <span class="mini-badge">Game Architecture</span>
             <span class="mini-badge">Vietnam (UTC+7)</span>
           </div>
         </div>
@@ -1233,37 +1278,37 @@
         
         <div>
           <div class="story-greeting">
-            Minecraft Marketplace &amp; Game Systems Developer
+            Software Engineer · Systems, Full-Stack &amp; Game Architecture
           </div>
           <p class="story-bio">
-            Hi, I'm <strong>Minh Lê</strong> (<strong>@Senthemodder</strong>), a developer based in <strong>Vietnam</strong> building commercial Minecraft Marketplace add-ons, cross-edition Java and Bedrock ports, and custom game worlds for partner studios and publishers.
+            Hi, I'm <strong>Minh Lê</strong> (<strong>Designation Vee</strong> · <strong>@Senthemodder</strong>), a software and systems engineer based in <strong>Vietnam</strong> building full-stack web platforms, compilers and developer toolchains, autonomous AI workflows, native desktop networking utilities, and high-performance game engines.
           </p>
           <p class="story-bio" style="font-size: 0.96rem;">
-            I've worked on contract and shipped official Marketplace releases and large-scale mods alongside established studios including <strong>Gamefam (Pickade Ltd)</strong>, <strong>Pixelusion</strong>, <strong>Kirill Studios</strong>, <strong>CompyCraft</strong>, <strong>Decayed Team</strong>, and <strong>TeamGalacticraft</strong>, handling custom gameplay systems, boss AI, custom UIs, and world builds from start to release.
+            I ship production software end-to-end across web products, open-source infrastructure, and commercial contracts with global teams including <strong>Gamefam (Pickade Ltd)</strong>, <strong>Pixelusion</strong>, <strong>Kirill Studios</strong>, <strong>CompyCraft</strong>, <strong>Decayed Team</strong>, and <strong>TeamGalacticraft</strong>, reaching millions of end users across PC, web, mobile, and console.
           </p>
 
           <div class="quote-sticker">
-            Open for studio contracts, Marketplace collaborations, and custom commissions. Reliable communication, clean delivery, and builds tested for console, mobile, and PC.
+            Open to software engineering roles, technical consulting, and studio contracts. Drop me a hard problem anywhere in the stack and you get a clean, finished product back.
           </div>
         </div>
 
         <!-- Verified Proof Stats -->
         <div class="story-grid">
           <div class="story-mini-card">
-            <div class="story-mini-label">Marketplace Proof</div>
-            <div class="story-mini-val">4.6 ★ Flagship Rating (1,990+ Store Reviews)</div>
+            <div class="story-mini-label">Engineering Scope</div>
+            <div class="story-mini-val">Full-Stack Web, Systems, Compilers &amp; AI</div>
           </div>
           <div class="story-mini-card">
-            <div class="story-mini-label">Mod Ecosystem Reach</div>
-            <div class="story-mini-val">3.7M+ Downloads Across Shipped Mods</div>
+            <div class="story-mini-label">Core Languages</div>
+            <div class="story-mini-val">TypeScript, Python, Java, C++, C#, SQL</div>
           </div>
           <div class="story-mini-card">
-            <div class="story-mini-label">Tech Stack</div>
-            <div class="story-mini-val">TypeScript, Java, Node.js, Python, C++</div>
+            <div class="story-mini-label">Shipped Reach</div>
+            <div class="story-mini-val">3.7M+ Downloads · 4.6 ★ (1,990+ Reviews)</div>
           </div>
           <div class="story-mini-card">
             <div class="story-mini-label">Location &amp; Hours</div>
-            <div class="story-mini-val">Vietnam (UTC+7) · Flexible EU / US Overlap</div>
+            <div class="story-mini-val">Vietnam (UTC+7) · Remote (EU / US Overlap)</div>
           </div>
         </div>
 
@@ -1274,107 +1319,185 @@
     <div class="partner-strip" aria-label="Partner studios and contract teams">
       <div class="partner-strip-head">
         <div class="partner-strip-label">
-          Contract &amp; Commercial Studio Experience
+          Commercial Contracts &amp; Production Track Record
         </div>
         <div class="partner-strip-sub">
-          6 Official Minecraft Marketplace Partners &amp; Mod Studios
+          6 Global Studios &amp; Engineering Teams
         </div>
       </div>
       <div class="partner-logos-row">
         <a href="https://gamefam.com" target="_blank" class="partner-chip">
-          <img src="img/studios/gamefam.webp" alt="Gamefam Minecraft Studio logo">
+          <img src="img/studios/gamefam.webp" alt="Gamefam logo">
           <div>
             <div class="partner-chip-name">Gamefam · Pickade Ltd</div>
-            <div class="partner-chip-role">Contract · Official Marketplace Partner</div>
+            <div class="partner-chip-role">Contract · Commercial Studio</div>
           </div>
         </a>
         <a href="https://wiki.pixelusion.net" target="_blank" class="partner-chip">
           <img src="img/studios/pixelusion.webp" class="contain-logo" alt="Pixelusion logo">
           <div>
             <div class="partner-chip-name">Pixelusion</div>
-            <div class="partner-chip-role">Official Minecraft Partner</div>
+            <div class="partner-chip-role">Commercial Partner Studio</div>
           </div>
         </a>
         <a href="https://kirillstudios.com" target="_blank" class="partner-chip">
           <img src="img/studios/kirill_studios.webp" alt="Kirill Studios logo">
           <div>
             <div class="partner-chip-name">Kirill Studios</div>
-            <div class="partner-chip-role">Contract · Official Marketplace Partner</div>
+            <div class="partner-chip-role">Contract · Creative-Tech Studio</div>
           </div>
         </a>
         <a href="https://www.minecraft.net/en-us/marketplace/pdp/compycraft/wildlifecraft-1.2/fd7b7f00-30cb-4f1a-a802-fd26025eaf14" target="_blank" class="partner-chip">
-          <img src="img/studios/compycraft.webp" class="light-logo" alt="CompyCraft WildlifeCraft icon">
+          <img src="img/studios/compycraft.webp" class="light-logo" alt="CompyCraft icon">
           <div>
             <div class="partner-chip-name">CompyCraft</div>
-            <div class="partner-chip-role">Official Minecraft Partner</div>
+            <div class="partner-chip-role">Commercial Partner Studio</div>
           </div>
         </a>
         <a href="https://decayed-team.com" target="_blank" class="partner-chip">
           <img src="img/studios/decayed_team.webp" class="contain-logo" alt="Decayed Team logo">
           <div>
             <div class="partner-chip-name">Decayed Team</div>
-            <div class="partner-chip-role">Bedrock Add-On Studio</div>
+            <div class="partner-chip-role">Game Development Team</div>
           </div>
         </a>
         <a href="https://github.com/TeamGalacticraft/Galacticraft" target="_blank" class="partner-chip">
           <img src="img/studios/galacticraft.webp" class="contain-logo" alt="TeamGalacticraft logo">
           <div>
             <div class="partner-chip-name">TeamGalacticraft</div>
-            <div class="partner-chip-role">3.7M+ Downloads Space Mod</div>
+            <div class="partner-chip-role">Open-Source Engineering · 3.7M+ Users</div>
           </div>
         </a>
       </div>
     </div>
 
-    <!-- ── Services Section: What You Can Hire Me For ── -->
+    <!-- ── Engineering Capabilities & Skillset Section ── -->
     <section class="services-section" id="services">
       <div class="section-header">
-        <h2 class="section-title">What You Can Hire Me For</h2>
-        <p class="section-subtitle">Concrete deliverables for Marketplace partners, studios, and creator teams</p>
+        <h2 class="section-title">Engineering Capabilities &amp; Skillset</h2>
+        <p class="section-subtitle">I build across the whole stack, from backend systems to final polish, and the finished product is always served well.</p>
       </div>
 
       <div class="services-grid">
         <article class="service-card">
           <div class="washi-tape left-corner"></div>
-          <span class="service-num">01 · Add-Ons &amp; Gameplay</span>
-          <h3 class="service-title">Full Marketplace Add-Ons</h3>
+          <span class="service-num">01 · Full-Stack &amp; Product</span>
+          <h3 class="service-title">Web Platforms, Desktop Apps &amp; APIs</h3>
           <p class="service-desc">
-            Complete Bedrock add-ons built ready for Marketplace review: custom mobs, multi-phase boss fights, custom UIs, tools, survival progression, and smooth performance across low-end mobile, console, and PC.
+            End-to-end SaaS platforms, creator marketplaces with split payouts, real-time messaging and VoIP apps, and native Windows desktop and system-tray utilities engineered from database schema to responsive frontend.
           </p>
           <div class="project-tags" style="margin-bottom:0;">
-            <span class="tag-chip">Boss &amp; Mob AI</span>
-            <span class="tag-chip">Custom Screens</span>
-            <span class="tag-chip">Marketplace QA</span>
-          </div>
-        </article>
-
-        <article class="service-card">
-          <div class="washi-tape"></div>
-          <span class="service-num">02 · Cross-Edition Ports</span>
-          <h3 class="service-title">Java &amp; Bedrock Porting</h3>
-          <p class="service-desc">
-            Faithful ports in either direction: bringing established Java Edition mods, machines, and custom menus cleanly to Bedrock Edition, or porting Bedrock add-ons over to Fabric and NeoForge.
-          </p>
-          <div class="project-tags" style="margin-bottom:0;">
-            <span class="tag-chip">Java to Bedrock</span>
-            <span class="tag-chip">Fabric &amp; NeoForge</span>
-            <span class="tag-chip">1:1 Gameplay Parity</span>
+            <span class="tag-chip">TypeScript</span>
+            <span class="tag-chip">React &amp; Next.js</span>
+            <span class="tag-chip">Node.js</span>
+            <span class="tag-chip">C# / Desktop</span>
+            <span class="tag-chip">REST &amp; WebSockets</span>
           </div>
         </article>
 
         <article class="service-card">
           <div class="washi-tape right-corner"></div>
-          <span class="service-num">03 · Worlds &amp; Landmarks</span>
-          <h3 class="service-title">Custom Worlds &amp; Builds</h3>
+          <span class="service-num">02 · Systems &amp; Compilers</span>
+          <h3 class="service-title">Compilers, Toolchains &amp; Networking</h3>
           <p class="service-desc">
-            Custom dimensions, biomes, multi-floor dungeon towers, courtyard temples, giant trees, and boss arenas built to drop cleanly into survival expansions or adventure maps.
+            Custom precompilers, AST code generators, automated cross-language migration pipelines, static analysis and schema validators, and low-level network routing and split-tunneling software.
           </p>
           <div class="project-tags" style="margin-bottom:0;">
-            <span class="tag-chip">Custom Dimensions</span>
-            <span class="tag-chip">Dungeons &amp; Temples</span>
-            <span class="tag-chip">Boss Arenas</span>
+            <span class="tag-chip">C++</span>
+            <span class="tag-chip">AST &amp; Transpilers</span>
+            <span class="tag-chip">Code Generation</span>
+            <span class="tag-chip">Static Analysis</span>
+            <span class="tag-chip">Network Tunneling</span>
           </div>
         </article>
+
+        <article class="service-card">
+          <div class="washi-tape left-corner"></div>
+          <span class="service-num">03 · AI &amp; Infrastructure</span>
+          <h3 class="service-title">AI Agents, DevOps &amp; GPU Pipelines</h3>
+          <p class="service-desc">
+            Autonomous multi-agent orchestration runtimes, MCP server infrastructure, evaluation benchmarks, automated CI/CD verification gates, and distributed headless GPU compute and rendering workflows.
+          </p>
+          <div class="project-tags" style="margin-bottom:0;">
+            <span class="tag-chip">Python</span>
+            <span class="tag-chip">LLM &amp; Agent Runtimes</span>
+            <span class="tag-chip">MCP Servers</span>
+            <span class="tag-chip">CI/CD &amp; Automated QA</span>
+            <span class="tag-chip">CUDA / GPU Automation</span>
+          </div>
+        </article>
+
+        <article class="service-card">
+          <div class="washi-tape right-corner"></div>
+          <span class="service-num">04 · Games &amp; Simulation</span>
+          <h3 class="service-title">Game Engines, Simulation &amp; Live Worlds</h3>
+          <p class="service-desc">
+            High-concurrency multiplayer gameplay systems, real-time physics and state machines, procedural generation compilers, cross-engine ports, and commercial releases shipped to millions of players across console, mobile, and PC.
+          </p>
+          <div class="project-tags" style="margin-bottom:0;">
+            <span class="tag-chip">Java</span>
+            <span class="tag-chip">Simulation Architecture</span>
+            <span class="tag-chip">Procedural Generation</span>
+            <span class="tag-chip">Cross-Engine Porting</span>
+            <span class="tag-chip">3D Pipelines</span>
+          </div>
+        </article>
+      </div>
+
+      <!-- Technical Skills Matrix -->
+      <div class="skills-matrix-card">
+        <div class="washi-tape"></div>
+        <div class="skills-matrix-header">
+          <span class="skills-matrix-title">Core Technical Stack</span>
+          <span class="skills-matrix-sub">Production Languages, Frameworks &amp; Tooling</span>
+        </div>
+        <div class="skills-matrix-grid">
+          <div>
+            <div class="skill-group-label">Languages</div>
+            <div class="project-tags" style="margin-bottom:0;">
+              <span class="tag-chip">TypeScript</span>
+              <span class="tag-chip">JavaScript (ES2024)</span>
+              <span class="tag-chip">Python</span>
+              <span class="tag-chip">Java</span>
+              <span class="tag-chip">C++</span>
+              <span class="tag-chip">C#</span>
+              <span class="tag-chip">SQL</span>
+              <span class="tag-chip">HTML5 / CSS3</span>
+            </div>
+          </div>
+          <div>
+            <div class="skill-group-label">Web, Desktop &amp; Product</div>
+            <div class="project-tags" style="margin-bottom:0;">
+              <span class="tag-chip">React</span>
+              <span class="tag-chip">Next.js</span>
+              <span class="tag-chip">Node.js</span>
+              <span class="tag-chip">REST &amp; WebSockets</span>
+              <span class="tag-chip">PostgreSQL</span>
+              <span class="tag-chip">Native Windows / Tray</span>
+              <span class="tag-chip">Auth &amp; Payout Flows</span>
+            </div>
+          </div>
+          <div>
+            <div class="skill-group-label">Systems, Compilers &amp; AI</div>
+            <div class="project-tags" style="margin-bottom:0;">
+              <span class="tag-chip">Compilers &amp; ASTs</span>
+              <span class="tag-chip">LLM Agents &amp; MCP</span>
+              <span class="tag-chip">Static Analysis</span>
+              <span class="tag-chip">Network Split-Tunneling</span>
+              <span class="tag-chip">Headless Blender &amp; CUDA</span>
+            </div>
+          </div>
+          <div>
+            <div class="skill-group-label">Architecture &amp; DevOps</div>
+            <div class="project-tags" style="margin-bottom:0;">
+              <span class="tag-chip">Distributed Systems</span>
+              <span class="tag-chip">Git &amp; CI/CD</span>
+              <span class="tag-chip">Automated Testing</span>
+              <span class="tag-chip">Linux &amp; SSH</span>
+              <span class="tag-chip">Cross-Platform Profiling</span>
+            </div>
+          </div>
+        </div>
       </div>
     </section>
 
@@ -1658,7 +1781,7 @@
       <div class="washi-tape"></div>
       <div class="section-header" style="margin-bottom: 0.8rem;">
         <h2 class="section-title">Work With Me</h2>
-        <p class="section-subtitle">Reach out directly for Marketplace add-ons, Java/Bedrock porting, or custom world builds</p>
+        <p class="section-subtitle">Open to software engineering roles, full-stack and systems contracts, technical consulting, and studio collaborations</p>
       </div>
 
       <div class="contact-grid">
@@ -1667,7 +1790,7 @@
           <div>
             <div class="contact-channel-lbl">Business Email</div>
             <div class="contact-handle">minhanhle220907@gmail.com</div>
-            <div class="contact-note">Best for project briefs, studio scopes &amp; contracts</div>
+            <div class="contact-note">Best for engineering roles, contracts &amp; project scopes</div>
           </div>
           <div class="contact-btn-row">
             <a href="mailto:minhanhle220907@gmail.com" class="btn-action-primary">Send Email ↗</a>
@@ -1680,7 +1803,7 @@
           <div>
             <div class="contact-channel-lbl">Discord</div>
             <div class="contact-handle">designatedasvee</div>
-            <div class="contact-note">Fastest for studio chats &amp; quick questions</div>
+            <div class="contact-note">Fastest for direct chats &amp; quick technical questions</div>
           </div>
           <div class="contact-btn-row">
             <button type="button" class="btn-action-primary" data-copy-text="designatedasvee">Copy Discord Handle</button>
@@ -1692,7 +1815,7 @@
           <div>
             <div class="contact-channel-lbl">LinkedIn</div>
             <div class="contact-handle">Minh Lê</div>
-            <div class="contact-note">Professional network, studio background &amp; DMs</div>
+            <div class="contact-note">Experience, professional network &amp; recruiter messages</div>
           </div>
           <div class="contact-btn-row">
             <a href="https://www.linkedin.com/in/minh-l%C3%AA-561867426/" target="_blank" class="btn-action-primary">Message on LinkedIn ↗</a>
