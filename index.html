@@ -4,7 +4,12 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="theme-color" id="themeColorMeta" content="#ffe5ec">
-  <title>Designation Vee ✨ @Senthemodder · Cozy Portfolio</title>
+  <title>Minh Lê (@Senthemodder) · Minecraft Marketplace &amp; Game Developer</title>
+  <meta name="description" content="Minh Lê (@Senthemodder) · Minecraft Marketplace add-on developer, Java & Bedrock mod porter, and custom world builder. Shipped releases with Pixelusion, CompyCraft, Decayed Team, and TeamGalacticraft.">
+  <meta property="og:title" content="Minh Lê (@Senthemodder) · Minecraft Marketplace & Game Developer">
+  <meta property="og:description" content="Official Marketplace add-ons, Java & Bedrock porting, and custom world builds. Shipped with Pixelusion, CompyCraft, Decayed Team, and TeamGalacticraft.">
+  <meta property="og:image" content="https://senthemodder.github.io/img/builds/tower_lineup.webp">
+  <meta property="og:type" content="website">
 
   <!-- Automatic Season Detection from Current Date (Zero-FOUC before first paint) -->
   <script>
@@ -50,7 +55,7 @@
       --quote-bg-1: #fff5f7;
       --quote-bg-2: #ffe8ee;
 
-      --paper-white: rgba(255, 255, 255, 0.88);
+      --paper-white: rgba(255, 255, 255, 0.90);
       --card-border: #f8c8d4;
       --subcard-border: #fed2dc;
       --badge-bg: #fff0f3;
@@ -88,7 +93,7 @@
       --quote-bg-1: #f2f7ff;
       --quote-bg-2: #e5effd;
 
-      --paper-white: rgba(255, 255, 255, 0.90);
+      --paper-white: rgba(255, 255, 255, 0.92);
       --card-border: #c2daf4;
       --subcard-border: #d5e6f9;
       --badge-bg: #eef5ff;
@@ -126,7 +131,7 @@
       --quote-bg-1: #f2fbf5;
       --quote-bg-2: #fdeef4;
 
-      --paper-white: rgba(255, 255, 255, 0.90);
+      --paper-white: rgba(255, 255, 255, 0.92);
       --card-border: #c6e6cf;
       --subcard-border: #d7efe0;
       --badge-bg: #effaf2;
@@ -164,7 +169,7 @@
       --quote-bg-1: #fffbeb;
       --quote-bg-2: #e7f8fb;
 
-      --paper-white: rgba(255, 255, 255, 0.90);
+      --paper-white: rgba(255, 255, 255, 0.92);
       --card-border: #bce3ec;
       --subcard-border: #cdebf2;
       --badge-bg: #eefafd;
@@ -225,9 +230,9 @@
     .wrapper {
       position: relative;
       z-index: 3;
-      max-width: 1100px;
+      max-width: 1120px;
       margin: 0 auto;
-      padding: 2.5rem 1.5rem 6rem;
+      padding: 2.2rem 1.5rem 5.5rem;
     }
 
     /* ── Washi Tape Decor ── */
@@ -256,42 +261,67 @@
       transform: rotate(5deg);
     }
 
-    /* ── Floating Strawpage Header Nav ── */
+    /* ── Floating Header Nav ── */
     .floating-nav {
       display: flex;
       justify-content: space-between;
       align-items: center;
-      background: var(--paper-white);
-      backdrop-filter: blur(12px);
+      background: rgba(255, 255, 255, 0.94);
       border: 2px solid var(--card-border);
       border-radius: 999px;
-      padding: 0.6rem 1.4rem;
-      margin-bottom: 2.5rem;
+      padding: 0.58rem 1.35rem;
+      margin-bottom: 2.2rem;
       box-shadow: var(--shadow-retro);
+      gap: 0.75rem;
     }
-    .nav-brand {
+    .nav-brand-group {
       display: flex;
       align-items: center;
-      gap: 0.6rem;
+      gap: 0.7rem;
+      flex-wrap: wrap;
+    }
+    .nav-brand {
       font-weight: 700;
       color: var(--accent-deep);
       text-decoration: none;
       font-family: 'Patrick Hand', cursive;
-      font-size: 1.4rem;
+      font-size: 1.45rem;
+      line-height: 1.1;
+    }
+    .availability-pill {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.38rem;
+      background: #ecfdf5;
+      border: 1px solid #a7f3d0;
+      color: #065f46;
+      font-size: 0.74rem;
+      font-weight: 600;
+      padding: 0.18rem 0.62rem;
+      border-radius: 999px;
+    }
+    .avail-dot {
+      width: 7px;
+      height: 7px;
+      border-radius: 50%;
+      background: #10b981;
+      box-shadow: 0 0 0 3px rgba(16, 185, 129, 0.22);
+      display: inline-block;
     }
     .nav-links {
       display: flex;
-      gap: 0.75rem;
+      gap: 0.55rem;
       align-items: center;
+      flex-wrap: wrap;
     }
     .nav-link-btn {
       background: #fff;
       border: 1.5px solid var(--accent-soft);
       color: var(--text-main);
-      padding: 0.35rem 0.9rem;
+      padding: 0.34rem 0.85rem;
       border-radius: 20px;
-      font-size: 0.88rem;
-      font-weight: 500;
+      font-size: 0.86rem;
+      font-weight: 600;
       cursor: pointer;
       text-decoration: none;
       transition: all 0.2s cubic-bezier(0.2, 0.8, 0.2, 1);
@@ -317,28 +347,31 @@
       box-shadow: 0 4px 8px rgba(10, 102, 194, 0.25);
     }
 
-    /* ── Giant Page of Me (Hero Scrapbook Section) ── */
+    /* ── Hero Section ── */
     .giant-me-hero {
       display: grid;
-      grid-template-columns: 320px 1fr;
-      gap: 2rem;
-      margin-bottom: 3.5rem;
+      grid-template-columns: 310px 1fr;
+      gap: 1.9rem;
+      margin-bottom: 1.8rem;
     }
 
     /* Polaroid Card */
     .polaroid-card {
       background: #fff;
-      padding: 1.25rem 1.25rem 1.8rem;
-      border-radius: 14px;
+      padding: 1.25rem 1.25rem 1.65rem;
+      border-radius: 16px;
       border: 2px solid var(--card-border);
       box-shadow: var(--shadow-retro);
       position: relative;
-      transform: rotate(-1.5deg);
+      transform: rotate(-1.2deg);
       transition: transform 0.3s ease, box-shadow 0.3s ease;
       text-align: center;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
     }
     .polaroid-card:hover {
-      transform: rotate(0deg) scale(1.02);
+      transform: rotate(0deg) scale(1.015);
       box-shadow: var(--shadow-hover);
     }
     .avatar-frame {
@@ -347,7 +380,7 @@
       border-radius: 10px;
       overflow: hidden;
       border: 2px solid var(--avatar-border);
-      margin-bottom: 1.1rem;
+      margin-bottom: 1rem;
       background: var(--avatar-bg);
       position: relative;
     }
@@ -359,20 +392,20 @@
     }
     .polaroid-title {
       font-family: 'Patrick Hand', cursive;
-      font-size: 1.7rem;
+      font-size: 1.85rem;
       color: var(--accent-deep);
-      line-height: 1.2;
+      line-height: 1.15;
     }
     .polaroid-subtitle {
-      font-size: 0.92rem;
+      font-size: 0.9rem;
       color: var(--text-muted);
-      font-weight: 500;
+      font-weight: 600;
       margin-top: 0.2rem;
     }
     .polaroid-badges {
       display: flex;
       flex-wrap: wrap;
-      gap: 0.4rem;
+      gap: 0.38rem;
       justify-content: center;
       margin-top: 0.85rem;
     }
@@ -380,19 +413,25 @@
       background: var(--badge-bg);
       border: 1px solid var(--accent-soft);
       color: var(--accent-deep);
-      font-size: 0.75rem;
+      font-size: 0.74rem;
       padding: 0.2rem 0.55rem;
       border-radius: 8px;
       font-weight: 600;
     }
+    .polaroid-quick-links {
+      display: flex;
+      gap: 0.45rem;
+      justify-content: center;
+      flex-wrap: wrap;
+      margin-top: 0.95rem;
+    }
 
-    /* Giant Me Story Board */
+    /* Story Board */
     .story-board {
-      background: var(--paper-white);
-      backdrop-filter: blur(8px);
+      background: rgba(255, 255, 255, 0.94);
       border: 2px solid var(--card-border);
       border-radius: 20px;
-      padding: 2.2rem 2.4rem;
+      padding: 2.1rem 2.3rem;
       box-shadow: var(--shadow-retro);
       position: relative;
       display: flex;
@@ -401,92 +440,133 @@
     }
     .story-greeting {
       font-family: 'Patrick Hand', cursive;
-      font-size: 2.3rem;
+      font-size: 2.25rem;
       color: var(--accent-deep);
-      margin-bottom: 0.3rem;
-      display: flex;
-      align-items: center;
-      gap: 0.5rem;
+      margin-bottom: 0.45rem;
+      line-height: 1.2;
     }
     .story-bio {
-      font-size: 1.08rem;
+      font-size: 1.03rem;
       color: var(--text-main);
-      line-height: 1.75;
-      margin-bottom: 1.4rem;
+      line-height: 1.72;
+      margin-bottom: 0.95rem;
     }
     .story-bio strong {
       color: var(--accent-deep);
     }
-    .specialties-box {
-      background: #fff;
-      border: 1.5px solid var(--subcard-border);
-      border-radius: 14px;
-      padding: 1rem 1.2rem;
-      margin-bottom: 1.25rem;
-      box-shadow: var(--subcard-shadow);
-    }
-    .specialties-heading {
-      font-size: 0.76rem;
-      font-weight: 700;
-      text-transform: uppercase;
-      letter-spacing: 0.6px;
-      color: var(--accent-deep);
-      margin-bottom: 0.55rem;
-    }
-    .specialties-list {
-      list-style: none;
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
-      gap: 0.45rem 1rem;
-      font-size: 0.86rem;
-      color: var(--text-main);
-    }
     .quote-sticker {
       background: linear-gradient(135deg, var(--quote-bg-1), var(--quote-bg-2));
       border-left: 4px solid var(--accent-primary);
-      padding: 0.75rem 1.1rem;
+      padding: 0.8rem 1.1rem;
       border-radius: 0 12px 12px 0;
-      font-style: italic;
       color: var(--quote-ink);
-      margin-bottom: 1.5rem;
-      font-size: 0.95rem;
-      display: flex;
-      align-items: center;
-      gap: 0.5rem;
-    }
-    .quote-asterisk {
-      font-size: 1.4rem;
-      color: var(--accent-primary);
+      margin-bottom: 1.35rem;
+      font-size: 0.92rem;
+      font-weight: 500;
+      line-height: 1.55;
     }
 
-    /* Bento mini widgets inside Storyboard */
+    /* Bento Proof Stats inside Hero */
     .story-grid {
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
-      gap: 0.9rem;
+      grid-template-columns: repeat(auto-fit, minmax(175px, 1fr));
+      gap: 0.85rem;
     }
     .story-mini-card {
       background: #fff;
       border: 1.5px solid var(--subcard-border);
       border-radius: 12px;
-      padding: 0.85rem 1rem;
+      padding: 0.8rem 0.95rem;
       box-shadow: var(--subcard-shadow);
     }
     .story-mini-label {
-      font-size: 0.75rem;
+      font-size: 0.72rem;
       font-weight: 700;
       text-transform: uppercase;
       letter-spacing: 0.5px;
       color: var(--accent-secondary);
-      margin-bottom: 0.25rem;
-      display: flex;
-      align-items: center;
-      gap: 0.3rem;
+      margin-bottom: 0.22rem;
     }
     .story-mini-val {
       font-size: 0.92rem;
-      font-weight: 600;
+      font-weight: 700;
       color: var(--text-main);
+      line-height: 1.35;
+    }
+
+    /* ── Trusted By / Shipped With Partner Logo Strip ── */
+    .partner-strip {
+      background: rgba(255, 255, 255, 0.94);
+      border: 2px solid var(--card-border);
+      border-radius: 18px;
+      padding: 1.15rem 1.5rem;
+      box-shadow: var(--shadow-retro);
+      margin-bottom: 3.6rem;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 1.2rem;
+      flex-wrap: wrap;
+    }
+    .partner-strip-label {
+      font-family: 'Space Mono', monospace;
+      font-size: 0.74rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.6px;
+      color: var(--text-muted);
+      max-width: 195px;
+      line-height: 1.4;
+    }
+    .partner-logos-row {
+      display: flex;
+      align-items: center;
+      gap: 0.85rem;
+      flex-wrap: wrap;
+      flex: 1;
+      justify-content: flex-end;
+    }
+    .partner-chip {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.6rem;
+      background: #fff;
+      border: 1.5px solid var(--subcard-border);
+      border-radius: 12px;
+      padding: 0.45rem 0.85rem 0.45rem 0.5rem;
+      text-decoration: none;
+      color: var(--text-main);
+      box-shadow: var(--subcard-shadow);
+      transition: transform 0.2s ease, border-color 0.2s ease;
+    }
+    .partner-chip:hover {
+      transform: translateY(-2px);
+      border-color: var(--accent-primary);
+    }
+    .partner-chip img {
+      width: 34px;
+      height: 34px;
+      border-radius: 8px;
+      object-fit: contain;
+      background: #0f172a;
+      padding: 2px;
+      flex-shrink: 0;
+    }
+    .partner-chip img.light-logo {
+      background: #f8fafc;
+      object-fit: cover;
+      padding: 0;
+    }
+    .partner-chip-name {
+      font-size: 0.88rem;
+      font-weight: 700;
+      line-height: 1.15;
+      color: var(--text-main);
+    }
+    .partner-chip-role {
+      font-size: 0.71rem;
+      color: var(--text-muted);
+      font-weight: 500;
     }
 
     /* ── Section Titles ── */
@@ -506,8 +586,8 @@
       content: "";
       position: absolute;
       bottom: 2px;
-      left: 10%;
-      right: 10%;
+      left: 8%;
+      right: 8%;
       height: 8px;
       background: var(--title-highlight);
       border-radius: 4px;
@@ -519,54 +599,285 @@
       margin-top: 0.2rem;
     }
 
-    /* ── Proud Builds Showcase ── */
-    .structures-section {
-      margin-bottom: 4.5rem;
+    /* ── Services Section ("What You Can Hire Me For") ── */
+    .services-section {
+      margin-bottom: 4.2rem;
     }
-    .arch-summary-banner {
-      background: var(--paper-white);
-      backdrop-filter: blur(8px);
+    .services-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 1.4rem;
+    }
+    .service-card {
+      background: rgba(255, 255, 255, 0.94);
       border: 2px solid var(--card-border);
-      border-radius: 20px;
-      padding: 1.7rem 2rem;
+      border-radius: 18px;
+      padding: 1.65rem 1.5rem 1.5rem;
       box-shadow: var(--shadow-retro);
       position: relative;
-      margin-bottom: 1.9rem;
+      display: flex;
+      flex-direction: column;
+      transition: transform 0.22s ease, box-shadow 0.22s ease, border-color 0.22s ease;
     }
-    .arch-summary-lead {
-      font-size: 0.98rem;
-      color: var(--text-main);
-      line-height: 1.7;
-      margin-bottom: 1.15rem;
+    .service-card:hover {
+      transform: translateY(-4px);
+      box-shadow: var(--shadow-hover);
+      border-color: var(--accent-primary);
     }
-    .arch-summary-lead strong {
-      color: var(--accent-deep);
-    }
-    .arch-metrics-row {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-      gap: 0.85rem;
-    }
-    .arch-metric-card {
-      background: #fff;
-      border: 1.5px solid var(--subcard-border);
-      border-radius: 12px;
-      padding: 0.75rem 0.95rem;
-      box-shadow: var(--subcard-shadow);
-    }
-    .arch-metric-num {
+    .service-num {
       font-family: 'Space Mono', monospace;
-      font-size: 1.05rem;
+      font-size: 0.72rem;
       font-weight: 700;
+      text-transform: uppercase;
       color: var(--accent-deep);
-      margin-bottom: 0.15rem;
+      background: var(--badge-bg);
+      border: 1px dashed var(--accent-soft);
+      padding: 0.2rem 0.6rem;
+      border-radius: 999px;
+      align-self: flex-start;
+      margin-bottom: 0.7rem;
     }
-    .arch-metric-lbl {
-      font-size: 0.79rem;
+    .service-title {
+      font-size: 1.25rem;
+      font-weight: 700;
+      color: var(--text-main);
+      margin-bottom: 0.45rem;
+    }
+    .service-desc {
+      font-size: 0.92rem;
       color: var(--text-muted);
-      line-height: 1.35;
+      line-height: 1.62;
+      margin-bottom: 1.1rem;
+      flex: 1;
     }
 
+    /* ── Shipped Projects ("Proudly Worked On") ── */
+    .featured-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(460px, 1fr));
+      gap: 1.8rem;
+      margin-bottom: 4.4rem;
+    }
+
+    .showcase-card {
+      background: rgba(255, 255, 255, 0.94);
+      border: 2px solid var(--card-border);
+      border-radius: 18px;
+      padding: 1.3rem 1.4rem 1.6rem;
+      box-shadow: var(--shadow-retro);
+      position: relative;
+      display: flex;
+      flex-direction: column;
+      transition: transform 0.25s cubic-bezier(0.2, 0.8, 0.2, 1), box-shadow 0.25s cubic-bezier(0.2, 0.8, 0.2, 1), border-color 0.25s ease;
+    }
+    .showcase-card:hover {
+      transform: translateY(-5px);
+      box-shadow: var(--shadow-hover);
+      border-color: var(--accent-primary);
+    }
+
+    .showcase-card.wildcraft { border-top: 6px solid #5a8d56; }
+    .showcase-card.dimensional-backpack { border-top: 6px solid #d97736; }
+    .showcase-card.decayed-reality { border-top: 6px solid #6b406e; }
+    .showcase-card.galacticraft { border-top: 6px solid #4a6fa5; }
+
+    /* Project 16:9 Media Frame + Cover/In-Game Switcher */
+    .project-media-wrap {
+      position: relative;
+      width: 100%;
+      aspect-ratio: 16 / 9;
+      border-radius: 12px;
+      overflow: hidden;
+      border: 2px solid var(--subcard-border);
+      background: #0f172a;
+      margin-bottom: 1rem;
+    }
+    .project-media-btn {
+      appearance: none;
+      border: none;
+      background: transparent;
+      width: 100%;
+      height: 100%;
+      padding: 0;
+      cursor: zoom-in;
+      display: block;
+    }
+    .project-media-btn img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+      transition: transform 0.35s ease;
+    }
+    .showcase-card:hover .project-media-btn img {
+      transform: scale(1.03);
+    }
+    .media-shot-tabs {
+      position: absolute;
+      top: 9px;
+      left: 9px;
+      display: inline-flex;
+      gap: 4px;
+      background: rgba(15, 23, 42, 0.78);
+      padding: 3px;
+      border-radius: 999px;
+      border: 1px solid rgba(255, 255, 255, 0.2);
+      z-index: 4;
+    }
+    .media-tab-btn {
+      appearance: none;
+      border: none;
+      background: transparent;
+      color: #cbd5e1;
+      font-family: inherit;
+      font-size: 0.71rem;
+      font-weight: 600;
+      padding: 0.2rem 0.58rem;
+      border-radius: 999px;
+      cursor: pointer;
+      transition: all 0.15s ease;
+    }
+    .media-tab-btn.active {
+      background: #fff;
+      color: #0f172a;
+    }
+
+    .card-top-row {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 0.5rem;
+      flex-wrap: wrap;
+      margin-bottom: 0.35rem;
+    }
+    .stamp-pill {
+      font-family: 'Space Mono', monospace;
+      font-size: 0.71rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      padding: 0.22rem 0.62rem;
+      border-radius: 20px;
+      border: 1px dashed;
+    }
+    .stamp-galacticraft { background: #eef3fc; color: #3b5f97; border-color: #a4c2f4; }
+    .stamp-decayed { background: #f6eefc; color: #582b68; border-color: #d5b8ff; }
+    .stamp-wildcraft { background: #eff7ee; color: #2e6629; border-color: #a3d99e; }
+    .stamp-dimensional { background: #fdf3ea; color: #a4531d; border-color: #f7b98d; }
+    .stamp-builds {
+      background: var(--badge-bg);
+      color: var(--accent-deep);
+      border-color: var(--accent-soft);
+    }
+
+    .traction-pill {
+      font-size: 0.75rem;
+      font-weight: 700;
+      color: #92400e;
+      background: #fef3c7;
+      border: 1px solid #fde68a;
+      padding: 0.18rem 0.58rem;
+      border-radius: 999px;
+      display: inline-flex;
+      align-items: center;
+      gap: 0.28rem;
+    }
+
+    .project-name {
+      font-size: 1.4rem;
+      font-weight: 700;
+      color: var(--text-main);
+      margin-top: 0.25rem;
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+    }
+    .project-tagline {
+      font-family: 'Patrick Hand', cursive;
+      font-size: 1.16rem;
+      color: var(--accent-deep);
+      margin-bottom: 0.65rem;
+    }
+    .project-desc {
+      font-size: 0.93rem;
+      color: var(--text-muted);
+      line-height: 1.62;
+      margin-bottom: 1.05rem;
+      flex: 1;
+    }
+    .project-tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.4rem;
+      margin-bottom: 1.15rem;
+    }
+    .tag-chip {
+      background: #fff;
+      border: 1px solid var(--subcard-border);
+      font-size: 0.75rem;
+      font-weight: 600;
+      color: var(--text-muted);
+      padding: 0.2rem 0.55rem;
+      border-radius: 6px;
+    }
+
+    .project-actions {
+      display: flex;
+      gap: 0.65rem;
+      margin-top: auto;
+      flex-wrap: wrap;
+    }
+    .btn-action-primary {
+      flex: 1;
+      background: linear-gradient(135deg, var(--accent-primary), var(--accent-deep));
+      color: #fff;
+      text-decoration: none;
+      text-align: center;
+      padding: 0.55rem 1rem;
+      border-radius: 10px;
+      font-weight: 600;
+      font-size: 0.87rem;
+      border: none;
+      cursor: pointer;
+      font-family: inherit;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 0.4rem;
+      box-shadow: 0 4px 10px var(--btn-shadow);
+      transition: all 0.2s;
+    }
+    .btn-action-primary:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 6px 14px var(--btn-shadow-hover);
+      color: #fff;
+    }
+    .btn-action-secondary {
+      background: #fff;
+      border: 1.5px solid var(--card-border);
+      color: var(--text-main);
+      text-decoration: none;
+      padding: 0.55rem 0.9rem;
+      border-radius: 10px;
+      font-weight: 600;
+      font-size: 0.87rem;
+      cursor: pointer;
+      font-family: inherit;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 0.35rem;
+      transition: all 0.2s;
+    }
+    .btn-action-secondary:hover {
+      background: var(--badge-bg);
+      border-color: var(--accent-soft);
+      color: var(--accent-deep);
+    }
+
+    /* ── Proud Builds Showcase ── */
+    .structures-section {
+      margin-bottom: 4.4rem;
+    }
     .structure-gallery {
       display: grid;
       grid-template-columns: repeat(auto-fit, minmax(460px, 1fr));
@@ -576,7 +887,7 @@
       background: rgba(255, 255, 255, 0.94);
       border: 2px solid var(--card-border);
       border-radius: 18px;
-      padding: 1.25rem 1.35rem 1.55rem;
+      padding: 1.25rem 1.35rem 1.5rem;
       box-shadow: var(--shadow-retro);
       position: relative;
       display: flex;
@@ -599,7 +910,7 @@
       padding: 0;
       cursor: zoom-in;
       position: relative;
-      margin-bottom: 1rem;
+      margin-bottom: 0.95rem;
       display: block;
       box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
     }
@@ -628,7 +939,8 @@
       pointer-events: none;
       transition: background 0.2s ease;
     }
-    .structure-shot-btn:hover .shot-zoom-pill {
+    .structure-shot-btn:hover .shot-zoom-pill,
+    .project-media-btn:hover .shot-zoom-pill {
       background: var(--accent-deep);
     }
     .structure-meta-top {
@@ -637,17 +949,59 @@
       align-items: center;
       gap: 0.5rem;
       flex-wrap: wrap;
-      margin-bottom: 0.35rem;
+      margin-bottom: 0.3rem;
     }
-    .stamp-builds {
-      background: var(--badge-bg);
-      color: var(--accent-deep);
-      border-color: var(--accent-soft);
+
+    /* ── Dedicated Business Contact Section ── */
+    .contact-section {
+      background: rgba(255, 255, 255, 0.95);
+      border: 2px solid var(--card-border);
+      border-radius: 22px;
+      padding: 2.2rem 2.2rem;
+      box-shadow: var(--shadow-retro);
+      position: relative;
+      margin-bottom: 3rem;
     }
-    .structure-file-hint {
+    .contact-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 1.15rem;
+      margin-top: 1.4rem;
+    }
+    .contact-card {
+      background: #fff;
+      border: 1.5px solid var(--subcard-border);
+      border-radius: 14px;
+      padding: 1.15rem 1.2rem;
+      box-shadow: var(--subcard-shadow);
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      gap: 0.85rem;
+    }
+    .contact-channel-lbl {
       font-family: 'Space Mono', monospace;
-      font-size: 0.71rem;
+      font-size: 0.72rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      color: var(--accent-secondary);
+      margin-bottom: 0.25rem;
+    }
+    .contact-handle {
+      font-size: 0.98rem;
+      font-weight: 700;
+      color: var(--text-main);
+      word-break: break-all;
+    }
+    .contact-note {
+      font-size: 0.81rem;
       color: var(--text-muted);
+      margin-top: 0.2rem;
+    }
+    .contact-btn-row {
+      display: flex;
+      gap: 0.5rem;
+      flex-wrap: wrap;
     }
 
     /* ── Fullscreen HD Lightbox Modal ── */
@@ -750,210 +1104,27 @@
       line-height: 1.55;
     }
 
-    /* ── Proudly Worked On: The 4 Flagships ── */
-    .featured-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(480px, 1fr));
-      gap: 1.8rem;
-      margin-bottom: 4.5rem;
-    }
-
-    .showcase-card {
-      background: var(--paper-white);
-      backdrop-filter: blur(8px);
-      border: 2px solid var(--card-border);
-      border-radius: 18px;
-      padding: 1.8rem;
-      box-shadow: var(--shadow-retro);
-      position: relative;
-      display: flex;
-      flex-direction: column;
-      transition: all 0.25s cubic-bezier(0.2, 0.8, 0.2, 1);
-    }
-    .showcase-card:hover {
-      transform: translateY(-5px);
-      box-shadow: var(--shadow-hover);
-      border-color: var(--accent-primary);
-    }
-
-    /* Specific decorative color themes for the 4 */
-    .showcase-card.galacticraft {
-      border-top: 6px solid #4a6fa5;
-    }
-    .showcase-card.decayed-reality {
-      border-top: 6px solid #6b406e;
-    }
-    .showcase-card.wildcraft {
-      border-top: 6px solid #5a8d56;
-    }
-    .showcase-card.dimensional-backpack {
-      border-top: 6px solid #d97736;
-    }
-
-    .card-top-row {
-      display: flex;
-      justify-content: space-between;
-      align-items: flex-start;
-      margin-bottom: 0.6rem;
-    }
-    .project-icon-badge {
-      width: 54px;
-      height: 54px;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      background: #fff;
-      border-radius: 14px;
-      border: 1.5px solid var(--card-border);
-      box-shadow: 2px 3px 0px rgba(0,0,0,0.05);
-      overflow: hidden;
-      padding: 0;
-    }
-    .project-icon-badge img {
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-      border-radius: 12px;
-    }
-    .stamp-pill {
-      font-family: 'Space Mono', monospace;
-      font-size: 0.72rem;
-      font-weight: 700;
-      text-transform: uppercase;
-      padding: 0.25rem 0.65rem;
-      border-radius: 20px;
-      border: 1px dashed;
-    }
-    .stamp-galacticraft { background: #eef3fc; color: #3b5f97; border-color: #a4c2f4; }
-    .stamp-decayed { background: #f6eefc; color: #582b68; border-color: #d5b8ff; }
-    .stamp-wildcraft { background: #eff7ee; color: #2e6629; border-color: #a3d99e; }
-    .stamp-dimensional { background: #fdf3ea; color: #a4531d; border-color: #f7b98d; }
-
-    .project-name {
-      font-size: 1.45rem;
-      font-weight: 700;
-      color: var(--text-main);
-      margin-top: 0.4rem;
-      display: flex;
-      align-items: center;
-      gap: 0.5rem;
-    }
-    .project-tagline {
-      font-family: 'Patrick Hand', cursive;
-      font-size: 1.18rem;
-      color: var(--accent-deep);
-      margin-bottom: 0.75rem;
-    }
-    .project-desc {
-      font-size: 0.95rem;
-      color: var(--text-muted);
-      line-height: 1.65;
-      margin-bottom: 1.2rem;
-      flex: 1;
-    }
-    .project-highlights {
-      list-style: none;
-      margin-bottom: 1.25rem;
-      display: flex;
-      flex-direction: column;
-      gap: 0.35rem;
-    }
-    .project-highlights li {
-      font-size: 0.88rem;
-      color: var(--text-main);
-      display: flex;
-      align-items: flex-start;
-      gap: 0.45rem;
-    }
-    .project-highlights li span.dot {
-      color: var(--accent-primary);
-      font-size: 1.1rem;
-      line-height: 1;
-    }
-    .project-tags {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 0.4rem;
-      margin-bottom: 1.25rem;
-    }
-    .tag-chip {
-      background: #fff;
-      border: 1px solid var(--subcard-border);
-      font-size: 0.76rem;
-      font-weight: 500;
-      color: var(--text-muted);
-      padding: 0.2rem 0.55rem;
-      border-radius: 6px;
-    }
-
-    .project-actions {
-      display: flex;
-      gap: 0.75rem;
-      margin-top: auto;
-    }
-    .btn-action-primary {
-      flex: 1;
-      background: linear-gradient(135deg, var(--accent-primary), var(--accent-deep));
-      color: #fff;
-      text-decoration: none;
-      text-align: center;
-      padding: 0.55rem 1rem;
-      border-radius: 10px;
-      font-weight: 600;
-      font-size: 0.88rem;
-      display: inline-flex;
-      align-items: center;
-      justify-content: center;
-      gap: 0.4rem;
-      box-shadow: 0 4px 10px var(--btn-shadow);
-      transition: all 0.2s;
-    }
-    .btn-action-primary:hover {
-      transform: translateY(-2px);
-      box-shadow: 0 6px 14px var(--btn-shadow-hover);
-      color: #fff;
-    }
-    .btn-action-secondary {
-      background: #fff;
-      border: 1.5px solid var(--card-border);
-      color: var(--text-main);
-      text-decoration: none;
-      padding: 0.55rem 0.9rem;
-      border-radius: 10px;
-      font-weight: 600;
-      font-size: 0.88rem;
-      display: inline-flex;
-      align-items: center;
-      gap: 0.35rem;
-      transition: all 0.2s;
-    }
-    .btn-action-secondary:hover {
-      background: var(--badge-bg);
-      border-color: var(--accent-soft);
-      color: var(--accent-deep);
-    }
-
     /* ── Cozy Footer ── */
     .straw-footer {
       text-align: center;
-      padding: 2.5rem 1.5rem 1rem;
+      padding: 1.5rem 1.5rem 1rem;
       position: relative;
     }
     .footer-stamp {
       font-family: 'Patrick Hand', cursive;
       font-size: 1.5rem;
       color: var(--accent-deep);
-      margin-bottom: 0.5rem;
+      margin-bottom: 0.4rem;
     }
     .footer-desc {
-      font-size: 0.9rem;
+      font-size: 0.88rem;
       color: var(--text-muted);
     }
     .footer-links {
       display: flex;
       justify-content: center;
       gap: 1.2rem;
-      margin-top: 1rem;
+      margin-top: 0.9rem;
       flex-wrap: wrap;
     }
     .footer-link {
@@ -968,18 +1139,24 @@
     }
 
     /* ── Responsive adjustments ── */
-    @media (max-width: 860px) {
+    @media (max-width: 920px) {
       .giant-me-hero { grid-template-columns: 1fr; }
-      .polaroid-card { max-width: 320px; margin: 0 auto; transform: none; }
+      .polaroid-card { max-width: 330px; margin: 0 auto; transform: none; }
+      .services-grid { grid-template-columns: 1fr; }
+      .contact-grid { grid-template-columns: 1fr; }
       .structure-gallery { grid-template-columns: 1fr; }
       .featured-grid { grid-template-columns: 1fr; }
-      .story-board { padding: 1.8rem 1.4rem; }
-      .arch-summary-banner { padding: 1.4rem 1.25rem; }
+      .story-board { padding: 1.75rem 1.4rem; }
+      .partner-strip { flex-direction: column; align-items: flex-start; }
+      .partner-strip-label { max-width: none; }
+      .partner-logos-row { justify-content: flex-start; }
     }
-    @media (max-width: 580px) {
-      .floating-nav { flex-direction: column; gap: 0.6rem; border-radius: 18px; }
-      .nav-links { flex-wrap: wrap; justify-content: center; }
-      .wrapper { padding: 1.5rem 1rem 4rem; }
+    @media (max-width: 640px) {
+      .floating-nav { flex-direction: column; gap: 0.65rem; border-radius: 18px; padding: 0.85rem 1rem; }
+      .nav-brand-group { justify-content: center; }
+      .nav-links { justify-content: center; }
+      .contact-section { padding: 1.6rem 1.2rem; }
+      .wrapper { padding: 1.4rem 1rem 4rem; }
     }
   </style>
 </head>
@@ -992,42 +1169,48 @@
 
     <!-- Floating Navigation Bar -->
     <header class="floating-nav">
-      <a href="#" class="nav-brand">
-        Designation Vee's Corner
-      </a>
+      <div class="nav-brand-group">
+        <a href="#" class="nav-brand">Minh Lê · @Senthemodder</a>
+        <span class="availability-pill"><span class="avail-dot"></span>Available for Studio Work</span>
+      </div>
       <nav class="nav-links">
-        <a href="#about" class="nav-link-btn">About</a>
+        <a href="#services" class="nav-link-btn">Services</a>
+        <a href="#featured" class="nav-link-btn">Shipped Work</a>
         <a href="#builds" class="nav-link-btn">Builds</a>
-        <a href="#featured" class="nav-link-btn">Proud Works</a>
-        <a href="https://www.linkedin.com/in/minh-l%C3%AA-561867426/" target="_blank" class="nav-link-btn linkedin-pill">LinkedIn</a>
+        <a href="#contact" class="nav-link-btn">Contact</a>
+        <a href="https://www.linkedin.com/in/minh-l%C3%AA-561867426/" target="_blank" class="nav-link-btn linkedin-pill">LinkedIn ↗</a>
       </nav>
     </header>
 
-    <!-- ── Giant Page of Me (Scrapbook Hero) ── -->
+    <!-- ── Hero Section ── -->
     <section class="giant-me-hero" id="about">
       
       <!-- Polaroid Persona Card -->
       <div class="polaroid-card">
         <div class="washi-tape"></div>
-        <div class="avatar-frame">
-          <img src="https://avatars.githubusercontent.com/u/120316848?v=4" alt="Designation Vee Avatar">
-        </div>
-        <h1 class="polaroid-title">Minh Lê</h1>
-        <div class="polaroid-subtitle">Designation Vee · @Senthemodder</div>
-        
-        <div class="polaroid-badges">
-          <span class="mini-badge">Software Developer</span>
-          <span class="mini-badge">Systems Engineer</span>
-          <span class="mini-badge">Vietnam</span>
-          <span class="mini-badge">Tooling &amp; Compilers</span>
-          <span class="mini-badge">Game Architecture</span>
+        <div>
+          <div class="avatar-frame">
+            <img src="https://avatars.githubusercontent.com/u/120316848?v=4" alt="Minh Lê (@Senthemodder)">
+          </div>
+          <h1 class="polaroid-title">Minh Lê</h1>
+          <div class="polaroid-subtitle">Designation Vee · @Senthemodder</div>
+          
+          <div class="polaroid-badges">
+            <span class="mini-badge">Marketplace Add-Ons</span>
+            <span class="mini-badge">Java &amp; Bedrock</span>
+            <span class="mini-badge">Custom Worlds</span>
+            <span class="mini-badge">Vietnam (UTC+7)</span>
+          </div>
         </div>
 
-        <div style="display:flex; gap:0.5rem; justify-content:center; margin-top:0.9rem;">
-          <a href="https://www.linkedin.com/in/minh-l%C3%AA-561867426/" target="_blank" class="nav-link-btn linkedin-pill" style="padding:0.3rem 0.75rem; font-size:0.8rem;">
+        <div class="polaroid-quick-links">
+          <a href="#contact" class="nav-link-btn" style="padding:0.32rem 0.78rem; font-size:0.8rem;">
+            Hire / Contact
+          </a>
+          <a href="https://www.linkedin.com/in/minh-l%C3%AA-561867426/" target="_blank" class="nav-link-btn linkedin-pill" style="padding:0.32rem 0.78rem; font-size:0.8rem;">
             LinkedIn
           </a>
-          <a href="https://github.com/Senthemodder" target="_blank" class="nav-link-btn" style="padding:0.3rem 0.75rem; font-size:0.8rem;">
+          <a href="https://github.com/Senthemodder" target="_blank" class="nav-link-btn" style="padding:0.32rem 0.78rem; font-size:0.8rem;">
             GitHub
           </a>
         </div>
@@ -1039,52 +1222,289 @@
         
         <div>
           <div class="story-greeting">
-            About Me
+            Minecraft Marketplace &amp; Game Systems Developer
           </div>
-          <p class="story-bio" style="margin-bottom: 0.9rem;">
-            Hi, I am <strong>Minh Lê</strong> (<strong>Designation Vee</strong> · <strong>@Senthemodder</strong>), a developer from <strong>Vietnam</strong> who specializes in software development, systems engineering, compiler &amp; porting toolchains, simulation engines, and cross-platform game architecture.
+          <p class="story-bio">
+            Hi, I'm <strong>Minh Lê</strong> (<strong>@Senthemodder</strong>), a developer based in <strong>Vietnam</strong> building commercial Minecraft Marketplace add-ons, cross-edition Java and Bedrock ports, and custom game worlds for partner studios and publishers.
           </p>
-          <p class="story-bio" style="margin-bottom: 1.1rem; font-size: 0.96rem;">
-            I architect production-grade systems, automated build pipelines, and high-performance gameplay infrastructure across commercial studios (<strong>Pixelusion</strong>, <strong>Compycraft</strong>, <strong>Decayed Team</strong>) and large-scale open-source ecosystems (<strong>Galacticraft</strong>).
+          <p class="story-bio" style="font-size: 0.96rem;">
+            I've shipped official Marketplace titles and large-scale mods alongside established teams including <strong>Pixelusion</strong>, <strong>CompyCraft</strong>, <strong>Decayed Team</strong>, and <strong>TeamGalacticraft</strong>, handling custom gameplay systems, boss AI, custom UIs, and world builds from start to release.
           </p>
-          <div class="specialties-box">
-            <div class="specialties-heading">
-              Specialties &amp; Engineering Focus
-            </div>
-            <ul class="specialties-list">
-              <li>• <strong>Systems Engineering:</strong> Backend architecture, networking, state management &amp; runtime optimization</li>
-              <li>• <strong>Compilers &amp; Porting Pipelines:</strong> Cross-platform code migration, code generators, AST tooling &amp; schema validation</li>
-              <li>• <strong>Simulation &amp; Engine Architecture:</strong> Real-time physics, procedural generation, state machines &amp; simulation logic</li>
-              <li>• <strong>DevOps, QA &amp; Automation Tooling:</strong> CLI build tools, automated integration testing, custom linters &amp; CI/CD pipelines</li>
-              <li>• <strong>Full-Stack Technical Delivery:</strong> End-to-end product development from system design to commercial deployment</li>
-            </ul>
-          </div>
 
           <div class="quote-sticker">
-            <span class="quote-asterisk">*</span>
-            <span>wandering through life :D</span>
+            Open for studio contracts, Marketplace collaborations, and custom commissions. Reliable communication, clean delivery, and builds tested for console, mobile, and PC.
           </div>
         </div>
 
-        <!-- Mini Bento Stats / Widgets -->
+        <!-- Verified Proof Stats -->
         <div class="story-grid">
           <div class="story-mini-card">
-            <div class="story-mini-label">Role &amp; Focus</div>
-            <div class="story-mini-val">Software Dev &amp; Systems Engineer</div>
+            <div class="story-mini-label">Marketplace Proof</div>
+            <div class="story-mini-val">4.6 ★ Flagship Rating (1,990+ Store Reviews)</div>
           </div>
           <div class="story-mini-card">
-            <div class="story-mini-label">Languages &amp; Stack</div>
+            <div class="story-mini-label">Mod Ecosystem Reach</div>
+            <div class="story-mini-val">3.7M+ Downloads Across Shipped Mods</div>
+          </div>
+          <div class="story-mini-card">
+            <div class="story-mini-label">Tech Stack</div>
             <div class="story-mini-val">TypeScript, Java, Node.js, Python, C++</div>
           </div>
           <div class="story-mini-card">
-            <div class="story-mini-label">Studio Experience</div>
-            <div class="story-mini-val">Pixelusion, Compycraft &amp; Decayed Team</div>
-          </div>
-          <div class="story-mini-card">
-            <div class="story-mini-label">Location &amp; Work</div>
-            <div class="story-mini-val">Vietnam (UTC+7) · Remote Worldwide</div>
+            <div class="story-mini-label">Location &amp; Hours</div>
+            <div class="story-mini-val">Vietnam (UTC+7) · Flexible EU / US Overlap</div>
           </div>
         </div>
+
+      </div>
+    </section>
+
+    <!-- ── Shipped With / Partner Studio Trust Bar ── -->
+    <div class="partner-strip" aria-label="Partner studios and teams">
+      <div class="partner-strip-label">
+        Shipped Commercial &amp; Studio Releases With
+      </div>
+      <div class="partner-logos-row">
+        <a href="https://wiki.pixelusion.net" target="_blank" class="partner-chip">
+          <img src="img/studios/pixelusion.webp" alt="Pixelusion logo">
+          <div>
+            <div class="partner-chip-name">Pixelusion</div>
+            <div class="partner-chip-role">Official Minecraft Partner</div>
+          </div>
+        </a>
+        <a href="https://www.minecraft.net/en-us/marketplace/pdp/compycraft/wildlifecraft-1.2/fd7b7f00-30cb-4f1a-a802-fd26025eaf14" target="_blank" class="partner-chip">
+          <img src="img/studios/compycraft.webp" class="light-logo" alt="CompyCraft WildlifeCraft icon">
+          <div>
+            <div class="partner-chip-name">CompyCraft</div>
+            <div class="partner-chip-role">Official Minecraft Partner</div>
+          </div>
+        </a>
+        <a href="https://decayed-team.com" target="_blank" class="partner-chip">
+          <img src="img/studios/decayed_team.webp" alt="Decayed Team logo">
+          <div>
+            <div class="partner-chip-name">Decayed Team</div>
+            <div class="partner-chip-role">Bedrock Add-On Studio</div>
+          </div>
+        </a>
+        <a href="https://github.com/TeamGalacticraft/Galacticraft" target="_blank" class="partner-chip">
+          <img src="img/studios/galacticraft.webp" alt="TeamGalacticraft logo">
+          <div>
+            <div class="partner-chip-name">TeamGalacticraft</div>
+            <div class="partner-chip-role">3.7M+ Downloads Space Mod</div>
+          </div>
+        </a>
+      </div>
+    </div>
+
+    <!-- ── Services Section: What You Can Hire Me For ── -->
+    <section class="services-section" id="services">
+      <div class="section-header">
+        <h2 class="section-title">What You Can Hire Me For</h2>
+        <p class="section-subtitle">Concrete deliverables for Marketplace partners, studios, and creator teams</p>
+      </div>
+
+      <div class="services-grid">
+        <article class="service-card">
+          <div class="washi-tape left-corner"></div>
+          <span class="service-num">01 · Add-Ons &amp; Gameplay</span>
+          <h3 class="service-title">Full Marketplace Add-Ons</h3>
+          <p class="service-desc">
+            Complete Bedrock add-ons built ready for Marketplace review: custom mobs, multi-phase boss fights, custom UIs, tools, survival progression, and smooth performance across low-end mobile, console, and PC.
+          </p>
+          <div class="project-tags" style="margin-bottom:0;">
+            <span class="tag-chip">Boss &amp; Mob AI</span>
+            <span class="tag-chip">Custom Screens</span>
+            <span class="tag-chip">Marketplace QA</span>
+          </div>
+        </article>
+
+        <article class="service-card">
+          <div class="washi-tape"></div>
+          <span class="service-num">02 · Cross-Edition Ports</span>
+          <h3 class="service-title">Java &amp; Bedrock Porting</h3>
+          <p class="service-desc">
+            Faithful ports in either direction: bringing established Java Edition mods, machines, and custom menus cleanly to Bedrock Edition, or porting Bedrock add-ons over to Fabric and NeoForge.
+          </p>
+          <div class="project-tags" style="margin-bottom:0;">
+            <span class="tag-chip">Java to Bedrock</span>
+            <span class="tag-chip">Fabric &amp; NeoForge</span>
+            <span class="tag-chip">1:1 Gameplay Parity</span>
+          </div>
+        </article>
+
+        <article class="service-card">
+          <div class="washi-tape right-corner"></div>
+          <span class="service-num">03 · Worlds &amp; Landmarks</span>
+          <h3 class="service-title">Custom Worlds &amp; Builds</h3>
+          <p class="service-desc">
+            Custom dimensions, biomes, multi-floor dungeon towers, courtyard temples, giant trees, and boss arenas built to drop cleanly into survival expansions or adventure maps.
+          </p>
+          <div class="project-tags" style="margin-bottom:0;">
+            <span class="tag-chip">Custom Dimensions</span>
+            <span class="tag-chip">Dungeons &amp; Temples</span>
+            <span class="tag-chip">Boss Arenas</span>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <!-- ── Shipped Showcase: Projects I Proudly Worked On ── -->
+    <section id="featured">
+      <div class="section-header">
+        <h2 class="section-title">Shipped Titles &amp; Collaborations</h2>
+        <p class="section-subtitle">Official Minecraft Marketplace releases and major collaborative mods</p>
+      </div>
+
+      <div class="featured-grid">
+
+        <!-- 1. WildlifeCraft -->
+        <article class="showcase-card wildcraft">
+          <div class="washi-tape left-corner"></div>
+          <div class="project-media-wrap">
+            <div class="media-shot-tabs">
+              <button type="button" class="media-tab-btn active" data-target-img="wcCardImg" data-src="img/projects/wildlifecraft_cover.webp" data-lb-idx="0">Key Art</button>
+              <button type="button" class="media-tab-btn" data-target-img="wcCardImg" data-src="img/projects/wildlifecraft_ingame.webp" data-lb-idx="1">In-Game</button>
+            </div>
+            <button type="button" class="project-media-btn" id="wcCardTrigger" data-lightbox-idx="0" aria-label="Zoom WildlifeCraft screenshot">
+              <img id="wcCardImg" src="img/projects/wildlifecraft_cover.webp" alt="WildlifeCraft official Minecraft Marketplace cover art" width="800" height="450" loading="lazy">
+              <span class="shot-zoom-pill">Click to zoom</span>
+            </button>
+          </div>
+          <div class="card-top-row">
+            <span class="stamp-pill stamp-wildcraft">CompyCraft · Marketplace</span>
+            <span class="traction-pill">★ 4.6 / 5 · 1,939 Reviews</span>
+          </div>
+          <h3 class="project-name">WildlifeCraft</h3>
+          <div class="project-tagline">"200+ custom animal species and 50+ biomes on the Minecraft Marketplace"</div>
+          <p class="project-desc">
+            A flagship Minecraft Marketplace add-on released with <strong>CompyCraft</strong> that overhauls survival worlds with realistic wildlife behaviors, custom animations, custom trees, and living ecosystems across 50+ habitats.
+          </p>
+          <div class="project-tags">
+            <span class="tag-chip">Official Marketplace</span>
+            <span class="tag-chip">200+ Custom Mobs</span>
+            <span class="tag-chip">50+ Biomes</span>
+            <span class="tag-chip">1,939 Player Ratings</span>
+          </div>
+          <div class="project-actions">
+            <a href="https://www.minecraft.net/en-us/marketplace/pdp/compycraft/wildlifecraft-1.2/fd7b7f00-30cb-4f1a-a802-fd26025eaf14" target="_blank" class="btn-action-primary">
+              Minecraft Marketplace ↗
+            </a>
+          </div>
+        </article>
+
+        <!-- 2. Dimensional Backpacks -->
+        <article class="showcase-card dimensional-backpack">
+          <div class="washi-tape right-corner"></div>
+          <div class="project-media-wrap">
+            <div class="media-shot-tabs">
+              <button type="button" class="media-tab-btn active" data-target-img="dbpCardImg" data-src="img/projects/dimensional_backpacks_cover.webp" data-lb-idx="2">Key Art</button>
+              <button type="button" class="media-tab-btn" data-target-img="dbpCardImg" data-src="img/projects/dimensional_backpacks_ingame.webp" data-lb-idx="3">Pocket Room</button>
+            </div>
+            <button type="button" class="project-media-btn" id="dbpCardTrigger" data-lightbox-idx="2" aria-label="Zoom Dimensional Backpacks screenshot">
+              <img id="dbpCardImg" src="img/projects/dimensional_backpacks_cover.webp" alt="Dimensional Backpacks official Minecraft Marketplace cover art" width="800" height="450" loading="lazy">
+              <span class="shot-zoom-pill">Click to zoom</span>
+            </button>
+          </div>
+          <div class="card-top-row">
+            <span class="stamp-pill stamp-dimensional">Pixelusion · Marketplace</span>
+            <span class="traction-pill">★ 4.1 / 5 · 60 Reviews</span>
+          </div>
+          <h3 class="project-name">Dimensional Backpacks</h3>
+          <div class="project-tagline">"Carry whole enterable pocket bases on your back · official Pixelusion release"</div>
+          <p class="project-desc">
+            An official Minecraft Marketplace add-on built with <strong>Pixelusion</strong>. Instead of plain inventory menus, players step physically inside upgradable pocket-dimension rooms, stabilize dimensional rifts, and fight the Dimensional Eater boss.
+          </p>
+          <div class="project-tags">
+            <span class="tag-chip">Official Marketplace</span>
+            <span class="tag-chip">Pixelusion</span>
+            <span class="tag-chip">Pocket Dimensions</span>
+            <span class="tag-chip">Custom Boss Fight</span>
+          </div>
+          <div class="project-actions">
+            <a href="https://www.minecraft.net/en-us/marketplace/pdp/pixelusion/dimensional-backpacks-add-on/daf728fe-49d3-4949-9917-7b028e571eab" target="_blank" class="btn-action-primary">
+              Minecraft Marketplace ↗
+            </a>
+            <a href="https://wiki.pixelusion.net/en/add-ons/dimensional-backpacks" target="_blank" class="btn-action-secondary">
+              Wiki ↗
+            </a>
+          </div>
+        </article>
+
+        <!-- 3. Decayed Reality -->
+        <article class="showcase-card decayed-reality">
+          <div class="washi-tape left-corner"></div>
+          <div class="project-media-wrap">
+            <div class="media-shot-tabs">
+              <button type="button" class="media-tab-btn active" data-target-img="drCardImg" data-src="img/projects/decayed_reality_cover.webp" data-lb-idx="4">Boss Scene</button>
+              <button type="button" class="media-tab-btn" data-target-img="drCardImg" data-src="img/projects/decayed_reality_ingame.webp" data-lb-idx="5">Tractor Beams</button>
+            </div>
+            <button type="button" class="project-media-btn" id="drCardTrigger" data-lightbox-idx="4" aria-label="Zoom Decayed Reality screenshot">
+              <img id="drCardImg" src="img/projects/decayed_reality_cover.webp" alt="Decayed Reality Wither Storm towering over a city at night" width="1200" height="457" loading="lazy">
+              <span class="shot-zoom-pill">Click to zoom</span>
+            </button>
+          </div>
+          <div class="card-top-row">
+            <span class="stamp-pill stamp-decayed">Decayed Team</span>
+            <span class="traction-pill">2,000+ Release Comments</span>
+          </div>
+          <h3 class="project-name">Decayed Reality</h3>
+          <div class="project-tagline">"The Story Mode Wither Storm experience brought to Bedrock Edition"</div>
+          <p class="project-desc">
+            Developed with <strong>Decayed Team</strong>, <em>Decayed Reality</em> recreates the evolving Wither Storm colossus with multi-stage boss phases, tractor beams, tentacle attacks, block-devouring growth, and cross-biome player tracking.
+          </p>
+          <div class="project-tags">
+            <span class="tag-chip">Bedrock Add-On</span>
+            <span class="tag-chip">Decayed Team</span>
+            <span class="tag-chip">Multi-Phase Boss AI</span>
+            <span class="tag-chip">Story Mode Tribute</span>
+          </div>
+          <div class="project-actions">
+            <a href="https://decayed-team.com" target="_blank" class="btn-action-primary">
+              Decayed Team Official ↗
+            </a>
+            <a href="https://mcpedl.com/decayed-reality/" target="_blank" class="btn-action-secondary">
+              MCPEDL ↗
+            </a>
+          </div>
+        </article>
+
+        <!-- 4. Galacticraft -->
+        <article class="showcase-card galacticraft">
+          <div class="washi-tape right-corner"></div>
+          <div class="project-media-wrap">
+            <div class="media-shot-tabs">
+              <button type="button" class="media-tab-btn active" data-target-img="gcCardImg" data-src="img/projects/galacticraft_cover.webp" data-lb-idx="6">Lunar Rover</button>
+              <button type="button" class="media-tab-btn" data-target-img="gcCardImg" data-src="img/projects/galacticraft_ingame.webp" data-lb-idx="7">Terraforming</button>
+            </div>
+            <button type="button" class="project-media-btn" id="gcCardTrigger" data-lightbox-idx="6" aria-label="Zoom Galacticraft screenshot">
+              <img id="gcCardImg" src="img/projects/galacticraft_cover.webp" alt="Galacticraft Moon Buggy on the lunar surface" width="1280" height="720" loading="lazy">
+              <span class="shot-zoom-pill">Click to zoom</span>
+            </button>
+          </div>
+          <div class="card-top-row">
+            <span class="stamp-pill stamp-galacticraft">Modern Space Mod</span>
+            <span class="traction-pill">3.7M+ Downloads · 637 ★</span>
+          </div>
+          <h3 class="project-name">Galacticraft</h3>
+          <div class="project-tagline">"The classic space exploration mod rewritten for modern Minecraft"</div>
+          <p class="project-desc">
+            Travel across the solar system in customizable rockets, build pressurized orbital space stations, wire oxygen life-support networks, drive lunar buggies, and explore alien moons and planets.
+          </p>
+          <div class="project-tags">
+            <span class="tag-chip">Java Edition</span>
+            <span class="tag-chip">637 GitHub Stars</span>
+            <span class="tag-chip">Celestial Dimensions</span>
+            <span class="tag-chip">Life-Support Tech</span>
+          </div>
+          <div class="project-actions">
+            <a href="https://github.com/Senthemodder/Galacticraft" target="_blank" class="btn-action-primary">
+              GitHub Repository ↗
+            </a>
+            <a href="https://www.curseforge.com/minecraft/mc-mods/galacticraft-legacy" target="_blank" class="btn-action-secondary">
+              CurseForge ↗
+            </a>
+          </div>
+        </article>
 
       </div>
     </section>
@@ -1101,7 +1521,7 @@
         <!-- Build 1 -->
         <article class="structure-card">
           <div class="washi-tape left-corner"></div>
-          <button type="button" class="structure-shot-btn" data-lightbox-idx="0" aria-label="View Five-Tower Dungeon Lineup">
+          <button type="button" class="structure-shot-btn" data-lightbox-idx="8" aria-label="View Five-Tower Dungeon Lineup">
             <img src="img/builds/tower_lineup.webp" alt="Five multi-story dungeon towers in five color palettes" width="1600" height="1000" loading="lazy">
             <span class="shot-zoom-pill">Click to zoom</span>
           </button>
@@ -1118,7 +1538,7 @@
         <!-- Build 2 -->
         <article class="structure-card">
           <div class="washi-tape right-corner"></div>
-          <button type="button" class="structure-shot-btn" data-lightbox-idx="1" aria-label="View Domed Courtyard Temple">
+          <button type="button" class="structure-shot-btn" data-lightbox-idx="9" aria-label="View Domed Courtyard Temple">
             <img src="img/builds/courtyard_temple.webp" alt="Domed courtyard temple with pillared entrance and side wings" width="1600" height="1000" loading="lazy">
             <span class="shot-zoom-pill">Click to zoom</span>
           </button>
@@ -1135,7 +1555,7 @@
         <!-- Build 3 -->
         <article class="structure-card">
           <div class="washi-tape left-corner"></div>
-          <button type="button" class="structure-shot-btn" data-lightbox-idx="2" aria-label="View Dark Stone and Crystal Tower">
+          <button type="button" class="structure-shot-btn" data-lightbox-idx="10" aria-label="View Dark Stone and Crystal Tower">
             <img src="img/builds/dark_stone_tower.webp" alt="Close-up of dark stone tower with blue trim and crystal roof" width="1600" height="1000" loading="lazy">
             <span class="shot-zoom-pill">Click to zoom</span>
           </button>
@@ -1152,7 +1572,7 @@
         <!-- Build 4 -->
         <article class="structure-card">
           <div class="washi-tape right-corner"></div>
-          <button type="button" class="structure-shot-btn" data-lightbox-idx="3" aria-label="View Custom Fantasy Trees">
+          <button type="button" class="structure-shot-btn" data-lightbox-idx="11" aria-label="View Custom Fantasy Trees">
             <img src="img/builds/fantasy_trees.webp" alt="Four large custom fantasy trees side by side" width="1600" height="1000" loading="lazy">
             <span class="shot-zoom-pill">Click to zoom</span>
           </button>
@@ -1169,7 +1589,7 @@
         <!-- Build 5 -->
         <article class="structure-card">
           <div class="washi-tape left-corner"></div>
-          <button type="button" class="structure-shot-btn" data-lightbox-idx="4" aria-label="View Layered Great Tree and Spiral Tower">
+          <button type="button" class="structure-shot-btn" data-lightbox-idx="12" aria-label="View Layered Great Tree and Spiral Tower">
             <img src="img/builds/tree_and_watchtower.webp" alt="Layered pastel tree next to a cylindrical stone watchtower" width="1600" height="1000" loading="lazy">
             <span class="shot-zoom-pill">Click to zoom</span>
           </button>
@@ -1186,7 +1606,7 @@
         <!-- Build 6 -->
         <article class="structure-card">
           <div class="washi-tape right-corner"></div>
-          <button type="button" class="structure-shot-btn" data-lightbox-idx="5" aria-label="View Four Boss Arena Shrines">
+          <button type="button" class="structure-shot-btn" data-lightbox-idx="13" aria-label="View Four Boss Arena Shrines">
             <img src="img/builds/boss_arenas.webp" alt="Four open boss arenas built on distinct terrain islands" width="1600" height="1000" loading="lazy">
             <span class="shot-zoom-pill">Click to zoom</span>
           </button>
@@ -1201,176 +1621,91 @@
         </article>
 
       </div>
+    </section>
 
-      <!-- Client-Hooking LinkedIn Callout -->
-      <div style="margin-top: 1.7rem; background: #fff; border: 2px solid var(--card-border); border-radius: 16px; padding: 1.15rem 1.5rem; box-shadow: var(--shadow-retro); display: flex; align-items: center; justify-content: space-between; gap: 1rem; flex-wrap: wrap;">
-        <div>
-          <div style="font-family: 'Patrick Hand', cursive; font-size: 1.45rem; color: var(--accent-deep); line-height: 1.2;">
-            Need custom worlds, builds, or full add-ons for your project?
+    <!-- ── Dedicated Business Contact Section ── -->
+    <section class="contact-section" id="contact">
+      <div class="washi-tape"></div>
+      <div class="section-header" style="margin-bottom: 0.8rem;">
+        <h2 class="section-title">Work With Me</h2>
+        <p class="section-subtitle">Reach out directly for Marketplace add-ons, Java/Bedrock porting, or custom world builds</p>
+      </div>
+
+      <div class="contact-grid">
+        <!-- Email -->
+        <div class="contact-card">
+          <div>
+            <div class="contact-channel-lbl">Business Email</div>
+            <div class="contact-handle">minhanhle220907@gmail.com</div>
+            <div class="contact-note">Best for project briefs, studio scopes &amp; contracts</div>
           </div>
-          <div style="font-size: 0.9rem; color: var(--text-muted); margin-top: 0.15rem;">
-            Open for studio work, Marketplace projects, and commissions.
+          <div class="contact-btn-row">
+            <a href="mailto:minhanhle220907@gmail.com" class="btn-action-primary">Send Email ↗</a>
+            <button type="button" class="btn-action-secondary" data-copy-text="minhanhle220907@gmail.com">Copy</button>
           </div>
         </div>
-        <a href="https://www.linkedin.com/in/minh-l%C3%AA-561867426/" target="_blank" class="btn-action-primary" style="flex: 0 0 auto; padding: 0.6rem 1.25rem;">
-          Message Me on LinkedIn ↗
-        </a>
+
+        <!-- Discord -->
+        <div class="contact-card">
+          <div>
+            <div class="contact-channel-lbl">Discord</div>
+            <div class="contact-handle">designatedasvee</div>
+            <div class="contact-note">Fastest for studio chats &amp; quick questions</div>
+          </div>
+          <div class="contact-btn-row">
+            <button type="button" class="btn-action-primary" data-copy-text="designatedasvee">Copy Discord Handle</button>
+          </div>
+        </div>
+
+        <!-- LinkedIn -->
+        <div class="contact-card">
+          <div>
+            <div class="contact-channel-lbl">LinkedIn</div>
+            <div class="contact-handle">Minh Lê</div>
+            <div class="contact-note">Professional network, studio background &amp; DMs</div>
+          </div>
+          <div class="contact-btn-row">
+            <a href="https://www.linkedin.com/in/minh-l%C3%AA-561867426/" target="_blank" class="btn-action-primary">Message on LinkedIn ↗</a>
+          </div>
+        </div>
       </div>
     </section>
 
-    <!-- ── Featured Showcase: Projects I Proudly Worked On ── -->
-    <section id="featured">
-      <div class="section-header">
-        <h2 class="section-title">Proudly Worked On</h2>
-        <p class="section-subtitle">Flagship mods, Bedrock add-ons, and major collaborative works</p>
-      </div>
-
-      <div class="featured-grid">
-
-        <!-- 1. Galacticraft -->
-        <article class="showcase-card galacticraft">
-          <div class="washi-tape left-corner"></div>
-          <div class="card-top-row">
-            <div class="project-icon-badge"><img src="https://avatars.githubusercontent.com/u/48632975?v=4" alt="Galacticraft"></div>
-            <span class="stamp-pill stamp-galacticraft">Modern Space Mod</span>
-          </div>
-          <h3 class="project-name">Galacticraft</h3>
-          <div class="project-tagline">"The classic space mod rewritten for modern Minecraft"</div>
-          <p class="project-desc">
-            Galacticraft lets you travel throughout the solar system in your own customizable spaceship! Explore distant celestial bodies, build pressurized space stations, manage life-support oxygen systems, and conquer extreme planetary physics.
-          </p>
-
-          <div class="project-tags">
-            <span class="tag-chip">Java</span>
-            <span class="tag-chip">Minecraft Mod</span>
-            <span class="tag-chip">Celestial Dimensions</span>
-            <span class="tag-chip">Multi-Block Tech</span>
-          </div>
-          <div class="project-actions">
-            <a href="https://github.com/Senthemodder/Galacticraft" target="_blank" class="btn-action-primary">
-              View Repository ↗
-            </a>
-          </div>
-        </article>
-
-        <!-- 2. Decayed Reality -->
-        <article class="showcase-card decayed-reality">
-          <div class="washi-tape right-corner"></div>
-          <div class="card-top-row">
-            <div class="project-icon-badge"><img src="https://custom-images.strikinglycdn.com/res/hrscywv4p/image/upload/c_limit,fl_lossy,h_64,w_64,q_auto/14340141/317607_954339.png" alt="Decayed Team"></div>
-            <span class="stamp-pill stamp-decayed">Decayed Team</span>
-          </div>
-          <h3 class="project-name">Decayed Reality</h3>
-          <div class="project-tagline">"The definitive Wither Storm Story Mode experience on Bedrock"</div>
-          <p class="project-desc">
-            Developed by the renowned <strong>Decayed Team</strong>, <em>Decayed Reality</em> recreates the legendary Wither Storm from Minecraft: Story Mode with frightening fidelity. Features an adaptive, evolving colossus that terraforms the world, devours blocks, and tracks players across biomes.
-          </p>
-
-          <div class="project-tags">
-            <span class="tag-chip">Bedrock Add-on</span>
-            <span class="tag-chip">Decayed Team</span>
-            <span class="tag-chip">Boss AI</span>
-            <span class="tag-chip">Story Mode Lore</span>
-          </div>
-          <div class="project-actions">
-            <a href="https://decayed-team.com" target="_blank" class="btn-action-primary">
-              Decayed Team Official ↗
-            </a>
-            <a href="https://mcpedl.com/decayed-reality/" target="_blank" class="btn-action-secondary">
-              MCPEDL
-            </a>
-          </div>
-        </article>
-
-        <!-- 3. Wildcraft -->
-        <article class="showcase-card wildcraft">
-          <div class="washi-tape left-corner"></div>
-          <div class="card-top-row">
-            <div class="project-icon-badge"><img src="img/wildcraft.png" alt="Wildcraft"></div>
-            <span class="stamp-pill stamp-wildcraft">Compycraft · Marketplace</span>
-          </div>
-          <h3 class="project-name">WildlifeCraft</h3>
-          <div class="project-tagline">"Overhauled wildlife and ecosystems for Bedrock Edition"</div>
-          <p class="project-desc">
-            A Minecraft Marketplace add-on by Compycraft that overhauls wildlife in Bedrock Edition with new animals, realistic behaviors, custom animations, and immersive ecosystems :D
-          </p>
-
-          <div class="project-tags">
-            <span class="tag-chip">Bedrock Marketplace</span>
-            <span class="tag-chip">Compycraft</span>
-            <span class="tag-chip">Wildlife &amp; Fauna</span>
-            <span class="tag-chip">Add-On</span>
-          </div>
-          <div class="project-actions">
-            <a href="https://www.minecraft.net/en-us/marketplace/pdp/compycraft/wildlifecraft-1.2/fd7b7f00-30cb-4f1a-a802-fd26025eaf14" target="_blank" class="btn-action-primary">
-              Bedrock Marketplace ↗
-            </a>
-          </div>
-        </article>
-
-        <!-- 4. Dimensional Backpack -->
-        <article class="showcase-card dimensional-backpack">
-          <div class="washi-tape right-corner"></div>
-          <div class="card-top-row">
-            <div class="project-icon-badge"><img src="https://pixelusion.net/assets/medias/logo.png" alt="Pixelusion"></div>
-            <span class="stamp-pill stamp-dimensional">Pixelusion Marketplace</span>
-          </div>
-          <h3 class="project-name">Dimensional Backpacks</h3>
-          <div class="project-tagline">"Carry whole dimensions on your back · official Pixelusion release"</div>
-          <p class="project-desc">
-            A premier Minecraft Marketplace add-on created with <strong>Pixelusion</strong>. Rather than regular inventory slots, players enter actual pocket dimensions housed inside their backpacks! Features tiered sub-dimensions, portable portals, and the terrifying Dimensional Eater boss.
-          </p>
-
-          <div class="project-tags">
-            <span class="tag-chip">Pixelusion</span>
-            <span class="tag-chip">Minecraft Marketplace</span>
-            <span class="tag-chip">Pocket Dimensions</span>
-            <span class="tag-chip">Boss Encounters</span>
-          </div>
-          <div class="project-actions">
-            <a href="https://wiki.pixelusion.net/en/add-ons/dimensional-backpacks" target="_blank" class="btn-action-primary">
-              Pixelusion Wiki ↗
-            </a>
-          </div>
-        </article>
-
-      </div>
-    </section>
-
-    <!-- ── Cozy Strawpage Footer ── -->
+    <!-- ── Cozy Footer ── -->
     <footer class="straw-footer">
       <div class="footer-stamp" id="footerStamp">Made with warmth and autumn leaves</div>
-      <p class="footer-desc">Designation Vee (@Senthemodder) · <span id="footerYear">2026</span></p>
+      <p class="footer-desc">Minh Lê (@Senthemodder) · <span id="footerYear">2026</span></p>
       <div class="footer-links">
-        <a href="https://www.linkedin.com/in/minh-l%C3%AA-561867426/" target="_blank" class="footer-link" style="color: #0a66c2;">LinkedIn (Minh Le) ↗</a>
-        <a href="https://github.com/Senthemodder" target="_blank" class="footer-link">GitHub Profile ↗</a>
-        <a href="https://decayed-team.com" target="_blank" class="footer-link">Decayed Team ↗</a>
+        <a href="mailto:minhanhle220907@gmail.com" class="footer-link">minhanhle220907@gmail.com</a>
+        <a href="https://www.linkedin.com/in/minh-l%C3%AA-561867426/" target="_blank" class="footer-link" style="color: #0a66c2;">LinkedIn ↗</a>
+        <a href="https://github.com/Senthemodder" target="_blank" class="footer-link">GitHub ↗</a>
         <a href="https://wiki.pixelusion.net" target="_blank" class="footer-link">Pixelusion ↗</a>
+        <a href="https://decayed-team.com" target="_blank" class="footer-link">Decayed Team ↗</a>
       </div>
     </footer>
 
   </div>
 
-  <!-- ── Fullscreen HD Build Viewer Lightbox ── -->
-  <div class="lightbox-backdrop" id="structureLightbox" role="dialog" aria-modal="true" aria-label="Full-screen build viewer">
+  <!-- ── Fullscreen HD Build & Project Viewer Lightbox ── -->
+  <div class="lightbox-backdrop" id="structureLightbox" role="dialog" aria-modal="true" aria-label="Full-screen project and build viewer">
     <div class="lightbox-dialog">
       <div class="lightbox-top">
-        <span class="lightbox-counter" id="lightboxCounter">1 / 6</span>
+        <span class="lightbox-counter" id="lightboxCounter">1 / 14</span>
         <div class="lightbox-controls">
-          <button type="button" class="lightbox-btn" id="lightboxPrev" aria-label="Previous render">‹ Prev</button>
-          <button type="button" class="lightbox-btn" id="lightboxNext" aria-label="Next render">Next ›</button>
+          <button type="button" class="lightbox-btn" id="lightboxPrev" aria-label="Previous image">‹ Prev</button>
+          <button type="button" class="lightbox-btn" id="lightboxNext" aria-label="Next image">Next ›</button>
           <button type="button" class="lightbox-btn" id="lightboxClose" aria-label="Close viewer">✕ Close</button>
         </div>
       </div>
       <div class="lightbox-img-wrap">
-        <img id="lightboxImg" src="img/builds/tower_lineup.webp" alt="Build preview">
+        <img id="lightboxImg" src="img/projects/wildlifecraft_cover.webp" alt="Preview">
       </div>
       <div class="lightbox-title" id="lightboxTitle"></div>
       <p class="lightbox-desc" id="lightboxDesc"></p>
     </div>
   </div>
 
-  <!-- ── Date-Driven Seasonal Theme & Ambient Particle Engine ── -->
+  <!-- ── Date-Driven Seasonal Theme, Media Switcher & Particle Engine ── -->
   <script>
     (function () {
       const SEASON_CONFIG = {
@@ -1503,7 +1838,6 @@
             this.swaySpeed = 0.01 + Math.random() * 0.014;
             this.rotationSpeed = (Math.random() - 0.5) * 0.012;
           } else {
-            /* Autumn (original maple + oval leaf physics) */
             this.y = initial ? Math.random() * canvas.height : -30;
             this.kind = Math.random() > 0.4 ? 'maple' : 'oval_leaf';
             this.size = 10 + Math.random() * 16;
@@ -1692,12 +2026,89 @@
 
       syncSeasonFromDate();
       animateParticles();
-
-      /* Re-check calendar every 60s in case a tab stays open across a season boundary */
       setInterval(syncSeasonFromDate, 60000);
 
-      /* ── Builds Gallery Fullscreen Lightbox ── */
+      /* ── Project Card Cover / In-Game Image Switchers ── */
+      const mediaTabs = document.querySelectorAll('.media-tab-btn');
+      mediaTabs.forEach((tab) => {
+        tab.addEventListener('click', (e) => {
+          e.stopPropagation();
+          const targetId = tab.getAttribute('data-target-img');
+          const nextSrc = tab.getAttribute('data-src');
+          const nextLbIdx = tab.getAttribute('data-lb-idx');
+          const imgEl = targetId ? document.getElementById(targetId) : null;
+          if (imgEl && nextSrc) {
+            imgEl.src = nextSrc;
+            const trigger = imgEl.closest('[data-lightbox-idx]');
+            if (trigger && nextLbIdx !== null) {
+              trigger.setAttribute('data-lightbox-idx', nextLbIdx);
+            }
+          }
+          const parentGroup = tab.parentElement;
+          if (parentGroup) {
+            parentGroup.querySelectorAll('.media-tab-btn').forEach((b) => b.classList.remove('active'));
+          }
+          tab.classList.add('active');
+        });
+      });
+
+      /* ── Copy-to-Clipboard Buttons (Email & Discord) ── */
+      const copyBtns = document.querySelectorAll('[data-copy-text]');
+      copyBtns.forEach((btn) => {
+        const originalLabel = btn.textContent;
+        btn.addEventListener('click', () => {
+          const val = btn.getAttribute('data-copy-text') || '';
+          if (navigator.clipboard && navigator.clipboard.writeText) {
+            navigator.clipboard.writeText(val).then(() => {
+              btn.textContent = 'Copied!';
+              setTimeout(() => { btn.textContent = originalLabel; }, 1800);
+            });
+          }
+        });
+      });
+
+      /* ── Fullscreen Gallery Lightbox (Projects + Builds) ── */
       const GALLERY_ITEMS = [
+        {
+          src: 'img/projects/wildlifecraft_cover.webp',
+          title: 'WildlifeCraft · Official Minecraft Marketplace Key Art',
+          desc: 'Released with CompyCraft on the Minecraft Marketplace (4.6 ★ across 1,939 verified player reviews). Adds 200+ custom animal species and 50+ biomes.'
+        },
+        {
+          src: 'img/projects/wildlifecraft_ingame.webp',
+          title: 'WildlifeCraft · In-Game Bluebell Forest & Custom Deer',
+          desc: 'In-game screenshot showing custom forest deer, bluebell meadows, and custom birch woodland biomes.'
+        },
+        {
+          src: 'img/projects/dimensional_backpacks_cover.webp',
+          title: 'Dimensional Backpacks · Official Pixelusion Marketplace Release',
+          desc: 'Official Minecraft Marketplace add-on released with Pixelusion (4.1 ★ across 60 player reviews). Step physically inside portable pocket-dimension bases.'
+        },
+        {
+          src: 'img/projects/dimensional_backpacks_ingame.webp',
+          title: 'Dimensional Backpacks · Enterable Pocket-Dimension Base',
+          desc: 'Inside a player backpack room: glowing exit rift portal, storage walls, crafting stations, and companion pets.'
+        },
+        {
+          src: 'img/projects/decayed_reality_cover.webp',
+          title: 'Decayed Reality · Wither Storm Night Encounter',
+          desc: 'Developed with Decayed Team. Multi-stage evolving Wither Storm colossus with glowing purple tractor beams towering over a city.'
+        },
+        {
+          src: 'img/projects/decayed_reality_ingame.webp',
+          title: 'Decayed Reality · Tractor Beams & Colossus Phases',
+          desc: 'In-game boss progression showcasing multi-beam player tracking and world-devouring stages.'
+        },
+        {
+          src: 'img/projects/galacticraft_cover.webp',
+          title: 'Galacticraft · Lunar Rover & Surface Power Station',
+          desc: 'Modern rewrite of the classic space exploration mod (3.7M+ combined ecosystem downloads, 637 GitHub stars).'
+        },
+        {
+          src: 'img/projects/galacticraft_ingame.webp',
+          title: 'Galacticraft · Planetary Terraforming Bubble',
+          desc: 'Terraforming alien terrain inside an oxygenated habitat dome.'
+        },
         {
           src: 'img/builds/tower_lineup.webp',
           title: 'Five-Tower Dungeon Lineup',
