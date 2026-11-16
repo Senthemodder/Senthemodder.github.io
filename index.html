@@ -187,6 +187,7 @@
     }
 
     * { margin: 0; padding: 0; box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
 
     body {
       font-family: 'Outfit', -apple-system, sans-serif;
@@ -518,6 +519,237 @@
       margin-top: 0.2rem;
     }
 
+    /* ── Proud Builds Showcase ── */
+    .structures-section {
+      margin-bottom: 4.5rem;
+    }
+    .arch-summary-banner {
+      background: var(--paper-white);
+      backdrop-filter: blur(8px);
+      border: 2px solid var(--card-border);
+      border-radius: 20px;
+      padding: 1.7rem 2rem;
+      box-shadow: var(--shadow-retro);
+      position: relative;
+      margin-bottom: 1.9rem;
+    }
+    .arch-summary-lead {
+      font-size: 0.98rem;
+      color: var(--text-main);
+      line-height: 1.7;
+      margin-bottom: 1.15rem;
+    }
+    .arch-summary-lead strong {
+      color: var(--accent-deep);
+    }
+    .arch-metrics-row {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 0.85rem;
+    }
+    .arch-metric-card {
+      background: #fff;
+      border: 1.5px solid var(--subcard-border);
+      border-radius: 12px;
+      padding: 0.75rem 0.95rem;
+      box-shadow: var(--subcard-shadow);
+    }
+    .arch-metric-num {
+      font-family: 'Space Mono', monospace;
+      font-size: 1.05rem;
+      font-weight: 700;
+      color: var(--accent-deep);
+      margin-bottom: 0.15rem;
+    }
+    .arch-metric-lbl {
+      font-size: 0.79rem;
+      color: var(--text-muted);
+      line-height: 1.35;
+    }
+
+    .structure-gallery {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(460px, 1fr));
+      gap: 1.8rem;
+    }
+    .structure-card {
+      background: rgba(255, 255, 255, 0.94);
+      border: 2px solid var(--card-border);
+      border-radius: 18px;
+      padding: 1.25rem 1.35rem 1.55rem;
+      box-shadow: var(--shadow-retro);
+      position: relative;
+      display: flex;
+      flex-direction: column;
+      transition: transform 0.25s cubic-bezier(0.2, 0.8, 0.2, 1), box-shadow 0.25s cubic-bezier(0.2, 0.8, 0.2, 1), border-color 0.25s ease;
+    }
+    .structure-card:hover {
+      transform: translateY(-5px);
+      box-shadow: var(--shadow-hover);
+      border-color: var(--accent-primary);
+    }
+    .structure-shot-btn {
+      appearance: none;
+      border: 2px solid var(--subcard-border);
+      background: #141c2e;
+      border-radius: 12px;
+      overflow: hidden;
+      aspect-ratio: 16 / 10;
+      width: 100%;
+      padding: 0;
+      cursor: zoom-in;
+      position: relative;
+      margin-bottom: 1rem;
+      display: block;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+    }
+    .structure-shot-btn img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+      transition: transform 0.38s cubic-bezier(0.2, 0.8, 0.2, 1);
+    }
+    .structure-card:hover .structure-shot-btn img {
+      transform: scale(1.035);
+    }
+    .shot-zoom-pill {
+      position: absolute;
+      bottom: 10px;
+      right: 10px;
+      background: rgba(15, 23, 42, 0.84);
+      color: #f8fafc;
+      font-family: 'Space Mono', monospace;
+      font-size: 0.68rem;
+      font-weight: 700;
+      padding: 0.24rem 0.6rem;
+      border-radius: 999px;
+      border: 1px solid rgba(255, 255, 255, 0.22);
+      pointer-events: none;
+      transition: background 0.2s ease;
+    }
+    .structure-shot-btn:hover .shot-zoom-pill {
+      background: var(--accent-deep);
+    }
+    .structure-meta-top {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 0.5rem;
+      flex-wrap: wrap;
+      margin-bottom: 0.35rem;
+    }
+    .stamp-builds {
+      background: var(--badge-bg);
+      color: var(--accent-deep);
+      border-color: var(--accent-soft);
+    }
+    .structure-file-hint {
+      font-family: 'Space Mono', monospace;
+      font-size: 0.71rem;
+      color: var(--text-muted);
+    }
+
+    /* ── Fullscreen HD Lightbox Modal ── */
+    .lightbox-backdrop {
+      position: fixed;
+      inset: 0;
+      background: rgba(12, 16, 28, 0.86);
+      backdrop-filter: blur(10px);
+      z-index: 200;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 1.5rem;
+      opacity: 0;
+      visibility: hidden;
+      transition: opacity 0.22s ease, visibility 0.22s ease;
+    }
+    .lightbox-backdrop.open {
+      opacity: 1;
+      visibility: visible;
+    }
+    .lightbox-dialog {
+      background: #fff;
+      border: 3px solid var(--card-border);
+      border-radius: 20px;
+      max-width: 1060px;
+      width: 100%;
+      padding: 1rem 1.15rem 1.25rem;
+      box-shadow: 0 24px 60px rgba(0, 0, 0, 0.45);
+      position: relative;
+      transform: scale(0.96);
+      transition: transform 0.22s cubic-bezier(0.2, 0.8, 0.2, 1);
+    }
+    .lightbox-backdrop.open .lightbox-dialog {
+      transform: scale(1);
+    }
+    .lightbox-top {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 0.75rem;
+      margin-bottom: 0.75rem;
+    }
+    .lightbox-counter {
+      font-family: 'Space Mono', monospace;
+      font-size: 0.76rem;
+      font-weight: 700;
+      color: var(--accent-deep);
+      background: var(--badge-bg);
+      border: 1px dashed var(--accent-soft);
+      padding: 0.22rem 0.65rem;
+      border-radius: 999px;
+    }
+    .lightbox-controls {
+      display: flex;
+      gap: 0.45rem;
+      align-items: center;
+    }
+    .lightbox-btn {
+      background: #fff;
+      border: 1.5px solid var(--card-border);
+      color: var(--text-main);
+      font-family: inherit;
+      font-size: 0.82rem;
+      font-weight: 600;
+      padding: 0.3rem 0.75rem;
+      border-radius: 999px;
+      cursor: pointer;
+      transition: all 0.18s ease;
+    }
+    .lightbox-btn:hover {
+      background: var(--accent-primary);
+      border-color: var(--accent-primary);
+      color: #fff;
+    }
+    .lightbox-img-wrap {
+      width: 100%;
+      aspect-ratio: 16 / 10;
+      border-radius: 12px;
+      overflow: hidden;
+      background: #0f172a;
+      border: 1.5px solid var(--subcard-border);
+      margin-bottom: 0.9rem;
+    }
+    .lightbox-img-wrap img {
+      width: 100%;
+      height: 100%;
+      object-fit: contain;
+      display: block;
+    }
+    .lightbox-title {
+      font-size: 1.3rem;
+      font-weight: 700;
+      color: var(--text-main);
+      margin-bottom: 0.2rem;
+    }
+    .lightbox-desc {
+      font-size: 0.92rem;
+      color: var(--text-muted);
+      line-height: 1.55;
+    }
+
     /* ── Proudly Worked On: The 4 Flagships ── */
     .featured-grid {
       display: grid;
@@ -739,8 +971,10 @@
     @media (max-width: 860px) {
       .giant-me-hero { grid-template-columns: 1fr; }
       .polaroid-card { max-width: 320px; margin: 0 auto; transform: none; }
+      .structure-gallery { grid-template-columns: 1fr; }
       .featured-grid { grid-template-columns: 1fr; }
       .story-board { padding: 1.8rem 1.4rem; }
+      .arch-summary-banner { padding: 1.4rem 1.25rem; }
     }
     @media (max-width: 580px) {
       .floating-nav { flex-direction: column; gap: 0.6rem; border-radius: 18px; }
@@ -763,6 +997,7 @@
       </a>
       <nav class="nav-links">
         <a href="#about" class="nav-link-btn">About</a>
+        <a href="#builds" class="nav-link-btn">Builds</a>
         <a href="#featured" class="nav-link-btn">Proud Works</a>
         <a href="https://www.linkedin.com/in/minh-l%C3%AA-561867426/" target="_blank" class="nav-link-btn linkedin-pill">LinkedIn</a>
       </nav>
@@ -851,6 +1086,135 @@
           </div>
         </div>
 
+      </div>
+    </section>
+
+    <!-- ── Proud Builds Showcase ── -->
+    <section class="structures-section" id="builds">
+      <div class="section-header">
+        <h2 class="section-title">Here's Some Proud Builds I Have Done!</h2>
+        <p class="section-subtitle">Dungeon towers, courtyard temples, custom trees, and boss arenas</p>
+      </div>
+
+      <div class="structure-gallery">
+
+        <!-- Build 1 -->
+        <article class="structure-card">
+          <div class="washi-tape left-corner"></div>
+          <button type="button" class="structure-shot-btn" data-lightbox-idx="0" aria-label="View Five-Tower Dungeon Lineup">
+            <img src="img/builds/tower_lineup.webp" alt="Five multi-story dungeon towers in five color palettes" width="1600" height="1000" loading="lazy">
+            <span class="shot-zoom-pill">Click to zoom</span>
+          </button>
+          <div class="structure-meta-top">
+            <span class="stamp-pill stamp-builds">Dungeon Towers</span>
+          </div>
+          <h3 class="project-name">Five-Tower Dungeon Lineup</h3>
+          <div class="project-tagline">"Same tower architecture across five color palettes and heights"</div>
+          <p class="project-desc" style="margin-bottom:0;">
+            Five multi-story dungeon towers stepping up from a compact two-floor keep to a tall dark-stone and crimson fortress. Each one has an arched ground entrance, recessed tall windows on every floor, an open lookout gallery near the top, and a pitched crystal roof.
+          </p>
+        </article>
+
+        <!-- Build 2 -->
+        <article class="structure-card">
+          <div class="washi-tape right-corner"></div>
+          <button type="button" class="structure-shot-btn" data-lightbox-idx="1" aria-label="View Domed Courtyard Temple">
+            <img src="img/builds/courtyard_temple.webp" alt="Domed courtyard temple with pillared entrance and side wings" width="1600" height="1000" loading="lazy">
+            <span class="shot-zoom-pill">Click to zoom</span>
+          </button>
+          <div class="structure-meta-top">
+            <span class="stamp-pill stamp-builds">Temple Complex</span>
+          </div>
+          <h3 class="project-name">Domed Courtyard Temple</h3>
+          <div class="project-tagline">"Stepped front portico leading into a central dome and side wings"</div>
+          <p class="project-desc" style="margin-bottom:0;">
+            A pale stone sanctuary trimmed in soft blue, built around a tall amethyst and gold dome. A pillared front staircase leads into the main hall, with smaller side rooms, skylights, and connected wings branching out around it.
+          </p>
+        </article>
+
+        <!-- Build 3 -->
+        <article class="structure-card">
+          <div class="washi-tape left-corner"></div>
+          <button type="button" class="structure-shot-btn" data-lightbox-idx="2" aria-label="View Dark Stone and Crystal Tower">
+            <img src="img/builds/dark_stone_tower.webp" alt="Close-up of dark stone tower with blue trim and crystal roof" width="1600" height="1000" loading="lazy">
+            <span class="shot-zoom-pill">Click to zoom</span>
+          </button>
+          <div class="structure-meta-top">
+            <span class="stamp-pill stamp-builds">Tower Close-Up</span>
+          </div>
+          <h3 class="project-name">Dark Stone &amp; Crystal Tower</h3>
+          <div class="project-tagline">"Deepslate walls with pale blue trim and lantern-lit floors"</div>
+          <p class="project-desc" style="margin-bottom:0;">
+            A closer look at the middle tower from the lineup. Dark brick walls are framed with light blue pillars and window ledges, with warm lanterns visible inside each floor and an open top chamber under an amethyst roof.
+          </p>
+        </article>
+
+        <!-- Build 4 -->
+        <article class="structure-card">
+          <div class="washi-tape right-corner"></div>
+          <button type="button" class="structure-shot-btn" data-lightbox-idx="3" aria-label="View Custom Fantasy Trees">
+            <img src="img/builds/fantasy_trees.webp" alt="Four large custom fantasy trees side by side" width="1600" height="1000" loading="lazy">
+            <span class="shot-zoom-pill">Click to zoom</span>
+          </button>
+          <div class="structure-meta-top">
+            <span class="stamp-pill stamp-builds">Custom Trees</span>
+          </div>
+          <h3 class="project-name">Custom Fantasy Trees</h3>
+          <div class="project-tagline">"Thick savanna trunks, stilt roots, spiral stems, and crystal branches"</div>
+          <p class="project-desc" style="margin-bottom:0;">
+            Four large tree builds side by side: a thick savanna baobab, a tall rainforest tree with wide stilt roots and hanging vines, a purple weeping willow with a twisted double-spiral trunk, and a pale ice-blue crystal tree.
+          </p>
+        </article>
+
+        <!-- Build 5 -->
+        <article class="structure-card">
+          <div class="washi-tape left-corner"></div>
+          <button type="button" class="structure-shot-btn" data-lightbox-idx="4" aria-label="View Layered Great Tree and Spiral Tower">
+            <img src="img/builds/tree_and_watchtower.webp" alt="Layered pastel tree next to a cylindrical stone watchtower" width="1600" height="1000" loading="lazy">
+            <span class="shot-zoom-pill">Click to zoom</span>
+          </button>
+          <div class="structure-meta-top">
+            <span class="stamp-pill stamp-builds">Landmarks</span>
+          </div>
+          <h3 class="project-name">Layered Great Tree &amp; Spiral Watchtower</h3>
+          <div class="project-tagline">"Striped pastel canopy next to a round tower with spiral window slits"</div>
+          <p class="project-desc" style="margin-bottom:0;">
+            Two standalone landmarks: a tall pale tree with alternating pink and blue leaf layers, and a round stone tower where diagonal window cutouts wrap up the wall along the spiral staircase inside.
+          </p>
+        </article>
+
+        <!-- Build 6 -->
+        <article class="structure-card">
+          <div class="washi-tape right-corner"></div>
+          <button type="button" class="structure-shot-btn" data-lightbox-idx="5" aria-label="View Four Boss Arena Shrines">
+            <img src="img/builds/boss_arenas.webp" alt="Four open boss arenas built on distinct terrain islands" width="1600" height="1000" loading="lazy">
+            <span class="shot-zoom-pill">Click to zoom</span>
+          </button>
+          <div class="structure-meta-top">
+            <span class="stamp-pill stamp-builds">Boss Arenas</span>
+          </div>
+          <h3 class="project-name">Four Boss Arena Shrines</h3>
+          <div class="project-tagline">"Open circular arenas built for boss fights across different terrains"</div>
+          <p class="project-desc" style="margin-bottom:0;">
+            Four open combat arenas: a stone pillar ring with a checkered floor, a sunken green pillar court, a red stone altar surrounded by four glowing beacons, and a row of giant petrified ribs sticking out of the ground.
+          </p>
+        </article>
+
+      </div>
+
+      <!-- Client-Hooking LinkedIn Callout -->
+      <div style="margin-top: 1.7rem; background: #fff; border: 2px solid var(--card-border); border-radius: 16px; padding: 1.15rem 1.5rem; box-shadow: var(--shadow-retro); display: flex; align-items: center; justify-content: space-between; gap: 1rem; flex-wrap: wrap;">
+        <div>
+          <div style="font-family: 'Patrick Hand', cursive; font-size: 1.45rem; color: var(--accent-deep); line-height: 1.2;">
+            Need custom worlds, builds, or full add-ons for your project?
+          </div>
+          <div style="font-size: 0.9rem; color: var(--text-muted); margin-top: 0.15rem;">
+            Open for studio work, Marketplace projects, and commissions.
+          </div>
+        </div>
+        <a href="https://www.linkedin.com/in/minh-l%C3%AA-561867426/" target="_blank" class="btn-action-primary" style="flex: 0 0 auto; padding: 0.6rem 1.25rem;">
+          Message Me on LinkedIn ↗
+        </a>
       </div>
     </section>
 
@@ -985,6 +1349,25 @@
       </div>
     </footer>
 
+  </div>
+
+  <!-- ── Fullscreen HD Build Viewer Lightbox ── -->
+  <div class="lightbox-backdrop" id="structureLightbox" role="dialog" aria-modal="true" aria-label="Full-screen build viewer">
+    <div class="lightbox-dialog">
+      <div class="lightbox-top">
+        <span class="lightbox-counter" id="lightboxCounter">1 / 6</span>
+        <div class="lightbox-controls">
+          <button type="button" class="lightbox-btn" id="lightboxPrev" aria-label="Previous render">‹ Prev</button>
+          <button type="button" class="lightbox-btn" id="lightboxNext" aria-label="Next render">Next ›</button>
+          <button type="button" class="lightbox-btn" id="lightboxClose" aria-label="Close viewer">✕ Close</button>
+        </div>
+      </div>
+      <div class="lightbox-img-wrap">
+        <img id="lightboxImg" src="img/builds/tower_lineup.webp" alt="Build preview">
+      </div>
+      <div class="lightbox-title" id="lightboxTitle"></div>
+      <p class="lightbox-desc" id="lightboxDesc"></p>
+    </div>
   </div>
 
   <!-- ── Date-Driven Seasonal Theme & Ambient Particle Engine ── -->
@@ -1312,6 +1695,96 @@
 
       /* Re-check calendar every 60s in case a tab stays open across a season boundary */
       setInterval(syncSeasonFromDate, 60000);
+
+      /* ── Builds Gallery Fullscreen Lightbox ── */
+      const GALLERY_ITEMS = [
+        {
+          src: 'img/builds/tower_lineup.webp',
+          title: 'Five-Tower Dungeon Lineup',
+          desc: 'Five multi-story dungeon towers stepping up from a compact two-floor keep to a tall dark-stone and crimson fortress. Each one has an arched ground entrance, recessed tall windows on every floor, an open lookout gallery near the top, and a pitched crystal roof.'
+        },
+        {
+          src: 'img/builds/courtyard_temple.webp',
+          title: 'Domed Courtyard Temple',
+          desc: 'A pale stone sanctuary trimmed in soft blue, built around a tall amethyst and gold dome. A pillared front staircase leads into the main hall, with smaller side rooms, skylights, and connected wings branching out around it.'
+        },
+        {
+          src: 'img/builds/dark_stone_tower.webp',
+          title: 'Dark Stone & Crystal Tower',
+          desc: 'A closer look at the middle tower from the lineup. Dark brick walls are framed with light blue pillars and window ledges, with warm lanterns visible inside each floor and an open top chamber under an amethyst roof.'
+        },
+        {
+          src: 'img/builds/fantasy_trees.webp',
+          title: 'Custom Fantasy Trees',
+          desc: 'Four large tree builds side by side: a thick savanna baobab, a tall rainforest tree with wide stilt roots and hanging vines, a purple weeping willow with a twisted double-spiral trunk, and a pale ice-blue crystal tree.'
+        },
+        {
+          src: 'img/builds/tree_and_watchtower.webp',
+          title: 'Layered Great Tree & Spiral Watchtower',
+          desc: 'Two standalone landmarks: a tall pale tree with alternating pink and blue leaf layers, and a round stone tower where diagonal window cutouts wrap up the wall along the spiral staircase inside.'
+        },
+        {
+          src: 'img/builds/boss_arenas.webp',
+          title: 'Four Boss Arena Shrines',
+          desc: 'Four open combat arenas: a stone pillar ring with a checkered floor, a sunken green pillar court, a red stone altar surrounded by four glowing beacons, and a row of giant petrified ribs sticking out of the ground.'
+        }
+      ];
+
+      const lbBackdrop = document.getElementById('structureLightbox');
+      const lbImg = document.getElementById('lightboxImg');
+      const lbCounter = document.getElementById('lightboxCounter');
+      const lbTitle = document.getElementById('lightboxTitle');
+      const lbDesc = document.getElementById('lightboxDesc');
+      const lbPrev = document.getElementById('lightboxPrev');
+      const lbNext = document.getElementById('lightboxNext');
+      const lbClose = document.getElementById('lightboxClose');
+      const shotBtns = document.querySelectorAll('[data-lightbox-idx]');
+      let lbIndex = 0;
+
+      function showLightboxItem(idx) {
+        lbIndex = ((idx % GALLERY_ITEMS.length) + GALLERY_ITEMS.length) % GALLERY_ITEMS.length;
+        const item = GALLERY_ITEMS[lbIndex];
+        if (lbImg) {
+          lbImg.src = item.src;
+          lbImg.alt = item.title;
+        }
+        if (lbCounter) lbCounter.textContent = (lbIndex + 1) + ' / ' + GALLERY_ITEMS.length;
+        if (lbTitle) lbTitle.textContent = item.title;
+        if (lbDesc) lbDesc.textContent = item.desc;
+      }
+
+      function openLightbox(idx) {
+        if (!lbBackdrop) return;
+        showLightboxItem(idx);
+        lbBackdrop.classList.add('open');
+      }
+
+      function closeLightbox() {
+        if (!lbBackdrop) return;
+        lbBackdrop.classList.remove('open');
+      }
+
+      shotBtns.forEach((btn) => {
+        btn.addEventListener('click', () => {
+          const idx = parseInt(btn.getAttribute('data-lightbox-idx') || '0', 10);
+          openLightbox(idx);
+        });
+      });
+
+      if (lbPrev) lbPrev.addEventListener('click', () => showLightboxItem(lbIndex - 1));
+      if (lbNext) lbNext.addEventListener('click', () => showLightboxItem(lbIndex + 1));
+      if (lbClose) lbClose.addEventListener('click', closeLightbox);
+      if (lbBackdrop) {
+        lbBackdrop.addEventListener('click', (e) => {
+          if (e.target === lbBackdrop) closeLightbox();
+        });
+      }
+      document.addEventListener('keydown', (e) => {
+        if (!lbBackdrop || !lbBackdrop.classList.contains('open')) return;
+        if (e.key === 'Escape') closeLightbox();
+        else if (e.key === 'ArrowLeft') showLightboxItem(lbIndex - 1);
+        else if (e.key === 'ArrowRight') showLightboxItem(lbIndex + 1);
+      });
     })();
   </script>
 </body>
