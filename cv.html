@@ -1,0 +1,422 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Minh Lê (@Senthemodder) · Software &amp; Systems Engineer CV</title>
+  <meta name="description" content="Curriculum Vitae of Minh Lê (@Senthemodder), Software & Systems Engineer.">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+  <style>
+    @page {
+      size: A4 portrait;
+      margin: 0;
+    }
+
+    *, *::before, *::after {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    html, body {
+      font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+      background: #e2e8f0;
+      color: #0f172a;
+      -webkit-font-smoothing: antialiased;
+      -moz-osx-font-smoothing: grayscale;
+    }
+
+    /* ── Screen Action Toolbar (Non-Printing) ── */
+    .cv-toolbar {
+      max-width: 210mm;
+      margin: 18px auto 14px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 10px;
+    }
+    .toolbar-group {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      flex-wrap: wrap;
+    }
+    .tb-btn {
+      appearance: none;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 6px;
+      padding: 8px 14px;
+      border-radius: 8px;
+      border: 1px solid #cbd5e1;
+      background: #ffffff;
+      color: #0f172a;
+      font-family: inherit;
+      font-size: 13px;
+      font-weight: 600;
+      text-decoration: none;
+      cursor: pointer;
+      box-shadow: 0 1px 2px rgba(15, 23, 42, 0.06);
+      transition: background 0.15s ease, border-color 0.15s ease, transform 0.15s ease;
+    }
+    .tb-btn:hover {
+      background: #f8fafc;
+      border-color: #94a3b8;
+      transform: translateY(-1px);
+    }
+    .tb-primary {
+      background: #1e40af;
+      border-color: #1e40af;
+      color: #ffffff;
+    }
+    .tb-primary:hover {
+      background: #1d4ed8;
+      border-color: #1d4ed8;
+      color: #ffffff;
+    }
+
+    /* ── Single-Page A4 Sheet ── */
+    .cv-sheet {
+      width: 210mm;
+      min-height: 297mm;
+      margin: 0 auto 32px;
+      background: #ffffff;
+      color: #0f172a;
+      padding: 10.5mm 12.5mm;
+      box-shadow: 0 12px 36px rgba(15, 23, 42, 0.12);
+    }
+
+    /* Header */
+    .cv-header {
+      margin-bottom: 5px;
+    }
+    .cv-header h1 {
+      font-size: 19.5pt;
+      font-weight: 800;
+      letter-spacing: -0.3px;
+      line-height: 1.06;
+      color: #0f172a;
+      text-transform: uppercase;
+    }
+    .cv-role {
+      font-size: 10pt;
+      font-weight: 600;
+      color: #334155;
+      margin-top: 1.5px;
+    }
+    .contact-row {
+      margin-top: 3.5px;
+      font-size: 7.95pt;
+      color: #334155;
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      gap: 3px 5px;
+      line-height: 1.3;
+    }
+    .contact-row a {
+      color: #1e40af;
+      text-decoration: none;
+      font-weight: 500;
+    }
+    .contact-row a:hover {
+      text-decoration: underline;
+    }
+    .sep {
+      color: #94a3b8;
+      user-select: none;
+    }
+
+    /* Section Headings */
+    h2.cv-section-title {
+      font-size: 9.1pt;
+      font-weight: 800;
+      text-transform: uppercase;
+      letter-spacing: 0.75px;
+      color: #0f172a;
+      border-bottom: 1.2px solid #0f172a;
+      padding-bottom: 2px;
+      margin: 7.5px 0 4.5px;
+    }
+
+    /* Summary */
+    .cv-summary {
+      font-size: 8.55pt;
+      line-height: 1.33;
+      color: #1e293b;
+    }
+
+    /* Skills */
+    .skills-list {
+      display: flex;
+      flex-direction: column;
+      gap: 2px;
+    }
+    .skill-row {
+      font-size: 8.45pt;
+      line-height: 1.31;
+      color: #1e293b;
+    }
+    .skill-row strong {
+      color: #0f172a;
+      font-weight: 700;
+    }
+
+    /* Experience & Selected Systems Entries */
+    .cv-entry {
+      margin-bottom: 4.8px;
+    }
+    .cv-entry:last-child {
+      margin-bottom: 0;
+    }
+    .entry-head {
+      display: flex;
+      justify-content: space-between;
+      align-items: baseline;
+      gap: 8px;
+    }
+    .entry-left {
+      font-size: 8.75pt;
+      color: #0f172a;
+      line-height: 1.26;
+    }
+    .entry-left strong {
+      font-weight: 700;
+    }
+    .entry-left .entry-org {
+      color: #334155;
+      font-weight: 500;
+      font-style: italic;
+    }
+    .entry-meta {
+      font-size: 8.05pt;
+      color: #475569;
+      font-weight: 600;
+      white-space: nowrap;
+      flex-shrink: 0;
+    }
+    .cv-bullets {
+      padding-left: 13px;
+      margin: 2px 0 0;
+    }
+    .cv-bullets li {
+      font-size: 8.45pt;
+      line-height: 1.31;
+      color: #1e293b;
+      margin-bottom: 1.5px;
+    }
+    .cv-bullets li:last-child {
+      margin-bottom: 0;
+    }
+    .cv-bullets code {
+      font-family: ui-monospace, Consolas, 'Courier New', monospace;
+      font-size: 7.8pt;
+      background: #f1f5f9;
+      color: #0f172a;
+      padding: 0 3px;
+      border-radius: 3px;
+    }
+
+    @media screen and (max-width: 840px) {
+      body {
+        padding: 0 10px 24px;
+      }
+      .cv-toolbar {
+        width: 100%;
+        max-width: 100%;
+        margin: 12px 0;
+        flex-wrap: wrap;
+      }
+      .cv-sheet {
+        width: 100%;
+        min-height: auto;
+        padding: 1.25rem;
+      }
+      .entry-head {
+        flex-direction: column;
+        gap: 1px;
+      }
+      .entry-meta {
+        white-space: normal;
+      }
+    }
+
+    @media print {
+      html, body {
+        background: #ffffff !important;
+        margin: 0 !important;
+        padding: 0 !important;
+      }
+      .no-print {
+        display: none !important;
+      }
+      .cv-sheet {
+        width: 210mm !important;
+        min-height: 0 !important;
+        height: auto !important;
+        margin: 0 !important;
+        box-shadow: none !important;
+        padding: 10.5mm 12.5mm !important;
+      }
+      a {
+        text-decoration: none !important;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <div class="cv-toolbar no-print">
+    <div class="toolbar-group">
+      <a href="index.html" class="tb-btn">← Back to Portfolio</a>
+    </div>
+    <div class="toolbar-group">
+      <a href="Minh_Le_CV.pdf" download="Minh_Le_CV.pdf" class="tb-btn tb-primary">Download PDF</a>
+      <button type="button" onclick="window.print()" class="tb-btn">Print</button>
+    </div>
+  </div>
+
+  <main class="cv-sheet">
+
+    <header class="cv-header">
+      <h1>MINH LÊ</h1>
+      <div class="cv-role">Software &amp; Systems Engineer</div>
+      <div class="contact-row">
+        <span>Vietnam (UTC+7 · Remote)</span>
+        <span class="sep">·</span>
+        <a href="mailto:minhanhle220907@gmail.com">minhanhle220907@gmail.com</a>
+        <span class="sep">·</span>
+        <a href="https://senthemodder.github.io" target="_blank" rel="noopener">senthemodder.github.io</a>
+        <span class="sep">·</span>
+        <a href="https://github.com/Senthemodder" target="_blank" rel="noopener">github.com/Senthemodder</a>
+        <span class="sep">·</span>
+        <a href="https://www.linkedin.com/in/minh-l%C3%AA-561867426/" target="_blank" rel="noopener">linkedin.com/in/minh-lê-561867426</a>
+      </div>
+    </header>
+
+    <section aria-labelledby="sec-summary">
+      <h2 class="cv-section-title" id="sec-summary">Summary</h2>
+      <p class="cv-summary">
+        Software and systems engineer building full-stack web platforms, custom compilers, desktop networking utilities, and high-concurrency game engines from scratch. Known for getting productive quickly in unfamiliar codebases and undocumented runtimes, untangling hard technical constraints, and shipping commercial software used by 3.7M+ end users across PC, web, mobile, and console.
+      </p>
+    </section>
+
+    <section aria-labelledby="sec-skills">
+      <h2 class="cv-section-title" id="sec-skills">Technical Skills</h2>
+      <div class="skills-list">
+        <div class="skill-row"><strong>Languages:</strong> TypeScript, JavaScript (ES2024), Python, Java, C++, C#, SQL, HTML5, CSS3</div>
+        <div class="skill-row"><strong>Systems &amp; Compilers:</strong> Custom Compilers &amp; Transpilers, AST Code Generation, Static Analysis, Schema Validation, RISC-V Target Compilation, Network Split-Tunneling</div>
+        <div class="skill-row"><strong>Web, Desktop &amp; Infrastructure:</strong> React, Next.js, Node.js, REST APIs, WebSockets, PostgreSQL, Native Windows &amp; System-Tray Apps, Git, CI/CD, Automated Verification, Linux</div>
+        <div class="skill-row"><strong>Game &amp; Simulation Engines:</strong> Kinematic &amp; Fluid Physics, Procedural World Generation, State Machines, Cross-Platform UI &amp; Asset Porting, Batched Rendering, Frame-Time Profiling</div>
+      </div>
+    </section>
+
+    <section aria-labelledby="sec-exp">
+      <h2 class="cv-section-title" id="sec-exp">Commercial &amp; Studio Experience</h2>
+
+      <article class="cv-entry">
+        <div class="entry-head">
+          <div class="entry-left"><strong>Software &amp; Gameplay Systems Engineer (Contract)</strong> · <span class="entry-org">Gamefam (Pickade Ltd)</span></div>
+          <span class="entry-meta">Contract · Remote (UK / US)</span>
+        </div>
+        <ul class="cv-bullets">
+          <li>Engineered production gameplay systems, custom mechanics, and cross-platform content builds for a major commercial UGC and official Minecraft Marketplace publishing studio.</li>
+          <li>Delivered modular client and server systems profiled for strict frame-time and memory budgets across low-end mobile, console, and desktop hardware.</li>
+        </ul>
+      </article>
+
+      <article class="cv-entry">
+        <div class="entry-head">
+          <div class="entry-left"><strong>Systems &amp; Add-On Engineer</strong> · <span class="entry-org">Pixelusion (Dimensional Backpacks &amp; Toolchains)</span></div>
+          <span class="entry-meta">Official Partner · 4.1 ★ Store Rating</span>
+        </div>
+        <ul class="cv-bullets">
+          <li>Co-developed <em>Dimensional Backpacks</em> for the official Minecraft Marketplace, building enterable pocket-dimension base mechanics, rift persistence, and multi-stage boss encounters.</li>
+          <li>Authored reusable studio build pipelines, custom liquid physics modules, and batched entity rendering tools adopted across commercial production titles.</li>
+        </ul>
+      </article>
+
+      <article class="cv-entry">
+        <div class="entry-head">
+          <div class="entry-left"><strong>Contract Systems Developer</strong> · <span class="entry-org">Kirill Studios</span></div>
+          <span class="entry-meta">Contract · Official Marketplace Partner</span>
+        </div>
+        <ul class="cv-bullets">
+          <li>Built custom gameplay mechanics, interactive world systems, and production-ready commercial releases on contract for an official Microsoft and Minecraft Marketplace partner studio.</li>
+        </ul>
+      </article>
+
+      <article class="cv-entry">
+        <div class="entry-head">
+          <div class="entry-left"><strong>Gameplay &amp; Ecosystem Developer</strong> · <span class="entry-org">CompyCraft (WildlifeCraft)</span></div>
+          <span class="entry-meta">Official Partner · 4.6 ★ (1,939+ Reviews)</span>
+        </div>
+        <ul class="cv-bullets">
+          <li>Contributed gameplay, entity behavior, and ecosystem engineering to <em>WildlifeCraft</em>, a flagship commercial release rated 4.6/5 across 1,939+ verified player reviews featuring 200+ animal species and 50+ biomes.</li>
+        </ul>
+      </article>
+
+      <article class="cv-entry">
+        <div class="entry-head">
+          <div class="entry-left"><strong>Systems &amp; Open-Source Contributor</strong> · <span class="entry-org">Decayed Team &amp; TeamGalacticraft</span></div>
+          <span class="entry-meta">3.7M+ Downloads · 637 GitHub Stars</span>
+        </div>
+        <ul class="cv-bullets">
+          <li>Engineered multi-phase boss state machines, tractor-beam kinematics, and cross-biome tracking for <em>Decayed Reality</em> (2,000+ release comments), and contributed to the modern Java rewrite of <em>Galacticraft</em> (3.7M+ combined CurseForge/Modrinth downloads).</li>
+        </ul>
+      </article>
+    </section>
+
+    <section aria-labelledby="sec-sys">
+      <h2 class="cv-section-title" id="sec-sys">Selected Systems &amp; Architecture</h2>
+
+      <article class="cv-entry">
+        <div class="entry-head">
+          <div class="entry-left"><strong>Custom Liquid Physics &amp; Sloped-Surface Engine</strong> · <span class="entry-org">TypeScript, JavaScript, Custom Meshing</span></div>
+          <span class="entry-meta">60 fps Mobile &amp; Console</span>
+        </div>
+        <ul class="cv-bullets">
+          <li>Built a complete liquid physics and sloped-surface rendering engine inside a game runtime with no native custom fluid support, handling slope-finding, viscosity drop-off, waterfalls, entity currents, bucket interactions, and culled surface geometry.</li>
+        </ul>
+      </article>
+
+      <article class="cv-entry">
+        <div class="entry-head">
+          <div class="entry-left"><strong>Moving Multi-Block Contraption &amp; Train Engine</strong> · <span class="entry-org">TypeScript, 3D Math, Batched Render</span></div>
+          <span class="entry-meta">35,000+ LoC Engine</span>
+        </div>
+        <ul class="cv-bullets">
+          <li>Architected a project-agnostic kinematic physics and rendering engine turning static world blocks into rotating machines, elevators, and multi-car trains on curved spline tracks while keeping onboard doors, seats, storage, and circuits active at 30 blocks per render batch.</li>
+        </ul>
+      </article>
+
+      <article class="cv-entry">
+        <div class="entry-head">
+          <div class="entry-left"><strong>3D Terrain Compiler &amp; Planetary Physics Suite</strong> · <span class="entry-org">Node.js, AST Compilation, Kinematics</span></div>
+          <span class="entry-meta">Deterministic Worldgen</span>
+        </div>
+        <ul class="cv-bullets">
+          <li>Built a mathematical worldgen compiler translating density graphs, climate decision trees, and 3D cave networks into native terrain pipelines for custom overhangs and void-built planets, paired with custom lunar and microgravity movement/projectile physics.</li>
+        </ul>
+      </article>
+
+      <article class="cv-entry">
+        <div class="entry-head">
+          <div class="entry-left"><strong>Split-Tunnel Network Router, Compilers &amp; Web Apps</strong> · <span class="entry-org">TypeScript, C#, React, Networking</span></div>
+          <span class="entry-meta">Open-Source &amp; Web</span>
+        </div>
+        <ul class="cv-bullets">
+          <li>Built a native Windows system-tray launcher (<code>roblox-global-split-launcher</code>) routing HTTPS login traffic through Cloudflare WARP + Sing-Box while keeping live UDP game packets on direct ISP connections for zero added ping; built automated 1:1 cross-edition UI/rig porting compilers, an experimental RISC-V compiler (<code>riscvmc2</code>), and <em>Atelier</em>, a creator commission marketplace with split payouts.</li>
+        </ul>
+      </article>
+    </section>
+
+  </main>
+
+</body>
+</html>
