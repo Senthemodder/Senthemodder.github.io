@@ -5,9 +5,9 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="theme-color" id="themeColorMeta" content="#ffe5ec">
   <title>Minh Lê (@Senthemodder) · Minecraft Marketplace &amp; Game Developer</title>
-  <meta name="description" content="Minh Lê (@Senthemodder) · Minecraft Marketplace add-on developer, Java & Bedrock mod porter, and custom world builder. Shipped releases with Pixelusion, CompyCraft, Decayed Team, and TeamGalacticraft.">
+  <meta name="description" content="Minh Lê (@Senthemodder) · Minecraft Marketplace add-on developer, Java & Bedrock mod porter, and custom world builder. Contract & studio work with Gamefam (Pickade Ltd), Pixelusion, Kirill Studios, CompyCraft, Decayed Team, and TeamGalacticraft.">
   <meta property="og:title" content="Minh Lê (@Senthemodder) · Minecraft Marketplace & Game Developer">
-  <meta property="og:description" content="Official Marketplace add-ons, Java & Bedrock porting, and custom world builds. Shipped with Pixelusion, CompyCraft, Decayed Team, and TeamGalacticraft.">
+  <meta property="og:description" content="Official Marketplace add-ons, Java & Bedrock porting, and custom world builds. Worked with Gamefam (Pickade Ltd), Pixelusion, Kirill Studios, CompyCraft, Decayed Team, and TeamGalacticraft.">
   <meta property="og:image" content="https://senthemodder.github.io/img/builds/tower_lineup.webp">
   <meta property="og:type" content="website">
 
@@ -469,7 +469,7 @@
     /* Bento Proof Stats inside Hero */
     .story-grid {
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(175px, 1fr));
+      grid-template-columns: repeat(2, 1fr);
       gap: 0.85rem;
     }
     .story-mini-card {
@@ -499,58 +499,69 @@
       background: rgba(255, 255, 255, 0.94);
       border: 2px solid var(--card-border);
       border-radius: 18px;
-      padding: 1.15rem 1.5rem;
+      padding: 1.25rem 1.5rem 1.35rem;
       box-shadow: var(--shadow-retro);
       margin-bottom: 3.6rem;
       display: flex;
-      align-items: center;
+      flex-direction: column;
+      gap: 0.9rem;
+    }
+    .partner-strip-head {
+      display: flex;
       justify-content: space-between;
-      gap: 1.2rem;
+      align-items: center;
+      gap: 0.75rem;
       flex-wrap: wrap;
     }
     .partner-strip-label {
       font-family: 'Space Mono', monospace;
-      font-size: 0.74rem;
+      font-size: 0.75rem;
       font-weight: 700;
       text-transform: uppercase;
       letter-spacing: 0.6px;
       color: var(--text-muted);
-      max-width: 195px;
       line-height: 1.4;
     }
+    .partner-strip-sub {
+      font-size: 0.78rem;
+      font-weight: 600;
+      color: var(--accent-deep);
+    }
     .partner-logos-row {
-      display: flex;
-      align-items: center;
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
       gap: 0.85rem;
-      flex-wrap: wrap;
-      flex: 1;
-      justify-content: flex-end;
+      width: 100%;
     }
     .partner-chip {
-      display: inline-flex;
+      display: flex;
       align-items: center;
-      gap: 0.6rem;
+      gap: 0.7rem;
       background: #fff;
       border: 1.5px solid var(--subcard-border);
       border-radius: 12px;
-      padding: 0.45rem 0.85rem 0.45rem 0.5rem;
+      padding: 0.55rem 0.9rem 0.55rem 0.6rem;
       text-decoration: none;
       color: var(--text-main);
       box-shadow: var(--subcard-shadow);
-      transition: transform 0.2s ease, border-color 0.2s ease;
+      transition: transform 0.2s ease, border-color 0.2s ease, box-shadow 0.2s ease;
     }
     .partner-chip:hover {
       transform: translateY(-2px);
       border-color: var(--accent-primary);
+      box-shadow: var(--shadow-retro);
     }
     .partner-chip img {
-      width: 34px;
-      height: 34px;
-      border-radius: 8px;
-      object-fit: contain;
+      width: 38px;
+      height: 38px;
+      border-radius: 9px;
+      object-fit: cover;
       background: #0f172a;
-      padding: 2px;
       flex-shrink: 0;
+    }
+    .partner-chip img.contain-logo {
+      object-fit: contain;
+      padding: 3px;
     }
     .partner-chip img.light-logo {
       background: #f8fafc;
@@ -1147,14 +1158,14 @@
       .structure-gallery { grid-template-columns: 1fr; }
       .featured-grid { grid-template-columns: 1fr; }
       .story-board { padding: 1.75rem 1.4rem; }
-      .partner-strip { flex-direction: column; align-items: flex-start; }
-      .partner-strip-label { max-width: none; }
-      .partner-logos-row { justify-content: flex-start; }
+      .partner-logos-row { grid-template-columns: repeat(2, 1fr); }
     }
     @media (max-width: 640px) {
       .floating-nav { flex-direction: column; gap: 0.65rem; border-radius: 18px; padding: 0.85rem 1rem; }
       .nav-brand-group { justify-content: center; }
       .nav-links { justify-content: center; }
+      .story-grid { grid-template-columns: 1fr; }
+      .partner-logos-row { grid-template-columns: 1fr; }
       .contact-section { padding: 1.6rem 1.2rem; }
       .wrapper { padding: 1.4rem 1rem 4rem; }
     }
@@ -1228,7 +1239,7 @@
             Hi, I'm <strong>Minh Lê</strong> (<strong>@Senthemodder</strong>), a developer based in <strong>Vietnam</strong> building commercial Minecraft Marketplace add-ons, cross-edition Java and Bedrock ports, and custom game worlds for partner studios and publishers.
           </p>
           <p class="story-bio" style="font-size: 0.96rem;">
-            I've shipped official Marketplace titles and large-scale mods alongside established teams including <strong>Pixelusion</strong>, <strong>CompyCraft</strong>, <strong>Decayed Team</strong>, and <strong>TeamGalacticraft</strong>, handling custom gameplay systems, boss AI, custom UIs, and world builds from start to release.
+            I've worked on contract and shipped official Marketplace releases and large-scale mods alongside established studios including <strong>Gamefam (Pickade Ltd)</strong>, <strong>Pixelusion</strong>, <strong>Kirill Studios</strong>, <strong>CompyCraft</strong>, <strong>Decayed Team</strong>, and <strong>TeamGalacticraft</strong>, handling custom gameplay systems, boss AI, custom UIs, and world builds from start to release.
           </p>
 
           <div class="quote-sticker">
@@ -1260,16 +1271,35 @@
     </section>
 
     <!-- ── Shipped With / Partner Studio Trust Bar ── -->
-    <div class="partner-strip" aria-label="Partner studios and teams">
-      <div class="partner-strip-label">
-        Shipped Commercial &amp; Studio Releases With
+    <div class="partner-strip" aria-label="Partner studios and contract teams">
+      <div class="partner-strip-head">
+        <div class="partner-strip-label">
+          Contract &amp; Commercial Studio Experience
+        </div>
+        <div class="partner-strip-sub">
+          6 Official Minecraft Marketplace Partners &amp; Mod Studios
+        </div>
       </div>
       <div class="partner-logos-row">
+        <a href="https://gamefam.com" target="_blank" class="partner-chip">
+          <img src="img/studios/gamefam.webp" alt="Gamefam Minecraft Studio logo">
+          <div>
+            <div class="partner-chip-name">Gamefam · Pickade Ltd</div>
+            <div class="partner-chip-role">Contract · Official Marketplace Partner</div>
+          </div>
+        </a>
         <a href="https://wiki.pixelusion.net" target="_blank" class="partner-chip">
-          <img src="img/studios/pixelusion.webp" alt="Pixelusion logo">
+          <img src="img/studios/pixelusion.webp" class="contain-logo" alt="Pixelusion logo">
           <div>
             <div class="partner-chip-name">Pixelusion</div>
             <div class="partner-chip-role">Official Minecraft Partner</div>
+          </div>
+        </a>
+        <a href="https://kirillstudios.com" target="_blank" class="partner-chip">
+          <img src="img/studios/kirill_studios.webp" alt="Kirill Studios logo">
+          <div>
+            <div class="partner-chip-name">Kirill Studios</div>
+            <div class="partner-chip-role">Contract · Official Marketplace Partner</div>
           </div>
         </a>
         <a href="https://www.minecraft.net/en-us/marketplace/pdp/compycraft/wildlifecraft-1.2/fd7b7f00-30cb-4f1a-a802-fd26025eaf14" target="_blank" class="partner-chip">
@@ -1280,14 +1310,14 @@
           </div>
         </a>
         <a href="https://decayed-team.com" target="_blank" class="partner-chip">
-          <img src="img/studios/decayed_team.webp" alt="Decayed Team logo">
+          <img src="img/studios/decayed_team.webp" class="contain-logo" alt="Decayed Team logo">
           <div>
             <div class="partner-chip-name">Decayed Team</div>
             <div class="partner-chip-role">Bedrock Add-On Studio</div>
           </div>
         </a>
         <a href="https://github.com/TeamGalacticraft/Galacticraft" target="_blank" class="partner-chip">
-          <img src="img/studios/galacticraft.webp" alt="TeamGalacticraft logo">
+          <img src="img/studios/galacticraft.webp" class="contain-logo" alt="TeamGalacticraft logo">
           <div>
             <div class="partner-chip-name">TeamGalacticraft</div>
             <div class="partner-chip-role">3.7M+ Downloads Space Mod</div>
@@ -1679,7 +1709,9 @@
         <a href="mailto:minhanhle220907@gmail.com" class="footer-link">minhanhle220907@gmail.com</a>
         <a href="https://www.linkedin.com/in/minh-l%C3%AA-561867426/" target="_blank" class="footer-link" style="color: #0a66c2;">LinkedIn ↗</a>
         <a href="https://github.com/Senthemodder" target="_blank" class="footer-link">GitHub ↗</a>
+        <a href="https://gamefam.com" target="_blank" class="footer-link">Gamefam ↗</a>
         <a href="https://wiki.pixelusion.net" target="_blank" class="footer-link">Pixelusion ↗</a>
+        <a href="https://kirillstudios.com" target="_blank" class="footer-link">Kirill Studios ↗</a>
         <a href="https://decayed-team.com" target="_blank" class="footer-link">Decayed Team ↗</a>
       </div>
     </footer>
