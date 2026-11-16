@@ -3,42 +3,194 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" id="themeColorMeta" content="#ffe5ec">
   <title>Designation Vee ✨ @Senthemodder · Cozy Portfolio</title>
-  
+
+  <!-- Automatic Season Detection from Current Date (Zero-FOUC before first paint) -->
+  <script>
+    (function () {
+      function getSeasonForDate(date) {
+        var m = (date || new Date()).getMonth(); // 0 = Jan ... 11 = Dec
+        if (m >= 2 && m <= 4) return 'spring'; // Mar, Apr, May
+        if (m >= 5 && m <= 7) return 'summer'; // Jun, Jul, Aug
+        if (m >= 8 && m <= 10) return 'autumn'; // Sep, Oct, Nov
+        return 'winter'; // Dec, Jan, Feb
+      }
+
+      var currentSeason = getSeasonForDate(new Date());
+      window.__PORTFOLIO_SEASON__ = {
+        getSeasonForDate: getSeasonForDate,
+        active: currentSeason
+      };
+
+      document.documentElement.setAttribute('data-season', currentSeason);
+    })();
+  </script>
+
   <!-- Aesthetic Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&family=Patrick+Hand&family=Space+Mono:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
 
   <style>
-    :root {
-      /* Soft pink & warm autumn palette */
-      --bg-cream: #fff7f9;
-      --bg-gradient-1: #ffe5ec;
-      --bg-gradient-2: #fcd5ce;
-      --bg-gradient-3: #fec5bb;
-      --pink-soft: #ffb3c1;
-      --pink-primary: #fb6f92;
-      --pink-deep: #c94a6e;
-      --autumn-peach: #f8ad9d;
-      --autumn-maple: #e07a5f;
-      --autumn-amber: #d97736;
-      --autumn-wine: #8f3b54;
+    /* ── Default / Autumn Palette (Sep – Nov): Warm Rose & Maple Scrapbook ── */
+    :root,
+    [data-season="autumn"] {
+      --bg-1: #fff0f5;
+      --bg-2: #ffe5ec;
+      --bg-3: #fde2e4;
+      --bg-4: #fae1dd;
+      --dot-grid: rgba(235, 130, 160, 0.18);
+
+      --accent-soft: #ffb3c1;
+      --accent-primary: #fb6f92;
+      --accent-deep: #c94a6e;
+      --accent-secondary: #e07a5f;
+      --quote-ink: #8f3b54;
+      --quote-bg-1: #fff5f7;
+      --quote-bg-2: #ffe8ee;
+
       --paper-white: rgba(255, 255, 255, 0.88);
       --card-border: #f8c8d4;
+      --subcard-border: #fed2dc;
+      --badge-bg: #fff0f3;
+      --avatar-border: #fce3ea;
+      --avatar-bg: #ffd9e2;
+
       --text-main: #4a2835;
       --text-muted: #8c5a6c;
+
       --shadow-retro: 5px 6px 0px rgba(201, 74, 110, 0.16);
       --shadow-hover: 7px 9px 0px rgba(201, 74, 110, 0.24);
+      --subcard-shadow: 2px 3px 0px rgba(251, 111, 146, 0.12);
+      --accent-glow: rgba(251, 111, 146, 0.30);
+      --btn-shadow: rgba(251, 111, 146, 0.28);
+      --btn-shadow-hover: rgba(251, 111, 146, 0.38);
+      --title-highlight: rgba(251, 111, 146, 0.25);
+
       --tape-color: rgba(255, 240, 195, 0.85);
-      --tape-border: rgba(230, 205, 140, 0.5);
+      --tape-border: rgba(230, 205, 140, 0.52);
+    }
+
+    /* ── Winter Palette (Dec – Feb): Cozy Frost, Glacier Blue & Starlight ── */
+    [data-season="winter"] {
+      --bg-1: #f3f8ff;
+      --bg-2: #e5f0ff;
+      --bg-3: #ddebfb;
+      --bg-4: #eaeefc;
+      --dot-grid: rgba(105, 150, 212, 0.20);
+
+      --accent-soft: #9dc3ee;
+      --accent-primary: #4c84c7;
+      --accent-deep: #29568f;
+      --accent-secondary: #5c6fb3;
+      --quote-ink: #2b4c78;
+      --quote-bg-1: #f2f7ff;
+      --quote-bg-2: #e5effd;
+
+      --paper-white: rgba(255, 255, 255, 0.90);
+      --card-border: #c2daf4;
+      --subcard-border: #d5e6f9;
+      --badge-bg: #eef5ff;
+      --avatar-border: #d4e5fa;
+      --avatar-bg: #dfecfc;
+
+      --text-main: #1e3148;
+      --text-muted: #57708c;
+
+      --shadow-retro: 5px 6px 0px rgba(41, 86, 143, 0.15);
+      --shadow-hover: 7px 9px 0px rgba(41, 86, 143, 0.24);
+      --subcard-shadow: 2px 3px 0px rgba(76, 132, 199, 0.12);
+      --accent-glow: rgba(76, 132, 199, 0.28);
+      --btn-shadow: rgba(76, 132, 199, 0.26);
+      --btn-shadow-hover: rgba(76, 132, 199, 0.36);
+      --title-highlight: rgba(76, 132, 199, 0.22);
+
+      --tape-color: rgba(222, 234, 255, 0.88);
+      --tape-border: rgba(154, 178, 224, 0.58);
+    }
+
+    /* ── Spring Palette (Mar – May): Fresh Matcha Meadow & Sakura Blossom ── */
+    [data-season="spring"] {
+      --bg-1: #f4fbf6;
+      --bg-2: #e9f7ee;
+      --bg-3: #f4f9ef;
+      --bg-4: #fdf0f5;
+      --dot-grid: rgba(96, 172, 120, 0.20);
+
+      --accent-soft: #9dd9b0;
+      --accent-primary: #48a868;
+      --accent-deep: #2b7544;
+      --accent-secondary: #d45b88;
+      --quote-ink: #2f6844;
+      --quote-bg-1: #f2fbf5;
+      --quote-bg-2: #fdeef4;
+
+      --paper-white: rgba(255, 255, 255, 0.90);
+      --card-border: #c6e6cf;
+      --subcard-border: #d7efe0;
+      --badge-bg: #effaf2;
+      --avatar-border: #d4eedb;
+      --avatar-bg: #e2f5e7;
+
+      --text-main: #233d2c;
+      --text-muted: #567862;
+
+      --shadow-retro: 5px 6px 0px rgba(43, 117, 68, 0.15);
+      --shadow-hover: 7px 9px 0px rgba(43, 117, 68, 0.23);
+      --subcard-shadow: 2px 3px 0px rgba(72, 168, 104, 0.12);
+      --accent-glow: rgba(72, 168, 104, 0.28);
+      --btn-shadow: rgba(72, 168, 104, 0.26);
+      --btn-shadow-hover: rgba(72, 168, 104, 0.36);
+      --title-highlight: rgba(232, 111, 154, 0.26);
+
+      --tape-color: rgba(255, 216, 230, 0.86);
+      --tape-border: rgba(226, 158, 184, 0.56);
+    }
+
+    /* ── Summer Palette (Jun – Aug): Sunlit Citrus & Coastal Breeze Postcard ── */
+    [data-season="summer"] {
+      --bg-1: #fffdf2;
+      --bg-2: #fef6d8;
+      --bg-3: #e6f8f6;
+      --bg-4: #dff2fe;
+      --dot-grid: rgba(45, 162, 184, 0.19);
+
+      --accent-soft: #8ad4e6;
+      --accent-primary: #1ba1bd;
+      --accent-deep: #0f6d87;
+      --accent-secondary: #dd7a24;
+      --quote-ink: #0f5c73;
+      --quote-bg-1: #fffbeb;
+      --quote-bg-2: #e7f8fb;
+
+      --paper-white: rgba(255, 255, 255, 0.90);
+      --card-border: #bce3ec;
+      --subcard-border: #cdebf2;
+      --badge-bg: #eefafd;
+      --avatar-border: #cbeaf2;
+      --avatar-bg: #daf2f8;
+
+      --text-main: #1c3842;
+      --text-muted: #527582;
+
+      --shadow-retro: 5px 6px 0px rgba(15, 109, 135, 0.15);
+      --shadow-hover: 7px 9px 0px rgba(15, 109, 135, 0.24);
+      --subcard-shadow: 2px 3px 0px rgba(27, 161, 189, 0.12);
+      --accent-glow: rgba(27, 161, 189, 0.28);
+      --btn-shadow: rgba(27, 161, 189, 0.26);
+      --btn-shadow-hover: rgba(27, 161, 189, 0.36);
+      --title-highlight: rgba(251, 191, 36, 0.32);
+
+      --tape-color: rgba(255, 231, 170, 0.88);
+      --tape-border: rgba(230, 184, 96, 0.58);
     }
 
     * { margin: 0; padding: 0; box-sizing: border-box; }
 
     body {
       font-family: 'Outfit', -apple-system, sans-serif;
-      background: linear-gradient(145deg, #fff0f5 0%, #ffe5ec 30%, #fde2e4 65%, #fae1dd 100%);
+      background: linear-gradient(145deg, var(--bg-1) 0%, var(--bg-2) 30%, var(--bg-3) 65%, var(--bg-4) 100%);
       background-attachment: fixed;
       color: var(--text-main);
       line-height: 1.6;
@@ -52,13 +204,13 @@
       content: "";
       position: fixed;
       inset: 0;
-      background-image: radial-gradient(rgba(235, 130, 160, 0.18) 1.5px, transparent 1.5px);
+      background-image: radial-gradient(var(--dot-grid) 1.5px, transparent 1.5px);
       background-size: 26px 26px;
       pointer-events: none;
       z-index: 1;
     }
 
-    /* Leaf canvas */
+    /* Seasonal ambient canvas */
     #leafCanvas {
       position: fixed;
       top: 0;
@@ -121,8 +273,7 @@
       align-items: center;
       gap: 0.6rem;
       font-weight: 700;
-      font-size: 1.15rem;
-      color: var(--pink-deep);
+      color: var(--accent-deep);
       text-decoration: none;
       font-family: 'Patrick Hand', cursive;
       font-size: 1.4rem;
@@ -134,7 +285,7 @@
     }
     .nav-link-btn {
       background: #fff;
-      border: 1.5px solid var(--pink-soft);
+      border: 1.5px solid var(--accent-soft);
       color: var(--text-main);
       padding: 0.35rem 0.9rem;
       border-radius: 20px;
@@ -148,26 +299,21 @@
       gap: 0.35rem;
     }
     .nav-link-btn:hover {
-      background: var(--pink-primary);
+      background: var(--accent-primary);
       color: #fff;
-      border-color: var(--pink-primary);
+      border-color: var(--accent-primary);
       transform: translateY(-2px);
-      box-shadow: 0 4px 8px rgba(251, 111, 146, 0.3);
+      box-shadow: 0 4px 8px var(--accent-glow);
     }
-    .toggle-leaves-btn {
-      background: #ffe3e8;
-      border: 1.5px dashed var(--pink-deep);
-      cursor: pointer;
-      font-size: 0.82rem;
-      padding: 0.35rem 0.75rem;
-      border-radius: 20px;
-      color: var(--pink-deep);
-      font-weight: 600;
-      transition: all 0.2s;
+    .nav-link-btn.linkedin-pill {
+      border-color: #92c5fd;
+      color: #0a66c2;
     }
-    .toggle-leaves-btn:hover {
-      background: var(--pink-deep);
+    .nav-link-btn.linkedin-pill:hover {
+      background: #0a66c2;
+      border-color: #0a66c2;
       color: #fff;
+      box-shadow: 0 4px 8px rgba(10, 102, 194, 0.25);
     }
 
     /* ── Giant Page of Me (Hero Scrapbook Section) ── */
@@ -199,9 +345,9 @@
       aspect-ratio: 1/1;
       border-radius: 10px;
       overflow: hidden;
-      border: 2px solid #fce3ea;
+      border: 2px solid var(--avatar-border);
       margin-bottom: 1.1rem;
-      background: #ffd9e2;
+      background: var(--avatar-bg);
       position: relative;
     }
     .avatar-frame img {
@@ -213,7 +359,7 @@
     .polaroid-title {
       font-family: 'Patrick Hand', cursive;
       font-size: 1.7rem;
-      color: var(--pink-deep);
+      color: var(--accent-deep);
       line-height: 1.2;
     }
     .polaroid-subtitle {
@@ -230,9 +376,9 @@
       margin-top: 0.85rem;
     }
     .mini-badge {
-      background: #fff0f3;
-      border: 1px solid var(--pink-soft);
-      color: var(--pink-deep);
+      background: var(--badge-bg);
+      border: 1px solid var(--accent-soft);
+      color: var(--accent-deep);
       font-size: 0.75rem;
       padding: 0.2rem 0.55rem;
       border-radius: 8px;
@@ -255,7 +401,7 @@
     .story-greeting {
       font-family: 'Patrick Hand', cursive;
       font-size: 2.3rem;
-      color: var(--pink-deep);
+      color: var(--accent-deep);
       margin-bottom: 0.3rem;
       display: flex;
       align-items: center;
@@ -268,20 +414,48 @@
       margin-bottom: 1.4rem;
     }
     .story-bio strong {
-      color: var(--pink-deep);
+      color: var(--accent-deep);
+    }
+    .specialties-box {
+      background: #fff;
+      border: 1.5px solid var(--subcard-border);
+      border-radius: 14px;
+      padding: 1rem 1.2rem;
+      margin-bottom: 1.25rem;
+      box-shadow: var(--subcard-shadow);
+    }
+    .specialties-heading {
+      font-size: 0.76rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.6px;
+      color: var(--accent-deep);
+      margin-bottom: 0.55rem;
+    }
+    .specialties-list {
+      list-style: none;
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
+      gap: 0.45rem 1rem;
+      font-size: 0.86rem;
+      color: var(--text-main);
     }
     .quote-sticker {
-      background: linear-gradient(135deg, #fff5f7, #ffe8ee);
-      border-left: 4px solid var(--pink-primary);
+      background: linear-gradient(135deg, var(--quote-bg-1), var(--quote-bg-2));
+      border-left: 4px solid var(--accent-primary);
       padding: 0.75rem 1.1rem;
       border-radius: 0 12px 12px 0;
       font-style: italic;
-      color: var(--autumn-wine);
+      color: var(--quote-ink);
       margin-bottom: 1.5rem;
       font-size: 0.95rem;
       display: flex;
       align-items: center;
       gap: 0.5rem;
+    }
+    .quote-asterisk {
+      font-size: 1.4rem;
+      color: var(--accent-primary);
     }
 
     /* Bento mini widgets inside Storyboard */
@@ -292,17 +466,17 @@
     }
     .story-mini-card {
       background: #fff;
-      border: 1.5px solid #fed2dc;
+      border: 1.5px solid var(--subcard-border);
       border-radius: 12px;
       padding: 0.85rem 1rem;
-      box-shadow: 2px 3px 0px rgba(251, 111, 146, 0.12);
+      box-shadow: var(--subcard-shadow);
     }
     .story-mini-label {
       font-size: 0.75rem;
       font-weight: 700;
       text-transform: uppercase;
       letter-spacing: 0.5px;
-      color: var(--autumn-maple);
+      color: var(--accent-secondary);
       margin-bottom: 0.25rem;
       display: flex;
       align-items: center;
@@ -323,7 +497,7 @@
     .section-title {
       font-family: 'Patrick Hand', cursive;
       font-size: 2.5rem;
-      color: var(--pink-deep);
+      color: var(--accent-deep);
       display: inline-block;
       position: relative;
     }
@@ -334,7 +508,7 @@
       left: 10%;
       right: 10%;
       height: 8px;
-      background: rgba(251, 111, 146, 0.25);
+      background: var(--title-highlight);
       border-radius: 4px;
       z-index: -1;
     }
@@ -367,7 +541,7 @@
     .showcase-card:hover {
       transform: translateY(-5px);
       box-shadow: var(--shadow-hover);
-      border-color: var(--pink-primary);
+      border-color: var(--accent-primary);
     }
 
     /* Specific decorative color themes for the 4 */
@@ -435,7 +609,7 @@
     .project-tagline {
       font-family: 'Patrick Hand', cursive;
       font-size: 1.18rem;
-      color: var(--pink-deep);
+      color: var(--accent-deep);
       margin-bottom: 0.75rem;
     }
     .project-desc {
@@ -460,7 +634,7 @@
       gap: 0.45rem;
     }
     .project-highlights li span.dot {
-      color: var(--pink-primary);
+      color: var(--accent-primary);
       font-size: 1.1rem;
       line-height: 1;
     }
@@ -472,7 +646,7 @@
     }
     .tag-chip {
       background: #fff;
-      border: 1px solid #fed1db;
+      border: 1px solid var(--subcard-border);
       font-size: 0.76rem;
       font-weight: 500;
       color: var(--text-muted);
@@ -487,7 +661,7 @@
     }
     .btn-action-primary {
       flex: 1;
-      background: linear-gradient(135deg, var(--pink-primary), var(--pink-deep));
+      background: linear-gradient(135deg, var(--accent-primary), var(--accent-deep));
       color: #fff;
       text-decoration: none;
       text-align: center;
@@ -499,12 +673,12 @@
       align-items: center;
       justify-content: center;
       gap: 0.4rem;
-      box-shadow: 0 4px 10px rgba(251, 111, 146, 0.28);
+      box-shadow: 0 4px 10px var(--btn-shadow);
       transition: all 0.2s;
     }
     .btn-action-primary:hover {
       transform: translateY(-2px);
-      box-shadow: 0 6px 14px rgba(251, 111, 146, 0.38);
+      box-shadow: 0 6px 14px var(--btn-shadow-hover);
       color: #fff;
     }
     .btn-action-secondary {
@@ -522,122 +696,9 @@
       transition: all 0.2s;
     }
     .btn-action-secondary:hover {
-      background: #fff0f3;
-      border-color: var(--pink-soft);
-      color: var(--pink-deep);
-    }
-
-    /* ── Full GitHub Vault Section ── */
-    .github-vault-section {
-      background: var(--paper-white);
-      backdrop-filter: blur(8px);
-      border: 2px solid var(--card-border);
-      border-radius: 20px;
-      padding: 2.2rem 2rem;
-      box-shadow: var(--shadow-retro);
-      margin-bottom: 4rem;
-      position: relative;
-    }
-    .vault-controls {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      flex-wrap: wrap;
-      gap: 1rem;
-      margin-bottom: 1.5rem;
-      padding-bottom: 1rem;
-      border-bottom: 1.5px dashed var(--pink-soft);
-    }
-    .filter-pills {
-      display: flex;
-      gap: 0.5rem;
-      flex-wrap: wrap;
-    }
-    .filter-btn {
-      background: #fff;
-      border: 1.5px solid var(--card-border);
-      color: var(--text-main);
-      padding: 0.35rem 0.85rem;
-      border-radius: 20px;
-      font-size: 0.82rem;
-      font-weight: 600;
-      cursor: pointer;
-      transition: all 0.2s;
-    }
-    .filter-btn:hover, .filter-btn.active {
-      background: var(--pink-deep);
-      color: #fff;
-      border-color: var(--pink-deep);
-    }
-    .vault-search {
-      padding: 0.4rem 0.9rem;
-      border-radius: 20px;
-      border: 1.5px solid var(--card-border);
-      font-size: 0.85rem;
-      font-family: inherit;
-      background: #fff;
-      outline: none;
-      min-width: 220px;
-      color: var(--text-main);
-    }
-    .vault-search:focus {
-      border-color: var(--pink-primary);
-      box-shadow: 0 0 0 3px rgba(251, 111, 146, 0.15);
-    }
-
-    .vault-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
-      gap: 1rem;
-    }
-    .vault-card {
-      background: #fff;
-      border: 1.5px solid #fedce4;
-      border-radius: 12px;
-      padding: 1.15rem;
-      display: flex;
-      flex-direction: column;
-      text-decoration: none;
-      color: inherit;
-      transition: all 0.2s cubic-bezier(0.2, 0.8, 0.2, 1);
-    }
-    .vault-card:hover {
-      transform: translateY(-3px);
-      border-color: var(--pink-primary);
-      box-shadow: 3px 4px 0px rgba(251, 111, 146, 0.18);
-    }
-    .vault-repo-name {
-      font-weight: 700;
-      font-size: 0.98rem;
-      color: var(--pink-deep);
-      margin-bottom: 0.4rem;
-      display: flex;
-      align-items: center;
-      gap: 0.4rem;
-    }
-    .vault-repo-desc {
-      font-size: 0.83rem;
-      color: var(--text-muted);
-      line-height: 1.5;
-      margin-bottom: 0.8rem;
-      flex: 1;
-      display: -webkit-box;
-      -webkit-line-clamp: 2;
-      -webkit-box-orient: vertical;
-      overflow: hidden;
-    }
-    .vault-meta {
-      display: flex;
-      align-items: center;
-      gap: 0.8rem;
-      font-size: 0.76rem;
-      color: var(--text-muted);
-    }
-    .lang-pip {
-      width: 10px;
-      height: 10px;
-      border-radius: 50%;
-      display: inline-block;
+      background: var(--badge-bg);
+      border-color: var(--accent-soft);
+      color: var(--accent-deep);
     }
 
     /* ── Cozy Footer ── */
@@ -649,7 +710,7 @@
     .footer-stamp {
       font-family: 'Patrick Hand', cursive;
       font-size: 1.5rem;
-      color: var(--pink-deep);
+      color: var(--accent-deep);
       margin-bottom: 0.5rem;
     }
     .footer-desc {
@@ -664,14 +725,14 @@
       flex-wrap: wrap;
     }
     .footer-link {
-      color: var(--autumn-maple);
+      color: var(--accent-secondary);
       text-decoration: none;
       font-weight: 600;
       font-size: 0.88rem;
       transition: color 0.2s;
     }
     .footer-link:hover {
-      color: var(--pink-deep);
+      color: var(--accent-deep);
     }
 
     /* ── Responsive adjustments ── */
@@ -690,7 +751,7 @@
 </head>
 <body>
 
-  <!-- Falling Leaves Canvas -->
+  <!-- Seasonal Ambient Canvas -->
   <canvas id="leafCanvas"></canvas>
 
   <div class="wrapper">
@@ -703,7 +764,7 @@
       <nav class="nav-links">
         <a href="#about" class="nav-link-btn">About</a>
         <a href="#featured" class="nav-link-btn">Proud Works</a>
-        <a href="https://www.linkedin.com/in/minh-l%C3%AA-561867426/" target="_blank" class="nav-link-btn" style="border-color:#92c5fd; color:#0a66c2;">LinkedIn</a>
+        <a href="https://www.linkedin.com/in/minh-l%C3%AA-561867426/" target="_blank" class="nav-link-btn linkedin-pill">LinkedIn</a>
       </nav>
     </header>
 
@@ -728,7 +789,7 @@
         </div>
 
         <div style="display:flex; gap:0.5rem; justify-content:center; margin-top:0.9rem;">
-          <a href="https://www.linkedin.com/in/minh-l%C3%AA-561867426/" target="_blank" class="nav-link-btn" style="padding:0.3rem 0.75rem; font-size:0.8rem; border-color:#92c5fd; color:#0a66c2;">
+          <a href="https://www.linkedin.com/in/minh-l%C3%AA-561867426/" target="_blank" class="nav-link-btn linkedin-pill" style="padding:0.3rem 0.75rem; font-size:0.8rem;">
             LinkedIn
           </a>
           <a href="https://github.com/Senthemodder" target="_blank" class="nav-link-btn" style="padding:0.3rem 0.75rem; font-size:0.8rem;">
@@ -751,11 +812,11 @@
           <p class="story-bio" style="margin-bottom: 1.1rem; font-size: 0.96rem;">
             I architect production-grade systems, automated build pipelines, and high-performance gameplay infrastructure across commercial studios (<strong>Pixelusion</strong>, <strong>Compycraft</strong>, <strong>Decayed Team</strong>) and large-scale open-source ecosystems (<strong>Galacticraft</strong>).
           </p>
-          <div style="background: #fff; border: 1.5px solid #fed2dc; border-radius: 14px; padding: 1rem 1.2rem; margin-bottom: 1.25rem; box-shadow: 2px 3px 0px rgba(251, 111, 146, 0.1);">
-            <div style="font-size: 0.76rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.6px; color: var(--pink-deep); margin-bottom: 0.55rem;">
+          <div class="specialties-box">
+            <div class="specialties-heading">
               Specialties &amp; Engineering Focus
             </div>
-            <ul style="list-style: none; display: grid; grid-template-columns: repeat(auto-fit, minmax(230px, 1fr)); gap: 0.45rem 1rem; font-size: 0.86rem; color: var(--text-main);">
+            <ul class="specialties-list">
               <li>• <strong>Systems Engineering:</strong> Backend architecture, networking, state management &amp; runtime optimization</li>
               <li>• <strong>Compilers &amp; Porting Pipelines:</strong> Cross-platform code migration, code generators, AST tooling &amp; schema validation</li>
               <li>• <strong>Simulation &amp; Engine Architecture:</strong> Real-time physics, procedural generation, state machines &amp; simulation logic</li>
@@ -765,7 +826,7 @@
           </div>
 
           <div class="quote-sticker">
-            <span style="font-size:1.4rem; color:var(--pink-primary);">*</span>
+            <span class="quote-asterisk">*</span>
             <span>wandering through life :D</span>
           </div>
         </div>
@@ -873,7 +934,7 @@
           <div class="project-tags">
             <span class="tag-chip">Bedrock Marketplace</span>
             <span class="tag-chip">Compycraft</span>
-            <span class="tag-chip">Wildlife & Fauna</span>
+            <span class="tag-chip">Wildlife &amp; Fauna</span>
             <span class="tag-chip">Add-On</span>
           </div>
           <div class="project-actions">
@@ -912,11 +973,10 @@
       </div>
     </section>
 
-
     <!-- ── Cozy Strawpage Footer ── -->
     <footer class="straw-footer">
-      <div class="footer-stamp">Made with warmth and autumn leaves</div>
-      <p class="footer-desc">Designation Vee (@Senthemodder) · 2026</p>
+      <div class="footer-stamp" id="footerStamp">Made with warmth and autumn leaves</div>
+      <p class="footer-desc">Designation Vee (@Senthemodder) · <span id="footerYear">2026</span></p>
       <div class="footer-links">
         <a href="https://www.linkedin.com/in/minh-l%C3%AA-561867426/" target="_blank" class="footer-link" style="color: #0a66c2;">LinkedIn (Minh Le) ↗</a>
         <a href="https://github.com/Senthemodder" target="_blank" class="footer-link">GitHub Profile ↗</a>
@@ -927,96 +987,332 @@
 
   </div>
 
-  <!-- ── Interactive Vault & Leaf Engine Scripts ── -->
+  <!-- ── Date-Driven Seasonal Theme & Ambient Particle Engine ── -->
   <script>
-    /* ── Cozy Autumn Leaves Particle Physics ── */
-    const canvas = document.getElementById('leafCanvas');
-    const ctx = canvas.getContext('2d');
-    let leaves = [];
-    const LEAF_COUNT = 32;
+    (function () {
+      const SEASON_CONFIG = {
+        spring: {
+          themeColor: '#e9f7ee',
+          footerStamp: 'Made with warmth and spring blossoms',
+          particleCount: 34,
+          colors: ['#ffb7c5', '#ff8fab', '#f472b6', '#f9a8d4', '#86efac', '#52b788']
+        },
+        summer: {
+          themeColor: '#fef6d8',
+          footerStamp: 'Made with sunshine and summer breezes',
+          particleCount: 30,
+          colors: ['#fbbf24', '#f59e0b', '#38bdf8', '#2dd4bf', '#fb7185', '#fcd34d']
+        },
+        autumn: {
+          themeColor: '#ffe5ec',
+          footerStamp: 'Made with warmth and autumn leaves',
+          particleCount: 32,
+          colors: ['#fb6f92', '#ff8fab', '#e07a5f', '#f4a261', '#e76f51', '#d97736']
+        },
+        winter: {
+          themeColor: '#e5f0ff',
+          footerStamp: 'Made with warmth and winter snow',
+          particleCount: 38,
+          colors: ['#ffffff', '#60a5fa', '#7cc4fa', '#818cf8', '#38bdf8', '#93c5fd']
+        }
+      };
 
-    const LEAF_COLORS = [
-      '#fb6f92', /* pink blossom */
-      '#ff8fab', /* pastel pink */
-      '#e07a5f', /* autumn terracotta */
-      '#f4a261', /* warm amber */
-      '#e76f51', /* maple red */
-      '#d97736'  /* golden maple */
-    ];
+      const bootState = window.__PORTFOLIO_SEASON__ || {
+        getSeasonForDate: function (d) {
+          const m = (d || new Date()).getMonth();
+          if (m >= 2 && m <= 4) return 'spring';
+          if (m >= 5 && m <= 7) return 'summer';
+          if (m >= 8 && m <= 10) return 'autumn';
+          return 'winter';
+        },
+        active: 'autumn'
+      };
 
-    function resizeCanvas() {
-      canvas.width = window.innerWidth;
-      canvas.height = window.innerHeight;
-    }
-    window.addEventListener('resize', resizeCanvas);
-    resizeCanvas();
+      let currentSeason = bootState.active;
 
-    class Leaf {
-      constructor() {
-        this.reset(true);
+      const themeMeta = document.getElementById('themeColorMeta');
+      const footerStamp = document.getElementById('footerStamp');
+      const footerYear = document.getElementById('footerYear');
+
+      const nowYear = new Date().getFullYear();
+      if (footerYear && nowYear >= 2026) {
+        footerYear.textContent = String(nowYear);
       }
-      reset(initial = false) {
-        this.x = Math.random() * canvas.width;
-        this.y = initial ? Math.random() * canvas.height : -30;
-        this.size = 10 + Math.random() * 16;
-        this.speedY = 0.3 + Math.random() * 0.5;
-        this.speedX = -0.2 + Math.random() * 0.4;
-        this.rotation = Math.random() * Math.PI * 2;
-        this.rotationSpeed = (Math.random() - 0.5) * 0.015;
-        this.color = LEAF_COLORS[Math.floor(Math.random() * LEAF_COLORS.length)];
-        this.swayAngle = Math.random() * Math.PI * 2;
-        this.swaySpeed = 0.01 + Math.random() * 0.015;
-        this.opacity = 0.4 + Math.random() * 0.45;
-        this.isMaple = Math.random() > 0.4;
-      }
-      update() {
-        this.swayAngle += this.swaySpeed;
-        this.x += this.speedX + Math.sin(this.swayAngle) * 0.8;
-        this.y += this.speedY;
-        this.rotation += this.rotationSpeed;
 
-        if (this.y > canvas.height + 30 || this.x < -40 || this.x > canvas.width + 40) {
-          this.reset(false);
+      /* ── Canvas Particle Simulation ── */
+      const canvas = document.getElementById('leafCanvas');
+      const ctx = canvas.getContext('2d');
+      let particles = [];
+
+      function resizeCanvas() {
+        canvas.width = window.innerWidth;
+        canvas.height = window.innerHeight;
+      }
+      window.addEventListener('resize', resizeCanvas);
+      resizeCanvas();
+
+      class SeasonalParticle {
+        constructor(season) {
+          this.season = season;
+          this.reset(true);
+        }
+
+        reset(initial = false) {
+          const cfg = SEASON_CONFIG[this.season] || SEASON_CONFIG.autumn;
+          this.x = Math.random() * canvas.width;
+          this.color = cfg.colors[Math.floor(Math.random() * cfg.colors.length)];
+          this.rotation = Math.random() * Math.PI * 2;
+          this.swayAngle = Math.random() * Math.PI * 2;
+          this.pulseAngle = Math.random() * Math.PI * 2;
+
+          if (this.season === 'winter') {
+            this.y = initial ? Math.random() * canvas.height : -30;
+            const roll = Math.random();
+            this.kind = roll < 0.5 ? 'crystal' : (roll < 0.82 ? 'powder' : 'froststar');
+            this.size = this.kind === 'powder' ? 4 + Math.random() * 5 : 9 + Math.random() * 11;
+            this.speedY = 0.32 + Math.random() * 0.52;
+            this.speedX = -0.18 + Math.random() * 0.36;
+            this.swayAmp = 0.55;
+            this.swaySpeed = 0.008 + Math.random() * 0.012;
+            this.rotationSpeed = (Math.random() - 0.5) * 0.008;
+            this.opacity = 0.52 + Math.random() * 0.42;
+          } else if (this.season === 'spring') {
+            this.y = initial ? Math.random() * canvas.height : -30;
+            const roll = Math.random();
+            this.kind = roll < 0.58 ? 'sakura_petal' : (roll < 0.82 ? 'sakura_blossom' : 'sprout_leaf');
+            if (this.kind === 'sprout_leaf') {
+              this.color = Math.random() > 0.5 ? '#74c69d' : '#52b788';
+            } else if (this.color === '#86efac' || this.color === '#52b788') {
+              this.color = '#ffb7c5';
+            }
+            this.size = this.kind === 'sakura_blossom' ? 8 + Math.random() * 7 : 8 + Math.random() * 10;
+            this.speedY = 0.3 + Math.random() * 0.48;
+            this.speedX = 0.1 + Math.random() * 0.42;
+            this.swayAmp = 0.9;
+            this.swaySpeed = 0.012 + Math.random() * 0.016;
+            this.rotationSpeed = (Math.random() - 0.5) * 0.02;
+            this.opacity = 0.48 + Math.random() * 0.42;
+          } else if (this.season === 'summer') {
+            const roll = Math.random();
+            this.kind = roll < 0.42 ? 'bubble' : (roll < 0.78 ? 'sun_sparkle' : 'sun_petal');
+            if (this.kind === 'bubble') {
+              this.y = initial ? Math.random() * canvas.height : canvas.height + 30;
+              this.size = 6 + Math.random() * 12;
+              this.speedY = -(0.24 + Math.random() * 0.42);
+              this.speedX = -0.15 + Math.random() * 0.35;
+              this.color = Math.random() > 0.5 ? '#38bdf8' : '#2dd4bf';
+              this.opacity = 0.32 + Math.random() * 0.35;
+            } else if (this.kind === 'sun_sparkle') {
+              this.y = initial ? Math.random() * canvas.height : Math.random() * canvas.height;
+              this.size = 6 + Math.random() * 9;
+              this.speedY = -0.08 + Math.random() * 0.22;
+              this.speedX = -0.12 + Math.random() * 0.24;
+              this.color = Math.random() > 0.35 ? '#fbbf24' : '#f59e0b';
+              this.opacity = 0.38 + Math.random() * 0.45;
+            } else {
+              this.y = initial ? Math.random() * canvas.height : -30;
+              this.size = 8 + Math.random() * 11;
+              this.speedY = 0.26 + Math.random() * 0.42;
+              this.speedX = 0.08 + Math.random() * 0.35;
+              this.opacity = 0.42 + Math.random() * 0.38;
+            }
+            this.swayAmp = 0.6;
+            this.swaySpeed = 0.01 + Math.random() * 0.014;
+            this.rotationSpeed = (Math.random() - 0.5) * 0.012;
+          } else {
+            /* Autumn (original maple + oval leaf physics) */
+            this.y = initial ? Math.random() * canvas.height : -30;
+            this.kind = Math.random() > 0.4 ? 'maple' : 'oval_leaf';
+            this.size = 10 + Math.random() * 16;
+            this.speedY = 0.3 + Math.random() * 0.5;
+            this.speedX = -0.2 + Math.random() * 0.4;
+            this.swayAmp = 0.8;
+            this.swaySpeed = 0.01 + Math.random() * 0.015;
+            this.rotationSpeed = (Math.random() - 0.5) * 0.015;
+            this.opacity = 0.4 + Math.random() * 0.45;
+          }
+        }
+
+        update() {
+          this.swayAngle += this.swaySpeed;
+          this.pulseAngle += 0.028;
+          this.x += this.speedX + Math.sin(this.swayAngle) * this.swayAmp;
+          this.y += this.speedY;
+          this.rotation += this.rotationSpeed;
+
+          if (this.kind === 'bubble') {
+            if (this.y < -35 || this.x < -45 || this.x > canvas.width + 45) {
+              this.reset(false);
+            }
+          } else if (this.kind === 'sun_sparkle') {
+            if (this.y < -35) this.y = canvas.height + 25;
+            if (this.y > canvas.height + 35) this.y = -25;
+            if (this.x < -45) this.x = canvas.width + 35;
+            if (this.x > canvas.width + 45) this.x = -35;
+          } else {
+            if (this.y > canvas.height + 35 || this.x < -45 || this.x > canvas.width + 45) {
+              this.reset(false);
+            }
+          }
+        }
+
+        draw() {
+          ctx.save();
+          ctx.translate(this.x, this.y);
+          ctx.rotate(this.rotation);
+
+          const s = this.size;
+
+          if (this.kind === 'maple') {
+            ctx.globalAlpha = this.opacity;
+            ctx.fillStyle = this.color;
+            ctx.beginPath();
+            ctx.moveTo(0, -s);
+            ctx.quadraticCurveTo(s * 0.6, -s * 0.3, s * 0.8, -s * 0.1);
+            ctx.quadraticCurveTo(s * 0.5, s * 0.3, s * 0.4, s * 0.7);
+            ctx.quadraticCurveTo(0, s * 0.5, -s * 0.4, s * 0.7);
+            ctx.quadraticCurveTo(-s * 0.5, s * 0.3, -s * 0.8, -s * 0.1);
+            ctx.quadraticCurveTo(-s * 0.6, -s * 0.3, 0, -s);
+            ctx.fill();
+          } else if (this.kind === 'oval_leaf' || this.kind === 'sprout_leaf' || this.kind === 'sun_petal') {
+            ctx.globalAlpha = this.opacity;
+            ctx.fillStyle = this.color;
+            ctx.beginPath();
+            ctx.ellipse(0, 0, s * 0.48, s * 0.95, 0, 0, Math.PI * 2);
+            ctx.fill();
+          } else if (this.kind === 'crystal') {
+            ctx.globalAlpha = this.opacity;
+            ctx.strokeStyle = this.color;
+            ctx.lineWidth = Math.max(1.4, s * 0.13);
+            ctx.lineCap = 'round';
+            if (this.color === '#ffffff') {
+              ctx.shadowColor = 'rgba(41, 86, 143, 0.38)';
+              ctx.shadowBlur = 4;
+            }
+            for (let i = 0; i < 6; i++) {
+              ctx.beginPath();
+              ctx.moveTo(0, 0);
+              ctx.lineTo(0, -s);
+              ctx.moveTo(0, -s * 0.58);
+              ctx.lineTo(-s * 0.24, -s * 0.78);
+              ctx.moveTo(0, -s * 0.58);
+              ctx.lineTo(s * 0.24, -s * 0.78);
+              ctx.stroke();
+              ctx.rotate(Math.PI / 3);
+            }
+          } else if (this.kind === 'powder') {
+            ctx.globalAlpha = this.opacity;
+            ctx.fillStyle = this.color;
+            if (this.color === '#ffffff') {
+              ctx.shadowColor = 'rgba(41, 86, 143, 0.35)';
+              ctx.shadowBlur = 4;
+            }
+            ctx.beginPath();
+            ctx.arc(0, 0, s, 0, Math.PI * 2);
+            ctx.fill();
+          } else if (this.kind === 'froststar' || this.kind === 'sun_sparkle') {
+            const pulse = this.kind === 'sun_sparkle' ? (0.65 + 0.35 * Math.sin(this.pulseAngle)) : 1;
+            ctx.globalAlpha = this.opacity * pulse;
+            ctx.fillStyle = this.color;
+            if (this.color === '#ffffff') {
+              ctx.shadowColor = 'rgba(41, 86, 143, 0.38)';
+              ctx.shadowBlur = 4;
+            }
+            const r = s * pulse;
+            ctx.beginPath();
+            ctx.moveTo(0, -r);
+            ctx.quadraticCurveTo(r * 0.18, -r * 0.18, r, 0);
+            ctx.quadraticCurveTo(r * 0.18, r * 0.18, 0, r);
+            ctx.quadraticCurveTo(-r * 0.18, r * 0.18, -r, 0);
+            ctx.quadraticCurveTo(-r * 0.18, -r * 0.18, 0, -r);
+            ctx.closePath();
+            ctx.fill();
+          } else if (this.kind === 'sakura_petal') {
+            ctx.globalAlpha = this.opacity;
+            ctx.fillStyle = this.color;
+            ctx.beginPath();
+            ctx.moveTo(0, s * 0.85);
+            ctx.bezierCurveTo(-s * 0.75, s * 0.35, -s * 0.72, -s * 0.58, -s * 0.18, -s * 0.85);
+            ctx.lineTo(0, -s * 0.56);
+            ctx.lineTo(s * 0.18, -s * 0.85);
+            ctx.bezierCurveTo(s * 0.72, -s * 0.58, s * 0.75, s * 0.35, 0, s * 0.85);
+            ctx.closePath();
+            ctx.fill();
+          } else if (this.kind === 'sakura_blossom') {
+            ctx.globalAlpha = this.opacity;
+            ctx.fillStyle = this.color;
+            for (let i = 0; i < 5; i++) {
+              ctx.beginPath();
+              ctx.ellipse(0, -s * 0.58, s * 0.32, s * 0.5, 0, 0, Math.PI * 2);
+              ctx.fill();
+              ctx.rotate((Math.PI * 2) / 5);
+            }
+            ctx.fillStyle = '#fde68a';
+            ctx.beginPath();
+            ctx.arc(0, 0, s * 0.22, 0, Math.PI * 2);
+            ctx.fill();
+          } else if (this.kind === 'bubble') {
+            ctx.globalAlpha = this.opacity;
+            ctx.strokeStyle = this.color;
+            ctx.lineWidth = 1.4;
+            ctx.fillStyle = 'rgba(255, 255, 255, 0.28)';
+            ctx.beginPath();
+            ctx.arc(0, 0, s, 0, Math.PI * 2);
+            ctx.fill();
+            ctx.stroke();
+
+            ctx.beginPath();
+            ctx.strokeStyle = 'rgba(255, 255, 255, 0.85)';
+            ctx.lineWidth = 1.3;
+            ctx.arc(0, 0, s * 0.65, -Math.PI * 0.78, -Math.PI * 0.38);
+            ctx.stroke();
+          }
+
+          ctx.restore();
         }
       }
-      draw() {
-        ctx.save();
-        ctx.translate(this.x, this.y);
-        ctx.rotate(this.rotation);
-        ctx.globalAlpha = this.opacity;
-        ctx.fillStyle = this.color;
 
-        ctx.beginPath();
-        if (this.isMaple) {
-          /* Maple leaf shape */
-          ctx.moveTo(0, -this.size);
-          ctx.quadraticCurveTo(this.size * 0.6, -this.size * 0.3, this.size * 0.8, -this.size * 0.1);
-          ctx.quadraticCurveTo(this.size * 0.5, this.size * 0.3, this.size * 0.4, this.size * 0.7);
-          ctx.quadraticCurveTo(0, this.size * 0.5, -this.size * 0.4, this.size * 0.7);
-          ctx.quadraticCurveTo(-this.size * 0.5, this.size * 0.3, -this.size * 0.8, -this.size * 0.1);
-          ctx.quadraticCurveTo(-this.size * 0.6, -this.size * 0.3, 0, -this.size);
-        } else {
-          /* Soft oval autumn leaf */
-          ctx.ellipse(0, 0, this.size * 0.5, this.size, 0, 0, Math.PI * 2);
+      function rebuildParticles(season) {
+        const cfg = SEASON_CONFIG[season] || SEASON_CONFIG.autumn;
+        particles = [];
+        for (let i = 0; i < cfg.particleCount; i++) {
+          particles.push(new SeasonalParticle(season));
         }
-        ctx.fill();
-        ctx.restore();
       }
-    }
 
-    for (let i = 0; i < LEAF_COUNT; i++) {
-      leaves.push(new Leaf());
-    }
+      function syncSeasonFromDate() {
+        const detected = bootState.getSeasonForDate(new Date());
+        const changed = detected !== currentSeason || particles.length === 0;
+        currentSeason = detected;
 
-    function animateLeaves() {
-      ctx.clearRect(0, 0, canvas.width, canvas.height);
-      for (const leaf of leaves) {
-        leaf.update();
-        leaf.draw();
+        const cfg = SEASON_CONFIG[currentSeason] || SEASON_CONFIG.autumn;
+        document.documentElement.setAttribute('data-season', currentSeason);
+        if (themeMeta) {
+          themeMeta.setAttribute('content', cfg.themeColor);
+        }
+        if (footerStamp) {
+          footerStamp.textContent = cfg.footerStamp;
+        }
+        if (changed) {
+          rebuildParticles(currentSeason);
+        }
       }
-      requestAnimationFrame(animateLeaves);
-    }
-    animateLeaves();
+
+      function animateParticles() {
+        ctx.clearRect(0, 0, canvas.width, canvas.height);
+        for (const p of particles) {
+          p.update();
+          p.draw();
+        }
+        requestAnimationFrame(animateParticles);
+      }
+
+      syncSeasonFromDate();
+      animateParticles();
+
+      /* Re-check calendar every 60s in case a tab stays open across a season boundary */
+      setInterval(syncSeasonFromDate, 60000);
+    })();
   </script>
 </body>
 </html>
