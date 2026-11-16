@@ -261,6 +261,27 @@
       transform: rotate(5deg);
     }
 
+    /* ── Animations (Keyframes + Scroll Reveal) ── */
+    @keyframes availPulse {
+      0% { box-shadow: 0 0 0 0 rgba(16, 185, 129, 0.45); }
+      70% { box-shadow: 0 0 0 7px rgba(16, 185, 129, 0); }
+      100% { box-shadow: 0 0 0 0 rgba(16, 185, 129, 0); }
+    }
+    @keyframes heroRise {
+      from {
+        opacity: 0;
+        transform: translateY(18px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+    @keyframes polaroidBreathe {
+      0%, 100% { transform: rotate(-1.2deg) translateY(0); }
+      50% { transform: rotate(-0.4deg) translateY(-5px); }
+    }
+
     /* ── Floating Header Nav ── */
     .floating-nav {
       display: flex;
@@ -273,6 +294,7 @@
       margin-bottom: 2.2rem;
       box-shadow: var(--shadow-retro);
       gap: 0.75rem;
+      animation: heroRise 0.45s cubic-bezier(0.22, 1, 0.36, 1) both;
     }
     .nav-brand-group {
       display: flex;
@@ -305,7 +327,7 @@
       height: 7px;
       border-radius: 50%;
       background: #10b981;
-      box-shadow: 0 0 0 3px rgba(16, 185, 129, 0.22);
+      animation: availPulse 2.2s infinite ease-out;
       display: inline-block;
     }
     .nav-links {
@@ -353,6 +375,7 @@
       grid-template-columns: 310px 1fr;
       gap: 1.9rem;
       margin-bottom: 1.8rem;
+      animation: heroRise 0.55s cubic-bezier(0.22, 1, 0.36, 1) 0.06s both;
     }
 
     /* Polaroid Card */
@@ -364,6 +387,7 @@
       box-shadow: var(--shadow-retro);
       position: relative;
       transform: rotate(-1.2deg);
+      animation: polaroidBreathe 6s ease-in-out infinite;
       transition: transform 0.3s ease, box-shadow 0.3s ease;
       text-align: center;
       display: flex;
@@ -371,6 +395,7 @@
       justify-content: space-between;
     }
     .polaroid-card:hover {
+      animation-play-state: paused;
       transform: rotate(0deg) scale(1.015);
       box-shadow: var(--shadow-hover);
     }
@@ -505,6 +530,7 @@
       display: flex;
       flex-direction: column;
       gap: 0.9rem;
+      animation: heroRise 0.65s cubic-bezier(0.22, 1, 0.36, 1) 0.12s both;
     }
     .partner-strip-head {
       display: flex;
@@ -621,7 +647,10 @@
       margin-bottom: 1.4rem;
     }
     .service-card {
-      background: rgba(255, 255, 255, 0.94);
+      background-color: rgba(255, 255, 255, 0.94);
+      background-image: linear-gradient(115deg, transparent 32%, var(--badge-bg) 50%, transparent 68%);
+      background-size: 240% 100%;
+      background-position: 140% 0;
       border: 2px solid var(--card-border);
       border-radius: 18px;
       padding: 1.65rem 1.55rem 1.5rem;
@@ -629,12 +658,13 @@
       position: relative;
       display: flex;
       flex-direction: column;
-      transition: transform 0.22s ease, box-shadow 0.22s ease, border-color 0.22s ease;
+      transition: transform 0.24s ease, box-shadow 0.24s ease, border-color 0.24s ease, background-position 0.6s ease;
     }
     .service-card:hover {
       transform: translateY(-4px);
       box-shadow: var(--shadow-hover);
       border-color: var(--accent-primary);
+      background-position: -60% 0;
     }
     .service-num {
       font-family: 'Space Mono', monospace;
@@ -705,6 +735,81 @@
       margin-bottom: 0.42rem;
     }
 
+    /* ── Scroll-Reveal Card Transitions ── */
+    .js-anim .reveal-card {
+      opacity: 0;
+      transform: translateY(22px) scale(0.985);
+      transition: opacity 0.52s cubic-bezier(0.22, 1, 0.36, 1),
+                  transform 0.52s cubic-bezier(0.22, 1, 0.36, 1),
+                  box-shadow 0.24s ease,
+                  border-color 0.24s ease,
+                  background-position 0.6s ease;
+      transition-delay: var(--reveal-delay, 0ms);
+    }
+    .js-anim .reveal-card.is-visible {
+      opacity: 1;
+      transform: translateY(0) scale(1);
+    }
+    .js-anim .reveal-card.is-visible:hover {
+      transition-delay: 0ms;
+      transform: translateY(-5px) scale(1);
+    }
+
+    /* ── Selected Systems Section (Live Procedural Canvas Cards) ── */
+    .systems-section {
+      margin-bottom: 4.4rem;
+    }
+    .systems-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 1.45rem;
+    }
+    .system-card {
+      background: rgba(255, 255, 255, 0.94);
+      border: 2px solid var(--card-border);
+      border-radius: 18px;
+      padding: 1.25rem 1.4rem 1.45rem;
+      box-shadow: var(--shadow-retro);
+      position: relative;
+      display: flex;
+      flex-direction: column;
+      overflow: hidden;
+      transition: transform 0.24s ease, box-shadow 0.24s ease, border-color 0.24s ease;
+    }
+    .system-card::after {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(115deg, transparent 22%, rgba(255, 255, 255, 0.46) 50%, transparent 78%);
+      transform: translateX(-115%);
+      transition: transform 0.65s cubic-bezier(0.22, 1, 0.36, 1);
+      pointer-events: none;
+      z-index: 3;
+    }
+    .system-card:hover::after {
+      transform: translateX(115%);
+    }
+    .system-card:hover {
+      transform: translateY(-5px);
+      box-shadow: var(--shadow-hover);
+      border-color: var(--accent-primary);
+    }
+    .system-viz-wrap {
+      width: 100%;
+      height: 92px;
+      border-radius: 11px;
+      background: #0f172a;
+      border: 1.5px solid var(--subcard-border);
+      overflow: hidden;
+      position: relative;
+      margin-bottom: 0.95rem;
+    }
+    .system-viz-canvas {
+      width: 100%;
+      height: 100%;
+      display: block;
+    }
+
     /* ── Shipped Projects ("Proudly Worked On") ── */
     .featured-grid {
       display: grid;
@@ -761,7 +866,10 @@
       height: 100%;
       object-fit: cover;
       display: block;
-      transition: transform 0.35s ease;
+      transition: transform 0.35s ease, opacity 0.18s ease;
+    }
+    .project-media-btn img.is-fading {
+      opacity: 0.35;
     }
     .showcase-card:hover .project-media-btn img {
       transform: scale(1.03);
@@ -1195,8 +1303,9 @@
     /* ── Responsive adjustments ── */
     @media (max-width: 920px) {
       .giant-me-hero { grid-template-columns: 1fr; }
-      .polaroid-card { max-width: 330px; margin: 0 auto; transform: none; }
+      .polaroid-card { max-width: 330px; margin: 0 auto; transform: none; animation: none; }
       .services-grid { grid-template-columns: 1fr; }
+      .systems-grid { grid-template-columns: 1fr; }
       .skills-matrix-grid { grid-template-columns: 1fr; }
       .contact-grid { grid-template-columns: 1fr; }
       .structure-gallery { grid-template-columns: 1fr; }
@@ -1230,6 +1339,7 @@
       </div>
       <nav class="nav-links">
         <a href="#services" class="nav-link-btn">Skills &amp; Stack</a>
+        <a href="#systems" class="nav-link-btn">Systems</a>
         <a href="#featured" class="nav-link-btn">Shipped Work</a>
         <a href="#builds" class="nav-link-btn">3D &amp; Worlds</a>
         <a href="#contact" class="nav-link-btn">Contact</a>
@@ -1498,6 +1608,126 @@
             </div>
           </div>
         </div>
+      </div>
+    </section>
+
+    <!-- ── Selected Systems Showcase (Animated Procedural Canvases) ── -->
+    <section class="systems-section" id="systems">
+      <div class="section-header">
+        <h2 class="section-title">Selected Systems I've Built</h2>
+        <p class="section-subtitle">Custom engines, compilers, and infrastructure built from scratch when standard tools couldn't do the job.</p>
+      </div>
+
+      <div class="systems-grid">
+
+        <!-- System 1: Custom Liquid Engine -->
+        <article class="system-card">
+          <div class="system-viz-wrap">
+            <canvas class="system-viz-canvas" data-viz="liquid" aria-label="Animated custom liquid flow and sloped surface visualization"></canvas>
+          </div>
+          <span class="service-num">01 · Physics &amp; Rendering</span>
+          <h3 class="service-title">Custom Liquid Physics &amp; Surface Engine</h3>
+          <p class="service-desc">
+            Engineered a full custom liquid system in a game engine that doesn't natively support custom fluids. Handles directional flow, slope-finding, viscosity, waterfalls, entity currents, bucket interaction, and smooth sloped fluid surfaces at console and mobile frame rates.
+          </p>
+          <div class="project-tags" style="margin-bottom:0;">
+            <span class="tag-chip">Fluid Kinematics</span>
+            <span class="tag-chip">Sloped Surface Meshing</span>
+            <span class="tag-chip">Bucket &amp; Current Logic</span>
+            <span class="tag-chip">Mobile &amp; Console 60fps</span>
+          </div>
+        </article>
+
+        <!-- System 2: Contraption & Train Engine -->
+        <article class="system-card">
+          <div class="system-viz-wrap">
+            <canvas class="system-viz-canvas" data-viz="contraption" aria-label="Animated rotating gears and curved-track train visualization"></canvas>
+          </div>
+          <span class="service-num">02 · Kinematics &amp; Vehicles</span>
+          <h3 class="service-title">Moving Multi-Block Contraption &amp; Train Engine</h3>
+          <p class="service-desc">
+            Built a 35,000+ line kinematic physics and rendering system that turns static world blocks into rotating machines, elevators, and trains running on curved tracks, keeping onboard doors, seats, storage, and circuits working smoothly on the move.
+          </p>
+          <div class="project-tags" style="margin-bottom:0;">
+            <span class="tag-chip">35,000+ LoC Engine</span>
+            <span class="tag-chip">Curved-Track Trains</span>
+            <span class="tag-chip">Onboard Circuits &amp; Storage</span>
+            <span class="tag-chip">Batched Rendering</span>
+          </div>
+        </article>
+
+        <!-- System 3: 3D Terrain & Planet Compiler -->
+        <article class="system-card">
+          <div class="system-viz-wrap">
+            <canvas class="system-viz-canvas" data-viz="terrain" aria-label="Animated 3D terrain ridge and cavern compiler sweep visualization"></canvas>
+          </div>
+          <span class="service-num">03 · Worldgen Compiler</span>
+          <h3 class="service-title">3D Terrain &amp; Planet Generation Compiler</h3>
+          <p class="service-desc">
+            Built a custom worldgen compiler that turns mathematical terrain graphs, climate models, and 3D cave networks into native world generation, powering custom overhangs, river valleys, and full void-built planets and moons.
+          </p>
+          <div class="project-tags" style="margin-bottom:0;">
+            <span class="tag-chip">Math-to-Worldgen Compiler</span>
+            <span class="tag-chip">3D Caves &amp; Overhangs</span>
+            <span class="tag-chip">Climate Decision Trees</span>
+            <span class="tag-chip">Void-Built Planets</span>
+          </div>
+        </article>
+
+        <!-- System 4: Planetary & Microgravity Physics -->
+        <article class="system-card">
+          <div class="system-viz-wrap">
+            <canvas class="system-viz-canvas" data-viz="gravity" aria-label="Animated orbital mechanics and low-gravity parabolic arc visualization"></canvas>
+          </div>
+          <span class="service-num">04 · Orbital &amp; Lunar Mechanics</span>
+          <h3 class="service-title">Planetary &amp; Microgravity Physics System</h3>
+          <p class="service-desc">
+            Designed custom lunar, orbital, and microgravity movement physics with scaled jump curves, custom terminal velocities, and adjusted projectile arcs for space and multi-planet titles.
+          </p>
+          <div class="project-tags" style="margin-bottom:0;">
+            <span class="tag-chip">Lunar &amp; Orbital Gravity</span>
+            <span class="tag-chip">Custom Jump Curves</span>
+            <span class="tag-chip">Projectile Kinematics</span>
+            <span class="tag-chip">Multi-Planet Worlds</span>
+          </div>
+        </article>
+
+        <!-- System 5: Cross-Platform UI & Code Porting Compilers -->
+        <article class="system-card">
+          <div class="system-viz-wrap">
+            <canvas class="system-viz-canvas" data-viz="compiler" aria-label="Animated syntax tree and cross-edition UI compiler visualization"></canvas>
+          </div>
+          <span class="service-num">05 · Migration &amp; Bytecode</span>
+          <h3 class="service-title">Cross-Platform UI &amp; Code Porting Compilers</h3>
+          <p class="service-desc">
+            Built automated porting toolchains that translate desktop game menus, 3D item rigs, and gameplay logic across editions with 1:1 parity, alongside an experimental RISC-V instruction compiler targeting a game scripting runtime.
+          </p>
+          <div class="project-tags" style="margin-bottom:0;">
+            <span class="tag-chip">1:1 UI &amp; Logic Porting</span>
+            <span class="tag-chip">RISC-V Compiler</span>
+            <span class="tag-chip">3D Rig Conversion</span>
+            <span class="tag-chip">Automated Parity Checks</span>
+          </div>
+        </article>
+
+        <!-- System 6: Split-Tunnel Desktop Network Router & Web Platforms -->
+        <article class="system-card">
+          <div class="system-viz-wrap">
+            <canvas class="system-viz-canvas" data-viz="network" aria-label="Animated split-tunneling network packet router visualization"></canvas>
+          </div>
+          <span class="service-num">06 · Networking &amp; Web</span>
+          <h3 class="service-title">Split-Tunnel Desktop Network Router &amp; Web Platforms</h3>
+          <p class="service-desc">
+            Outside of game engines, built a native Windows system-tray launcher that routes web and login traffic through encrypted tunnels while keeping live UDP game packets on direct ISP connections for zero added ping, plus full-stack marketplace apps with split payouts.
+          </p>
+          <div class="project-tags" style="margin-bottom:0;">
+            <span class="tag-chip">Windows Split-Tunneling</span>
+            <span class="tag-chip">Zero-Ping Direct UDP</span>
+            <span class="tag-chip">System-Tray Desktop App</span>
+            <span class="tag-chip">Split-Payout Web Apps</span>
+          </div>
+        </article>
+
       </div>
     </section>
 
@@ -2121,18 +2351,517 @@
         }
       }
 
-      function animateParticles() {
+      function resizeVizCanvases() {
+        document.querySelectorAll('.system-viz-canvas').forEach((vc) => {
+          const w = vc.clientWidth || (vc.parentElement && vc.parentElement.clientWidth) || 460;
+          const h = vc.clientHeight || (vc.parentElement && vc.parentElement.clientHeight) || 92;
+          if (vc.width !== w) vc.width = w;
+          if (vc.height !== h) vc.height = h;
+        });
+      }
+
+      const vizCanvases = Array.from(document.querySelectorAll('.system-viz-canvas'));
+      window.addEventListener('resize', resizeVizCanvases);
+      resizeVizCanvases();
+
+      function drawVizGrid(c, w, h) {
+        c.strokeStyle = 'rgba(148, 163, 184, 0.08)';
+        c.lineWidth = 1;
+        for (let x = 24; x < w; x += 28) {
+          c.beginPath();
+          c.moveTo(x, 0);
+          c.lineTo(x, h);
+          c.stroke();
+        }
+        for (let y = 20; y < h; y += 22) {
+          c.beginPath();
+          c.moveTo(0, y);
+          c.lineTo(w, y);
+          c.stroke();
+        }
+      }
+
+      function drawGear(c, cx, cy, outerR, innerR, teeth, angle, fillCol, strokeCol) {
+        c.save();
+        c.translate(cx, cy);
+        c.rotate(angle);
+        c.beginPath();
+        const step = (Math.PI * 2) / teeth;
+        for (let i = 0; i < teeth; i++) {
+          const a0 = i * step;
+          const a1 = a0 + step * 0.22;
+          const a2 = a0 + step * 0.5;
+          const a3 = a0 + step * 0.72;
+          if (i === 0) c.moveTo(Math.cos(a0) * innerR, Math.sin(a0) * innerR);
+          else c.lineTo(Math.cos(a0) * innerR, Math.sin(a0) * innerR);
+          c.lineTo(Math.cos(a1) * outerR, Math.sin(a1) * outerR);
+          c.lineTo(Math.cos(a2) * outerR, Math.sin(a2) * outerR);
+          c.lineTo(Math.cos(a3) * innerR, Math.sin(a3) * innerR);
+        }
+        c.closePath();
+        c.fillStyle = fillCol;
+        c.strokeStyle = strokeCol;
+        c.lineWidth = 1.5;
+        c.fill();
+        c.stroke();
+        c.beginPath();
+        c.arc(0, 0, innerR * 0.36, 0, Math.PI * 2);
+        c.fillStyle = '#0f172a';
+        c.fill();
+        c.stroke();
+        c.restore();
+      }
+
+      const SYSTEM_VIZ_RENDERERS = {
+        liquid(c, w, h, t) {
+          drawVizGrid(c, w, h);
+          // Terraced dark terrain steps from left to right
+          const steps = [
+            { x0: 0, x1: w * 0.26, y: h * 0.36 },
+            { x0: w * 0.26, x1: w * 0.52, y: h * 0.52 },
+            { x0: w * 0.52, x1: w * 0.78, y: h * 0.68 },
+            { x0: w * 0.78, x1: w, y: h * 0.80 }
+          ];
+          c.fillStyle = '#1e293b';
+          for (const st of steps) {
+            c.fillRect(st.x0, st.y, st.x1 - st.x0 + 1, h - st.y);
+          }
+
+          // Animated sloped fluid mesh cresting across step transitions
+          c.beginPath();
+          c.moveTo(0, h);
+          const samples = 48;
+          for (let i = 0; i <= samples; i++) {
+            const px = (i / samples) * w;
+            let bedY = h * 0.80;
+            for (const st of steps) {
+              if (px >= st.x0 && px <= st.x1) { bedY = st.y; break; }
+            }
+            const depth = 17 - (px / w) * 7;
+            const wave = Math.sin(px * 0.055 - t * 4.4) * 2.4 + Math.cos(px * 0.11 - t * 6.2) * 1.1;
+            c.lineTo(px, bedY - depth + wave);
+          }
+          c.lineTo(w, h);
+          c.closePath();
+          c.fillStyle = 'rgba(56, 189, 248, 0.52)';
+          c.fill();
+
+          // Glowing fluid top surface line
+          c.beginPath();
+          for (let i = 0; i <= samples; i++) {
+            const px = (i / samples) * w;
+            let bedY = h * 0.80;
+            for (const st of steps) {
+              if (px >= st.x0 && px <= st.x1) { bedY = st.y; break; }
+            }
+            const depth = 17 - (px / w) * 7;
+            const wave = Math.sin(px * 0.055 - t * 4.4) * 2.4 + Math.cos(px * 0.11 - t * 6.2) * 1.1;
+            if (i === 0) c.moveTo(px, bedY - depth + wave);
+            else c.lineTo(px, bedY - depth + wave);
+          }
+          c.strokeStyle = '#7dd3fc';
+          c.lineWidth = 2;
+          c.stroke();
+
+          // Flowing current droplets along streamlines
+          for (let i = 0; i < 9; i++) {
+            const p = (t * 0.34 + i / 9) % 1;
+            const px = p * w;
+            let bedY = h * 0.80;
+            for (const st of steps) {
+              if (px >= st.x0 && px <= st.x1) { bedY = st.y; break; }
+            }
+            const depth = (17 - p * 7) * 0.55;
+            const wave = Math.sin(px * 0.055 - t * 4.4) * 1.8;
+            c.beginPath();
+            c.arc(px, bedY - depth + wave, 2.2, 0, Math.PI * 2);
+            c.fillStyle = i % 3 === 0 ? '#fde68a' : '#e0f2fe';
+            c.fill();
+          }
+        },
+
+        contraption(c, w, h, t) {
+          drawVizGrid(c, w, h);
+          // Interlocking gear pair on the left
+          drawGear(c, 58, 46, 26, 19, 8, t * 1.15, 'rgba(56, 189, 248, 0.25)', '#38bdf8');
+          drawGear(c, 102, 55, 19, 13.5, 6, -t * (8 / 6) * 1.15 + 0.38, 'rgba(251, 146, 60, 0.28)', '#fb923c');
+
+          // Curved track spline on the right
+          const rx0 = 148;
+          const rx1 = w - 16;
+          const trackY = (u) => h * 0.55 + Math.sin(u * Math.PI * 1.65) * (h * 0.22);
+
+          c.beginPath();
+          for (let i = 0; i <= 40; i++) {
+            const u = i / 40;
+            const px = rx0 + u * (rx1 - rx0);
+            const py = trackY(u);
+            if (i === 0) c.moveTo(px, py);
+            else c.lineTo(px, py);
+          }
+          c.strokeStyle = 'rgba(148, 163, 184, 0.48)';
+          c.lineWidth = 4;
+          c.stroke();
+
+          c.strokeStyle = '#e2e8f0';
+          c.lineWidth = 1.4;
+          c.stroke();
+
+          // Articulated 3-carriage train moving along curved track
+          const headU = 0.16 + 0.68 * (0.5 - 0.5 * Math.cos(t * 0.85));
+          const dir = Math.sin(t * 0.85) >= 0 ? 1 : -1;
+          for (let car = 0; car < 3; car++) {
+            const cu = Math.max(0.05, Math.min(0.95, headU - dir * car * 0.088));
+            const cx = rx0 + cu * (rx1 - rx0);
+            const cy = trackY(cu);
+            const du = 0.01;
+            const nx = rx0 + (cu + du) * (rx1 - rx0);
+            const ny = trackY(cu + du);
+            const ang = Math.atan2(ny - cy, nx - cx);
+
+            c.save();
+            c.translate(cx, cy - 6);
+            c.rotate(ang);
+            c.fillStyle = car === 0 ? '#fb6f92' : '#38bdf8';
+            c.strokeStyle = '#f8fafc';
+            c.lineWidth = 1.2;
+            c.fillRect(-11, -5, 22, 10);
+            c.strokeRect(-11, -5, 22, 10);
+            c.restore();
+          }
+        },
+
+        terrain(c, w, h, t) {
+          drawVizGrid(c, w, h);
+          const scroll = t * 24;
+          const samples = 56;
+          const ridgeY = (px) => {
+            const gx = px + scroll;
+            const macro = Math.sin(gx * 0.022) * 16 + Math.cos(gx * 0.047) * 9;
+            const detail = Math.sin(gx * 0.11) * 4;
+            return h * 0.54 - macro - detail;
+          };
+
+          // Valley water fill
+          c.fillStyle = 'rgba(56, 189, 248, 0.24)';
+          c.fillRect(0, h * 0.62, w, h * 0.38);
+
+          // Stone strata + grass surface cap
+          c.beginPath();
+          c.moveTo(0, h);
+          for (let i = 0; i <= samples; i++) {
+            const px = (i / samples) * w;
+            c.lineTo(px, ridgeY(px));
+          }
+          c.lineTo(w, h);
+          c.closePath();
+          c.fillStyle = '#334155';
+          c.fill();
+
+          // Carved underground cavern pocket moving with ridge
+          const caveX = w * 0.5 - ((scroll * 0.8) % (w * 0.6)) + w * 0.2;
+          c.beginPath();
+          c.ellipse(caveX, h * 0.77, 34, 10, -0.1, 0, Math.PI * 2);
+          c.fillStyle = '#0f172a';
+          c.fill();
+
+          // Emerald terrain crest line
+          c.beginPath();
+          for (let i = 0; i <= samples; i++) {
+            const px = (i / samples) * w;
+            const py = ridgeY(px);
+            if (i === 0) c.moveTo(px, py);
+            else c.lineTo(px, py);
+          }
+          c.strokeStyle = '#34d399';
+          c.lineWidth = 2.2;
+          c.stroke();
+
+          // Compiler sweep beam across heightfield
+          const scanX = (t * 95) % w;
+          c.beginPath();
+          c.moveTo(scanX, 0);
+          c.lineTo(scanX, h);
+          c.strokeStyle = 'rgba(251, 191, 36, 0.78)';
+          c.lineWidth = 1.6;
+          c.stroke();
+
+          c.beginPath();
+          c.arc(scanX, ridgeY(scanX), 4, 0, Math.PI * 2);
+          c.fillStyle = '#fde68a';
+          c.fill();
+        },
+
+        gravity(c, w, h, t) {
+          drawVizGrid(c, w, h);
+          // Central planet + orbiting moon on the left
+          const px = 68;
+          const py = h * 0.52;
+          c.beginPath();
+          c.ellipse(px, py, 34, 12, -0.26, 0, Math.PI * 2);
+          c.strokeStyle = 'rgba(148, 163, 184, 0.42)';
+          c.lineWidth = 1.3;
+          c.stroke();
+
+          c.beginPath();
+          c.arc(px, py, 16, 0, Math.PI * 2);
+          c.fillStyle = '#0284c7';
+          c.fill();
+          c.strokeStyle = '#7dd3fc';
+          c.lineWidth = 1.4;
+          c.stroke();
+
+          const orbA = t * 1.6;
+          const mx = px + Math.cos(orbA) * 34 * Math.cos(-0.26) - Math.sin(orbA) * 12 * Math.sin(-0.26);
+          const my = py + Math.cos(orbA) * 34 * Math.sin(-0.26) + Math.sin(orbA) * 12 * Math.cos(-0.26);
+          c.beginPath();
+          c.arc(mx, my, 4.2, 0, Math.PI * 2);
+          c.fillStyle = '#fde68a';
+          c.fill();
+
+          // Earth vs Lunar gravity parabolic arcs on the right
+          const sx = 142;
+          const sy = h - 14;
+          const drawArc = (spanX, peakH, speed, col, phase) => {
+            c.beginPath();
+            for (let i = 0; i <= 28; i++) {
+              const u = i / 28;
+              const ax = sx + u * spanX;
+              const ay = sy - 4 * peakH * u * (1 - u);
+              if (i === 0) c.moveTo(ax, ay);
+              else c.lineTo(ax, ay);
+            }
+            c.strokeStyle = col;
+            c.lineWidth = 1.5;
+            c.stroke();
+
+            const pu = (t * speed + phase) % 1;
+            const bx = sx + pu * spanX;
+            const by = sy - 4 * peakH * pu * (1 - pu);
+            c.beginPath();
+            c.arc(bx, by, 3.8, 0, Math.PI * 2);
+            c.fillStyle = '#fff';
+            c.fill();
+          };
+
+          const maxSpan = Math.max(120, w - sx - 18);
+          drawArc(maxSpan * 0.48, h * 0.42, 0.72, 'rgba(251, 113, 133, 0.65)', 0.1);
+          drawArc(maxSpan, h * 0.70, 0.44, 'rgba(52, 211, 153, 0.78)', 0.45);
+        },
+
+        compiler(c, w, h, t) {
+          drawVizGrid(c, w, h);
+          const treeNodes = [
+            { x: 34, y: 26 },
+            { x: 34, y: 66 },
+            { x: 96, y: 46 }
+          ];
+          // Edges in AST
+          c.strokeStyle = 'rgba(167, 139, 250, 0.6)';
+          c.lineWidth = 1.6;
+          for (let i = 0; i < 2; i++) {
+            c.beginPath();
+            c.moveTo(treeNodes[i].x, treeNodes[i].y);
+            c.lineTo(treeNodes[2].x, treeNodes[2].y);
+            c.stroke();
+          }
+
+          // AST nodes pulsing
+          treeNodes.forEach((n, idx) => {
+            const pulse = 5.5 + Math.sin(t * 3 + idx * 1.4) * 1.1;
+            c.beginPath();
+            c.arc(n.x, n.y, pulse, 0, Math.PI * 2);
+            c.fillStyle = idx === 2 ? '#c084fc' : '#38bdf8';
+            c.fill();
+          });
+
+          // Central compiler pipeline bridge + chevron
+          const midX = w * 0.48;
+          c.beginPath();
+          c.moveTo(treeNodes[2].x + 8, 46);
+          c.lineTo(w * 0.68, 46);
+          c.strokeStyle = 'rgba(148, 163, 184, 0.35)';
+          c.lineWidth = 2;
+          c.stroke();
+
+          c.strokeStyle = '#fbbf24';
+          c.lineWidth = 2;
+          c.beginPath();
+          c.moveTo(midX - 5, 38);
+          c.lineTo(midX + 3, 46);
+          c.lineTo(midX - 5, 54);
+          c.stroke();
+
+          // Streaming IR tokens moving into structured target panel
+          for (let i = 0; i < 4; i++) {
+            const p = (t * 0.55 + i * 0.25) % 1;
+            const tx = (treeNodes[2].x + 10) + p * (w * 0.66 - treeNodes[2].x - 10);
+            c.fillStyle = p > 0.5 ? '#34d399' : '#7dd3fc';
+            c.fillRect(tx - 3, 43, 6, 6);
+          }
+
+          // Target structured UI container on right
+          const ux = w * 0.68;
+          const uw = Math.max(76, w - ux - 18);
+          c.fillStyle = 'rgba(30, 41, 59, 0.9)';
+          c.strokeStyle = '#38bdf8';
+          c.lineWidth = 1.5;
+          c.fillRect(ux, 14, uw, 64);
+          c.strokeRect(ux, 14, uw, 64);
+          c.fillStyle = '#38bdf8';
+          c.fillRect(ux, 14, uw, 10);
+
+          const activeSlot = Math.floor(t * 3.2) % 6;
+          const cols = 3;
+          const cellW = (uw - 20) / cols;
+          for (let s = 0; s < 6; s++) {
+            const col = s % cols;
+            const row = Math.floor(s / cols);
+            const sx = ux + 8 + col * (cellW + 2);
+            const sy = 30 + row * 21;
+            c.fillStyle = s === activeSlot ? 'rgba(52, 211, 153, 0.72)' : 'rgba(148, 163, 184, 0.25)';
+            c.fillRect(sx, sy, cellW - 2, 15);
+          }
+        },
+
+        network(c, w, h, t) {
+          drawVizGrid(c, w, h);
+          const hubX = w * 0.34;
+          const hubY = h * 0.5;
+          const endX = w - 22;
+          const topY = 23;
+          const botY = h - 23;
+
+          // Incoming trunk
+          c.beginPath();
+          c.moveTo(12, hubY);
+          c.lineTo(hubX, hubY);
+          c.strokeStyle = 'rgba(148, 163, 184, 0.5)';
+          c.lineWidth = 2;
+          c.stroke();
+
+          // Upper encrypted web lane
+          c.beginPath();
+          c.moveTo(hubX, hubY);
+          c.quadraticCurveTo(hubX + (endX - hubX) * 0.25, topY, endX, topY);
+          c.strokeStyle = 'rgba(167, 139, 250, 0.65)';
+          c.lineWidth = 2;
+          c.stroke();
+
+          // Lower direct UDP lane
+          c.beginPath();
+          c.moveTo(hubX, hubY);
+          c.quadraticCurveTo(hubX + (endX - hubX) * 0.25, botY, endX, botY);
+          c.strokeStyle = 'rgba(52, 211, 153, 0.75)';
+          c.lineWidth = 2;
+          c.stroke();
+
+          // Central diamond router node
+          c.save();
+          c.translate(hubX, hubY);
+          c.rotate(Math.PI / 4);
+          c.fillStyle = '#0284c7';
+          c.strokeStyle = '#7dd3fc';
+          c.lineWidth = 1.6;
+          c.fillRect(-8, -8, 16, 16);
+          c.strokeRect(-8, -8, 16, 16);
+          c.restore();
+
+          // Animated packets split cleanly between lanes
+          for (let i = 0; i < 6; i++) {
+            const isDirect = i % 2 === 0;
+            const speed = isDirect ? 0.62 : 0.38;
+            const p = (t * speed + i * 0.18) % 1;
+            let px, py;
+            if (p < 0.32) {
+              const u = p / 0.32;
+              px = 12 + u * (hubX - 12);
+              py = hubY;
+            } else {
+              const u = (p - 0.32) / 0.68;
+              const targetY = isDirect ? botY : topY;
+              const cx = hubX + (endX - hubX) * 0.25;
+              const inv = 1 - u;
+              px = inv * inv * hubX + 2 * inv * u * cx + u * u * endX;
+              py = inv * inv * hubY + 2 * inv * u * targetY + u * u * targetY;
+            }
+            c.beginPath();
+            c.arc(px, py, isDirect ? 3.5 : 3.1, 0, Math.PI * 2);
+            c.fillStyle = isDirect ? '#34d399' : '#c084fc';
+            c.fill();
+          }
+
+          // Endpoint badges
+          c.fillStyle = '#c084fc';
+          c.beginPath();
+          c.arc(endX, topY, 4.5, 0, Math.PI * 2);
+          c.fill();
+          c.fillStyle = '#34d399';
+          c.beginPath();
+          c.arc(endX, botY, 4.5, 0, Math.PI * 2);
+          c.fill();
+        }
+      };
+
+      function animateParticles(now) {
+        const t = (now || 0) * 0.001;
         ctx.clearRect(0, 0, canvas.width, canvas.height);
         for (const p of particles) {
           p.update();
           p.draw();
         }
+        for (const vc of vizCanvases) {
+          const kind = vc.getAttribute('data-viz');
+          const drawFn = kind ? SYSTEM_VIZ_RENDERERS[kind] : null;
+          if (!drawFn || typeof vc.getContext !== 'function') continue;
+          const vctx = vc.getContext('2d');
+          if (!vctx) continue;
+          const w = vc.width || 460;
+          const h = vc.height || 92;
+          vctx.clearRect(0, 0, w, h);
+          drawFn(vctx, w, h, t);
+        }
         requestAnimationFrame(animateParticles);
       }
 
       syncSeasonFromDate();
-      animateParticles();
+      requestAnimationFrame(animateParticles);
       setInterval(syncSeasonFromDate, 60000);
+
+      /* ── Staggered Scroll-Reveal Across Cards ── */
+      const revealTargets = document.querySelectorAll(
+        '.partner-chip, .service-card, .skills-matrix-card, .system-card, .showcase-card, .structure-card, .contact-card'
+      );
+      document.documentElement.classList.add('js-anim');
+      revealTargets.forEach((el, idx) => {
+        el.classList.add('reveal-card');
+        if (el.style && typeof el.style.setProperty === 'function') {
+          el.style.setProperty('--reveal-delay', ((idx % 3) * 65) + 'ms');
+        }
+      });
+
+      if (typeof IntersectionObserver !== 'undefined') {
+        const vh = window.innerHeight || 900;
+        const observer = new IntersectionObserver((entries) => {
+          for (const entry of entries) {
+            if (entry.isIntersecting) {
+              entry.target.classList.add('is-visible');
+              observer.unobserve(entry.target);
+            }
+          }
+        }, { threshold: 0.06, rootMargin: '0px 0px -20px 0px' });
+
+        revealTargets.forEach((el) => {
+          const rect = typeof el.getBoundingClientRect === 'function' ? el.getBoundingClientRect() : null;
+          if (rect && rect.top < vh) {
+            el.classList.add('is-visible');
+          } else {
+            observer.observe(el);
+          }
+        });
+      } else {
+        revealTargets.forEach((el) => el.classList.add('is-visible'));
+      }
 
       /* ── Project Card Cover / In-Game Image Switchers ── */
       const mediaTabs = document.querySelectorAll('.media-tab-btn');
@@ -2144,7 +2873,9 @@
           const nextLbIdx = tab.getAttribute('data-lb-idx');
           const imgEl = targetId ? document.getElementById(targetId) : null;
           if (imgEl && nextSrc) {
+            imgEl.classList.add('is-fading');
             imgEl.src = nextSrc;
+            setTimeout(() => imgEl.classList.remove('is-fading'), 90);
             const trigger = imgEl.closest('[data-lightbox-idx]');
             if (trigger && nextLbIdx !== null) {
               trigger.setAttribute('data-lightbox-idx', nextLbIdx);
