@@ -494,90 +494,308 @@
       line-height: 1.35;
     }
 
-    /* ── Trusted By / Shipped With Partner Logo Strip ── */
-    .partner-strip {
-      background: rgba(255, 255, 255, 0.94);
+    /* ── Scrollable & Auto-Rotating Teams / Roles Board ── */
+    .roles-board {
+      background: rgba(255, 255, 255, 0.95);
       border: 2px solid var(--card-border);
       border-radius: 18px;
-      padding: 1.25rem 1.5rem 1.35rem;
+      padding: 1.35rem 1.45rem 1.25rem;
       box-shadow: var(--shadow-retro);
       margin-bottom: 3.6rem;
+      position: relative;
       display: flex;
       flex-direction: column;
-      gap: 0.9rem;
+      gap: 0.95rem;
     }
-    .partner-strip-head {
+    .roles-board-head {
       display: flex;
       justify-content: space-between;
       align-items: center;
-      gap: 0.75rem;
+      gap: 0.85rem;
       flex-wrap: wrap;
     }
-    .partner-strip-label {
+    .roles-board-titles {
+      display: flex;
+      flex-direction: column;
+      gap: 0.12rem;
+    }
+    .roles-board-label {
       font-family: 'Space Mono', monospace;
-      font-size: 0.75rem;
+      font-size: 0.76rem;
       font-weight: 700;
       text-transform: uppercase;
       letter-spacing: 0.6px;
-      color: var(--text-muted);
-      line-height: 1.4;
-    }
-    .partner-strip-sub {
-      font-size: 0.78rem;
-      font-weight: 600;
       color: var(--accent-deep);
+      line-height: 1.35;
     }
-    .partner-logos-row {
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 0.85rem;
-      width: 100%;
+    .roles-board-sub {
+      font-size: 0.82rem;
+      font-weight: 500;
+      color: var(--text-muted);
     }
-    .partner-chip {
+    .roles-controls {
       display: flex;
       align-items: center;
-      gap: 0.7rem;
-      background: #fff;
-      border: 1.5px solid var(--subcard-border);
-      border-radius: 12px;
-      padding: 0.55rem 0.9rem 0.55rem 0.6rem;
-      text-decoration: none;
+      gap: 0.5rem;
+      flex-wrap: wrap;
+    }
+    .role-dots {
+      display: flex;
+      align-items: center;
+      gap: 0.34rem;
+    }
+    .role-dot {
+      appearance: none;
+      width: 8px;
+      height: 8px;
+      border-radius: 999px;
+      border: none;
+      padding: 0;
+      background: var(--card-border);
+      cursor: pointer;
+      transition: width 0.2s ease, background-color 0.2s ease;
+    }
+    .role-dot.active {
+      width: 22px;
+      background: var(--accent-primary);
+    }
+    .role-nav-btn {
+      appearance: none;
+      width: 30px;
+      height: 30px;
+      border-radius: 999px;
+      border: 1.5px solid var(--card-border);
+      background: #ffffff;
       color: var(--text-main);
-      box-shadow: var(--subcard-shadow);
-      transition: transform 0.2s ease, border-color 0.2s ease, box-shadow 0.2s ease;
+      font-family: inherit;
+      font-size: 1rem;
+      font-weight: 700;
+      line-height: 1;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      cursor: pointer;
+      transition: background 0.18s ease, border-color 0.18s ease, color 0.18s ease;
     }
-    .partner-chip:hover {
-      transform: translateY(-2px);
+    .role-nav-btn:hover {
+      background: var(--accent-primary);
       border-color: var(--accent-primary);
-      box-shadow: var(--shadow-retro);
+      color: #ffffff;
     }
-    .partner-chip img {
-      width: 38px;
-      height: 38px;
-      border-radius: 9px;
+
+    /* Spotlight Banner (Auto-Rotating Role Display) */
+    .role-spotlight {
+      background: var(--quote-bg-1);
+      border: 1.5px dashed var(--accent-soft);
+      border-radius: 14px;
+      padding: 0.85rem 1rem;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 1rem;
+      transition: opacity 0.16s ease;
+    }
+    .role-spotlight.fading {
+      opacity: 0.45;
+    }
+    .role-spotlight-main {
+      display: flex;
+      align-items: center;
+      gap: 0.85rem;
+      min-width: 0;
+    }
+    .role-logo {
+      width: 44px;
+      height: 44px;
+      border-radius: 10px;
       object-fit: cover;
       background: #0f172a;
       flex-shrink: 0;
     }
-    .partner-chip img.contain-logo {
+    .role-logo.contain-logo {
       object-fit: contain;
-      padding: 3px;
+      padding: 4px;
     }
-    .partner-chip img.light-logo {
+    .role-logo.light-logo {
       background: #f8fafc;
+      border: 1px solid #e2e8f0;
       object-fit: cover;
       padding: 0;
     }
-    .partner-chip-name {
-      font-size: 0.88rem;
+    .role-logo.contain-light-logo {
+      background: #ffffff;
+      border: 1px solid #e2e8f0;
+      object-fit: contain;
+      padding: 3px;
+    }
+    .role-spotlight-text {
+      display: flex;
+      flex-direction: column;
+      gap: 0.18rem;
+      min-width: 0;
+    }
+    .role-spotlight-top {
+      display: flex;
+      align-items: center;
+      gap: 0.48rem;
+      flex-wrap: wrap;
+    }
+    .role-pill-badge {
+      font-family: 'Space Mono', monospace;
+      font-size: 0.72rem;
       font-weight: 700;
-      line-height: 1.15;
+      padding: 0.16rem 0.55rem;
+      border-radius: 999px;
+      background: var(--accent-primary);
+      color: #ffffff;
+      letter-spacing: 0.2px;
+    }
+    .role-pill-badge.past-role {
+      background: var(--badge-bg);
+      color: var(--accent-deep);
+      border: 1px solid var(--accent-soft);
+    }
+    .role-spotlight-org {
+      font-size: 0.98rem;
+      font-weight: 800;
       color: var(--text-main);
     }
-    .partner-chip-role {
-      font-size: 0.71rem;
+    .role-spotlight-desc {
+      font-size: 0.84rem;
       color: var(--text-muted);
-      font-weight: 500;
+      line-height: 1.38;
+    }
+    .role-visit-btn {
+      flex-shrink: 0;
+      text-decoration: none;
+      font-size: 0.78rem;
+      font-weight: 700;
+      color: var(--accent-deep);
+      background: #ffffff;
+      border: 1.5px solid var(--card-border);
+      padding: 0.38rem 0.78rem;
+      border-radius: 999px;
+      white-space: nowrap;
+      transition: all 0.18s ease;
+    }
+    .role-visit-btn:hover {
+      background: var(--accent-primary);
+      border-color: var(--accent-primary);
+      color: #ffffff;
+    }
+
+    /* Horizontal Scrollable Role Cards Track */
+    .roles-track {
+      display: flex;
+      gap: 0.85rem;
+      overflow-x: auto;
+      padding: 0.2rem 0.1rem 0.55rem;
+      scroll-behavior: smooth;
+      scrollbar-width: thin;
+      scrollbar-color: var(--accent-soft) rgba(255, 255, 255, 0.5);
+      cursor: grab;
+      user-select: none;
+    }
+    .roles-track.dragging {
+      cursor: grabbing;
+      scroll-behavior: auto;
+    }
+    .roles-track::-webkit-scrollbar {
+      height: 7px;
+    }
+    .roles-track::-webkit-scrollbar-track {
+      background: rgba(255, 255, 255, 0.6);
+      border-radius: 999px;
+    }
+    .roles-track::-webkit-scrollbar-thumb {
+      background: var(--accent-soft);
+      border-radius: 999px;
+    }
+    .role-card {
+      flex: 0 0 258px;
+      min-width: 258px;
+      background: #ffffff;
+      border: 1.5px solid var(--subcard-border);
+      border-radius: 13px;
+      padding: 0.72rem 0.85rem;
+      display: flex;
+      flex-direction: column;
+      gap: 0.45rem;
+      box-shadow: var(--subcard-shadow);
+      cursor: pointer;
+      text-align: left;
+      transition: transform 0.18s ease, border-color 0.18s ease, box-shadow 0.18s ease;
+    }
+    .role-card:hover {
+      transform: translateY(-2px);
+      border-color: var(--accent-soft);
+    }
+    .role-card.active {
+      border: 2px solid var(--accent-primary);
+      box-shadow: var(--shadow-retro);
+      background: #ffffff;
+    }
+    .role-card-head {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 0.55rem;
+    }
+    .role-card-ident {
+      display: flex;
+      align-items: center;
+      gap: 0.6rem;
+      min-width: 0;
+    }
+    .role-card-ident .role-logo {
+      width: 36px;
+      height: 36px;
+      border-radius: 8px;
+    }
+    .role-card-name {
+      font-size: 0.88rem;
+      font-weight: 700;
+      color: var(--text-main);
+      line-height: 1.18;
+    }
+    .role-card-ext {
+      color: var(--text-muted);
+      text-decoration: none;
+      font-size: 0.82rem;
+      font-weight: 700;
+      padding: 2px 5px;
+      border-radius: 6px;
+      flex-shrink: 0;
+      transition: color 0.15s ease, background 0.15s ease;
+    }
+    .role-card-ext:hover {
+      color: var(--accent-deep);
+      background: var(--badge-bg);
+    }
+    .role-card-badge-row {
+      display: flex;
+      align-items: center;
+      gap: 0.4rem;
+      flex-wrap: wrap;
+    }
+    .role-card-role {
+      font-family: 'Space Mono', monospace;
+      font-size: 0.7rem;
+      font-weight: 700;
+      padding: 0.12rem 0.48rem;
+      border-radius: 999px;
+      background: var(--accent-primary);
+      color: #ffffff;
+    }
+    .role-card-role.past-role {
+      background: var(--badge-bg);
+      color: var(--accent-deep);
+      border: 1px solid var(--accent-soft);
+    }
+    .role-card-note {
+      font-size: 0.74rem;
+      color: var(--text-muted);
+      line-height: 1.32;
     }
 
     /* ── Section Titles ── */
@@ -1213,14 +1431,15 @@
       .structure-gallery { grid-template-columns: 1fr; }
       .featured-grid { grid-template-columns: 1fr; }
       .story-board { padding: 1.75rem 1.4rem; }
-      .partner-logos-row { grid-template-columns: repeat(2, 1fr); }
     }
     @media (max-width: 640px) {
       .floating-nav { flex-direction: column; gap: 0.65rem; border-radius: 18px; padding: 0.85rem 1rem; }
       .nav-brand-group { justify-content: center; }
       .nav-links { justify-content: center; }
       .story-grid { grid-template-columns: 1fr; }
-      .partner-logos-row { grid-template-columns: 1fr; }
+      .roles-board { padding: 1.1rem 1rem 1rem; }
+      .role-spotlight { flex-direction: column; align-items: flex-start; gap: 0.65rem; }
+      .role-card { flex: 0 0 232px; min-width: 232px; }
       .contact-section { padding: 1.6rem 1.2rem; }
       .wrapper { padding: 1.4rem 1rem 4rem; }
     }
@@ -1240,6 +1459,7 @@
         <span class="availability-pill"><span class="avail-dot"></span>Open to Roles &amp; Contracts</span>
       </div>
       <nav class="nav-links">
+        <a href="#teams" class="nav-link-btn">Teams</a>
         <a href="#services" class="nav-link-btn">Skills &amp; Stack</a>
         <a href="#systems" class="nav-link-btn">Systems</a>
         <a href="#featured" class="nav-link-btn">Shipped Work</a>
@@ -1300,7 +1520,7 @@
             Hi, I'm <strong>Minh Lê</strong> (<strong>@Senthemodder</strong>), a software engineer based in <strong>Vietnam</strong>. I get up to speed on unfamiliar codebases and stacks quickly, like working through tough technical problems, and build things from scratch when off-the-shelf tools don't fit.
           </p>
           <p class="story-bio" style="font-size: 0.96rem;">
-            I work across backend services, web apps, compilers, desktop networking tools, and commercial contracts with teams including <strong>Gamefam (Pickade Ltd)</strong>, <strong>Pixelusion</strong>, <strong>Kirill Studios</strong>, <strong>CompyCraft</strong>, <strong>Decayed Team</strong>, and <strong>TeamGalacticraft</strong>, shipping software used by millions across PC, web, mobile, and console.
+            I work across backend services, web apps, compilers, desktop networking tools, and studio roles with <strong>Kirill Studios</strong>, <strong>Gamefam (Pickade Ltd)</strong>, <strong>Pixelusion</strong>, <strong>Spring Games</strong>, <strong>Entity Builds</strong>, <strong>CompyCraft</strong>, <strong>Decayed Reality</strong>, and <strong>Galacticraft</strong>, shipping software used by millions across PC, web, mobile, and console.
           </p>
 
           <div class="quote-sticker">
@@ -1331,61 +1551,179 @@
       </div>
     </section>
 
-    <!-- ── Shipped With / Partner Studio Trust Bar ── -->
-    <div class="partner-strip" aria-label="Partner studios and contract teams">
-      <div class="partner-strip-head">
-        <div class="partner-strip-label">
-          Commercial Contracts &amp; Production Track Record
+    <!-- ── Scrollable & Auto-Rotating Teams / Roles Board ── -->
+    <section class="roles-board" id="teams" aria-label="Teams, studios, and roles board">
+      <div class="washi-tape"></div>
+
+      <div class="roles-board-head">
+        <div class="roles-board-titles">
+          <div class="roles-board-label">Studios, Teams &amp; Organizations I've Worked With</div>
+          <div class="roles-board-sub">Scroll or click through all 9 roles · rotates automatically</div>
         </div>
-        <div class="partner-strip-sub">
-          6 Global Studios &amp; Engineering Teams
+        <div class="roles-controls">
+          <button type="button" class="role-nav-btn" id="rolePrevBtn" aria-label="Previous role">‹</button>
+          <div class="role-dots" id="roleDots" role="tablist" aria-label="Role indicators"></div>
+          <button type="button" class="role-nav-btn" id="roleNextBtn" aria-label="Next role">›</button>
         </div>
       </div>
-      <div class="partner-logos-row">
-        <a href="https://gamefam.com" target="_blank" class="partner-chip">
-          <img src="img/studios/gamefam.webp" alt="Gamefam logo">
-          <div>
-            <div class="partner-chip-name">Gamefam · Pickade Ltd</div>
-            <div class="partner-chip-role">Contract · Commercial Studio</div>
+
+      <!-- Auto-Rotating Active Role Spotlight -->
+      <div class="role-spotlight" id="roleSpotlight" aria-live="polite">
+        <div class="role-spotlight-main">
+          <img id="roleSpotlightImg" src="img/studios/kirill_studios.webp" class="role-logo" alt="Kirill Studios logo">
+          <div class="role-spotlight-text">
+            <div class="role-spotlight-top">
+              <span id="roleSpotlightBadge" class="role-pill-badge">Snr Dev</span>
+              <span id="roleSpotlightOrg" class="role-spotlight-org">Kirill Studios</span>
+            </div>
+            <div id="roleSpotlightDesc" class="role-spotlight-desc">
+              Senior Developer building custom gameplay systems, mob behaviors, and commercial Minecraft Marketplace releases.
+            </div>
           </div>
-        </a>
-        <a href="https://wiki.pixelusion.net" target="_blank" class="partner-chip">
-          <img src="img/studios/pixelusion.webp" class="contain-logo" alt="Pixelusion logo">
-          <div>
-            <div class="partner-chip-name">Pixelusion</div>
-            <div class="partner-chip-role">Commercial Partner Studio</div>
-          </div>
-        </a>
-        <a href="https://kirillstudios.com" target="_blank" class="partner-chip">
-          <img src="img/studios/kirill_studios.webp" alt="Kirill Studios logo">
-          <div>
-            <div class="partner-chip-name">Kirill Studios</div>
-            <div class="partner-chip-role">Contract · Creative-Tech Studio</div>
-          </div>
-        </a>
-        <a href="https://www.minecraft.net/en-us/marketplace/pdp/compycraft/wildlifecraft-1.2/fd7b7f00-30cb-4f1a-a802-fd26025eaf14" target="_blank" class="partner-chip">
-          <img src="img/studios/compycraft.webp" class="light-logo" alt="CompyCraft icon">
-          <div>
-            <div class="partner-chip-name">CompyCraft</div>
-            <div class="partner-chip-role">Commercial Partner Studio</div>
-          </div>
-        </a>
-        <a href="https://decayed-team.com" target="_blank" class="partner-chip">
-          <img src="img/studios/decayed_team.webp" class="contain-logo" alt="Decayed Team logo">
-          <div>
-            <div class="partner-chip-name">Decayed Team</div>
-            <div class="partner-chip-role">Game Development Team · 1M+ Downloads</div>
-          </div>
-        </a>
-        <a href="https://github.com/TeamGalacticraft/Galacticraft" target="_blank" class="partner-chip">
-          <img src="img/studios/galacticraft.webp" class="contain-logo" alt="TeamGalacticraft logo">
-          <div>
-            <div class="partner-chip-name">TeamGalacticraft</div>
-            <div class="partner-chip-role">Open-Source Engineering · 3.7M+ Users</div>
-          </div>
-        </a>
+        </div>
+        <a id="roleSpotlightLink" href="https://kirillstudios.com" target="_blank" rel="noopener" class="role-visit-btn">Visit ↗</a>
       </div>
-    </div>
+
+      <!-- Scrollable Cards Track (All 9 Roles) -->
+      <div class="roles-track" id="rolesTrack">
+
+        <!-- 0: Kirill Studios -->
+        <div class="role-card active" data-role-idx="0" tabindex="0" role="button" aria-label="Snr Dev at Kirill Studios">
+          <div class="role-card-head">
+            <div class="role-card-ident">
+              <img src="img/studios/kirill_studios.webp" class="role-logo" alt="Kirill Studios logo">
+              <div class="role-card-name">Kirill Studios</div>
+            </div>
+            <a href="https://kirillstudios.com" target="_blank" rel="noopener" class="role-card-ext" aria-label="Open Kirill Studios website">↗</a>
+          </div>
+          <div class="role-card-badge-row">
+            <span class="role-card-role">Snr Dev</span>
+          </div>
+          <div class="role-card-note">Official Marketplace Partner · Gameplay systems &amp; commercial releases</div>
+        </div>
+
+        <!-- 1: Gamefam Pickade Ltd -->
+        <div class="role-card" data-role-idx="1" tabindex="0" role="button" aria-label="Contractor at Gamefam Pickade Ltd">
+          <div class="role-card-head">
+            <div class="role-card-ident">
+              <img src="img/studios/gamefam.webp" class="role-logo" alt="Gamefam logo">
+              <div class="role-card-name">Gamefam · Pickade Ltd</div>
+            </div>
+            <a href="https://gamefam.com" target="_blank" rel="noopener" class="role-card-ext" aria-label="Open Gamefam website">↗</a>
+          </div>
+          <div class="role-card-badge-row">
+            <span class="role-card-role">Contractor</span>
+          </div>
+          <div class="role-card-note">Commercial Game Studio · Cross-platform gameplay &amp; Marketplace builds</div>
+        </div>
+
+        <!-- 2: Pixelusion -->
+        <div class="role-card" data-role-idx="2" tabindex="0" role="button" aria-label="Contractor at Pixelusion">
+          <div class="role-card-head">
+            <div class="role-card-ident">
+              <img src="img/studios/pixelusion.webp" class="role-logo contain-logo" alt="Pixelusion logo">
+              <div class="role-card-name">Pixelusion</div>
+            </div>
+            <a href="https://wiki.pixelusion.net" target="_blank" rel="noopener" class="role-card-ext" aria-label="Open Pixelusion Wiki">↗</a>
+          </div>
+          <div class="role-card-badge-row">
+            <span class="role-card-role">Contractor</span>
+          </div>
+          <div class="role-card-note">Marketplace Partner · Dimensional Backpacks &amp; shared studio tooling</div>
+        </div>
+
+        <!-- 3: Spring Games -->
+        <div class="role-card" data-role-idx="3" tabindex="0" role="button" aria-label="Contractor at Spring Games">
+          <div class="role-card-head">
+            <div class="role-card-ident">
+              <img src="img/studios/spring_games.webp" class="role-logo contain-light-logo" alt="Spring Games logo">
+              <div class="role-card-name">Spring Games</div>
+            </div>
+            <a href="https://x.com/SpringCraftMC" target="_blank" rel="noopener" class="role-card-ext" aria-label="Open Spring Games page">↗</a>
+          </div>
+          <div class="role-card-badge-row">
+            <span class="role-card-role">Contractor</span>
+          </div>
+          <div class="role-card-note">Official Marketplace Partner · Custom maps, minigames &amp; mechanics</div>
+        </div>
+
+        <!-- 4: Entity Builds -->
+        <div class="role-card" data-role-idx="4" tabindex="0" role="button" aria-label="Contractor at Entity Builds">
+          <div class="role-card-head">
+            <div class="role-card-ident">
+              <img src="img/studios/entity_builds.webp" class="role-logo contain-light-logo" alt="Entity Builds logo">
+              <div class="role-card-name">Entity Builds</div>
+            </div>
+            <a href="https://entitybuilds.com" target="_blank" rel="noopener" class="role-card-ext" aria-label="Open Entity Builds website">↗</a>
+          </div>
+          <div class="role-card-badge-row">
+            <span class="role-card-role">Contractor</span>
+          </div>
+          <div class="role-card-note">Official Marketplace Partner (200+ packs) · Add-ons &amp; custom worlds</div>
+        </div>
+
+        <!-- 5: CompyCraft -->
+        <div class="role-card" data-role-idx="5" tabindex="0" role="button" aria-label="Ex-Contractor at CompyCraft">
+          <div class="role-card-head">
+            <div class="role-card-ident">
+              <img src="img/studios/compycraft.webp" class="role-logo light-logo" alt="CompyCraft logo">
+              <div class="role-card-name">CompyCraft</div>
+            </div>
+            <a href="https://www.minecraft.net/en-us/marketplace/pdp/compycraft/wildlifecraft-1.2/fd7b7f00-30cb-4f1a-a802-fd26025eaf14" target="_blank" rel="noopener" class="role-card-ext" aria-label="Open CompyCraft Marketplace listing">↗</a>
+          </div>
+          <div class="role-card-badge-row">
+            <span class="role-card-role past-role">Ex-Contractor</span>
+          </div>
+          <div class="role-card-note">Marketplace Partner · WildlifeCraft survival add-on (4.6 ★ · 1,939+ reviews)</div>
+        </div>
+
+        <!-- 6: Decayed Reality -->
+        <div class="role-card" data-role-idx="6" tabindex="0" role="button" aria-label="Ex-Developer at Decayed Reality">
+          <div class="role-card-head">
+            <div class="role-card-ident">
+              <img src="img/studios/decayed_team.webp" class="role-logo contain-logo" alt="Decayed Reality logo">
+              <div class="role-card-name">Decayed Reality</div>
+            </div>
+            <a href="https://decayed-team.com" target="_blank" rel="noopener" class="role-card-ext" aria-label="Open Decayed Team website">↗</a>
+          </div>
+          <div class="role-card-badge-row">
+            <span class="role-card-role past-role">Ex-Developer</span>
+          </div>
+          <div class="role-card-note">Decayed Team · Wither Storm boss phases &amp; tractor beams (1M+ downloads)</div>
+        </div>
+
+        <!-- 7: Galacticraft -->
+        <div class="role-card" data-role-idx="7" tabindex="0" role="button" aria-label="Ex-Developer at Galacticraft">
+          <div class="role-card-head">
+            <div class="role-card-ident">
+              <img src="img/studios/galacticraft.webp" class="role-logo contain-logo" alt="Galacticraft logo">
+              <div class="role-card-name">Galacticraft</div>
+            </div>
+            <a href="https://github.com/TeamGalacticraft/Galacticraft" target="_blank" rel="noopener" class="role-card-ext" aria-label="Open Galacticraft GitHub">↗</a>
+          </div>
+          <div class="role-card-badge-row">
+            <span class="role-card-role past-role">Ex-Developer</span>
+          </div>
+          <div class="role-card-note">TeamGalacticraft · Modern Java rewrite of the space mod (3.7M+ downloads)</div>
+        </div>
+
+        <!-- 8: HCM Youth Union -->
+        <div class="role-card" data-role-idx="8" tabindex="0" role="button" aria-label="Ex-Fundraising Volunteer at HCM Youth Union">
+          <div class="role-card-head">
+            <div class="role-card-ident">
+              <img src="img/studios/hcm_youth_union.webp" class="role-logo contain-light-logo" alt="HCM Youth Union emblem">
+              <div class="role-card-name">HCM Youth Union</div>
+            </div>
+            <a href="https://vi.wikipedia.org/wiki/%C4%90o%C3%A0n_Thanh_ni%C3%AAn_C%E1%BB%99ng_s%E1%BA%A3n_H%E1%BB%93_Ch%C3%AD_Minh" target="_blank" rel="noopener" class="role-card-ext" aria-label="About HCM Youth Union">↗</a>
+          </div>
+          <div class="role-card-badge-row">
+            <span class="role-card-role past-role">Ex-Fundraising Volunteer</span>
+          </div>
+          <div class="role-card-note">Ho Chi Minh City · Community charity fundraising &amp; youth volunteer drives</div>
+        </div>
+
+      </div>
+    </section>
 
     <!-- ── Engineering Capabilities & Skillset Section ── -->
     <section class="services-section" id="services">
@@ -1912,9 +2250,10 @@
         <a href="Minh_Le_CV.pdf" target="_blank" class="footer-link">CV (PDF) ↗</a>
         <a href="https://www.linkedin.com/in/minh-l%C3%AA-561867426/" target="_blank" class="footer-link" style="color: #0a66c2;">LinkedIn ↗</a>
         <a href="https://github.com/Senthemodder" target="_blank" class="footer-link">GitHub ↗</a>
+        <a href="https://kirillstudios.com" target="_blank" class="footer-link">Kirill Studios ↗</a>
         <a href="https://gamefam.com" target="_blank" class="footer-link">Gamefam ↗</a>
         <a href="https://wiki.pixelusion.net" target="_blank" class="footer-link">Pixelusion ↗</a>
-        <a href="https://kirillstudios.com" target="_blank" class="footer-link">Kirill Studios ↗</a>
+        <a href="https://entitybuilds.com" target="_blank" class="footer-link">Entity Builds ↗</a>
         <a href="https://decayed-team.com" target="_blank" class="footer-link">Decayed Team ↗</a>
       </div>
     </footer>
@@ -2262,6 +2601,254 @@
       syncSeasonFromDate();
       animateParticles();
       setInterval(syncSeasonFromDate, 60000);
+
+      /* ── Auto-Rotating & Scrollable Teams / Roles Board ── */
+      const ROLES_DATA = [
+        {
+          org: 'Kirill Studios',
+          role: 'Snr Dev',
+          past: false,
+          img: 'img/studios/kirill_studios.webp',
+          logoClass: 'role-logo',
+          url: 'https://kirillstudios.com',
+          desc: 'Senior Developer building custom gameplay systems, mob behaviors, and commercial Minecraft Marketplace releases.'
+        },
+        {
+          org: 'Gamefam · Pickade Ltd',
+          role: 'Contractor',
+          past: false,
+          img: 'img/studios/gamefam.webp',
+          logoClass: 'role-logo',
+          url: 'https://gamefam.com',
+          desc: 'Contractor building gameplay features, custom items and blocks, and cross-platform Marketplace releases.'
+        },
+        {
+          org: 'Pixelusion',
+          role: 'Contractor',
+          past: false,
+          img: 'img/studios/pixelusion.webp',
+          logoClass: 'role-logo contain-logo',
+          url: 'https://wiki.pixelusion.net',
+          desc: 'Contractor co-developing Dimensional Backpacks (4.1 ★) along with shared internal fluid and multi-block tools.'
+        },
+        {
+          org: 'Spring Games',
+          role: 'Contractor',
+          past: false,
+          img: 'img/studios/spring_games.webp',
+          logoClass: 'role-logo contain-light-logo',
+          url: 'https://x.com/SpringCraftMC',
+          desc: 'Contractor developing custom gameplay mechanics, maps, and minigame systems for an official Marketplace Partner studio.'
+        },
+        {
+          org: 'Entity Builds',
+          role: 'Contractor',
+          past: false,
+          img: 'img/studios/entity_builds.webp',
+          logoClass: 'role-logo contain-light-logo',
+          url: 'https://entitybuilds.com',
+          desc: 'Contractor building add-on systems and custom world features for a long-running Marketplace Partner studio (200+ packs).'
+        },
+        {
+          org: 'CompyCraft',
+          role: 'Ex-Contractor',
+          past: true,
+          img: 'img/studios/compycraft.webp',
+          logoClass: 'role-logo light-logo',
+          url: 'https://www.minecraft.net/en-us/marketplace/pdp/compycraft/wildlifecraft-1.2/fd7b7f00-30cb-4f1a-a802-fd26025eaf14',
+          desc: 'Former contractor working on animal behaviors, spawning, and biome features for WildlifeCraft (4.6 ★ across 1,939+ reviews).'
+        },
+        {
+          org: 'Decayed Reality',
+          role: 'Ex-Developer',
+          past: true,
+          img: 'img/studios/decayed_team.webp',
+          logoClass: 'role-logo contain-logo',
+          url: 'https://decayed-team.com',
+          desc: 'Former developer with Decayed Team building Wither Storm boss phases, tractor beams, and player tracking (1M+ downloads).'
+        },
+        {
+          org: 'Galacticraft',
+          role: 'Ex-Developer',
+          past: true,
+          img: 'img/studios/galacticraft.webp',
+          logoClass: 'role-logo contain-logo',
+          url: 'https://github.com/TeamGalacticraft/Galacticraft',
+          desc: 'Former developer with TeamGalacticraft contributing to the modern Java rewrite of the space mod (3.7M+ downloads).'
+        },
+        {
+          org: 'HCM Youth Union',
+          role: 'Ex-Fundraising Volunteer',
+          past: true,
+          img: 'img/studios/hcm_youth_union.webp',
+          logoClass: 'role-logo contain-light-logo',
+          url: 'https://vi.wikipedia.org/wiki/%C4%90o%C3%A0n_Thanh_ni%C3%AAn_C%E1%BB%99ng_s%E1%BA%A3n_H%E1%BB%93_Ch%C3%AD_Minh',
+          desc: 'Former fundraising volunteer helping organize local charity campaigns and community youth drives in Ho Chi Minh City.'
+        }
+      ];
+
+      const rolesBoard = document.getElementById('teams');
+      const rolesTrack = document.getElementById('rolesTrack');
+      const roleCards = document.querySelectorAll('.role-card');
+      const roleDotsWrap = document.getElementById('roleDots');
+      const rolePrevBtn = document.getElementById('rolePrevBtn');
+      const roleNextBtn = document.getElementById('roleNextBtn');
+      const roleSpotlight = document.getElementById('roleSpotlight');
+      const roleSpotImg = document.getElementById('roleSpotlightImg');
+      const roleSpotBadge = document.getElementById('roleSpotlightBadge');
+      const roleSpotOrg = document.getElementById('roleSpotlightOrg');
+      const roleSpotDesc = document.getElementById('roleSpotlightDesc');
+      const roleSpotLink = document.getElementById('roleSpotlightLink');
+
+      let activeRoleIdx = 0;
+      let roleAutoPaused = false;
+      let roleManualCooldownUntil = 0;
+
+      if (roleDotsWrap) {
+        ROLES_DATA.forEach((item, idx) => {
+          const dot = document.createElement('button');
+          dot.type = 'button';
+          dot.className = 'role-dot' + (idx === 0 ? ' active' : '');
+          dot.setAttribute('aria-label', item.role + ' at ' + item.org);
+          dot.addEventListener('click', () => {
+            roleManualCooldownUntil = Date.now() + 6000;
+            setActiveRole(idx, true);
+          });
+          roleDotsWrap.appendChild(dot);
+        });
+      }
+
+      function scrollRoleCardIntoTrack(cardEl) {
+        if (!rolesTrack || !cardEl) return;
+        const trackRect = rolesTrack.getBoundingClientRect();
+        const cardRect = cardEl.getBoundingClientRect();
+        const currentLeft = rolesTrack.scrollLeft;
+        const offsetInsideTrack = cardRect.left - trackRect.left;
+        const targetLeft = currentLeft + offsetInsideTrack - (trackRect.width - cardRect.width) / 2;
+        rolesTrack.scrollTo({
+          left: Math.max(0, targetLeft),
+          behavior: 'smooth'
+        });
+      }
+
+      function setActiveRole(idx, scrollTrack) {
+        activeRoleIdx = ((idx % ROLES_DATA.length) + ROLES_DATA.length) % ROLES_DATA.length;
+        const data = ROLES_DATA[activeRoleIdx];
+
+        roleCards.forEach((card, i) => {
+          card.classList.toggle('active', i === activeRoleIdx);
+        });
+        if (roleDotsWrap) {
+          Array.from(roleDotsWrap.children).forEach((dot, i) => {
+            dot.classList.toggle('active', i === activeRoleIdx);
+          });
+        }
+
+        if (roleSpotlight) {
+          roleSpotlight.classList.add('fading');
+          setTimeout(() => {
+            if (roleSpotImg) {
+              roleSpotImg.src = data.img;
+              roleSpotImg.className = data.logoClass;
+              roleSpotImg.alt = data.org + ' logo';
+            }
+            if (roleSpotBadge) {
+              roleSpotBadge.textContent = data.role;
+              roleSpotBadge.className = 'role-pill-badge' + (data.past ? ' past-role' : '');
+            }
+            if (roleSpotOrg) roleSpotOrg.textContent = data.org;
+            if (roleSpotDesc) roleSpotDesc.textContent = data.desc;
+            if (roleSpotLink) roleSpotLink.href = data.url;
+            roleSpotlight.classList.remove('fading');
+          }, 110);
+        }
+
+        if (scrollTrack && roleCards[activeRoleIdx]) {
+          scrollRoleCardIntoTrack(roleCards[activeRoleIdx]);
+        }
+      }
+
+      roleCards.forEach((card) => {
+        card.addEventListener('click', (e) => {
+          if (e.target.closest('a')) return;
+          const idx = parseInt(card.getAttribute('data-role-idx') || '0', 10);
+          roleManualCooldownUntil = Date.now() + 6000;
+          setActiveRole(idx, true);
+        });
+        card.addEventListener('keydown', (e) => {
+          if (e.key === 'Enter' || e.key === ' ') {
+            if (e.target.closest('a')) return;
+            e.preventDefault();
+            const idx = parseInt(card.getAttribute('data-role-idx') || '0', 10);
+            roleManualCooldownUntil = Date.now() + 6000;
+            setActiveRole(idx, true);
+          }
+        });
+      });
+
+      if (rolePrevBtn) {
+        rolePrevBtn.addEventListener('click', () => {
+          roleManualCooldownUntil = Date.now() + 6000;
+          setActiveRole(activeRoleIdx - 1, true);
+        });
+      }
+      if (roleNextBtn) {
+        roleNextBtn.addEventListener('click', () => {
+          roleManualCooldownUntil = Date.now() + 6000;
+          setActiveRole(activeRoleIdx + 1, true);
+        });
+      }
+
+      if (rolesBoard) {
+        rolesBoard.addEventListener('mouseenter', () => { roleAutoPaused = true; });
+        rolesBoard.addEventListener('mouseleave', () => { roleAutoPaused = false; });
+        rolesBoard.addEventListener('focusin', () => { roleAutoPaused = true; });
+        rolesBoard.addEventListener('focusout', () => { roleAutoPaused = false; });
+      }
+
+      if (rolesTrack) {
+        let isDown = false;
+        let startX = 0;
+        let startScroll = 0;
+        let dragged = false;
+
+        rolesTrack.addEventListener('mousedown', (e) => {
+          if (e.target.closest('a')) return;
+          isDown = true;
+          dragged = false;
+          startX = e.pageX - rolesTrack.offsetLeft;
+          startScroll = rolesTrack.scrollLeft;
+        });
+        window.addEventListener('mouseup', () => {
+          isDown = false;
+          rolesTrack.classList.remove('dragging');
+        });
+        rolesTrack.addEventListener('mousemove', (e) => {
+          if (!isDown) return;
+          const x = e.pageX - rolesTrack.offsetLeft;
+          const walk = x - startX;
+          if (Math.abs(walk) > 5) {
+            dragged = true;
+            rolesTrack.classList.add('dragging');
+            roleManualCooldownUntil = Date.now() + 5000;
+            rolesTrack.scrollLeft = startScroll - walk;
+          }
+        });
+        rolesTrack.addEventListener('click', (e) => {
+          if (dragged) {
+            e.stopPropagation();
+            dragged = false;
+          }
+        }, true);
+        rolesTrack.addEventListener('touchstart', () => {
+          roleManualCooldownUntil = Date.now() + 5000;
+        }, { passive: true });
+      }
+
+      setInterval(() => {
+        if (roleAutoPaused || Date.now() < roleManualCooldownUntil) return;
+        setActiveRole(activeRoleIdx + 1, true);
+      }, 3200);
 
       /* ── Project Card Cover / In-Game Image Switchers ── */
       const mediaTabs = document.querySelectorAll('.media-tab-btn');
