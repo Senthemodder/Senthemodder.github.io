@@ -217,6 +217,31 @@
       padding: 1px 6px;
       font-weight: 700;
     }
+    .crypto-spoiler-box {
+      cursor: pointer;
+      font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+      user-select: none;
+    }
+    .crypto-spoiler-box .spoiler-lead,
+    .crypto-spoiler-box ul li,
+    .crypto-spoiler-box ul li strong {
+      color: #0f172a;
+      transition: color 0.16s ease;
+    }
+    .crypto-spoiler-box.is-revealed {
+      user-select: text;
+    }
+    .crypto-spoiler-box.is-revealed .spoiler-lead,
+    .crypto-spoiler-box.is-revealed ul li,
+    .crypto-spoiler-box.is-revealed ul li strong {
+      color: #ffffff;
+    }
+    .crypto-spoiler-box .spoiler-pill::after {
+      content: "CLICK BOX TO TURN WORDS WHITE";
+    }
+    .crypto-spoiler-box.is-revealed .spoiler-pill::after {
+      content: "CLICK TO HIDE WORDS";
+    }
     .pwn-topbar {
       padding: 10px 16px;
       background: #b91c1c;
@@ -397,10 +422,13 @@
           <strong style="color: #fde047; display: block; font-size: 15px; margin-bottom: 3px;">DISCLAIMER: TRUST INDEPENDENT CORPORATE LEGAL TEAMS (VERDICTS FINISHED &amp; FINAL)</strong>
           Both <strong>Strikingly, Inc.'s Corporate Legal Team</strong> (San Francisco, CA) and <strong>MediaFire's Director of Customer Support</strong> (<code>Daniel Goebel</code>, Shenandoah, TX) were provided with the complete, unredacted primary-source record (cryptographic Git <code>SHA-1</code> commit objects, <code>0xB5690EEEBB952194</code> PGP signatures, full unedited Discord logs, and <code>Tazo</code>'s own manifestos) and reviewed it thoroughly before acting. Unlike teenage Discord moderators judging off rumors and <em>&ldquo;vibes,&rdquo;</em> independent US corporate legal and compliance officers act strictly on verified statutory and contractual proof. <strong>We consider their independent verdicts finished, binding, and final.</strong>
         </div>
-        <div class="corp-final-banner" style="margin: 0 0 12px; padding: 11px 14px; background: #0b1120; color: #f8fafc; border: 2px solid #eab308; font-size: 13.9px; line-height: 1.55;">
-          <strong style="color: #fde047; display: block; font-size: 14.8px; margin-bottom: 4px;">LEGAL NOTICE ON CODE AUTHORSHIP (<code>17 U.S.C. &sect;&sect; 201(a), 204(a)</code>): WORDS ARE MEANINGLESS; CRYPTOGRAPHIC VERIFICATIONS ARE FINAL</strong>
-          Discord claims, anonymous screenshots, and Google Doc spin carry zero legal weight against hardware-signed cryptographic proof of authorship:
-          <ul style="margin: 6px 0 0; padding-left: 19px; color: #e2e8f0;">
+        <div class="corp-final-banner crypto-spoiler-box" tabindex="0" role="button" aria-expanded="false" onclick="var r=this.classList.toggle('is-revealed');this.setAttribute('aria-expanded',r?'true':'false');" onkeydown="if(event.key==='Enter'||event.key===' '){event.preventDefault();var r=this.classList.toggle('is-revealed');this.setAttribute('aria-expanded',r?'true':'false');}" style="margin: 0 0 12px; padding: 11px 14px; background: #0b1120; border: 2px solid #eab308; font-size: 13.4px; line-height: 1.6;">
+          <div style="display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 8px; margin-bottom: 4px;">
+            <strong style="color: #fde047; font-size: 14.4px;">LEGAL NOTICE ON CODE AUTHORSHIP (<code>17 U.S.C. &sect;&sect; 201(a), 204(a)</code>): WORDS ARE MEANINGLESS; CRYPTOGRAPHIC VERIFICATIONS ARE FINAL</strong>
+            <span class="spoiler-pill" style="display: inline-block; padding: 2px 8px; background: #1e293b; color: #fde047; border: 1px solid #eab308; font-size: 11px; font-weight: 700;"></span>
+          </div>
+          <span class="spoiler-lead">Discord claims, anonymous screenshots, and Google Doc spin carry zero legal weight against hardware-signed cryptographic proof of authorship:</span>
+          <ul style="margin: 6px 0 0; padding-left: 19px;">
             <li style="margin-bottom: 3px;"><strong>Immutable GitHub Database Identity (<code>UID 120316848</code>):</strong> Inside <code>TazoLaTaza/Decayed-Reality</code>, <strong><code>100</code> commits (<code>83</code> non-merge) touching <code>3,525</code> file paths</strong> (including <code>53</code> foundational pre-<code>v2.1</code> commits <code>a19521d65196..12d892f0fadb</code> and <code>main</code> <code>HEAD</code> <code>5c6385ef5ae0</code>) record immutable GitHub numeric user ID <code>120316848</code> (<code>api.github.com/user/120316848</code> &rarr; <code>Senthemodder</code>, the sole verified owner of <code>senthemodder.github.io</code>).</li>
             <li style="margin-bottom: 3px;"><strong>Sealed Under <code>304</code> GitHub, Inc. HSM RSA PGP Signatures (<code>0xB5690EEEBB952194</code>):</strong> Respondent's own signed commit <code>59ae42d26516db9f8a5dd1869c2015a2d23553a6</code> (<code>Tazo!</code>, <code>2026-02-12</code>) and <code>cbb6bbc036d8a2727105820384276501f60b67e2</code> (<code>doofus</code>, <code>2026-06-18</code>) are digitally signed by GitHub, Inc.'s private Hardware Security Module RSA key (<code>github.com/web-flow.gpg</code>). Because Git is a cryptographic Merkle DAG, every ancestor <code>SHA-1</code> commit I authored is mathematically locked inside GitHub's RSA signature; disputing my authorship is mathematically equivalent to forging GitHub Inc.'s private HSM key.</li>
             <li style="margin-bottom: 3px;"><strong>Corroborated by Respondent's Own Repo Audit:</strong> Both <code>Tazo</code>'s PGP-sealed commit <code>ba6abcdd41</code> (<code>"refracted OMG YOUA RE COOKINGGG"</code> on <code>clusterPull.js</code>) and his hired developer <code>Ijatullah [BAO]</code>'s Nov 26 audit (<code>~1,200</code> lines + <code>6</code> <code>main</code> commits across <code>EnchantmentLib</code>, <code>tentacleattacks</code>, <code>fluids</code>, <code>stormCommands</code>, <code>endertownGenerator</code>, <code>beamController</code>, <code>mobflee</code>, <code>WitherCombat</code>) independently confirm my exact authorship inside his private repository.</li>

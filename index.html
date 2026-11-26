@@ -1633,12 +1633,41 @@
     }
     .pwn-mini-card:hover { animation-play-state: paused; }
     .pwn-mini-card code, .authorship-dark-box code {
-      background: #1e293b;
-      color: #fde047;
-      border: 1px solid #f59e0b;
+      background: #052e16;
+      color: #86efac;
+      border: 1px solid #22c55e;
       padding: 1px 6px;
       border-radius: 4px;
       font-weight: 700;
+    }
+    .pwn-mini-card code {
+      background: #1e293b;
+      color: #fde047;
+      border: 1px solid #f59e0b;
+    }
+    .authorship-dark-box {
+      cursor: pointer;
+      font-family: 'Space Mono', ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+      color: #0f172a;
+      user-select: none;
+      transition: color 0.16s ease;
+    }
+    .authorship-dark-box strong.prose-strong {
+      color: #0f172a;
+      transition: color 0.16s ease;
+    }
+    .authorship-dark-box.is-revealed {
+      color: #ffffff;
+      user-select: text;
+    }
+    .authorship-dark-box.is-revealed strong.prose-strong {
+      color: #ffffff;
+    }
+    .authorship-dark-box .spoiler-pill::after {
+      content: "CLICK TO TURN WORDS WHITE";
+    }
+    .authorship-dark-box.is-revealed .spoiler-pill::after {
+      content: "CLICK TO HIDE WORDS";
     }
   </style>
 </head>
@@ -1657,8 +1686,12 @@
       <div style="margin: 0 0 10px; padding: 8px 12px; border-radius: 8px; background: #14532d; color: #f0fdf4; font-size: 0.86rem; line-height: 1.5;">
         <strong style="color: #fde047;">Trust Independent Corporate Legal Teams (Verdicts Finished &amp; Final):</strong> Both <strong>Strikingly, Inc.'s Legal Team</strong> (San Francisco) and <strong>MediaFire's Director of Customer Support</strong> (<span style="font-family: 'Space Mono', monospace; background: #052e16; color: #86efac; padding: 1px 6px; border-radius: 4px; border: 1px solid #22c55e; font-weight: 700;">Daniel Goebel</span>) received the full primary-source archive and thoroughly reviewed all evidence before issuing binding enforcement actions. Corporate legal counsel decide on verified proof, not Discord rumors; we consider their verdicts finished and final.
       </div>
-      <div class="authorship-dark-box" style="margin: 0 0 10px; padding: 9px 12px; border-radius: 8px; background: #0b1120; color: #f8fafc; border: 1.5px solid #eab308; font-size: 0.85rem; line-height: 1.5;">
-        <strong style="color: #fde047;">Legal Authorship Notice (17 U.S.C. &sect;&sect; 201(a), 204(a)) &middot; Words Are Meaningless; Cryptographic Verifications Are Final:</strong> My authorship of <code>100</code> commits (<code>3,525</code> file paths, including <code>53</code> pre-<code>v2.1</code> foundational commits and <code>main</code> <code>HEAD</code> <code>5c6385ef5ae0</code>) inside <code>TazoLaTaza/Decayed-Reality</code> is cryptographically bound to immutable GitHub UID <code>120316848</code> (<code>@Senthemodder</code>) and sealed as Merkle ancestors inside <strong><code>304</code> GitHub, Inc. Hardware-Security-Module (HSM) RSA PGP signatures</strong> (<code>0xB5690EEEBB952194</code>, <code>github.com/web-flow.gpg</code>), corroborated by <code>Ijatullah [BAO]</code>'s Nov 26 audit confirming <code>~1,200</code> lines + <code>6</code> <code>main</code> commits remain in the repo. Zero signed transfer exists (<code>$0.00</code> paid); statutory ownership is mathematically and legally final.
+      <div class="authorship-dark-box" tabindex="0" role="button" aria-expanded="false" onclick="var r=this.classList.toggle('is-revealed');this.setAttribute('aria-expanded',r?'true':'false');" onkeydown="if(event.key==='Enter'||event.key===' '){event.preventDefault();var r=this.classList.toggle('is-revealed');this.setAttribute('aria-expanded',r?'true':'false');}" style="margin: 0 0 10px; padding: 9px 12px; border-radius: 8px; background: #0b1120; border: 1.5px solid #eab308; font-size: 0.81rem; line-height: 1.56;">
+        <div style="display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 6px; margin-bottom: 4px;">
+          <strong style="color: #fde047;">Legal Authorship Notice (<code>17 U.S.C. &sect;&sect; 201(a), 204(a)</code>) &middot; Words Are Meaningless; Cryptographic Verifications Are Final:</strong>
+          <span class="spoiler-pill" style="display: inline-block; padding: 1px 7px; border-radius: 4px; background: #1e293b; color: #fde047; border: 1px solid #eab308; font-size: 0.7rem; font-weight: 700;"></span>
+        </div>
+        My authorship of <code>100</code> commits (<code>3,525</code> file paths, including <code>53</code> pre-<code>v2.1</code> foundational commits and <code>main</code> <code>HEAD</code> <code>5c6385ef5ae0</code>) inside <code>TazoLaTaza/Decayed-Reality</code> is cryptographically bound to immutable GitHub UID <code>120316848</code> (<code>@Senthemodder</code>) and sealed as Merkle ancestors inside <strong class="prose-strong"><code>304</code> GitHub, Inc. Hardware-Security-Module (HSM) RSA PGP signatures</strong> (<code>0xB5690EEEBB952194</code>, <code>github.com/web-flow.gpg</code>), corroborated by <code>Ijatullah [BAO]</code>'s Nov 26 audit confirming <code>~1,200</code> lines + <code>6</code> <code>main</code> commits remain in the repo. Zero signed transfer exists (<code>$0.00</code> paid); statutory ownership is mathematically and legally final.
       </div>
       <p style="margin: 0 0 10px; font-size: 0.92rem; line-height: 1.52; color: #1e293b;">
         Reviewed by <strong>Strikingly, Inc.'s corporate Legal Team</strong> (independent, law-trained compliance counsel in San Francisco with zero stake in Minecraft drama, not an automated DMCA bot), <code>decayed-team.com</code> / <code>decayed-team.mystrikingly.com</code> was <strong>permanently terminated with zero appeal or counter-notice path</strong> under <strong>5 Terms of Service violations</strong>: <strong>(a)</strong> Defamation, libel, harassment &amp; unconsented private DMs &middot; <strong>(b)</strong> Harm to minors (publicly outing an underage artist's private DMs as dogpile bait, mobilizing an underage server raid &amp; operating the site <em>"as a Minor"</em>) &middot; <strong>(d)</strong> Manipulating identifiers (black-markering a <code>$0</code> non-client into a fake <em>"victim"</em>) &middot; <strong>(e)</strong> Unauthorized proprietary material &middot; <strong>(f)</strong> Intellectual property infringement. In his panic Google Doc mirror, <code>Tazo</code> also pasted 5 lines of <code>document.referrer</code> JavaScript from <em>this</em> site claiming it "interfered with <code>decayed-team.com</code>," and missed <code>ThatMaidenJaden</code> + <code>i worked for free ?</code> under his own red marker.
