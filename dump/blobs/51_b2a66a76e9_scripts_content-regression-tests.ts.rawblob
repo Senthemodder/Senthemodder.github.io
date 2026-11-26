@@ -1,0 +1,61 @@
+================================================================================
+CRYPTOGRAPHIC FORENSIC INSPECTION CARD (17 U.S.C. §§ 102(b), 107 COMPLIANT)
+================================================================================
+Legal Notice: Full verbatim body intentionally omitted so zero executable source
+modules or complete prose documents from TazoLaTaza/Decayed-Reality are hosted.
+This record publishes strictly uncopyrightable cryptographic Git facts (§ 102(b)),
+structural symbol/heading metadata, and a bounded evidentiary excerpt (§ 107)
+establishing autonomous OpenAI Codex harness usage, CWSBP derivation, and cover-up
+deletion commits ('papoi', 'ohmama', 'beca cultural', '1b6facfdcd').
+--------------------------------------------------------------------------------
+Artifact Index           : #51
+Original Repository Path : scripts/content-regression-tests.ts
+Exact Git Blob SHA-1     : b2a66a76e9d227f99dcac79374e685c541ecb890
+Exact Raw SHA-256        : 335b07bcdeb31f23b50e622b0fc20deaa4f813c56328204e1a6f401978c0384a
+Original Byte Length     : 12,272 bytes (114 lines)
+Provenance / Wipe Commit : Tazo Wiped AI / Codex / Validation / Test File — Tentacle is finished! (wiped 23 automated *-tests.ts suites)
+Forensic Marker Counts   : Codex/Harness refs=0 | CWSBP/tainted refs=0 | Em/En-dashes=0
+--------------------------------------------------------------------------------
+OFFLINE CRYPTOGRAPHIC VERIFICATION (RUN AGAINST BARE COMMIT/TREE GRAPH):
+  git log --all --full-history --stat -- "scripts/content-regression-tests.ts"
+  # Any local clone holding blob b2a66a76e9d2 verifies exact bytes via:
+  git cat-file -t b2a66a76e9d227f99dcac79374e685c541ecb890 && git cat-file -s b2a66a76e9d227f99dcac79374e685c541ecb890   # -> blob, 12272
+--------------------------------------------------------------------------------
+DECLARED SYMBOL / TEST INVENTORY (up to 25 shown):
+  * L1: fs
+  * L2: subscribers
+  * L3: signal
+  * L4: emit
+  * L5: events
+  * L7: Stack
+  * L14: Inventory
+  * L20: left
+  * L26: MockEntity
+  * L40: MockPlayer
+  * L49: cache
+  * L50: world
+  * L51: minecraft
+  * L52: load
+  * L54: module
+  * L55: localRequire
+  * L64: js
+  * L67: dimension
+  * L68: d
+  * L73: values
+  * L78: check
+  * L81: inv
+  * L84: d
+  * L86: container
+  * L90: item
+--------------------------------------------------------------------------------
+BOUNDED FAIR-USE EVIDENTIARY EXCERPT (8 of 114 lines shown; full file omitted):
+  L0004 | const emit=(name:string,event:any)=>{for(const callback of subscribers.get(name)??[])callback(event)};
+  L0074 |  d.block={typeId:"decayed:withered_phlegm_block",location:{x:0,y:0,z:0},dimension:d,permutation,setPermutation:()=>{},offset:
+  L0078 | const check=(name:string,f:()=>void)=>{f();assertions++;console.log("PASS "+name)};
+  L0083 | load("src/content/phlegm.ts");const phlegm=components.get("decayed:withered_phlegm_block");
+  L0085 | emit("playerPlaceBlock",{block:d.block});
+  L0098 | check("breaking phlegm drops each stack once and removes its helper",()=>{emit("playerBreakBlock",{block:d.block,brokenBlockP
+  L0106 | check("scope starts once and restores camera on stop",()=>{emit("itemStartUse",{source:player,itemStack:player.inventory.getI
+  L0107 | check("slot changes close the scope",()=>{emit("itemStartUse",{source:player,itemStack:player.inventory.getItem(0)});player.s
+  [... 106 lines omitted under 17 U.S.C. § 107 transformative evidentiary scope ...]
+================================================================================

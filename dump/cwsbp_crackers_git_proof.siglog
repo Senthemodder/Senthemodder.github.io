@@ -1,0 +1,510 @@
+================================================================================
+CRYPTOGRAPHIC AUDIT: nonamecrackers2 (Cracker's Wither Storm Mod) & CWSBP RECORD
+================================================================================
+
+1. UPSTREAM LICENSE & COPYRIGHT NOTICE (nonamecrackers2/crackers-wither-storm-mod)
+--------------------------------------------------------------------------------
+- Modrinth API (https://api.modrinth.com/v2/project/kWjNGDUH):
+    "license": { "id": "LicenseRef-All-Rights-Reserved" }
+- GitHub HEAD (b46c4e9c07f923a960b5a06b6f1466be80808aae, README.md blob 1a53ea33b0cbe282bb6d11e7963600df1afbd7dc):
+    "The mod is currently not open source, however translators can feel free to use
+     the lang files included in this repo to translate the mod to other languages."
+- Official Wiki Copyright-Info (https://github.com/nonamecrackers2/crackers-wither-storm-mod/wiki/Copyright-Info):
+    "The Wither Storm concept isn't owned by us, however the term 'Cracker's Wither
+     Storm Mod', and our assets (besides the majority of the sound effects), is.
+     If you want to use them you MUST GET PERMISSION FROM US! ... Textures and models
+     were made by the CWSM team using reference images from the game. They are NOT
+     exact models. The code for the mod is written by nonamecrackers2, with help from Nazaru."
+
+2. PUBLIC CLAIM IN DECAYED NEWSLETTER 1 (https://www.decayed-team.com/blog/newsletter-1)
+--------------------------------------------------------------------------------
+Line 87 (TazoLaTaza, published 2026-11-24T05:14:11-08:00):
+    "Its important to mention that on my side, I haven't worked on CWSBP so I never
+     fixed anything there, being a project that Persom and Cluster have put a lot of effort into."
+
+3. VERBATIM CWSBP 0.5.0 MANIFESTS COMMITTED BY TazoLaTaza (ccb25d2819d4c17f43dddd3d81435fe60106b389)
+   Note: (a) 'Port Created by Persom with the help of Tazo, Spud & The Decayed Team'
+         (b) '"url": "https://decayed-team.mystrikingly.com/"' (Strikingly Site ID 14340141)
+         (c) '"license": "MIT"' stamped onto a port of an All-Rights-Reserved mod
+--------------------------------------------------------------------------------
+--- [ccb25d2819] storm_decompiled_phases/CWSBP INTEGRATION/BP/manifest.json (blob 0a1c149faf996ec80aa3ad4484f38ee3b6d5c109) ---
+{
+	"format_version": 3,
+	"header": {
+		"description": "Original Creator: §6nonamecrackers2§r - Port Created by §dPersom§r with the help of §aTazo, §3Spud§r & §uThe Decayed Team ©§r",
+		"name": "§5§lCWSM: Bedrock Port 0.5.0§r",
+		"uuid": "2e283826-7be7-4da6-b51c-33ec0a36f3c8",
+		"version": "0.5.0",
+		"min_engine_version": "1.21.131"
+	},
+	"modules": [
+		{
+			"type": "data",
+			"uuid": "96c7eda6-902a-41f3-b696-bdbef428a681",
+			"version": "1.0.0"
+		},
+		{
+			"type": "script",
+			"uuid": "6bb25911-7695-4659-9c8f-51e6c25cf1de",
+			"entry": "scripts/WitherStormMod.js",
+			"version": "1.0.0"
+		}
+	],
+	"dependencies": [
+		{
+			"module_name": "@minecraft/server",
+			"version": "beta"
+		},
+		{
+			"module_name": "@minecraft/server-ui",
+			"version": "beta"
+		},
+		{
+			"uuid": "cf1a64eb-dfa3-4178-885b-70a1cde920ea",
+			"version": "0.5.0"
+		}
+	],
+	"metadata": {
+		"product_type": "addon",
+		"authors": [
+			"Persom",
+			"Spud",
+			"The Decayed Team ©"
+		],
+		"url": "https://decayed-team.mystrikingly.com/",
+		"license": "MIT",
+		"generated_with": {
+			"bridge": [
+				"2.7.54"
+			],
+			"dash": [
+				"0.11.7"
+			]
+		}
+	}
+}
+
+--- [ccb25d2819] storm_decompiled_phases/CWSBP INTEGRATION/RP/manifest.json (blob 3c4f127fd637578e31364afd8e6238adc435015e) ---
+{
+	"format_version": 2,
+	"header": {
+		"description": "Original Creator: §6nonamecrackers2§r - Port Created by §dPersom§r with the help of §aTazo, §3Spud§r & §uThe Decayed Team ©§r",
+		"name": "§5§lCWSM: Bedrock Port 0.5.0§r",
+		"uuid": "cf1a64eb-dfa3-4178-885b-70a1cde920ea",
+		"version": [
+			0,
+			5,
+			0
+		],
+		"min_engine_version": [
+			1,
+			21,
+			130
+		]
+	},
+	"modules": [
+		{
+			"type": "resources",
+			"uuid": "9e2a764c-5038-42b8-aa19-3928c9b87e96",
+			"version": [
+				1,
+				0,
+				0
+			]
+		}
+	],
+	"capabilities": [
+		"pbr"
+	],
+	"dependencies": [
+		{
+			"uuid": "2e283826-7be7-4da6-b51c-33ec0a36f3c8",
+			"version": [
+				0,
+				5,
+				0
+			]
+		}
+	],
+	"metadata": {
+		"authors": [
+			"Persom",
+			"Spud",
+			"The Decayed Team ©"
+		],
+		"url": "https://decayed-team.mystrikingly.com/",
+		"license": "MIT",
+		"generated_with": {
+			"bridge": [
+				"2.7.54"
+			],
+			"dash": [
+				"0.11.7"
+			]
+		}
+	}
+}
+
+4. RAW GIT COMMIT OBJECTS BY [redacted-owner-email] IMPORTING, ADAPTING, RENAMING & WIPING CWSBP
+--------------------------------------------------------------------------------
+commit 526e38b76cf8a2fde774c6f9889a38c6905bbccb  [files touched: 10]
+tree 590ba20aeb78238d573c7d18a8b5c3f040cb9a2d
+parent 2f0d423b34f4fbe6b2a8d3eeddb580da1306f52d
+author TazoLaTaza <[redacted-owner-email]> 1786211534 -0300
+committer TazoLaTaza <[redacted-owner-email]> 1786211534 -0300
+
+implemented cwsbp skybox systems into decayed.
+
+commit 49bf17122a21efebdedcdab0c960d7bc37e55398  [files touched: 1]
+tree 685477f7fecedfde841ec41d082e37b5021ab93e
+parent 2bf3dc9ea3a1e0e51771bf36b3edf3a3566dac8a
+author Tazo! <[redacted-owner-email]> 1786292893 -0300
+committer Tazo! <[redacted-owner-email]> 1786292893 -0300
+
+feat: add CWS-style pre-lock head attack acquisition
+
+commit e9ca52c954f2d2733e4e66b2b559518a7a823132  [files touched: 1]
+tree 5b50706b5a8c2792d77b5f42f01cb2a704c300cb
+parent d4e065ba0a25f9f2daf0891801217809cee8a79a
+author Tazo! <[redacted-owner-email]> 1786316892 -0300
+committer Tazo! <[redacted-owner-email]> 1786316892 -0300
+
+Add CWS-style storm death cluster scatter
+
+commit aaa92c3387bae7aeedea736bc1da1bb135eb3aae  [files touched: 1]
+tree c6cd5cd7ffb79e3b344c1cf2a59781cf30c86102
+parent 0697abe15edcf1f1979b99fcf69268748712780a
+author Tazo! <[redacted-owner-email]> 1786316950 -0300
+committer Tazo! <[redacted-owner-email]> 1786316950 -0300
+
+Document CWS-style storm cluster scatter
+
+commit 26a95360acc6a6aa536d21d4be047ac54d789e50  [files touched: 3]
+tree 8ad030f54a8582c8f51a9c7824d5b6d34f5b855b
+parent 95818e67171ea1a16a950829bcd301446099bf1a
+author TazoLaTaza <[redacted-owner-email]> 1786324259 -0300
+committer TazoLaTaza <[redacted-owner-email]> 1786324259 -0300
+
+beca cultural
+
+commit 7b5ec31e3ca90a2e8e1532b3db9965a9122eb0ab  [files touched: 1]
+tree 6a5231e87b861b74465f6ef11a7c51747846fb36
+parent 25ede8117dce65bc14b34bc31c5a24ef730e4813
+author Tazo! <[redacted-owner-email]> 1786372998 -0300
+committer Tazo! <[redacted-owner-email]> 1786372998 -0300
+
+Rebuild storm debris around CWS falling block entity
+
+commit 8ba082e09895b0fe855add6837a2f3fb975b5c1f  [files touched: 1]
+tree 9a9df34d0188667cbbecb7645e4f9330b4600d0f
+parent 7b5ec31e3ca90a2e8e1532b3db9965a9122eb0ab
+author Tazo! <[redacted-owner-email]> 1786373020 -0300
+committer Tazo! <[redacted-owner-email]> 1786373020 -0300
+
+Add CWS-style Decayed storm falling block entity
+
+commit cdfb4eb42975413e5a05ee234178380f3e9d8377  [files touched: 1]
+tree a6243139eec3adeeffc84a9f8a26c74d07589fce
+parent 8160570a08f103178d617266288b424594c743eb
+author Tazo! <[redacted-owner-email]> 1786373220 -0300
+committer Tazo! <[redacted-owner-email]> 1786373220 -0300
+
+Document CWS-style storm falling debris system
+
+commit b0ea0aaa42df5322d7f1b63bb4cb57fd2ceb3967  [files touched: 21]
+tree 8cc9341a3b88b095a1ee517a325f561a9912ef14
+parent 99aeb98e904e57fab1ab4801b077391955169ac9
+author TazoLaTaza <[redacted-owner-email]> 1786456801 -0300
+committer TazoLaTaza <[redacted-owner-email]> 1786456801 -0300
+
+a quite config change!
+
+commit 4597a194a887862a0d8f07027c25e15b756a0dd3  [files touched: 16]
+tree 49efe6c8cf53ddadca5e0bbdb1bd30d0268219f4
+parent a5f16fee54155691991b159b62e57eee30e78c77
+author TazoLaTaza <[redacted-owner-email]> 1788649740 -0300
+committer TazoLaTaza <[redacted-owner-email]> 1788649740 -0300
+
+implemented more CWSBP files
+
+commit ccb25d2819d4c17f43dddd3d81435fe60106b389  [files touched: 1619]
+tree 49dee48772729fbcb013634d2d23fbe0231dc503
+parent 0d693cb85cb5d7e66ef6775cd6796f43ca9717de
+author TazoLaTaza <[redacted-owner-email]> 1788928139 -0300
+committer TazoLaTaza <[redacted-owner-email]> 1788928139 -0300
+
+CWSBP assets for the compat
+
+commit e7ba793e715b8f98cd6666810c5ecd41a1b5fb9a  [files touched: 262]
+tree a3765d40099b7abf83642f013c12932fa119f239
+parent ccb25d2819d4c17f43dddd3d81435fe60106b389
+author TazoLaTaza <[redacted-owner-email]> 1788933291 -0300
+committer TazoLaTaza <[redacted-owner-email]> 1788933291 -0300
+
+Implemented CWSBP tainted blocks, Phaseometer, Beacon, and more (to alter rework them and adapt them!)
+
+commit 9bbd8177af4de23123a4a5c9919dc1519888df1b  [files touched: 21]
+tree e821b842188e3a4b0bddb76ed618f2205acdd20c
+parent 48d0d4aaba4e29a0fb94b1bf1469abdce64c2df6
+author TazoLaTaza <[redacted-owner-email]> 1789099366 -0300
+committer TazoLaTaza <[redacted-owner-email]> 1789099366 -0300
+
+ohmama
+
+commit 9cfe187f475a1b7946d25bbddee9b2891637f998  [files touched: 1018]
+tree 3bb709cf0882deaa723b19798076aaa62d50a4da
+parent 984da4d4a46f4f0b910b0d9bc3a2325076675231
+author TazoLaTaza <[redacted-owner-email]> 1789156383 -0300
+committer TazoLaTaza <[redacted-owner-email]> 1789156383 -0300
+
+Textures Reorder
+
+commit 61cd619d11344e90b73ce243ee4dfa010e94f4a8  [files touched: 1639]
+tree 47fcaf811bbe222b9e06916614215f170df9a5b4
+parent 38539b9e3418d74081bdc5609d53b58a9380fa75
+author TazoLaTaza <[redacted-owner-email]> 1791775531 -0300
+committer TazoLaTaza <[redacted-owner-email]> 1791775531 -0300
+
+fortnite
+
+commit f4bd7c3ac7aa034cabb71502139394ae1e9157c1  [files touched: 1321]
+tree 9f855f24ab32c12f345bdde32b8018549357a3db
+parent 61cd619d11344e90b73ce243ee4dfa010e94f4a8
+author TazoLaTaza <[redacted-owner-email]> 1791828243 -0300
+committer TazoLaTaza <[redacted-owner-email]> 1791828243 -0300
+
+through
+
+commit 9b7b94d64cb9467df9612d3c6078353cc599c1b0  [files touched: 1389]
+tree 3844d462d6c8e304caf5d4bfc60c3b48ccc3ad09
+parent 30a96cd84025044a8356d69b88e492b510b682be
+author TazoLaTaza <[redacted-owner-email]> 1793072631 -0300
+committer TazoLaTaza <[redacted-owner-email]> 1793072631 -0300
+
+updated: removed cwsbp implementation and compacted withered sound
+
+5. WIPED OPENAI CODEX ENGINEERING DOCS CITING CWSBP TYPESCRIPT SOURCE FILES
+--------------------------------------------------------------------------------
+--- 9bbd8177af~1:docs/storm-behavior-port.md (wiped in 9bbd8177af 'ohmama' on 2026-09-11) ---
+  L3: Decayed's existing TickBus, Scheduler, caches, growth scoreboards, native phase events and hunt controller remain the behavior owners. CWSBP's CommandedWitherHead.ts, WitherStormFlying.ts, ClusterAbsorbSystem.ts and WitherStormMod.ts were used as references. Rider order, nearest-owner searches, dimension-wide scans and the external phase numbering were not imported.
+  L67: - Changed TypeScript and JSON contain no imported CWSBP namespaces. The regenerated bundle still includes two pre-existing keys, falling_block:layers and falling_block:custom_component, from Decayed's unchanged falling-block implementation; both were verified in the base commit.
+
+--- b0ea0aaa42~1:src/clusters/STORM_FALLING_BLOCKS.md (wiped in b0ea0aaa42 'a quite config change!' on 2026-08-11) ---
+  L3: ## CWSBP reference
+  L5: Decayed's storm debris now follows the CWSBP `BP/entities/blocks/falling_block.json` + `BP/src/entities/BlockCluster.ts` model instead of emulating gravity with `decayed:cluster`.
+  L7: CWSBP's `witherstormmod:falling_block`:
+  L34: | Sustained Play Dead | CWS 30% tick chance, 5 blocks per successful emission while still above the CWS-style 8-block ground threshold |
+  L39: | Actual death | immediate 20-block burst, then a detached 140-tick emitter using CWS's 40% emission chance and 40% big-block chance |
+  L77: 3. for `mark_variant=5`, place 2-4 additional random registered withered/flesh blocks nearby, approximating CWSBP's large-debris flesh deposit
+
+--- 26a95360ac~1:src/clusters/STORM_DEATH_SCATTER.md (wiped in 26a95360ac 'beca cultural' on 2026-08-09) ---
+  L3: ## CWSBP reference
+  L5: The `Main-Development` CWSBP implementation is split between `BP/src/entities/WitherStorm.ts` and `BP/src/entities/BlockCluster.ts`.
+  L7: CWSBP separates debris emission from motion: Play Dead emits debris during the descent, death emits a denser shower, and each visible block receives an outward randomized launch. Decayed Reality keeps that visual language while reusing its own cluster renderer.
+  L84: Death is deliberately more deterministic than the earlier CWS-style probability-only implementation so flesh debris is always visible during the sequence.
+
+6. BYTE-IDENTICAL GIT BLOB SHA-1 MATCHES STILL LIVE AT testing-ig HEAD (08f6ee66e980)
+   Even after commit 9b7b94d64c ('updated: removed cwsbp implementation'),
+   363 non-node_modules files in Decayed Reality ({'.json': 8, '.ogg': 79, '.png': 255, '.tga': 21}) share the EXACT
+   40-character Git SHA-1 blob hash with storm_decompiled_phases/CWSBP INTEGRATION,
+   including 68 custom CWSM tainted/flesh/phlegm/storm assets renamed from tainted_* -> withered_*
+   by TazoLaTaza in commit 9cfe187f475a1b7946d25bbddee9b2891637f998 ('Textures Reorder', 2026-09-11):
+--------------------------------------------------------------------------------
+4d58e3a47036305f564fe102853561277f42fc78  Decayed_Reality_BP/entities/misc/raycast.json
+                                          == storm_decompiled_phases/CWSBP INTEGRATION/BP/entities/misc/raycast.json
+e5720dbcbdab8ee0e87860ca6ee80f657fca21a5  Decayed_Reality_BP/entities/misc/sky_ambient.json
+                                          == storm_decompiled_phases/CWSBP INTEGRATION/BP/entities/misc/sky_ambient.json
+5b8d05f3c4f437d437bdec8b9c691b9f85da3bcd  Decayed_Reality_RP/models/entity/clusters/falling_flesh.json
+                                          == storm_decompiled_phases/CWSBP INTEGRATION/RP/models/entity/clusters/falling_flesh.json
+76b2b472ab3538ade87cc4835b30631ca51627fc  Decayed_Reality_RP/sounds/decayed_content/phlegm/withered_phlegm_close1.ogg
+                                          == storm_decompiled_phases/CWSBP INTEGRATION/RP/sounds/phlegm/withered_phlegm_close1.ogg
+be12468073d96ac1356ac663f4de60ecd2667a0c  Decayed_Reality_RP/sounds/decayed_content/phlegm/withered_phlegm_close2.ogg
+                                          == storm_decompiled_phases/CWSBP INTEGRATION/RP/sounds/phlegm/withered_phlegm_close2.ogg
+ea3efdb5f0b94dc65652cd8e281705063e350bff  Decayed_Reality_RP/sounds/decayed_content/phlegm/withered_phlegm_close3.ogg
+                                          == storm_decompiled_phases/CWSBP INTEGRATION/RP/sounds/phlegm/withered_phlegm_close3.ogg
+515414975953374e83234656c6caa9932ccf788e  Decayed_Reality_RP/sounds/decayed_content/phlegm/withered_phlegm_open1.ogg
+                                          == storm_decompiled_phases/CWSBP INTEGRATION/RP/sounds/phlegm/withered_phlegm_open1.ogg
+683d211cef9a77be76af127e0d3b027d36265e01  Decayed_Reality_RP/sounds/decayed_content/phlegm/withered_phlegm_open2.ogg
+                                          == storm_decompiled_phases/CWSBP INTEGRATION/RP/sounds/phlegm/withered_phlegm_open2.ogg
+ecb566ca6e0b891ad409ccdb257039b41fcff48b  Decayed_Reality_RP/sounds/decayed_content/phlegm/withered_phlegm_open3.ogg
+                                          == storm_decompiled_phases/CWSBP INTEGRATION/RP/sounds/phlegm/withered_phlegm_open3.ogg
+13a5bcf706843ef703f07159591472b42125d92f  Decayed_Reality_RP/textures/blocks/decayed_blocks/decayed_ground/decayed_dust_dot.png
+                                          == storm_decompiled_phases/CWSBP INTEGRATION/RP/textures/blocks/tainted_dust_dot.png
+27a9b9a9e06503cd8d3e35e18af9104fad963e99  Decayed_Reality_RP/textures/blocks/decayed_blocks/storm_flesh/flesh_skele.png
+                                          == storm_decompiled_phases/CWSBP INTEGRATION/RP/textures/blocks/flesh_skele.png
+b7898112540d9d29815862e2f6002dc4ee41f271  Decayed_Reality_RP/textures/blocks/decayed_blocks/storm_flesh/flesh_skele.texture_set.json
+                                          == storm_decompiled_phases/CWSBP INTEGRATION/RP/textures/blocks/flesh_skele.texture_set.json
+be9d8a9f6b029e30daf407e255683e45bfab8634  Decayed_Reality_RP/textures/blocks/decayed_blocks/storm_flesh/flesh_skele_mers.tga
+                                          == storm_decompiled_phases/CWSBP INTEGRATION/RP/textures/blocks/flesh_skele_mers.tga
+8c6ad80c0774d7ecdbb745093490a782e2c8a5de  Decayed_Reality_RP/textures/blocks/decayed_blocks/storm_flesh/flesh_zomb.png
+                                          == storm_decompiled_phases/CWSBP INTEGRATION/RP/textures/blocks/flesh_zomb.png
+af80d377e6ee8eba6c56b1885240149a0cdd5135  Decayed_Reality_RP/textures/blocks/decayed_blocks/storm_flesh/flesh_zomb.texture_set.json
+                                          == storm_decompiled_phases/CWSBP INTEGRATION/RP/textures/blocks/flesh_zomb.texture_set.json
+c7f773055b2565cfa9ddd3b8061d80bfa0e2f494  Decayed_Reality_RP/textures/blocks/decayed_blocks/storm_flesh/flesh_zomb_mers.tga
+                                          == storm_decompiled_phases/CWSBP INTEGRATION/RP/textures/blocks/flesh_zomb_mers.tga
+429eef520159c802e8c5d9c2610a723c1b51f68f  Decayed_Reality_RP/textures/blocks/decayed_blocks/storm_flesh/hardened_flesh_block.png
+                                          == storm_decompiled_phases/CWSBP INTEGRATION/RP/textures/blocks/hardened_flesh_block.png
+13de1d70078203038a399b973527bee5cd4968ce  Decayed_Reality_RP/textures/blocks/decayed_blocks/storm_flesh/withered_flesh_block.png
+                                          == storm_decompiled_phases/CWSBP INTEGRATION/RP/textures/blocks/tainted_flesh_block.png
+a9c6e5ddb0a333dd2d0a22de825e196a2cdf35ab  Decayed_Reality_RP/textures/blocks/decayed_blocks/withered_cobblestone/withered_cobblestone.png
+                                          == storm_decompiled_phases/CWSBP INTEGRATION/RP/textures/blocks/tainted_cobblestone.png
+79f1f5239e4dd3c8fd6ea0e69aec18db33a6284f  Decayed_Reality_RP/textures/blocks/decayed_blocks/withered_foliage/withered_carved_pumpkin.png
+                                          == storm_decompiled_phases/CWSBP INTEGRATION/RP/textures/blocks/tainted_carved_pumpkin.png
+79f1f5239e4dd3c8fd6ea0e69aec18db33a6284f  Decayed_Reality_RP/textures/blocks/decayed_blocks/withered_foliage/withered_carved_pumpkin_alt.png
+                                          == storm_decompiled_phases/CWSBP INTEGRATION/RP/textures/blocks/tainted_carved_pumpkin.png
+78f3a9974ef73de08e0a10cd3b32d45d1dfb1c80  Decayed_Reality_RP/textures/blocks/decayed_blocks/withered_foliage/withered_jack_o_lantern.png
+                                          == storm_decompiled_phases/CWSBP INTEGRATION/RP/textures/blocks/tainted_jack_o_lantern.png
+3fc9c96a38eff0438329ff88b2f577e841e30afb  Decayed_Reality_RP/textures/blocks/decayed_blocks/withered_foliage/withered_jack_o_lantern_mers.tga
+                                          == storm_decompiled_phases/CWSBP INTEGRATION/RP/textures/blocks/tainted_jack_o_lantern_mers.tga
+3ccf6cf8d6c9f52e9901e12c6a86c4de6a5b5ec5  Decayed_Reality_RP/textures/blocks/decayed_blocks/withered_foliage/withered_mushroom_alt.png
+                                          == storm_decompiled_phases/CWSBP INTEGRATION/RP/textures/blocks/tainted_mushroom.png
+68b2ac1e5f913e3be0f836e77b4a3da78c19dfca  Decayed_Reality_RP/textures/blocks/decayed_blocks/withered_foliage/withered_mushroom_mers.tga
+                                          == storm_decompiled_phases/CWSBP INTEGRATION/RP/textures/blocks/tainted_mushroom_mers.tga
+c99cb7ed82f4be625b1789671bd66ae0f12b9711  Decayed_Reality_RP/textures/blocks/decayed_blocks/withered_foliage/withered_pumpkin_side.png
+                                          == storm_decompiled_phases/CWSBP INTEGRATION/RP/textures/blocks/tainted_pumpkin_side.png
+c99cb7ed82f4be625b1789671bd66ae0f12b9711  Decayed_Reality_RP/textures/blocks/decayed_blocks/withered_foliage/withered_pumpkin_side_alt.png
+                                          == storm_decompiled_phases/CWSBP INTEGRATION/RP/textures/blocks/tainted_pumpkin_side.png
+98b1eeffe8a2ed58bbd29a44136a65d79be98153  Decayed_Reality_RP/textures/blocks/decayed_blocks/withered_foliage/withered_pumpkin_top.png
+                                          == storm_decompiled_phases/CWSBP INTEGRATION/RP/textures/blocks/tainted_pumpkin_top.png
+98b1eeffe8a2ed58bbd29a44136a65d79be98153  Decayed_Reality_RP/textures/blocks/decayed_blocks/withered_foliage/withered_pumpkin_top_alt.png
+                                          == storm_decompiled_phases/CWSBP INTEGRATION/RP/textures/blocks/tainted_pumpkin_top.png
+4de6faaf95109f6dd7db25b3b514b5a950bf774a  Decayed_Reality_RP/textures/blocks/decayed_blocks/withered_glass/withered_glass.png
+                                          == storm_decompiled_phases/CWSBP INTEGRATION/RP/textures/blocks/tainted_glass.png
+849a2456a8d45ab20fb6f2c04f04a3556a9a37aa  Decayed_Reality_RP/textures/blocks/decayed_blocks/withered_glass/withered_glass_alpha.png
+                                          == storm_decompiled_phases/CWSBP INTEGRATION/RP/textures/blocks/tainted_glass_alpha.png
+7768713af9d96146816a8b36fc4b24d6bcfc2119  Decayed_Reality_RP/textures/blocks/decayed_blocks/withered_glass/withered_glass_pane_top.png
+                                          == storm_decompiled_phases/CWSBP INTEGRATION/RP/textures/blocks/tainted_glass_pane_top.png
+279f6930826f1fbada59e6659db30f9baa64ada8  Decayed_Reality_RP/textures/blocks/decayed_blocks/withered_ground/withered_dust_block.png
+                                          == storm_decompiled_phases/CWSBP INTEGRATION/RP/textures/blocks/tainted_dust_block.png
+13a5bcf706843ef703f07159591472b42125d92f  Decayed_Reality_RP/textures/blocks/decayed_blocks/withered_ground/withered_dust_dot.png
+                                          == storm_decompiled_phases/CWSBP INTEGRATION/RP/textures/blocks/tainted_dust_dot.png
+37057e5a18db5c64c3e363a7147de22ae487a0ff  Decayed_Reality_RP/textures/blocks/decayed_blocks/withered_sandstone/withered_chiseled_sandstone.png
+                                          == storm_decompiled_phases/CWSBP INTEGRATION/RP/textures/blocks/tainted_chiseled_sandstone.png
+397a7b922d41328e865daa75bf8365eada938de8  Decayed_Reality_RP/textures/blocks/decayed_blocks/withered_sandstone/withered_cut_sandstone.png
+                                          == storm_decompiled_phases/CWSBP INTEGRATION/RP/textures/blocks/tainted_cut_sandstone.png
+bab6c5cc00511c95e8aec1085b5667933a096c55  Decayed_Reality_RP/textures/blocks/decayed_blocks/withered_slime/withered_phlegm_block.png
+                                          == storm_decompiled_phases/CWSBP INTEGRATION/RP/textures/blocks/withered_phlegm_block.png
+66923d27c7adc5a41a222031460fd689c1184120  Decayed_Reality_RP/textures/blocks/decayed_blocks/withered_stone/withered_stone.png
+                                          == storm_decompiled_phases/CWSBP INTEGRATION/RP/textures/blocks/tainted_stone.png
+423dde0735fc2de8519e5a00e319b7f9211f4db2  Decayed_Reality_RP/textures/blocks/decayed_blocks/withered_utility/withered_torch.png
+                                          == storm_decompiled_phases/CWSBP INTEGRATION/RP/textures/blocks/tainted_torch.png
+715acf44cab9c84faa1fddd0f4c3e0f20b3eba47  Decayed_Reality_RP/textures/blocks/decayed_blocks/withered_utility/withered_torch_mers.tga
+                                          == storm_decompiled_phases/CWSBP INTEGRATION/RP/textures/blocks/tainted_torch_mers.tga
+49627ff226dedb65475fd392d27780d0101baf6d  Decayed_Reality_RP/textures/blocks/decayed_blocks/withered_wood/withered_door_bottom.png
+                                          == storm_decompiled_phases/CWSBP INTEGRATION/RP/textures/blocks/tainted_door_bottom.png
+c85104c42b84fe9c109b0fe220d92adef6481cd7  Decayed_Reality_RP/textures/blocks/decayed_blocks/withered_wood/withered_door_top.png
+                                          == storm_decompiled_phases/CWSBP INTEGRATION/RP/textures/blocks/tainted_door_top.png
+f1258df0d60102caabd76e42f06979e15a6a20b6  Decayed_Reality_RP/textures/blocks/decayed_blocks/withered_wood/withered_trapdoor.png
+                                          == storm_decompiled_phases/CWSBP INTEGRATION/RP/textures/blocks/tainted_trapdoor.png
+cdb684d7f964c425e0c9a44de83b6bb3a57bfde7  Decayed_Reality_RP/textures/entity/cluster/blocks/decayed/decayed_sand.png
+                                          == storm_decompiled_phases/CWSBP INTEGRATION/RP/textures/entity/blocks/tainted_sand.png
+2cd53c7617f947ff4f1fb73cac51a89e30187d46  Decayed_Reality_RP/textures/entity/cluster/blocks/withered/infected_flesh_block.png
+                                          == storm_decompiled_phases/CWSBP INTEGRATION/RP/textures/entity/blocks/infected_flesh_block.png
+8ae4447b5077a441e3502ca2bf3c76c549995323  Decayed_Reality_RP/textures/entity/cluster/blocks/withered/stripped_withered_log.png
+                                          == storm_decompiled_phases/CWSBP INTEGRATION/RP/textures/entity/blocks/stripped_tainted_log.png
+425f364b9e76c9982d37dd0b550e0c3e8dfdcb57  Decayed_Reality_RP/textures/entity/cluster/blocks/withered/withered_blocks.png
+                                          == storm_decompiled_phases/CWSBP INTEGRATION/RP/textures/entity/blocks/tainted_blocks.png
+f06af9553d3f2a5f19e6b5a858655fe6b75d3dad  Decayed_Reality_RP/textures/entity/cluster/blocks/withered/withered_carved_pumpkin.png
+                                          == storm_decompiled_phases/CWSBP INTEGRATION/RP/textures/entity/blocks/tainted_carved_pumpkin.png
+bc9c124e9fa450beacc8f649d1bd56263a1e67e9  Decayed_Reality_RP/textures/entity/cluster/blocks/withered/withered_dirt.png
+                                          == storm_decompiled_phases/CWSBP INTEGRATION/RP/textures/entity/blocks/tainted_dirt.png
+b2481631dccba1a8ddf651371b8dc1c4b9998b98  Decayed_Reality_RP/textures/entity/cluster/blocks/withered/withered_dust_block.png
+                                          == storm_decompiled_phases/CWSBP INTEGRATION/RP/textures/entity/blocks/tainted_dust_block.png
+071cffc7ffc18ba49da7676e0a1bb7317718b2b9  Decayed_Reality_RP/textures/entity/cluster/blocks/withered/withered_flesh_block.png
+                                          == storm_decompiled_phases/CWSBP INTEGRATION/RP/textures/entity/blocks/tainted_flesh_block.png
+130f2405f7d0b2c3bd378dcbf73c2bad4d9f8032  Decayed_Reality_RP/textures/entity/cluster/blocks/withered/withered_glass.png
+                                          == storm_decompiled_phases/CWSBP INTEGRATION/RP/textures/entity/blocks/tainted_glass.png
+1a33277f4c8dcf754f085eaf6bbfd1978a6e0710  Decayed_Reality_RP/textures/entity/cluster/blocks/withered/withered_jack_o_lantern.png
+                                          == storm_decompiled_phases/CWSBP INTEGRATION/RP/textures/entity/blocks/tainted_jack_o_lantern.png
+98322d106e1b4b48edc99bf6f8c938d5ed75b744  Decayed_Reality_RP/textures/entity/cluster/blocks/withered/withered_leaves.png
+                                          == storm_decompiled_phases/CWSBP INTEGRATION/RP/textures/entity/blocks/tainted_leaves.png
+cc32a74334fa8b7a7ead125f278cefcc6efd2cd3  Decayed_Reality_RP/textures/entity/cluster/blocks/withered/withered_log.png
+                                          == storm_decompiled_phases/CWSBP INTEGRATION/RP/textures/entity/blocks/tainted_log.png
+2e315f9a9d6ff613e8eda8d00c07c42623c245db  Decayed_Reality_RP/textures/entity/cluster/blocks/withered/withered_planks.png
+                                          == storm_decompiled_phases/CWSBP INTEGRATION/RP/textures/entity/blocks/tainted_planks.png
+ae93c237c619f3f2877411531fc01775e8e0f593  Decayed_Reality_RP/textures/entity/cluster/blocks/withered/withered_pumpkin.png
+                                          == storm_decompiled_phases/CWSBP INTEGRATION/RP/textures/entity/blocks/tainted_pumpkin.png
+fb4476ae8a69e9673d6aeb339509e68794abd140  Decayed_Reality_RP/textures/entity/cluster/blocks/withered/withered_sandstone.png
+                                          == storm_decompiled_phases/CWSBP INTEGRATION/RP/textures/entity/blocks/tainted_sandstone.png
+f34ad4f425969a3ab87b31ab8b988354547d1cef  Decayed_Reality_RP/textures/entity/cluster/blocks/withered/withered_stone.png
+                                          == storm_decompiled_phases/CWSBP INTEGRATION/RP/textures/entity/blocks/tainted_stone.png
+b118f623d5640db0fd5d3152438ccc7165242e4a  Decayed_Reality_RP/textures/entity/cluster/blocks/withered/withered_wood.png
+                                          == storm_decompiled_phases/CWSBP INTEGRATION/RP/textures/entity/blocks/tainted_wood.png
+c1705721a5f12988916d25010997f6451059692e  Decayed_Reality_RP/textures/items/withered/withered_door.png
+                                          == storm_decompiled_phases/CWSBP INTEGRATION/RP/textures/items/tainted_door.png
+361a75138ee2dd1a89dea896199021c8e401813b  Decayed_Reality_RP/textures/misc/glare.png
+                                          == storm_decompiled_phases/CWSBP INTEGRATION/RP/textures/misc/glare.png
+dd7225ef8640c7402c012be0dccf1890bd0ccc3a  Decayed_Reality_RP/textures/misc/glare.texture_set.json
+                                          == storm_decompiled_phases/CWSBP INTEGRATION/RP/textures/misc/glare.texture_set.json
+2d7db92d58cfe0d04ee8ad8d3cc5f5c3ff007eff  Decayed_Reality_RP/textures/misc/glare_mer.tga
+                                          == storm_decompiled_phases/CWSBP INTEGRATION/RP/textures/misc/glare_mer.tga
+f06482fec34769bd19b451ec0a1948e2057fa257  Decayed_Reality_RP/textures/misc/pink_wither_storm.png
+                                          == storm_decompiled_phases/CWSBP INTEGRATION/RP/textures/misc/pink_wither_storm.png
+edcbe09375912c532da59e9c8b8d737ac72b5317  Decayed_Reality_RP/textures/misc/pink_wither_storm_emissive_decal.png
+                                          == storm_decompiled_phases/CWSBP INTEGRATION/RP/textures/misc/pink_wither_storm_emissive_decal.png
+544fa1495da5c4f298ddb77c0095e8c9d7c807ce  Decayed_Reality_RP/textures/particle/phlegm/phlegm.png
+                                          == storm_decompiled_phases/CWSBP INTEGRATION/RP/textures/particle/phlegm.png
+544fa1495da5c4f298ddb77c0095e8c9d7c807ce  Decayed_Reality_RP/textures/particle/phlegm/phlegm_alt.png
+                                          == storm_decompiled_phases/CWSBP INTEGRATION/RP/textures/particle/phlegm.png
+
+7. LIVE HEAD (08f6ee66e980) TYPESCRIPT JSDOCS STILL REFERENCING CWSBP
+--------------------------------------------------------------------------------
+src/clusters/stormDeathScatter.ts:
+  L16: /** CWSBP-style native-physics debris. This system never enrolls debris into decayed:cluster mechanics. */
+  L227: /** Mirrors CWSBP's entitySpawn setup: choose corrupted payload, equip it, then apply one native impulse. */
+  L249: /** Spawns the CWS-style native falling entity. The entity's BP owns gravity, collision, ground detection and timeout. */
+  L296: /** Recreates CWSBP's revert_tainted_blocks behavior using the exact stored Decayed payload. */
+  L349: /** Live-state emission: Play Dead, <500 HP, and optional Devour are independent CWS-style entry points. */
+src/storm_head/state.ts:
+  L21: /** Pre-lock CWS-style attack candidates selected by head AI. */
+src/systems/skybox.ts:
+  L187: /** CWSBP distance curve: the blue transition overlay is strongest at the edge and disappears near the Storm. */
+src/systems/tentacleattacks.ts:
+  L486: cws = cache.commandedWithers || [],
+  L488: if ((!dragons.length && !cws.length) || !pls.length) return;
+  L490: const d=dragons.length?dragons[(sourceCursor++)%dragons.length]:undefined,w=cws.length?cws[(commandedCursor++)%cws.length]:undefined;
+
+8. DIRECT BYTE-FOR-BYTE SHA-1 MATCHES AGAINST OFFICIAL MODRINTH JAVA .JAR
+   Upstream Archive: witherstormmod-1.20.1-4.2.1-all.jar (Modrinth project kWjNGDUH)
+   Official JAR SHA-1: bd32ea3f44812b6b1744739633ea25d32197f4b8 (LicenseRef-All-Rights-Reserved)
+   Decompiled Storm Phase Geometries Committed by TazoLaTaza (66ca772d43, 2026-01-09) & Wiped in 'fortnite' (61cd619d11):
+     - 152e8be0455f8f855d227426978a80877533fb46  storm_decompiled_phases/wither_storm_phases_decompiled.geo.json
+     - 880e1fe9a1ea804accd9e9ab96efc3ecd1bfa7dd  storm_decompiled_phases/wither_storm_devour_phases_decompiled.geo.json
+   Total Unmodified Official Java .jar Files Live at testing-ig HEAD (08f6ee66e980): 108 (35 .png + 73 .ogg)
+   All 35 .png textures below were committed under renamed paths by TazoLaTaza in 9cfe187f47 ('Textures Reorder'):
+--------------------------------------------------------------------------------
+  [PNG] 27a9b9a9e06503cd8d3e35e18af9104fad963e99  Decayed_Reality_RP/textures/blocks/decayed_blocks/storm_flesh/flesh_skele.png  <==  CWSM_JAVA_JAR:assets/witherstormmod/textures/block/flesh_skele.png
+  [PNG] 8c6ad80c0774d7ecdbb745093490a782e2c8a5de  Decayed_Reality_RP/textures/blocks/decayed_blocks/storm_flesh/flesh_zomb.png  <==  CWSM_JAVA_JAR:assets/witherstormmod/textures/block/flesh_zomb.png
+  [PNG] 429eef520159c802e8c5d9c2610a723c1b51f68f  Decayed_Reality_RP/textures/blocks/decayed_blocks/storm_flesh/hardened_flesh_block.png  <==  CWSM_JAVA_JAR:assets/witherstormmod/textures/block/hardened_flesh_block.png
+  [PNG] 13de1d70078203038a399b973527bee5cd4968ce  Decayed_Reality_RP/textures/blocks/decayed_blocks/storm_flesh/withered_flesh_block.png  <==  CWSM_JAVA_JAR:assets/witherstormmod/textures/block/tainted_flesh_block.png
+  [PNG] a9c6e5ddb0a333dd2d0a22de825e196a2cdf35ab  Decayed_Reality_RP/textures/blocks/decayed_blocks/withered_cobblestone/withered_cobblestone.png  <==  CWSM_JAVA_JAR:assets/witherstormmod/textures/block/tainted_cobblestone.png
+  [PNG] 79f1f5239e4dd3c8fd6ea0e69aec18db33a6284f  Decayed_Reality_RP/textures/blocks/decayed_blocks/withered_foliage/withered_carved_pumpkin.png  <==  CWSM_JAVA_JAR:assets/witherstormmod/textures/block/tainted_carved_pumpkin.png
+  [PNG] 79f1f5239e4dd3c8fd6ea0e69aec18db33a6284f  Decayed_Reality_RP/textures/blocks/decayed_blocks/withered_foliage/withered_carved_pumpkin_alt.png  <==  CWSM_JAVA_JAR:assets/witherstormmod/textures/block/tainted_carved_pumpkin.png
+  [PNG] 78f3a9974ef73de08e0a10cd3b32d45d1dfb1c80  Decayed_Reality_RP/textures/blocks/decayed_blocks/withered_foliage/withered_jack_o_lantern.png  <==  CWSM_JAVA_JAR:assets/witherstormmod/textures/block/tainted_jack_o_lantern.png
+  [PNG] 3ccf6cf8d6c9f52e9901e12c6a86c4de6a5b5ec5  Decayed_Reality_RP/textures/blocks/decayed_blocks/withered_foliage/withered_mushroom_alt.png  <==  CWSM_JAVA_JAR:assets/witherstormmod/textures/block/tainted_mushroom.png
+  [PNG] c99cb7ed82f4be625b1789671bd66ae0f12b9711  Decayed_Reality_RP/textures/blocks/decayed_blocks/withered_foliage/withered_pumpkin_side.png  <==  CWSM_JAVA_JAR:assets/witherstormmod/textures/block/tainted_pumpkin_side.png
+  [PNG] c99cb7ed82f4be625b1789671bd66ae0f12b9711  Decayed_Reality_RP/textures/blocks/decayed_blocks/withered_foliage/withered_pumpkin_side_alt.png  <==  CWSM_JAVA_JAR:assets/witherstormmod/textures/block/tainted_pumpkin_side.png
+  [PNG] 98b1eeffe8a2ed58bbd29a44136a65d79be98153  Decayed_Reality_RP/textures/blocks/decayed_blocks/withered_foliage/withered_pumpkin_top.png  <==  CWSM_JAVA_JAR:assets/witherstormmod/textures/block/tainted_pumpkin_top.png
+  [PNG] 98b1eeffe8a2ed58bbd29a44136a65d79be98153  Decayed_Reality_RP/textures/blocks/decayed_blocks/withered_foliage/withered_pumpkin_top_alt.png  <==  CWSM_JAVA_JAR:assets/witherstormmod/textures/block/tainted_pumpkin_top.png
+  [PNG] 4de6faaf95109f6dd7db25b3b514b5a950bf774a  Decayed_Reality_RP/textures/blocks/decayed_blocks/withered_glass/withered_glass.png  <==  CWSM_JAVA_JAR:assets/witherstormmod/textures/block/tainted_glass.png
+  [PNG] 279f6930826f1fbada59e6659db30f9baa64ada8  Decayed_Reality_RP/textures/blocks/decayed_blocks/withered_ground/withered_dust_block.png  <==  CWSM_JAVA_JAR:assets/witherstormmod/textures/block/tainted_dust_block.png
+  [PNG] 37057e5a18db5c64c3e363a7147de22ae487a0ff  Decayed_Reality_RP/textures/blocks/decayed_blocks/withered_sandstone/withered_chiseled_sandstone.png  <==  CWSM_JAVA_JAR:assets/witherstormmod/textures/block/tainted_chiseled_sandstone.png
+  [PNG] 397a7b922d41328e865daa75bf8365eada938de8  Decayed_Reality_RP/textures/blocks/decayed_blocks/withered_sandstone/withered_cut_sandstone.png  <==  CWSM_JAVA_JAR:assets/witherstormmod/textures/block/tainted_cut_sandstone.png
+  [PNG] bab6c5cc00511c95e8aec1085b5667933a096c55  Decayed_Reality_RP/textures/blocks/decayed_blocks/withered_slime/withered_phlegm_block.png  <==  CWSM_JAVA_JAR:assets/witherstormmod/textures/block/withered_phlegm_block.png
+  [PNG] 66923d27c7adc5a41a222031460fd689c1184120  Decayed_Reality_RP/textures/blocks/decayed_blocks/withered_stone/withered_stone.png  <==  CWSM_JAVA_JAR:assets/witherstormmod/textures/block/tainted_stone.png
+  [PNG] 423dde0735fc2de8519e5a00e319b7f9211f4db2  Decayed_Reality_RP/textures/blocks/decayed_blocks/withered_utility/withered_torch.png  <==  CWSM_JAVA_JAR:assets/witherstormmod/textures/block/tainted_torch.png
+  [PNG] 49627ff226dedb65475fd392d27780d0101baf6d  Decayed_Reality_RP/textures/blocks/decayed_blocks/withered_wood/withered_door_bottom.png  <==  CWSM_JAVA_JAR:assets/witherstormmod/textures/block/tainted_door_bottom.png
+  [PNG] c85104c42b84fe9c109b0fe220d92adef6481cd7  Decayed_Reality_RP/textures/blocks/decayed_blocks/withered_wood/withered_door_top.png  <==  CWSM_JAVA_JAR:assets/witherstormmod/textures/block/tainted_door_top.png
+  [PNG] f1258df0d60102caabd76e42f06979e15a6a20b6  Decayed_Reality_RP/textures/blocks/decayed_blocks/withered_wood/withered_trapdoor.png  <==  CWSM_JAVA_JAR:assets/witherstormmod/textures/block/tainted_trapdoor.png
+  [PNG] ea392d3516d7b78e75889c8e5718cf0cbd7955df  Decayed_Reality_RP/textures/entity/command_block/ribcage.png  <==  CWSM_JAVA_JAR:assets/witherstormmod/textures/entity/command_block/ribcage.png
+  [PNG] 42cfdb3011bc76250e9400f0329435897b747231  Decayed_Reality_RP/textures/entity/withered/iron_golem/withered_iron_golem_crackiness_high.png  <==  CWSM_JAVA_JAR:assets/witherstormmod/textures/entity/sickened/sickened_iron_golem_crackiness_high.png
+  [PNG] 01783da3db824c66947cf6a436329494de7c097a  Decayed_Reality_RP/textures/entity/withered/iron_golem/withered_iron_golem_crackiness_low.png  <==  CWSM_JAVA_JAR:assets/witherstormmod/textures/entity/sickened/sickened_iron_golem_crackiness_low.png
+  [PNG] d5490320c3ac25237e23f1a53ce521478b03a380  Decayed_Reality_RP/textures/entity/withered/iron_golem/withered_iron_golem_crackiness_medium.png  <==  CWSM_JAVA_JAR:assets/witherstormmod/textures/entity/sickened/sickened_iron_golem_crackiness_medium.png
+  [PNG] d84a625883997f46f0f8d3dca305f48cd1708322  Decayed_Reality_RP/textures/items/food/golden_apple_stew.png  <==  CWSM_JAVA_JAR:assets/witherstormmod/textures/item/golden_apple_stew.png
+  [PNG] 029d5d4c971e08821ab9dd43aed5d4bd0ba83d58  Decayed_Reality_RP/textures/items/tools/phasometer.png  <==  CWSM_JAVA_JAR:assets/witherstormmod/textures/item/phasometer.png
+  [PNG] c1705721a5f12988916d25010997f6451059692e  Decayed_Reality_RP/textures/items/withered/withered_door.png  <==  CWSM_JAVA_JAR:assets/witherstormmod/textures/item/tainted_door.png
+  [PNG] b0e200e8819bb637cac86b2d81b13bc37276bcf3  Decayed_Reality_RP/textures/particle/command_block_1.png  <==  CWSM_JAVA_JAR:assets/witherstormmod/textures/particle/command_block_1.png
+  [PNG] 46ba59d92a429b85910772c9ebdae7516667e5bb  Decayed_Reality_RP/textures/particle/command_block_2.png  <==  CWSM_JAVA_JAR:assets/witherstormmod/textures/particle/command_block_2.png
+  [PNG] e6ebe81e70b07710b974ad7a86a02d6fa7b7ce1a  Decayed_Reality_RP/textures/particle/command_block_3.png  <==  CWSM_JAVA_JAR:assets/witherstormmod/textures/particle/command_block_3.png
+  [PNG] 544fa1495da5c4f298ddb77c0095e8c9d7c807ce  Decayed_Reality_RP/textures/particle/phlegm/phlegm.png  <==  CWSM_JAVA_JAR:assets/witherstormmod/textures/particle/phlegm.png
+  [PNG] 544fa1495da5c4f298ddb77c0095e8c9d7c807ce  Decayed_Reality_RP/textures/particle/phlegm/phlegm_alt.png  <==  CWSM_JAVA_JAR:assets/witherstormmod/textures/particle/phlegm.png

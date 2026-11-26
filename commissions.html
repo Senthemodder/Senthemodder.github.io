@@ -1,0 +1,744 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" id="themeColorMeta" content="#ffe5ec">
+  <title>Studio Contracting &amp; Licensing · Minh Lê (@Senthemodder)</title>
+  <meta name="description" content="B2B studio contracting, turnkey SKU licensing, custom compilers, and cross-edition engineering by Minh Lê (@Senthemodder).">
+  <meta property="og:title" content="Studio Contracting &amp; Licensing · Minh Lê (@Senthemodder)">
+  <meta property="og:description" content="B2B studio contracting, milestone engineering, and turnkey Marketplace SKU licensing.">
+  <meta property="og:image" content="https://senthemodder.github.io/img/builds/build_06_courtyard_sanctuary.webp">
+  <meta property="og:type" content="website">
+
+  <script>
+    (function () {
+      function getSeasonForDate(date) {
+        var m = (date || new Date()).getMonth();
+        if (m >= 2 && m <= 4) return 'spring';
+        if (m >= 5 && m <= 7) return 'summer';
+        if (m >= 8 && m <= 10) return 'autumn';
+        return 'winter';
+      }
+      var currentSeason = getSeasonForDate(new Date());
+      window.__PORTFOLIO_SEASON__ = {
+        getSeasonForDate: getSeasonForDate,
+        active: currentSeason
+      };
+      document.documentElement.setAttribute('data-season', currentSeason);
+    })();
+  </script>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700;800&family=Patrick+Hand&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
+
+  <style>
+    :root,
+    [data-season="autumn"] {
+      --bg-1: #fff0f5;
+      --bg-2: #ffe5ec;
+      --bg-3: #fde2e4;
+      --bg-4: #fae1dd;
+      --dot-grid: rgba(235, 130, 160, 0.18);
+      --accent-soft: #ffb3c1;
+      --accent-primary: #fb6f92;
+      --accent-deep: #c94a6e;
+      --accent-secondary: #e07a5f;
+      --quote-bg-1: #fff5f7;
+      --paper-white: rgba(255, 255, 255, 0.94);
+      --card-border: #f8c8d4;
+      --subcard-border: #fed2dc;
+      --badge-bg: #fff0f3;
+      --text-main: #4a2835;
+      --text-muted: #8c5a6c;
+      --shadow-retro: 5px 6px 0px rgba(201, 74, 110, 0.16);
+      --subcard-shadow: 2px 3px 0px rgba(251, 111, 146, 0.12);
+      --btn-shadow: rgba(251, 111, 146, 0.28);
+      --btn-shadow-hover: rgba(251, 111, 146, 0.38);
+      --tape-color: rgba(255, 240, 195, 0.85);
+      --tape-border: rgba(230, 205, 140, 0.52);
+    }
+
+    [data-season="winter"] {
+      --bg-1: #f3f8ff;
+      --bg-2: #e5f0ff;
+      --bg-3: #ddebfb;
+      --bg-4: #eaeefc;
+      --dot-grid: rgba(105, 150, 212, 0.20);
+      --accent-soft: #9dc3ee;
+      --accent-primary: #4c84c7;
+      --accent-deep: #29568f;
+      --accent-secondary: #5c6fb3;
+      --quote-bg-1: #f2f7ff;
+      --paper-white: rgba(255, 255, 255, 0.94);
+      --card-border: #c2daf4;
+      --subcard-border: #d5e6f9;
+      --badge-bg: #eef5ff;
+      --text-main: #1e3148;
+      --text-muted: #57708c;
+      --shadow-retro: 5px 6px 0px rgba(41, 86, 143, 0.15);
+      --subcard-shadow: 2px 3px 0px rgba(76, 132, 199, 0.12);
+      --btn-shadow: rgba(76, 132, 199, 0.26);
+      --btn-shadow-hover: rgba(76, 132, 199, 0.36);
+      --tape-color: rgba(222, 234, 255, 0.88);
+      --tape-border: rgba(154, 178, 224, 0.58);
+    }
+
+    [data-season="spring"] {
+      --bg-1: #f4fbf6;
+      --bg-2: #e9f7ee;
+      --bg-3: #f4f9ef;
+      --bg-4: #fdf0f5;
+      --dot-grid: rgba(96, 172, 120, 0.20);
+      --accent-soft: #9dd9b0;
+      --accent-primary: #48a868;
+      --accent-deep: #2b7544;
+      --accent-secondary: #d45b88;
+      --quote-bg-1: #f2fbf5;
+      --paper-white: rgba(255, 255, 255, 0.94);
+      --card-border: #c6e6cf;
+      --subcard-border: #d7efe0;
+      --badge-bg: #effaf2;
+      --text-main: #233d2c;
+      --text-muted: #567862;
+      --shadow-retro: 5px 6px 0px rgba(43, 117, 68, 0.15);
+      --subcard-shadow: 2px 3px 0px rgba(72, 168, 104, 0.12);
+      --btn-shadow: rgba(72, 168, 104, 0.26);
+      --btn-shadow-hover: rgba(72, 168, 104, 0.36);
+      --tape-color: rgba(255, 216, 230, 0.86);
+      --tape-border: rgba(226, 158, 184, 0.56);
+    }
+
+    [data-season="summer"] {
+      --bg-1: #fffdf2;
+      --bg-2: #fef6d8;
+      --bg-3: #e6f8f6;
+      --bg-4: #dff2fe;
+      --dot-grid: rgba(45, 162, 184, 0.19);
+      --accent-soft: #8ad4e6;
+      --accent-primary: #1ba1bd;
+      --accent-deep: #0f6d87;
+      --accent-secondary: #dd7a24;
+      --quote-bg-1: #fffbeb;
+      --paper-white: rgba(255, 255, 255, 0.94);
+      --card-border: #bce3ec;
+      --subcard-border: #cdebf2;
+      --badge-bg: #eefafd;
+      --text-main: #1c3842;
+      --text-muted: #527582;
+      --shadow-retro: 5px 6px 0px rgba(15, 109, 135, 0.15);
+      --subcard-shadow: 2px 3px 0px rgba(27, 161, 189, 0.12);
+      --btn-shadow: rgba(27, 161, 189, 0.26);
+      --btn-shadow-hover: rgba(27, 161, 189, 0.36);
+      --tape-color: rgba(255, 231, 170, 0.88);
+      --tape-border: rgba(230, 184, 96, 0.58);
+    }
+
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+
+    body {
+      font-family: 'Outfit', -apple-system, sans-serif;
+      background: linear-gradient(145deg, var(--bg-1) 0%, var(--bg-2) 30%, var(--bg-3) 65%, var(--bg-4) 100%);
+      background-attachment: fixed;
+      color: var(--text-main);
+      line-height: 1.6;
+      min-height: 100vh;
+      overflow-x: hidden;
+      position: relative;
+    }
+
+    body::before {
+      content: "";
+      position: fixed;
+      inset: 0;
+      background-image: radial-gradient(var(--dot-grid) 1.5px, transparent 1.5px);
+      background-size: 26px 26px;
+      pointer-events: none;
+      z-index: 1;
+    }
+
+    #leafCanvas {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      pointer-events: none;
+      z-index: 2;
+    }
+
+    .wrapper {
+      position: relative;
+      z-index: 3;
+      max-width: 880px;
+      margin: 0 auto;
+      padding: 2.2rem 1.5rem 4.8rem;
+    }
+
+    .washi-tape {
+      position: absolute;
+      top: -12px;
+      left: 50%;
+      transform: translateX(-50%) rotate(-1deg);
+      width: 105px;
+      height: 25px;
+      background: var(--tape-color);
+      border: 1px dashed var(--tape-border);
+      box-shadow: 0 2px 4px rgba(0, 0, 0, 0.06);
+      border-radius: 2px;
+      z-index: 10;
+    }
+
+    /* ── Nav ── */
+    .floating-nav {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      background: rgba(255, 255, 255, 0.94);
+      border: 2px solid var(--card-border);
+      border-radius: 999px;
+      padding: 0.6rem 1.3rem;
+      margin-bottom: 2.5rem;
+      box-shadow: var(--shadow-retro);
+      gap: 0.75rem;
+      flex-wrap: wrap;
+    }
+    .nav-brand-group {
+      display: flex;
+      align-items: center;
+      gap: 0.65rem;
+      flex-wrap: wrap;
+    }
+    .nav-brand {
+      font-family: 'Patrick Hand', cursive;
+      font-size: 1.42rem;
+      font-weight: 700;
+      color: var(--accent-deep);
+      text-decoration: none;
+    }
+    .availability-pill {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.4rem;
+      font-size: 0.74rem;
+      font-weight: 700;
+      padding: 0.22rem 0.68rem;
+      border-radius: 999px;
+      background: #ecfdf5;
+      color: #047857;
+      border: 1.5px solid #a7f3d0;
+    }
+    .avail-dot {
+      width: 7px;
+      height: 7px;
+      border-radius: 50%;
+      background: #10b981;
+      box-shadow: 0 0 0 3px rgba(16, 185, 129, 0.2);
+    }
+    .nav-links {
+      display: flex;
+      gap: 0.5rem;
+      align-items: center;
+      flex-wrap: wrap;
+    }
+    .nav-link-btn {
+      text-decoration: none;
+      font-size: 0.85rem;
+      font-weight: 600;
+      color: var(--text-main);
+      padding: 0.38rem 0.88rem;
+      border-radius: 999px;
+      background: #fff;
+      border: 1.5px solid var(--card-border);
+      transition: all 0.18s ease;
+    }
+    .nav-link-btn:hover,
+    .nav-link-btn.active-nav {
+      background: var(--accent-primary);
+      color: #fff;
+      border-color: var(--accent-primary);
+    }
+
+    /* ── Main Paper Card ── */
+    .paper-card {
+      background: var(--paper-white);
+      border: 2px solid var(--card-border);
+      border-radius: 20px;
+      padding: 2.1rem 2.2rem;
+      box-shadow: var(--shadow-retro);
+      position: relative;
+      margin-bottom: 1.9rem;
+    }
+
+    .page-title {
+      font-family: 'Patrick Hand', cursive;
+      font-size: 2.5rem;
+      line-height: 1.12;
+      color: var(--accent-deep);
+      margin-bottom: 0.75rem;
+    }
+    .intro-p {
+      font-size: 1rem;
+      color: var(--text-main);
+      margin-bottom: 0.85rem;
+      line-height: 1.62;
+    }
+    .intro-p:last-child {
+      margin-bottom: 0;
+    }
+    .rate-highlight {
+      display: inline-block;
+      font-family: 'Space Mono', monospace;
+      font-size: 0.9rem;
+      font-weight: 700;
+      background: var(--quote-bg-1);
+      color: var(--accent-deep);
+      border: 1px dashed var(--accent-soft);
+      padding: 0.08rem 0.45rem;
+      border-radius: 6px;
+    }
+
+    /* ── Compact Price List ── */
+    .card-heading {
+      font-family: 'Patrick Hand', cursive;
+      font-size: 1.95rem;
+      color: var(--accent-deep);
+      margin-bottom: 1rem;
+      line-height: 1.15;
+    }
+    .price-list {
+      display: flex;
+      flex-direction: column;
+      gap: 0.8rem;
+    }
+    .price-row {
+      background: #ffffff;
+      border: 1.5px solid var(--subcard-border);
+      border-radius: 14px;
+      padding: 1rem 1.15rem;
+      box-shadow: var(--subcard-shadow);
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-start;
+      gap: 1rem;
+    }
+    .price-row-title {
+      font-size: 1.03rem;
+      font-weight: 700;
+      color: var(--text-main);
+      margin-bottom: 0.2rem;
+    }
+    .price-row-desc {
+      font-size: 0.89rem;
+      color: var(--text-muted);
+      line-height: 1.48;
+    }
+    .price-tag {
+      font-family: 'Space Mono', monospace;
+      font-size: 0.88rem;
+      font-weight: 700;
+      color: #ffffff;
+      background: var(--accent-primary);
+      padding: 0.28rem 0.78rem;
+      border-radius: 999px;
+      white-space: nowrap;
+      flex-shrink: 0;
+    }
+
+    /* ── Simple Notes List ── */
+    .notes-list {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: 0.6rem;
+    }
+    .notes-list li {
+      font-size: 0.94rem;
+      color: var(--text-main);
+      line-height: 1.52;
+      padding-left: 1.1rem;
+      position: relative;
+    }
+    .notes-list li::before {
+      content: "•";
+      position: absolute;
+      left: 0;
+      color: var(--accent-deep);
+      font-weight: 800;
+    }
+
+    /* ── Contact Row ── */
+    .contact-sub {
+      font-size: 0.94rem;
+      color: var(--text-muted);
+      margin-bottom: 1.1rem;
+    }
+    .contact-boxes {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 1rem;
+    }
+    .contact-box {
+      background: #ffffff;
+      border: 1.5px solid var(--subcard-border);
+      border-radius: 14px;
+      padding: 1rem 1.15rem;
+      box-shadow: var(--subcard-shadow);
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      gap: 0.75rem;
+    }
+    .contact-lbl {
+      font-family: 'Space Mono', monospace;
+      font-size: 0.72rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      color: var(--accent-secondary);
+    }
+    .contact-val {
+      font-size: 1.02rem;
+      font-weight: 800;
+      color: var(--text-main);
+      word-break: break-word;
+    }
+    .btn-row {
+      display: flex;
+      gap: 0.5rem;
+      flex-wrap: wrap;
+    }
+    .btn-primary {
+      appearance: none;
+      text-decoration: none;
+      background: var(--accent-primary);
+      color: #ffffff;
+      border: none;
+      padding: 0.52rem 1rem;
+      border-radius: 999px;
+      font-family: inherit;
+      font-weight: 700;
+      font-size: 0.86rem;
+      cursor: pointer;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      box-shadow: 0 3px 0 var(--btn-shadow);
+      transition: all 0.18s ease;
+    }
+    .btn-primary:hover {
+      background: var(--accent-deep);
+      transform: translateY(-2px);
+      box-shadow: 0 5px 0 var(--btn-shadow-hover);
+    }
+    .btn-secondary {
+      appearance: none;
+      text-decoration: none;
+      background: #ffffff;
+      color: var(--text-main);
+      border: 1.5px solid var(--card-border);
+      padding: 0.48rem 0.95rem;
+      border-radius: 999px;
+      font-family: inherit;
+      font-weight: 600;
+      font-size: 0.85rem;
+      cursor: pointer;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      transition: all 0.18s ease;
+    }
+    .btn-secondary:hover {
+      background: var(--badge-bg);
+      color: var(--accent-deep);
+    }
+
+    .straw-footer {
+      text-align: center;
+      padding-top: 0.8rem;
+    }
+    .footer-stamp {
+      font-family: 'Patrick Hand', cursive;
+      font-size: 1.3rem;
+      color: var(--accent-deep);
+      margin-bottom: 0.25rem;
+    }
+    .footer-desc {
+      font-size: 0.86rem;
+      color: var(--text-muted);
+    }
+
+    @media (max-width: 680px) {
+      .floating-nav { flex-direction: column; border-radius: 18px; padding: 0.85rem 1rem; }
+      .nav-brand-group, .nav-links { justify-content: center; }
+      .paper-card { padding: 1.5rem 1.2rem; }
+      .page-title { font-size: 2.1rem; }
+      .price-row { flex-direction: column; gap: 0.5rem; }
+      .contact-boxes { grid-template-columns: 1fr; }
+      .wrapper { padding: 1.4rem 1rem 3.5rem; }
+    }
+  </style>
+</head>
+<body>
+
+  <canvas id="leafCanvas"></canvas>
+
+  <div class="wrapper">
+
+    <header class="floating-nav">
+      <div class="nav-brand-group">
+        <a href="index.html" class="nav-brand">Minh Lê · @Senthemodder</a>
+        <span class="availability-pill"><span class="avail-dot"></span>B2B Studio Intake</span>
+      </div>
+      <nav class="nav-links">
+        <a href="index.html" class="nav-link-btn">← Portfolio</a>
+        <a href="commissions.html" class="nav-link-btn active-nav">Studio Inquiries</a>
+        <a href="cv.html" class="nav-link-btn">CV</a>
+      </nav>
+    </header>
+
+    <!-- Intro -->
+    <section class="paper-card">
+      <div class="washi-tape"></div>
+      <h1 class="page-title">Studio Contracting &amp; Licensing</h1>
+      <p class="intro-p">
+        I partner directly with commercial studios, publishers, and engineering teams on <strong>turnkey Add-On production</strong>, <strong>custom compilers &amp; worldgen pipelines</strong>, <strong>multi-block physics &amp; contraption engines</strong>, and <strong>Java ↔ Bedrock cross-edition ports</strong>.
+      </p>
+      <p class="intro-p">
+        Engagements are structured exclusively as <span class="rate-highlight">B2B Milestone Contracts, Retainers, or SKU Licensing</span> based on written technical specifications and target platform requirements.
+      </p>
+    </section>
+
+    <!-- Engagement Tracks -->
+    <section class="paper-card" id="prices">
+      <h2 class="card-heading">Engagement Models</h2>
+
+      <div class="price-list">
+        <div class="price-row">
+          <div>
+            <div class="price-row-title">Turnkey Commercial Add-On &amp; Asset Production</div>
+            <p class="price-row-desc">End-to-end delivery of QA-verified block ecosystems, interactive furniture packs, custom entities, PBR materials, localization, and Partner packaging.</p>
+          </div>
+          <span class="price-tag">Fixed Milestone / Buyout</span>
+        </div>
+
+        <div class="price-row">
+          <div>
+            <div class="price-row-title">SKU Co-Publishing &amp; Royalty Licensing</div>
+            <p class="price-row-desc">Completed standalone Add-Ons and custom dimension titles available for Partner storefront publishing under advance-plus-royalty or revenue-share agreements.</p>
+          </div>
+          <span class="price-tag">Advance + Royalty</span>
+        </div>
+
+        <div class="price-row">
+          <div>
+            <div class="price-row-title">Compilers, Procedural Worldgen &amp; Physics Engines</div>
+            <p class="price-row-desc">Custom terrain compilers, custom dimensions, flowing fluid engines, bit-packed entity renderers, and Create-style moving contraption/train frameworks.</p>
+          </div>
+          <span class="price-tag">Scoped Engineering</span>
+        </div>
+
+        <div class="price-row">
+          <div>
+            <div class="price-row-title">Cross-Edition Porting &amp; Ongoing Studio Retainers</div>
+            <p class="price-row-desc">1:1 Java (Fabric / NeoForge) ↔ Bedrock architecture ports, custom UI pipelines, performance profiling, and embedded sprint capacity inside studio Git repositories.</p>
+          </div>
+          <span class="price-tag">Retainer / Sprint</span>
+        </div>
+      </div>
+    </section>
+
+    <!-- Terms -->
+    <section class="paper-card">
+      <h2 class="card-heading">Standard Studio Terms</h2>
+      <ul class="notes-list">
+        <li><strong>Written Scope First:</strong> Every sprint or pack begins with a written deliverable checklist, target runtime version, and milestone schedule prior to kickoff.</li>
+        <li><strong>NDA &amp; Clean Provenance:</strong> Accustomed to strict Partner NDAs, private Git workflows, and delivering verified source models and deterministic build outputs.</li>
+        <li><strong>Billing &amp; Settlement:</strong> Structured via milestone wire transfers (Wise, International Bank Transfer, or PayPal in USD / EUR).</li>
+        <li><strong>QA Warranty:</strong> All agreed deliverables are playtested against retail ContentLog and frame-time budgets prior to handoff.</li>
+      </ul>
+    </section>
+
+    <!-- Contact -->
+    <section class="paper-card" id="contact">
+      <h2 class="card-heading">Studio &amp; Publishing Inquiries</h2>
+      <p class="contact-sub">
+        Send a brief project overview, target timeline, and company/storefront link via email. Direct workspace Slack or Discord channels are exchanged upon project scoping.
+      </p>
+
+      <div class="contact-boxes">
+        <div class="contact-box">
+          <div>
+            <div class="contact-lbl">Direct Studio Inbox</div>
+            <div class="contact-val">Contract &amp; Licensing Desk</div>
+          </div>
+          <div class="btn-row">
+            <a href="#contact" data-studio-mailto class="btn-primary">Send Inquiry ↗</a>
+            <button type="button" class="btn-secondary" data-copy-studio-email>Copy Email</button>
+          </div>
+        </div>
+
+        <div class="contact-box">
+          <div>
+            <div class="contact-lbl">Engineering Profile</div>
+            <div class="contact-val">github.com/Senthemodder</div>
+          </div>
+          <div class="btn-row">
+            <a href="https://github.com/Senthemodder" target="_blank" rel="noopener" class="btn-primary">GitHub ↗</a>
+            <a href="Minh_Le_CV.pdf" target="_blank" rel="noopener" class="btn-secondary">CV (PDF)</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <footer class="straw-footer">
+      <div class="footer-stamp" id="footerStamp">Made with warmth and autumn leaves</div>
+      <p class="footer-desc">Minh Lê (@Senthemodder) · <span id="footerYear">2026</span></p>
+    </footer>
+
+  </div>
+
+  <script>
+    (function () {
+      const SEASON_CONFIG = {
+        spring: {
+          themeColor: '#e9f7ee',
+          footerStamp: 'Made with warmth and spring blossoms',
+          particleCount: 26,
+          colors: ['#ffb7c5', '#ff8fab', '#f472b6', '#f9a8d4', '#86efac', '#52b788']
+        },
+        summer: {
+          themeColor: '#fef6d8',
+          footerStamp: 'Made with sunshine and summer breezes',
+          particleCount: 24,
+          colors: ['#fbbf24', '#f59e0b', '#38bdf8', '#2dd4bf', '#fb7185', '#fcd34d']
+        },
+        autumn: {
+          themeColor: '#ffe5ec',
+          footerStamp: 'Made with warmth and autumn leaves',
+          particleCount: 26,
+          colors: ['#fb6f92', '#ff8fab', '#e07a5f', '#f4a261', '#e76f51', '#d97736']
+        },
+        winter: {
+          themeColor: '#e5f0ff',
+          footerStamp: 'Made with warmth and winter snow',
+          particleCount: 30,
+          colors: ['#ffffff', '#60a5fa', '#7cc4fa', '#818cf8', '#38bdf8', '#93c5fd']
+        }
+      };
+
+      const bootState = window.__PORTFOLIO_SEASON__;
+      let currentSeason = bootState.active;
+      const themeMeta = document.getElementById('themeColorMeta');
+      const footerStamp = document.getElementById('footerStamp');
+      const footerYear = document.getElementById('footerYear');
+
+      const nowYear = new Date().getFullYear();
+      if (footerYear && nowYear >= 2026) {
+        footerYear.textContent = String(nowYear);
+      }
+
+      const canvas = document.getElementById('leafCanvas');
+      const ctx = canvas.getContext('2d');
+      let particles = [];
+
+      function resizeCanvas() {
+        canvas.width = window.innerWidth;
+        canvas.height = window.innerHeight;
+      }
+      window.addEventListener('resize', resizeCanvas);
+      resizeCanvas();
+
+      class SeasonalParticle {
+        constructor(season) {
+          this.season = season;
+          this.reset(true);
+        }
+        reset(initial) {
+          const cfg = SEASON_CONFIG[this.season] || SEASON_CONFIG.autumn;
+          this.x = Math.random() * canvas.width;
+          this.y = initial ? Math.random() * canvas.height : -25;
+          this.color = cfg.colors[Math.floor(Math.random() * cfg.colors.length)];
+          this.size = 7 + Math.random() * 11;
+          this.speedY = 0.28 + Math.random() * 0.46;
+          this.speedX = -0.18 + Math.random() * 0.36;
+          this.swayAngle = Math.random() * Math.PI * 2;
+          this.swaySpeed = 0.01 + Math.random() * 0.014;
+          this.rotation = Math.random() * Math.PI * 2;
+          this.rotationSpeed = (Math.random() - 0.5) * 0.014;
+          this.opacity = 0.38 + Math.random() * 0.4;
+        }
+        update() {
+          this.swayAngle += this.swaySpeed;
+          this.x += this.speedX + Math.sin(this.swayAngle) * 0.65;
+          this.y += this.speedY;
+          this.rotation += this.rotationSpeed;
+          if (this.y > canvas.height + 30 || this.x < -40 || this.x > canvas.width + 40) {
+            this.reset(false);
+          }
+        }
+        draw() {
+          ctx.save();
+          ctx.translate(this.x, this.y);
+          ctx.rotate(this.rotation);
+          ctx.globalAlpha = this.opacity;
+          ctx.fillStyle = this.color;
+          ctx.beginPath();
+          if (this.season === 'winter') {
+            ctx.arc(0, 0, this.size * 0.45, 0, Math.PI * 2);
+          } else {
+            ctx.ellipse(0, 0, this.size * 0.46, this.size * 0.9, 0, 0, Math.PI * 2);
+          }
+          ctx.fill();
+          ctx.restore();
+        }
+      }
+
+      function syncSeason() {
+        const detected = bootState.getSeasonForDate(new Date());
+        const changed = detected !== currentSeason || particles.length === 0;
+        currentSeason = detected;
+        const cfg = SEASON_CONFIG[currentSeason] || SEASON_CONFIG.autumn;
+        document.documentElement.setAttribute('data-season', currentSeason);
+        if (themeMeta) themeMeta.setAttribute('content', cfg.themeColor);
+        if (footerStamp) footerStamp.textContent = cfg.footerStamp;
+        if (changed) {
+          particles = [];
+          for (let i = 0; i < cfg.particleCount; i++) {
+            particles.push(new SeasonalParticle(currentSeason));
+          }
+        }
+      }
+
+      function tickParticles() {
+        ctx.clearRect(0, 0, canvas.width, canvas.height);
+        for (const p of particles) {
+          p.update();
+          p.draw();
+        }
+        requestAnimationFrame(tickParticles);
+      }
+
+      syncSeason();
+      tickParticles();
+
+      const studioAddr = String.fromCharCode(109,105,110,104,97,110,104,108,101,50,50,48,57,48,55,64,103,109,97,105,108,46,99,111,109);
+      document.querySelectorAll('[data-studio-mailto]').forEach((el) => {
+        el.setAttribute('href', 'mailto:' + studioAddr + '?subject=Studio%20Contract%20%2F%20Licensing%20Inquiry');
+      });
+      document.querySelectorAll('[data-copy-studio-email]').forEach((btn) => {
+        const orig = btn.textContent;
+        btn.addEventListener('click', () => {
+          if (navigator.clipboard && navigator.clipboard.writeText) {
+            navigator.clipboard.writeText(studioAddr).then(() => {
+              btn.textContent = 'Copied!';
+              setTimeout(() => { btn.textContent = orig; }, 1800);
+            });
+          }
+        });
+      });
+    })();
+  </script>
+</body>
+</html>

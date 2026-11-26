@@ -1,0 +1,27 @@
+================================================================================
+CRYPTOGRAPHIC FORENSIC INSPECTION CARD (17 U.S.C. §§ 102(b), 107 COMPLIANT)
+================================================================================
+Legal Notice: Full verbatim body intentionally omitted so zero executable source
+modules or complete prose documents from TazoLaTaza/Decayed-Reality are hosted.
+This record publishes strictly uncopyrightable cryptographic Git facts (§ 102(b)),
+structural symbol/heading metadata, and a bounded evidentiary excerpt (§ 107)
+establishing autonomous OpenAI Codex harness usage, CWSBP derivation, and cover-up
+deletion commits ('papoi', 'ohmama', 'beca cultural', '1b6facfdcd').
+--------------------------------------------------------------------------------
+Artifact Index           : #22
+Original Repository Path : .a1-validation/validate-content-final.log
+Exact Git Blob SHA-1     : 9cecbb7a53e65f8f2f57fef7491c564f666fee7b
+Exact Raw SHA-256        : 0200899d9db101b77325a925cb03244ecc4fc37b7c1bee276c77cf2f3616e865
+Original Byte Length     : 3,162 bytes (28 lines)
+Provenance / Wipe Commit : Tazo Wiped AI / Codex / Validation / Test File — papoi (+7m30s wipe of .codex, AGENTS.md, SKILL.md, 23 .a1-validation files)
+Forensic Marker Counts   : Codex/Harness refs=0 | CWSBP/tainted refs=0 | Em/En-dashes=1
+--------------------------------------------------------------------------------
+OFFLINE CRYPTOGRAPHIC VERIFICATION (RUN AGAINST BARE COMMIT/TREE GRAPH):
+  git log --all --full-history --stat -- ".a1-validation/validate-content-final.log"
+  # Any local clone holding blob 9cecbb7a53e6 verifies exact bytes via:
+  git cat-file -t 9cecbb7a53e65f8f2f57fef7491c564f666fee7b && git cat-file -s 9cecbb7a53e65f8f2f57fef7491c564f666fee7b   # -> blob, 3162
+--------------------------------------------------------------------------------
+BOUNDED FAIR-USE EVIDENTIARY EXCERPT (1 of 28 lines shown; full file omitted):
+  L0008 | [rtk] /!\ No hook installed — run `rtk init -g` for automatic token savings
+  [... 27 lines omitted under 17 U.S.C. § 107 transformative evidentiary scope ...]
+================================================================================

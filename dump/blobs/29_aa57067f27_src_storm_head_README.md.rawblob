@@ -1,0 +1,38 @@
+================================================================================
+CRYPTOGRAPHIC FORENSIC INSPECTION CARD (17 U.S.C. §§ 102(b), 107 COMPLIANT)
+================================================================================
+Legal Notice: Full verbatim body intentionally omitted so zero executable source
+modules or complete prose documents from TazoLaTaza/Decayed-Reality are hosted.
+This record publishes strictly uncopyrightable cryptographic Git facts (§ 102(b)),
+structural symbol/heading metadata, and a bounded evidentiary excerpt (§ 107)
+establishing autonomous OpenAI Codex harness usage, CWSBP derivation, and cover-up
+deletion commits ('papoi', 'ohmama', 'beca cultural', '1b6facfdcd').
+--------------------------------------------------------------------------------
+Artifact Index           : #29
+Original Repository Path : src/storm_head/README.md
+Exact Git Blob SHA-1     : aa57067f2710c2b9846eee5ab85a85600ad076c2
+Exact Raw SHA-256        : b37beeedd0f552ada8a80bda45c33c2e478bb8b0d4063abafdade95dd4eec7b6
+Original Byte Length     : 6,362 bytes (97 lines)
+Provenance / Wipe Commit : Tazo Wiped AI / Codex / Validation / Test File — patches to cluster speed (wiped src/storm_head/README.md)
+Forensic Marker Counts   : Codex/Harness refs=0 | CWSBP/tainted refs=0 | Em/En-dashes=1
+--------------------------------------------------------------------------------
+OFFLINE CRYPTOGRAPHIC VERIFICATION (RUN AGAINST BARE COMMIT/TREE GRAPH):
+  git log --all --full-history --stat -- "src/storm_head/README.md"
+  # Any local clone holding blob aa57067f2710 verifies exact bytes via:
+  git cat-file -t aa57067f2710c2b9846eee5ab85a85600ad076c2 && git cat-file -s aa57067f2710c2b9846eee5ab85a85600ad076c2   # -> blob, 6362
+--------------------------------------------------------------------------------
+DOCUMENT SECTION HEADING INVENTORY (9 headings):
+  * L1: # Decayed Reality v2.5 — Storm Head / Tractor Beam Runtime
+  * L5: ## Tick order
+  * L11: ## Head modes
+  * L20: ## Movement model
+  * L28: ## Beam model
+  * L38: ## Terrain cluster generation
+  * L61: ## Developer controls
+  * L81: ## Health endpoints
+  * L95: ## Runtime validation
+--------------------------------------------------------------------------------
+BOUNDED FAIR-USE EVIDENTIARY EXCERPT (1 of 97 lines shown; full file omitted):
+  L0001 | # Decayed Reality v2.5 — Storm Head / Tractor Beam Runtime
+  [... 96 lines omitted under 17 U.S.C. § 107 transformative evidentiary scope ...]
+================================================================================

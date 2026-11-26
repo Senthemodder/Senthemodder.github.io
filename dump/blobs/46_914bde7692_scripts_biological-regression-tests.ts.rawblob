@@ -1,0 +1,61 @@
+================================================================================
+CRYPTOGRAPHIC FORENSIC INSPECTION CARD (17 U.S.C. §§ 102(b), 107 COMPLIANT)
+================================================================================
+Legal Notice: Full verbatim body intentionally omitted so zero executable source
+modules or complete prose documents from TazoLaTaza/Decayed-Reality are hosted.
+This record publishes strictly uncopyrightable cryptographic Git facts (§ 102(b)),
+structural symbol/heading metadata, and a bounded evidentiary excerpt (§ 107)
+establishing autonomous OpenAI Codex harness usage, CWSBP derivation, and cover-up
+deletion commits ('papoi', 'ohmama', 'beca cultural', '1b6facfdcd').
+--------------------------------------------------------------------------------
+Artifact Index           : #46
+Original Repository Path : scripts/biological-regression-tests.ts
+Exact Git Blob SHA-1     : 914bde7692a478e8d5bcd3f3c33a164cb2e569a4
+Exact Raw SHA-256        : 5a00d7996d6f60538e87b5b3fea7fd2921fd291b1612c50f83578615e8994fda
+Original Byte Length     : 12,491 bytes (118 lines)
+Provenance / Wipe Commit : Tazo Wiped AI / Codex / Validation / Test File — Tentacle is finished! (wiped 23 automated *-tests.ts suites)
+Forensic Marker Counts   : Codex/Harness refs=0 | CWSBP/tainted refs=0 | Em/En-dashes=0
+--------------------------------------------------------------------------------
+OFFLINE CRYPTOGRAPHIC VERIFICATION (RUN AGAINST BARE COMMIT/TREE GRAPH):
+  git log --all --full-history --stat -- "scripts/biological-regression-tests.ts"
+  # Any local clone holding blob 914bde7692a4 verifies exact bytes via:
+  git cat-file -t 914bde7692a478e8d5bcd3f3c33a164cb2e569a4 && git cat-file -s 914bde7692a478e8d5bcd3f3c33a164cb2e569a4   # -> blob, 12491
+--------------------------------------------------------------------------------
+DECLARED SYMBOL / TEST INVENTORY (up to 25 shown):
+  * L1: fs
+  * L3: test
+  * L4: harness
+  * L5: intervals
+  * L6: event
+  * L7: emit
+  * L8: state
+  * L9: entities
+  * L10: cache
+  * L11: key
+  * L12: air
+  * L13: dimension
+  * L15: Entity
+  * L34: Item
+  * L35: world
+  * L36: server
+  * L37: load
+  * L39: req
+  * L49: block
+  * L50: b
+  * L53: player
+  * L54: storm
+  * L57: test('sickness thresholds and health progression')
+  * L58: h
+  * L61: test('exposure infects survival players and respects cure immunity')
+--------------------------------------------------------------------------------
+BOUNDED FAIR-USE EVIDENTIARY EXCERPT (8 of 118 lines shown; full file omitted):
+  L0003 | const test=(name:string,run:()=>void):void=>{try{run();passed++;console.log("PASS "+name)}catch(error){console.error("FAIL "+
+  L0007 |   const emit=(key:string,e:any)=>{for(const fn of listeners.get(key)??[])fn(e)};
+  L0033 |   dimension.spawnEntity=(type:string,l:any)=>{if(state.spawnFailure)throw Error("spawn");const e=new Entity(type);e.location=
+  L0055 |   return{load,state,intervals,emit,Entity,player,storm,cache,dimension,entities,block,blocks,items,world,errors};
+  L0069 |   const h=harness();h.load("src/biology/sickness.ts");h.player.setDynamicProperty("decayed:sickness_age",24000);h.emit("playe
+  L0072 |   h.emit("playerSpawn",{player:h.player,initialSpawn:false});assert.equal(h.player.getDynamicProperty("decayed:sickness_age")
+  L0075 |   const h=harness();h.load("src/biology/sickness.ts");h.player.setDynamicProperty("decayed:sickness_age",1);h.emit("itemCompl
+  L0106 |   const h=harness();h.load("src/biology/mobs.ts");const cow=new h.Entity("minecraft:cow");cow.location={x:1,y:1,z:0};cow.name
+  [... 110 lines omitted under 17 U.S.C. § 107 transformative evidentiary scope ...]
+================================================================================

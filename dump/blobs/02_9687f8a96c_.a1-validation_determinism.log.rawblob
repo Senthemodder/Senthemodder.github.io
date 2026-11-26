@@ -1,0 +1,31 @@
+================================================================================
+CRYPTOGRAPHIC FORENSIC INSPECTION CARD (17 U.S.C. §§ 102(b), 107 COMPLIANT)
+================================================================================
+Legal Notice: Full verbatim body intentionally omitted so zero executable source
+modules or complete prose documents from TazoLaTaza/Decayed-Reality are hosted.
+This record publishes strictly uncopyrightable cryptographic Git facts (§ 102(b)),
+structural symbol/heading metadata, and a bounded evidentiary excerpt (§ 107)
+establishing autonomous OpenAI Codex harness usage, CWSBP derivation, and cover-up
+deletion commits ('papoi', 'ohmama', 'beca cultural', '1b6facfdcd').
+--------------------------------------------------------------------------------
+Artifact Index           : #02
+Original Repository Path : .a1-validation/determinism.log
+Exact Git Blob SHA-1     : 9687f8a96ca514e70737d4930795c994d0c95efe
+Exact Raw SHA-256        : 43e6231b7deae8f578d0e2a5b8209bff942f526905efaac67f237460d33c1638
+Original Byte Length     : 3,874 bytes (46 lines)
+Provenance / Wipe Commit : Tazo Wiped AI / Codex / Validation / Test File — papoi (+7m30s wipe of .codex, AGENTS.md, SKILL.md, 23 .a1-validation files)
+Forensic Marker Counts   : Codex/Harness refs=0 | CWSBP/tainted refs=0 | Em/En-dashes=5
+--------------------------------------------------------------------------------
+OFFLINE CRYPTOGRAPHIC VERIFICATION (RUN AGAINST BARE COMMIT/TREE GRAPH):
+  git log --all --full-history --stat -- ".a1-validation/determinism.log"
+  # Any local clone holding blob 9687f8a96ca5 verifies exact bytes via:
+  git cat-file -t 9687f8a96ca514e70737d4930795c994d0c95efe && git cat-file -s 9687f8a96ca514e70737d4930795c994d0c95efe   # -> blob, 3874
+--------------------------------------------------------------------------------
+BOUNDED FAIR-USE EVIDENTIARY EXCERPT (5 of 46 lines shown; full file omitted):
+  L0026 | [rtk] /!\ No hook installed — run `rtk init -g` for automatic token savings
+  L0027 | [rtk] /!\ No hook installed — run `rtk init -g` for automatic token savings
+  L0032 | [rtk] /!\ No hook installed — run `rtk init -g` for automatic token savings
+  L0037 | [rtk] /!\ No hook installed — run `rtk init -g` for automatic token savings
+  L0042 | [rtk] /!\ No hook installed — run `rtk init -g` for automatic token savings
+  [... 41 lines omitted under 17 U.S.C. § 107 transformative evidentiary scope ...]
+================================================================================

@@ -1,0 +1,34 @@
+================================================================================
+CRYPTOGRAPHIC FORENSIC INSPECTION CARD (17 U.S.C. §§ 102(b), 107 COMPLIANT)
+================================================================================
+Legal Notice: Full verbatim body intentionally omitted so zero executable source
+modules or complete prose documents from TazoLaTaza/Decayed-Reality are hosted.
+This record publishes strictly uncopyrightable cryptographic Git facts (§ 102(b)),
+structural symbol/heading metadata, and a bounded evidentiary excerpt (§ 107)
+establishing autonomous OpenAI Codex harness usage, CWSBP derivation, and cover-up
+deletion commits ('papoi', 'ohmama', 'beca cultural', '1b6facfdcd').
+--------------------------------------------------------------------------------
+Artifact Index           : #18
+Original Repository Path : .a1-validation/test-tentacle-contact.log
+Exact Git Blob SHA-1     : 3c96de901b95ee0cfcef545ccba63e0abf5052e5
+Exact Raw SHA-256        : f596f95b35667f68b5659fda74d9f9664ac06eb819a1a8256b6d5dadd43335fb
+Original Byte Length     : 5,471 bytes (102 lines)
+Provenance / Wipe Commit : Tazo Wiped AI / Codex / Validation / Test File — papoi (+7m30s wipe of .codex, AGENTS.md, SKILL.md, 23 .a1-validation files)
+Forensic Marker Counts   : Codex/Harness refs=11 | CWSBP/tainted refs=0 | Em/En-dashes=0
+--------------------------------------------------------------------------------
+OFFLINE CRYPTOGRAPHIC VERIFICATION (RUN AGAINST BARE COMMIT/TREE GRAPH):
+  git log --all --full-history --stat -- ".a1-validation/test-tentacle-contact.log"
+  # Any local clone holding blob 3c96de901b95 verifies exact bytes via:
+  git cat-file -t 3c96de901b95ee0cfcef545ccba63e0abf5052e5 && git cat-file -s 3c96de901b95ee0cfcef545ccba63e0abf5052e5   # -> blob, 5471
+--------------------------------------------------------------------------------
+BOUNDED FAIR-USE EVIDENTIARY EXCERPT (8 of 102 lines shown; full file omitted):
+  L0010 | > node --experimental-strip-types "D:/mydocs-server/add-on test/scripts/tentacle-contact-tests.ts"
+  L0031 | Ôä╣ pass 14
+  L0032 | Ôä╣ fail 3
+  L0040 | test at D:\mydocs-server\add-on test\scripts\tentacle-contact-tests.ts:34:7
+  L0044 |       at read (file:///D:/mydocs-server/add-on%20test/scripts/tentacle-contact-tests.ts:6:35)
+  L0045 |       at TestContext.<anonymous> (file:///D:/mydocs-server/add-on%20test/scripts/tentacle-contact-tests.ts:37:12)
+  L0051 |       at async file:///D:/mydocs-server/add-on%20test/scripts/tentacle-contact-tests.ts:34:1 {
+  L0058 | test at D:\mydocs-server\add-on test\scripts\tentacle-contact-tests.ts:153:7
+  [... 94 lines omitted under 17 U.S.C. § 107 transformative evidentiary scope ...]
+================================================================================

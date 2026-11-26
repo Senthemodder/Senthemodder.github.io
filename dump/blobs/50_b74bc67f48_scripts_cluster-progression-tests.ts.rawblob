@@ -1,0 +1,62 @@
+================================================================================
+CRYPTOGRAPHIC FORENSIC INSPECTION CARD (17 U.S.C. §§ 102(b), 107 COMPLIANT)
+================================================================================
+Legal Notice: Full verbatim body intentionally omitted so zero executable source
+modules or complete prose documents from TazoLaTaza/Decayed-Reality are hosted.
+This record publishes strictly uncopyrightable cryptographic Git facts (§ 102(b)),
+structural symbol/heading metadata, and a bounded evidentiary excerpt (§ 107)
+establishing autonomous OpenAI Codex harness usage, CWSBP derivation, and cover-up
+deletion commits ('papoi', 'ohmama', 'beca cultural', '1b6facfdcd').
+--------------------------------------------------------------------------------
+Artifact Index           : #50
+Original Repository Path : scripts/cluster-progression-tests.ts
+Exact Git Blob SHA-1     : b74bc67f48db7da8320ca66c75be9d67fc27d85d
+Exact Raw SHA-256        : 2f8ff5013aa992d0be854b9a90cad33caf4416464954f2a0f5ddbd79dc82bcf2
+Original Byte Length     : 6,965 bytes (70 lines)
+Provenance / Wipe Commit : Tazo Wiped AI / Codex / Validation / Test File — Tentacle is finished! (wiped 23 automated *-tests.ts suites)
+Forensic Marker Counts   : Codex/Harness refs=0 | CWSBP/tainted refs=0 | Em/En-dashes=0
+--------------------------------------------------------------------------------
+OFFLINE CRYPTOGRAPHIC VERIFICATION (RUN AGAINST BARE COMMIT/TREE GRAPH):
+  git log --all --full-history --stat -- "scripts/cluster-progression-tests.ts"
+  # Any local clone holding blob b74bc67f48db verifies exact bytes via:
+  git cat-file -t b74bc67f48db7da8320ca66c75be9d67fc27d85d && git cat-file -s b74bc67f48db7da8320ca66c75be9d67fc27d85d   # -> blob, 6965
+--------------------------------------------------------------------------------
+MODULE IMPORT GRAPH (6 imports):
+  * L1: import assert from "node:assert/strict";
+  * L2: import {readFileSync} from "node:fs";
+  * L3: import {resolve} from "node:path";
+  * L4: import {runInNewContext} from "node:vm";
+  * L5: import {build,transformSync} from "esbuild";
+  * L6: import {test} from "node:test";
+--------------------------------------------------------------------------------
+DECLARED SYMBOL / TEST INVENTORY (up to 25 shown):
+  * L7: legacy
+  * L8: mocks
+  * L9: result
+  * L14: api
+  * L15: json
+  * L16: ground
+  * L17: changed
+  * L18: dimension
+  * L24: source
+  * L26: test('Destroyer unlocks exactly models 1 through 7 at the existing phase boundaries')
+  * L27: expected
+  * L29: seen
+  * L32: test('Devour ranges grow and phase seven excludes small normal and flat models')
+  * L38: test('procedural growth biases selection upward without crossing available bounds')
+  * L42: test('grass requires real flat support and never falls through to normal')
+  * L43: flat
+  * L46: test('crater floors and buried anchors are rejected beside higher ground')
+  * L47: crater
+  * L50: test('top-down terrain sampling cannot choose a cave below the exposed surface')
+  * L51: g
+  * L53: test('every phase-selected flat variant resolves both its geometry and footprint')
+  * L54: rp
+  * L58: test('setdevourphase validates all targets before mutating any storm')
+  * L59: text
+  * L61: invoke
+--------------------------------------------------------------------------------
+BOUNDED FAIR-USE EVIDENTIARY EXCERPT (1 of 70 lines shown; full file omitted):
+  L0068 |  const marker=runInNewContext(transformSync(text.slice(a,b).replace("export const","const")+"\nmarkTerrainCluster;",{loader:"
+  [... 69 lines omitted under 17 U.S.C. § 107 transformative evidentiary scope ...]
+================================================================================

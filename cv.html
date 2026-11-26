@@ -1,0 +1,439 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Minh Lê (@Senthemodder) · Software Engineer CV</title>
+  <meta name="description" content="CV of Minh Lê (@Senthemodder), Software Engineer.">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+  <style>
+    @page {
+      size: A4 portrait;
+      margin: 0;
+    }
+
+    *, *::before, *::after {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    html, body {
+      font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+      background: #e2e8f0;
+      color: #0f172a;
+      -webkit-font-smoothing: antialiased;
+      -moz-osx-font-smoothing: grayscale;
+    }
+
+    /* ── Screen Action Toolbar (Non-Printing) ── */
+    .cv-toolbar {
+      max-width: 210mm;
+      margin: 18px auto 14px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 10px;
+    }
+    .toolbar-group {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      flex-wrap: wrap;
+    }
+    .tb-btn {
+      appearance: none;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 6px;
+      padding: 8px 14px;
+      border-radius: 8px;
+      border: 1px solid #cbd5e1;
+      background: #ffffff;
+      color: #0f172a;
+      font-family: inherit;
+      font-size: 13px;
+      font-weight: 600;
+      text-decoration: none;
+      cursor: pointer;
+      box-shadow: 0 1px 2px rgba(15, 23, 42, 0.06);
+      transition: background 0.15s ease, border-color 0.15s ease, transform 0.15s ease;
+    }
+    .tb-btn:hover {
+      background: #f8fafc;
+      border-color: #94a3b8;
+      transform: translateY(-1px);
+    }
+    .tb-primary {
+      background: #1e40af;
+      border-color: #1e40af;
+      color: #ffffff;
+    }
+    .tb-primary:hover {
+      background: #1d4ed8;
+      border-color: #1d4ed8;
+      color: #ffffff;
+    }
+
+    /* ── Single-Page A4 Sheet ── */
+    .cv-sheet {
+      width: 210mm;
+      min-height: 297mm;
+      margin: 0 auto 32px;
+      background: #ffffff;
+      color: #0f172a;
+      padding: 10.5mm 13mm;
+      box-shadow: 0 12px 36px rgba(15, 23, 42, 0.12);
+    }
+
+    /* Header */
+    .cv-header {
+      margin-bottom: 6px;
+    }
+    .cv-header h1 {
+      font-size: 20.5pt;
+      font-weight: 800;
+      letter-spacing: -0.3px;
+      line-height: 1.06;
+      color: #0f172a;
+      text-transform: uppercase;
+    }
+    .cv-role {
+      font-size: 10.2pt;
+      font-weight: 600;
+      color: #334155;
+      margin-top: 2px;
+    }
+    .contact-row {
+      margin-top: 4px;
+      font-size: 8.2pt;
+      color: #334155;
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      gap: 3px 6px;
+      line-height: 1.32;
+    }
+    .contact-row a {
+      color: #1e40af;
+      text-decoration: none;
+      font-weight: 500;
+    }
+    .contact-row a:hover {
+      text-decoration: underline;
+    }
+    .sep {
+      color: #94a3b8;
+      user-select: none;
+    }
+
+    /* Section Headings */
+    h2.cv-section-title {
+      font-size: 9pt;
+      font-weight: 800;
+      text-transform: uppercase;
+      letter-spacing: 0.75px;
+      color: #0f172a;
+      border-bottom: 1.2px solid #0f172a;
+      padding-bottom: 2px;
+      margin: 7.5px 0 4.5px;
+    }
+
+    /* Summary */
+    .cv-summary {
+      font-size: 8.55pt;
+      line-height: 1.34;
+      color: #1e293b;
+    }
+
+    /* Skills */
+    .skills-list {
+      display: flex;
+      flex-direction: column;
+      gap: 2px;
+    }
+    .skill-row {
+      font-size: 8.45pt;
+      line-height: 1.32;
+      color: #1e293b;
+    }
+    .skill-row strong {
+      color: #0f172a;
+      font-weight: 700;
+    }
+
+    /* Experience & Selected Systems Entries */
+    .cv-entry {
+      margin-bottom: 4.8px;
+    }
+    .cv-entry:last-child {
+      margin-bottom: 0;
+    }
+    .entry-head {
+      display: flex;
+      justify-content: space-between;
+      align-items: baseline;
+      gap: 8px;
+    }
+    .entry-left {
+      font-size: 8.75pt;
+      color: #0f172a;
+      line-height: 1.26;
+    }
+    .entry-left strong {
+      font-weight: 700;
+    }
+    .entry-left .entry-org {
+      color: #334155;
+      font-weight: 500;
+      font-style: italic;
+    }
+    .entry-meta {
+      font-size: 8pt;
+      color: #475569;
+      font-weight: 600;
+      white-space: nowrap;
+      flex-shrink: 0;
+    }
+    .cv-bullets {
+      padding-left: 13px;
+      margin: 2px 0 0;
+    }
+    .cv-bullets li {
+      font-size: 8.45pt;
+      line-height: 1.32;
+      color: #1e293b;
+      margin-bottom: 1.5px;
+    }
+    .cv-bullets li:last-child {
+      margin-bottom: 0;
+    }
+    .cv-bullets code {
+      font-family: ui-monospace, Consolas, 'Courier New', monospace;
+      font-size: 8.2pt;
+      color: #0f172a;
+    }
+
+    @media screen and (max-width: 840px) {
+      body {
+        padding: 0 10px 24px;
+      }
+      .cv-toolbar {
+        width: 100%;
+        max-width: 100%;
+        margin: 12px 0;
+        flex-wrap: wrap;
+      }
+      .cv-sheet {
+        width: 100%;
+        min-height: auto;
+        padding: 1.25rem;
+      }
+      .entry-head {
+        flex-direction: column;
+        gap: 1px;
+      }
+      .entry-meta {
+        white-space: normal;
+      }
+    }
+
+    @media print {
+      html, body {
+        background: #ffffff !important;
+        margin: 0 !important;
+        padding: 0 !important;
+      }
+      .no-print {
+        display: none !important;
+      }
+      .cv-sheet {
+        width: 210mm !important;
+        min-height: 0 !important;
+        height: auto !important;
+        margin: 0 !important;
+        box-shadow: none !important;
+        padding: 10.5mm 13mm !important;
+      }
+      a {
+        text-decoration: none !important;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <div class="cv-toolbar no-print">
+    <div class="toolbar-group">
+      <a href="index.html" class="tb-btn">← Back to Portfolio</a>
+    </div>
+    <div class="toolbar-group">
+      <a href="Minh_Le_CV.pdf" download="Minh_Le_CV.pdf" class="tb-btn tb-primary">Download PDF</a>
+      <button type="button" onclick="window.print()" class="tb-btn">Print</button>
+    </div>
+  </div>
+
+  <main class="cv-sheet">
+
+    <header class="cv-header">
+      <h1>MINH LÊ</h1>
+      <div class="cv-role">Software Engineer</div>
+      <div class="contact-row">
+        <span>Vietnam (UTC+7 · Remote)</span>
+        <span class="sep">·</span>
+        <a href="mailto:minhanhle220907@gmail.com">minhanhle220907@gmail.com</a>
+        <span class="sep">·</span>
+        <a href="https://senthemodder.github.io" target="_blank" rel="noopener">senthemodder.github.io</a>
+        <span class="sep">·</span>
+        <a href="https://github.com/Senthemodder" target="_blank" rel="noopener">github.com/Senthemodder</a>
+      </div>
+    </header>
+
+    <section aria-labelledby="sec-summary">
+      <h2 class="cv-section-title" id="sec-summary">Summary</h2>
+      <p class="cv-summary">
+        Software engineer with 4+ years building backend services, web apps, desktop tools, compilers, Minecraft mods, and commercial add-ons. Comfortable jumping into unfamiliar codebases, working around engine limits from scratch, and shipping code that holds up in production across PC, web, mobile, and console.
+      </p>
+    </section>
+
+    <section aria-labelledby="sec-skills">
+      <h2 class="cv-section-title" id="sec-skills">Technical Skills</h2>
+      <div class="skills-list">
+        <div class="skill-row"><strong>Languages:</strong> TypeScript, JavaScript, Java, Rust, Python, C++, C#, SQL, HTML/CSS</div>
+        <div class="skill-row"><strong>Backend &amp; Web:</strong> Node.js, React, Next.js, PostgreSQL, SQLite, REST APIs, WebSockets</div>
+        <div class="skill-row"><strong>Desktop, Tooling &amp; Ops:</strong> Windows Desktop Apps (Win32 / C# / Electron), Compilers &amp; Code Generation, Network Routing (WARP / Sing-Box), Git, CI/CD, Linux</div>
+        <div class="skill-row"><strong>Game &amp; Modding:</strong> Minecraft (Java Edition: Fabric / NeoForge · Bedrock: Script API / Add-Ons), Custom Physics, World Generation, Cross-Edition Porting</div>
+      </div>
+    </section>
+
+    <section aria-labelledby="sec-exp">
+      <h2 class="cv-section-title" id="sec-exp">Experience</h2>
+
+      <article class="cv-entry">
+        <div class="entry-head">
+          <div class="entry-left"><strong>Senior Gameplay &amp; Systems Developer</strong> · <span class="entry-org">Official Minecraft Marketplace Partner (NDA)</span></div>
+          <span class="entry-meta">Current · Direct Reference on Inquiry</span>
+        </div>
+        <ul class="cv-bullets">
+          <li>Leading and building custom gameplay systems, mob behaviors, and world mechanics for commercial Minecraft Marketplace releases across console, mobile, and PC.</li>
+        </ul>
+      </article>
+
+      <article class="cv-entry">
+        <div class="entry-head">
+          <div class="entry-left"><strong>Systems &amp; Gameplay Contractor</strong> · <span class="entry-org">Commercial Cross-Platform UGC Studio (UK / US · NDA)</span></div>
+          <span class="entry-meta">Current · Contractor · Remote</span>
+        </div>
+        <ul class="cv-bullets">
+          <li>Building gameplay features, custom items and blocks, and scripted mechanics for commercial multi-platform releases tuned to hold 60 fps on phones, Switch, consoles, and PC.</li>
+        </ul>
+      </article>
+
+      <article class="cv-entry">
+        <div class="entry-head">
+          <div class="entry-left"><strong>Engine &amp; Tooling Contractor</strong> · <span class="entry-org">Official Minecraft Marketplace Partner (NDA)</span></div>
+          <span class="entry-meta">Current · Marketplace Partner · 4.1 ★</span>
+        </div>
+        <ul class="cv-bullets">
+          <li>Co-developed an official enterable pocket-dimension survival &amp; boss add-on and authored shared internal studio compilers for custom fluids and batched multi-block rendering.</li>
+        </ul>
+      </article>
+
+      <article class="cv-entry">
+        <div class="entry-head">
+          <div class="entry-left"><strong>Full-Stack Add-On Contractor</strong> · <span class="entry-org">Multi-Storefront Marketplace Partners (200+ Releases · NDA)</span></div>
+          <span class="entry-meta">Current · Turnkey Add-Ons</span>
+        </div>
+        <ul class="cv-bullets">
+          <li>Delivering turnkey commercial add-ons end-to-end (including a 264-piece, 106k+ LOC zero-idle interactive furniture &amp; appliance engine localized across 6 languages) plus minigame and world mechanics.</li>
+        </ul>
+      </article>
+
+      <article class="cv-entry">
+        <div class="entry-head">
+          <div class="entry-left"><strong>Gameplay &amp; Ecosystem Contractor</strong> · <span class="entry-org">Official Minecraft Marketplace Partner (Former · NDA)</span></div>
+          <span class="entry-meta">Former · 4.6 ★ · 1,939+ Ratings</span>
+        </div>
+        <ul class="cv-bullets">
+          <li>Built animal behaviors, habitat spawning, and biome features for a commercial Marketplace survival overhaul (200+ custom species across 50+ biomes, rated 4.6/5 across 1,939+ verified player reviews).</li>
+        </ul>
+      </article>
+
+      <article class="cv-entry">
+        <div class="entry-head">
+          <div class="entry-left"><strong>Open-Source Gameplay &amp; Physics Contributor</strong> · <span class="entry-org">Major Java Space Exploration Mod</span></div>
+          <span class="entry-meta">Former · 3.7M+ Downloads · 637 ★</span>
+        </div>
+        <ul class="cv-bullets">
+          <li>Contributed orbital mechanics and gameplay systems to a modern Java Edition space exploration mod (3.7M+ combined downloads; active studio references &amp; live Marketplace links shared directly upon inquiry).</li>
+        </ul>
+      </article>
+    </section>
+
+    <section aria-labelledby="sec-sys">
+      <h2 class="cv-section-title" id="sec-sys">Selected Projects</h2>
+
+      <article class="cv-entry">
+        <div class="entry-head">
+          <div class="entry-left"><strong>Custom Fluid System</strong> · <span class="entry-org">TypeScript, JavaScript</span></div>
+          <span class="entry-meta">60 fps on Mobile &amp; Console</span>
+        </div>
+        <ul class="cv-bullets">
+          <li>Ported Java-style flowing fluids into an engine with no custom liquid API. Handles flow levels, slope finding, waterfalls, pushing players and items, bucket pickup, fluid-to-stone reactions, and smooth angled top faces without hurting frame rate.</li>
+        </ul>
+      </article>
+
+      <article class="cv-entry">
+        <div class="entry-head">
+          <div class="entry-left"><strong>Moving Contraption &amp; Train Engine</strong> · <span class="entry-org">TypeScript, 3D Math</span></div>
+          <span class="entry-meta">35,000+ Lines of Code</span>
+        </div>
+        <ul class="cv-bullets">
+          <li>Wrote a Create-style contraption and train engine from scratch. Turns placed world blocks into rotating bearings, pistons, elevators, and multi-car trains on curved tracks, batching 30 blocks per entity while keeping chests, seats, doors, and redstone working onboard.</li>
+        </ul>
+      </article>
+
+      <article class="cv-entry">
+        <div class="entry-head">
+          <div class="entry-left"><strong>Terrain Compiler &amp; Low-Gravity Physics</strong> · <span class="entry-org">Node.js, TypeScript</span></div>
+          <span class="entry-meta">Custom Worldgen</span>
+        </div>
+        <ul class="cv-bullets">
+          <li>Wrote a compiler that takes noise functions, height splines, and 3D cave rules in JS and compiles them into worldgen files for overhangs, rivers, and custom void-world planets, paired with low-gravity jump, fall, and projectile physics for moons and space stations.</li>
+        </ul>
+      </article>
+
+      <article class="cv-entry">
+        <div class="entry-head">
+          <div class="entry-left"><strong>Split-Tunnel Launcher, Porting Tools &amp; Web Apps</strong> · <span class="entry-org">TypeScript, C#, React, PostgreSQL</span></div>
+          <span class="entry-meta">Open-Source &amp; Web</span>
+        </div>
+        <ul class="cv-bullets">
+          <li>Built <code>roblox-global-split-launcher</code>, a Windows tray app that routes login and API traffic over Cloudflare WARP + Sing-Box while keeping live UDP game packets on the direct ISP route so ping stays flat.</li>
+          <li>Built CLI tools that convert Java mod GUIs and 3D item models into Bedrock format, a RISC-V-to-script compiler (<code>riscvmc2</code>), and <em>Atelier</em>, a full-stack commission marketplace with split payouts.</li>
+        </ul>
+      </article>
+    </section>
+
+    <section aria-labelledby="sec-vol">
+      <h2 class="cv-section-title" id="sec-vol">Volunteering</h2>
+      <article class="cv-entry">
+        <div class="entry-head">
+          <div class="entry-left"><strong>Ex-Fundraising Volunteer</strong> · <span class="entry-org">HCM Youth Union</span></div>
+          <span class="entry-meta">Former · Ho Chi Minh City</span>
+        </div>
+        <ul class="cv-bullets">
+          <li>Helped organize local charity fundraising campaigns and community youth volunteer drives in Ho Chi Minh City.</li>
+        </ul>
+      </article>
+    </section>
+
+  </main>
+
+</body>
+</html>

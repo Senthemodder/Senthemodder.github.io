@@ -1,0 +1,37 @@
+================================================================================
+CRYPTOGRAPHIC FORENSIC INSPECTION CARD (17 U.S.C. §§ 102(b), 107 COMPLIANT)
+================================================================================
+Legal Notice: Full verbatim body intentionally omitted so zero executable source
+modules or complete prose documents from TazoLaTaza/Decayed-Reality are hosted.
+This record publishes strictly uncopyrightable cryptographic Git facts (§ 102(b)),
+structural symbol/heading metadata, and a bounded evidentiary excerpt (§ 107)
+establishing autonomous OpenAI Codex harness usage, CWSBP derivation, and cover-up
+deletion commits ('papoi', 'ohmama', 'beca cultural', '1b6facfdcd').
+--------------------------------------------------------------------------------
+Artifact Index           : #04
+Original Repository Path : .a1-validation/geometry-resource-changes.json
+Exact Git Blob SHA-1     : f9958c84066b89f346117b96c71c66148b3fc7d1
+Exact Raw SHA-256        : 9d7aac23f99323d583fae6917e3b68f3e42c8500bd2bc3d62424c9787fc97841
+Original Byte Length     : 7,980 bytes (443 lines)
+Provenance / Wipe Commit : Tazo Wiped AI / Codex / Validation / Test File — papoi (+7m30s wipe of .codex, AGENTS.md, SKILL.md, 23 .a1-validation files)
+Forensic Marker Counts   : Codex/Harness refs=0 | CWSBP/tainted refs=0 | Em/En-dashes=0
+--------------------------------------------------------------------------------
+OFFLINE CRYPTOGRAPHIC VERIFICATION (RUN AGAINST BARE COMMIT/TREE GRAPH):
+  git log --all --full-history --stat -- ".a1-validation/geometry-resource-changes.json"
+  # Any local clone holding blob f9958c84066b verifies exact bytes via:
+  git cat-file -t f9958c84066b89f346117b96c71c66148b3fc7d1 && git cat-file -s f9958c84066b89f346117b96c71c66148b3fc7d1   # -> blob, 7980
+--------------------------------------------------------------------------------
+JSON SCHEMA / TOP-LEVEL KEY INVENTORY:
+  * root: array[9 items]
+--------------------------------------------------------------------------------
+BOUNDED FAIR-USE EVIDENTIARY EXCERPT (8 of 443 lines shown; full file omitted):
+  L0001 | [
+  L0002 |   {
+  L0003 |     "name": "main_body",
+  L0004 |     "before": {
+  L0005 |       "name": "main_body",
+  L0006 |       "parent": "wither_storm",
+  L0007 |       "pivot": [
+  L0008 |         -24.76271,
+  [... 435 lines omitted under 17 U.S.C. § 107 transformative evidentiary scope ...]
+================================================================================

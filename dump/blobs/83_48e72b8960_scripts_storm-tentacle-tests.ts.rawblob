@@ -1,0 +1,65 @@
+================================================================================
+CRYPTOGRAPHIC FORENSIC INSPECTION CARD (17 U.S.C. §§ 102(b), 107 COMPLIANT)
+================================================================================
+Legal Notice: Full verbatim body intentionally omitted so zero executable source
+modules or complete prose documents from TazoLaTaza/Decayed-Reality are hosted.
+This record publishes strictly uncopyrightable cryptographic Git facts (§ 102(b)),
+structural symbol/heading metadata, and a bounded evidentiary excerpt (§ 107)
+establishing autonomous OpenAI Codex harness usage, CWSBP derivation, and cover-up
+deletion commits ('papoi', 'ohmama', 'beca cultural', '1b6facfdcd').
+--------------------------------------------------------------------------------
+Artifact Index           : #83
+Original Repository Path : scripts/storm-tentacle-tests.ts
+Exact Git Blob SHA-1     : 48e72b89601bda3923a34d974de8b53e18961b47
+Exact Raw SHA-256        : 9601986c2af4e75e4bf88c1d3ca5e05f358c993df70a0fcf73e1f8c1475563dc
+Original Byte Length     : 42,106 bytes (190 lines)
+Provenance / Wipe Commit : Tazo Commit 8d9d855b35 Automated Agent Test Suite — Added alongside AGENTS.md & .codex/config.toml in 8d9d855b35
+Forensic Marker Counts   : Codex/Harness refs=0 | CWSBP/tainted refs=0 | Em/En-dashes=0
+--------------------------------------------------------------------------------
+OFFLINE CRYPTOGRAPHIC VERIFICATION (RUN AGAINST BARE COMMIT/TREE GRAPH):
+  git log --all --full-history --stat -- "scripts/storm-tentacle-tests.ts"
+  # Any local clone holding blob 48e72b89601b verifies exact bytes via:
+  git cat-file -t 48e72b89601bda3923a34d974de8b53e18961b47 && git cat-file -s 48e72b89601bda3923a34d974de8b53e18961b47   # -> blob, 42106
+--------------------------------------------------------------------------------
+MODULE IMPORT GRAPH (5 imports):
+  * L1: import assert from "node:assert/strict";
+  * L2: import { readFileSync, writeFileSync } from "node:fs";
+  * L3: import { createRequire } from "node:module";
+  * L4: import { performance } from "node:perf_hooks";
+  * L5: import { build } from "esbuild";
+--------------------------------------------------------------------------------
+DECLARED SYMBOL / TEST INVENTORY (up to 25 shown):
+  * L7: listeners
+  * L10: intervals
+  * L11: subscribe
+  * L12: dimension
+  * L13: MockEntity
+  * L20: MockPlayer
+  * L21: env
+  * L23: result
+  * L24: taskModule
+  * L26: rest
+  * L27: geometry
+  * L28: procedural
+  * L29: original
+  * L30: rotate
+  * L31: oracle
+  * L38: query
+  * L41: layout
+  * L43: pivot
+  * L45: result
+  * L49: chainNames
+  * L52: origin
+  * L59: pose
+  * L68: origin
+  * L70: goal
+  * L71: storm
+--------------------------------------------------------------------------------
+BOUNDED FAIR-USE EVIDENTIARY EXCERPT (5 of 190 lines shown; full file omitted):
+  L0130 | exports.manageTentacle(storm,"destroyer_a1",true);setActions(storm,{destroyer_a1:"attack"},80);dimension.getBlock=()=>({typeI
+  L0131 | exports.manageTentacle(storm,"destroyer_a1",true);setActions(storm,{destroyer_a1:"attack"},80);const deferredCount=spawned;le
+  L0147 | assert.equal(exports.queueTentaclePoseContact(storm,"destroyer_a1",sweep,()=>assert.fail("Severed attack")),false);
+  L0175 | for(const owner of concurrent){assert.ok(read(owner.id)?.target,"Enrollment pass deferred an active owner");assert.ok(entitie
+  L0180 | console.log(`Four active owners acquired on the same enrollment pass and held under pressure; offline combined mock update me
+  [... 185 lines omitted under 17 U.S.C. § 107 transformative evidentiary scope ...]
+================================================================================

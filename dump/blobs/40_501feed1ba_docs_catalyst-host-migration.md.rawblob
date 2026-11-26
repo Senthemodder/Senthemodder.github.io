@@ -1,0 +1,48 @@
+================================================================================
+CRYPTOGRAPHIC FORENSIC INSPECTION CARD (17 U.S.C. §§ 102(b), 107 COMPLIANT)
+================================================================================
+Legal Notice: Full verbatim body intentionally omitted so zero executable source
+modules or complete prose documents from TazoLaTaza/Decayed-Reality are hosted.
+This record publishes strictly uncopyrightable cryptographic Git facts (§ 102(b)),
+structural symbol/heading metadata, and a bounded evidentiary excerpt (§ 107)
+establishing autonomous OpenAI Codex harness usage, CWSBP derivation, and cover-up
+deletion commits ('papoi', 'ohmama', 'beca cultural', '1b6facfdcd').
+--------------------------------------------------------------------------------
+Artifact Index           : #40
+Original Repository Path : docs/catalyst-host-migration.md
+Exact Git Blob SHA-1     : 501feed1ba8625779f899154cb246509eacda21a
+Exact Raw SHA-256        : 5a5826c6a8db838e2571b1744b8591189f98a5f2b8f1225f41fdd30258865bfe
+Original Byte Length     : 11,899 bytes (165 lines)
+Provenance / Wipe Commit : Tazo Wiped AI / Codex / Validation / Test File — TENTACLES REWORK (wiped 3 docs/tentacle-*.md specs)
+Forensic Marker Counts   : Codex/Harness refs=0 | CWSBP/tainted refs=0 | Em/En-dashes=0
+--------------------------------------------------------------------------------
+OFFLINE CRYPTOGRAPHIC VERIFICATION (RUN AGAINST BARE COMMIT/TREE GRAPH):
+  git log --all --full-history --stat -- "docs/catalyst-host-migration.md"
+  # Any local clone holding blob 501feed1ba86 verifies exact bytes via:
+  git cat-file -t 501feed1ba8625779f899154cb246509eacda21a && git cat-file -s 501feed1ba8625779f899154cb246509eacda21a   # -> blob, 11899
+--------------------------------------------------------------------------------
+DOCUMENT SECTION HEADING INVENTORY (12 headings):
+  * L1: # Catalyst on the persistent dragon host
+  * L7: ## 1. Architecture and migration map
+  * L22: ## 2. Role identification
+  * L30: ## 3. Properties, behavior and assets
+  * L38: ## 4. Runtime references and performance
+  * L44: ## 5. Catalyst to Phase 4
+  * L50: ## 6. Formidibomb and Play Dead
+  * L56: ## 7. Revival, Devour and cleanup
+  * L64: ## 8. Intentionally retained legacy identifiers
+  * L76: ## 9. Files changed
+  * L130: ## 10. Validation and remaining work
+  * L152: ### Required Minecraft checks
+--------------------------------------------------------------------------------
+BOUNDED FAIR-USE EVIDENTIARY EXCERPT (8 of 165 lines shown; full file omitted):
+  L0005 | The source migration is implemented and the runtime bundle is generated. The targeted checks pass. The full project validatio
+  L0083 | src/ticking/WitherStormTick_evolution.ts
+  L0116 | Decayed_Reality_BP/animations/witherstorm_basic.json
+  L0128 | Concurrent changes in `src/clusters/clusterConfig.ts` were preserved and are not part of this migration's authored edits. No 
+  L0134 | | `npm run test:catalyst` | 12/12 pass |
+  L0135 | | `npm run typecheck` | Pass |
+  L0136 | | `npm run audit` | Pass, 153 TypeScript files; 12 existing unchecked files |
+  L0137 | | Direct esbuild of `src/main.ts` with the project's build flags | Pass; runtime bundle generated |
+  [... 157 lines omitted under 17 U.S.C. § 107 transformative evidentiary scope ...]
+================================================================================

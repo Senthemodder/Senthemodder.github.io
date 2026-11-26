@@ -1,0 +1,300 @@
+RAW GIT OBJECT & PGP PROVENANCE RECORD: TazoLaTaza/Decayed-Reality
+Bundle SHA-256: 34f6e9a49ae9ba3869e50abb0677f268be9a7a89337b74ae2bfcbdd105886d79
+GitHub Web-Flow Public RSA Key (0xB5690EEEBB952194): https://github.com/web-flow.gpg
+================================================================================
+
+--- [OBJECT 1] git cat-file -p 59ae42d26516 (PGP-Signed Tazo! Commit Anchor) ---
+tree fb1077e71da5ec30c62d236d962cc14d56a4b7a2
+parent ed670c47fbe3c1eb1bb25fb67952660e81db5f6e
+parent 0bf7c63bfa5b238db1e1c04aed9b71cc6f73a3cd
+author Tazo! <[redacted-owner-email]> 1770866644 -0300
+committer GitHub <[redacted-private-email]> 1770866644 -0300
+gpgsig -----BEGIN PGP SIGNATURE-----
+ 
+ wsFcBAABCAAQBQJpjUfUCRC1aQ7uu5UhlAAAfKEQACIlvB1pc3UyibxHrERpFawZ
+ AHS/qg+KRLsf/1cbxOc4mpLBcg2BmCgXUEL7M5CK71eXstbcw0qAPpmaOt2MnLR1
+ X2dDeQMc8oRZ1CyowmnFTLzCCef01+WoFFxfrTtgnG+1dtvvB9yyqF6G+Bvx9mSc
+ kHFBc/vHwgSLeUDfJA6rimaPi6R0OTY/GZgWEd2EQpXWShBEjFnaIbytA/0VxrYH
+ sdHS0mIBsEYcfF5Jj+rdHZkA4x9RLUaLCSx0UvqUNUCTdQH06GZHAxMuhdxQr6sD
+ JUjOz8j/aADOrZcAQCpaW2iNk1gOUoJe8PCxFhVTEVJ6gEM/pB3wOBTdF4CuxeTo
+ x7VTifjDoYDf97CcUCFEQWij/dSQaJRq1LBlVfDgxMv3ibymH2bNqo7gh1kLcTLc
+ tHDNQUNEpiKacEytjZlW5Hxmgjtaj9y3dO9xjQcpy1lWXpD4u2oGt7GuM/mrAHms
+ MYtgZIDqdfvXCBqFGuszOEVLF2WTAaowFRaA816Z7AUUV1X2OJoUhL1FcVTV+1UT
+ r7FUjmF+wwEyuOzqCdKmGH6X9sdbFBn7Tk/jbpx5f6A//f+UBEYzmbLOw5pwAJyU
+ uVgoL88xcHlrJ6Dw1YCxD4IcRgatVysFkjXVI7cdpI32eHYwmtt4/P5BpSbclqNh
+ buCU9cCbed8ZnmeWHJtY
+ =MTWt
+ -----END PGP SIGNATURE-----
+ 
+
+this could go really badly
+
+Optimize dragon targeting, centralize entity cache, and refactor multiple runtime systems
+--- [OBJECT 2] git cat-file -p cbb6bbc036d8 (PGP-Signed doofus -0400 Commit Anchor) ---
+tree a0c43b8be441c71645b9fa8359d1c8972d7ee0cb
+parent c0947784e724edae7eda50eb637304ee0918b506
+author doofus <[redacted-private-email]> 1781802288 -0400
+committer GitHub <[redacted-private-email]> 1781802288 -0400
+gpgsig -----BEGIN PGP SIGNATURE-----
+ 
+ wsFcBAABCAAQBQJqNCUwCRC1aQ7uu5UhlAAA3OMQAIUYm2UBcP9HjDAagtXe98hc
+ ifVHwzwhjPv37+usVQ4exhIQNXCRbsDI2zgxu0absN7DuTI7uc2CGEqQ1fkLTAso
+ 9bFtBt6iZ89C8OGLbXGz2takxhZ93PxBT6iuFnmgqybMhetc/98m1YDdFAVXwBsX
+ WWyjwdfJB5cPmoG5y31ueBzU8jccEHKWIX7WwqRZf0mTz4SBY6vZ12dGIZer3Uj1
+ HJEnNS8vEr+sjig7HACZqRsJwMGd0Xtdm9PqCBVO0g+WcAyMC/P3MpGpaAlgRZAr
+ G8/d/mdW7ft5YK6mcrWMeM8r5hy3vk+6jX396Gp8b7leuvz94PwuV+qsUSXsVeoG
+ 0yyIWeDHlXyVV2z1pTrkVLl6NBWXDFgMs7FQIprXjsmunrgbondFOYU4i2KWf2l7
+ 7p3WuH8YuuppcfOgwE7IczUs/5A9QbrK/HSJ7Pu0uCai/OQ4HrwEsMV4dT+NOFix
+ LoXALIAX86q2g3sd4KwESFxLhLY4iqZR8ldv9NPWfuPKqZTpjn1yqoejorRUVfMp
+ t8uygulrWpmJ2jHgP1YLCkSdyMARCtRGEWcnjJBOv3Xs1cAeK/X5A4tKgaIK6LuZ
+ oBT8IJ+RixK7EYQTW7rnbslMsOLn8LaHAqKhG/nRCm5NybuMfUv4cvhbDWd03IpA
+ owBkigacfzGcqKAO7f5u
+ =rHhE
+ -----END PGP SIGNATURE-----
+ 
+
+Update project version in README (free to change back)
+--- [OBJECT 3] git show --stat --format=raw 8d9d855b35cb8eda2862cd70136048de15a098fd ---
+commit 8d9d855b35cb8eda2862cd70136048de15a098fd
+tree 3a9b99a721ecc52fa56484454907d50b8f2901a0
+parent 17b7930ea3e830ed47e5f45130a1014741326f6e
+author TazoLaTaza <[redacted-owner-email]> 1791011772 -0300
+committer TazoLaTaza <[redacted-owner-email]> 1791011772 -0300
+
+    A1 IMPLEMENTED
+
+ .a1-validation/build.log                           |    82 +
+ .a1-validation/determinism.log                     |    46 +
+ .a1-validation/focused.log                         |    39 +
+ .a1-validation/geometry-resource-changes.json      |   443 +
+ .a1-validation/phase-comparison.json               |   674 +
+ .a1-validation/severing-build.log                  |    88 +
+ .a1-validation/severing-diff-check.log             |    40 +
+ .a1-validation/severing-phase-comparison.md        |    34 +
+ .a1-validation/severing-test-content.log           |    24 +
+ .../severing-test-procedural-tentacle.log          |   264 +
+ .a1-validation/severing-test-storm-heads.log       |    18 +
+ .a1-validation/severing-test-storm-tentacle.log    |    47 +
+ .a1-validation/severing-test-tentacle-contact.log  |   104 +
+ .a1-validation/severing-test-tentacles.log         |   188 +
+ .a1-validation/severing-test.log                   |   400 +
+ .a1-validation/severing-validate-content.log       |    42 +
+ .a1-validation/test-procedural-tentacle.log        |   265 +
+ .a1-validation/test-tentacle-contact.log           |   102 +
+ .a1-validation/test-tentacles-final.log            |   158 +
+ .a1-validation/test-tentacles.log                  |   162 +
+ .a1-validation/test.log                            |   398 +
+ .a1-validation/validate-content-final.log          |    28 +
+ .a1-validation/validate-content.log                |    53 +
+ .agents/skills/minecraft-bedrock/SKILL.md          |    20 +
+ .codex/config.toml                                 |     4 +
+ AGENTS.md                                          |    29 +
+ .../entities/tentacles/storm_tentacle_hitbox.json  |    47 +
+ .../entities/tentacles/tentacle.json               |    32 +
+ .../wither_storm/wither_storm_maincode.json        |     6 +-
+ Decayed_Reality_BP/scripts/main.js                 |    30 +-
+ .../17_controller_animation_tentacle.json          |    44 +-
+ .../wither_storm/tentacles/destroyer_a1.json       |   225 +-
+ .../decayed_bio/18_animation_tentacle_asleep.json  |    96 +-
+ .../decayed_bio/19_animation_tentacle_attack.json  |     6 +-
+ .../decayed_bio/20_animation_tentacle_grab.json    |     6 +-
+ .../commanded_wither_spawn.animation.json          |     9 -
+ .../destroyer/attacks/attacks.animation.json       |  3630 ++
+ .../tentacles/destroyer/birth/birth.animation.json |  6289 ++++
+ .../grabs/grabs.animation.json}                    |     0
+ .../tentacles/destroyer/idle/idle.animation.json   |  7603 ++++
+ .../destroyer/layouts/layouts.animation.json       |   509 +
+ .../tentacles/destroyer/motion.animation.json      | 18034 ----------
+ .../transitions/transitions.animation.json         |    23 +
+ .../idle.animation.json}                           |     0
+ .../tentacles/procedural/a1.animation.json         |   275 +
+ .../tentacles/procedural/a1_damage.animation.json  |  5014 +++
+ .../procedural/attacks/attacks.animation.json      | 19779 +++++++++++
+ .../procedural/damage/damage.animation.json        |   966 +
+ .../idle.animation.json}                           | 28347 ++-------------
+ .../transitions/transitions.animation.json         |   323 +
+ .../shared/attacks/attacks.animation.json          | 13033 +++++++
+ .../tentacles/shared/damage/damage.animation.json  |   709 +
+ .../idle.animation.json}                           | 17122 +--------
+ .../shared/layouts/layouts.animation.json          |   217 +
+ .../shared/transitions/transitions.animation.json  |    23 +
+ .../wither_storm_debris_n_particles.animation.json |    58 -
+ .../animations/wither_storm/wither_storm_idle.json |  4701 +--
+ .../entity/misc/storm_tentacle_hitbox.json         |    20 +
+ .../entity/wither_storm/tentacle.json              |     2 +-
+ .../entity/wither_storm/wither_storm.json          |    42 +-
+ .../entity/decayed_bio/geometry_tentacle.json      |     2 +-
+ .../storm_phases/wither_storm_phases.geo.json      |     2 +-
+ .../storm_tentacle_hitbox.geo.json                 |    47 +
+ .../particles/cluster/flesh_break.particle.json    |    46 +
+ .../wither_storm/storm_tentacle_hitbox.json        |    21 +
+ Decayed_Reality_RP/sounds.json                     |     9 +
+ package.json                                       |    41 +-
+ scripts/animation_sources/storm_a1_sleep.json      |   101 +
+ .../storm_tentacles/destroyer/attacks.json         |  3727 ++
+ .../storm_tentacles/destroyer/birth.json           |  6387 ++++
+ .../storm_tentacles/destroyer/idle.json            |  7794 +++++
+ .../storm_tentacles/destroyer/layouts.json         |   535 +
+ .../storm_tentacles/destroyer/transitions.json     |    31 +
+ .../storm_tentacles/devour/idle.json               |  8222 +++++
+ .../storm_tentacles/procedural/attacks.json        | 12474 +++++++
+ .../storm_tentacles/procedural/damage.json         |   700 +
+ .../storm_tentacles/procedural/idle.json           | 29454 ++++++++++++++++
+ .../storm_tentacles/procedural/transitions.json    |   429 +
+ .../storm_tentacles/shared/attacks.json            |  9354 +++++
+ .../storm_tentacles/shared/damage.json             |   852 +
+ .../storm_tentacles/shared/idle.json               | 35026 +++++++++++++++++++
+ .../storm_tentacles/shared/layouts.json            |   215 +
+ .../storm_tentacles/shared/transitions.json        |    31 +
+ scripts/deduplicate-storm-animations.ts            |    26 +
+ scripts/fixtures/storm-animation-library.json      |  1830 +
+ scripts/fixtures/storm-tentacle-geometry.json      |  2888 ++
+ scripts/fixtures/tentacle-animation-ownership.json |  1098 +-
+ scripts/generate-procedural-tentacle.ts            |    14 +-
+ scripts/generate-storm-animation-library.ts        |    49 +
+ scripts/generate-storm-tentacle.ts                 |   112 +
+ scripts/generatedText.ts                           |     4 +
+ scripts/static-audit.mjs                           |     2 +-
+ scripts/storm-head-terrain-tests.ts                |    39 +
+ scripts/storm-tentacle-packing-tests.ts            |    25 +
+ scripts/storm-tentacle-tests.ts                    |   190 +
+ scripts/validate-biological.ts                     |     2 +
+ scripts/validate-content.ts                        |     2 +
+ scripts/validate-storm-animation-library.ts        |    42 +
+ scripts/validate-storm-tentacle.ts                 |    81 +
+ src/core/stormIdentity.ts                          |     2 +
+ src/main.ts                                        |     1 +
+ src/storm_head/availability.ts                     |     9 +-
+ src/storm_head/headController.ts                   |     7 +-
+ src/storm_head/runtime.ts                          |     2 +
+ src/storm_head/source.ts                           |     4 +-
+ src/storm_head/structureTargets.ts                 |     4 +-
+ src/storm_head/terrain.ts                          |    60 +
+ src/systems/WitherCombat.ts                        |     9 +-
+ src/systems/proceduralTentacle.ts                  |    24 +-
+ src/systems/proceduralTentacleMath.ts              |     4 +-
+ src/systems/proceduralTentacleTerrain.ts           |     4 +-
+ src/systems/stormHunt.ts                           |     8 +-
+ src/systems/stormMotionOwnership.ts                |     3 +
+ src/systems/stormTentacle.ts                       |   351 +
+ src/systems/stormTentacleCondition.ts              |     7 +
+ src/systems/stormTentaclePose.ts                   |    21 +
+ src/systems/stormTentacleRig.ts                    |    89 +
+ src/systems/stormTentacleRigData.ts                |     2 +
+ src/systems/tentacleContact.ts                     |    45 +-
+ src/systems/tentacleControl.ts                     |    30 +-
+ src/systems/tentacleDefense.ts                     |     1 +
+ src/systems/tentacleFeedback.ts                    |    14 +
+ src/systems/tentacleattacks.ts                     |    19 +-
+ 123 files changed, 189984 insertions(+), 63612 deletions(-)
+
+--- [OBJECT 4] git show --stat --format=raw 70246d4102a8b2415538b003857b848930321b74 ('papoi' +7m30s) ---
+commit 70246d4102a8b2415538b003857b848930321b74
+tree b2453181af0b8b4c99a645a56ed804bd907689a8
+parent 8d9d855b35cb8eda2862cd70136048de15a098fd
+author TazoLaTaza <[redacted-owner-email]> 1791012222 -0300
+committer TazoLaTaza <[redacted-owner-email]> 1791012222 -0300
+
+    papoi
+
+ .a1-validation/build.log                           |  82 ---
+ .a1-validation/determinism.log                     |  46 --
+ .a1-validation/focused.log                         |  39 --
+ .a1-validation/geometry-resource-changes.json      | 443 --------------
+ .a1-validation/phase-comparison.json               | 674 ---------------------
+ .a1-validation/severing-build.log                  |  88 ---
+ .a1-validation/severing-diff-check.log             |  40 --
+ .a1-validation/severing-phase-comparison.md        |  34 --
+ .a1-validation/severing-test-content.log           |  24 -
+ .../severing-test-procedural-tentacle.log          | 264 --------
+ .a1-validation/severing-test-storm-heads.log       |  18 -
+ .a1-validation/severing-test-storm-tentacle.log    |  47 --
+ .a1-validation/severing-test-tentacle-contact.log  | 104 ----
+ .a1-validation/severing-test-tentacles.log         | 188 ------
+ .a1-validation/severing-test.log                   | 400 ------------
+ .a1-validation/severing-validate-content.log       |  42 --
+ .a1-validation/test-procedural-tentacle.log        | 265 --------
+ .a1-validation/test-tentacle-contact.log           | 102 ----
+ .a1-validation/test-tentacles-final.log            | 158 -----
+ .a1-validation/test-tentacles.log                  | 162 -----
+ .a1-validation/test.log                            | 398 ------------
+ .a1-validation/validate-content-final.log          |  28 -
+ .a1-validation/validate-content.log                |  53 --
+ .agents/skills/minecraft-bedrock/SKILL.md          |  20 -
+ .codex/config.toml                                 |   4 -
+ AGENTS.md                                          |  29 -
+ BugFixed.md                                        |  21 -
+ 27 files changed, 3773 deletions(-)
+
+--- [OBJECT 5, 6, & 6B] git ls-tree 8d9d855b35 (Cryptographic Tree Proof + Bounded 17 U.S.C. § 107 Excerpts) ---
+100644 blob fef56318d97a93d5f84bde90f6b852481fd2c9c5	.codex/config.toml   (240 bytes, 4 lines)
+100644 blob da38bda40288f7ef1e394ac797ffd08d3b956c39	AGENTS.md            (3,001 bytes, 29 lines)
+100644 blob 9c41a3093ced894cda671095acb4fd0b97d9ad44	.agents/skills/minecraft-bedrock/SKILL.md (1,427 bytes, 32 lines)
+
+Bounded Evidentiary Excerpt — 8d9d855b35:.codex/config.toml (functional TOML config keys, 2 of 4 lines):
+  L0003 | [mcp_servers.microsoftLearn]
+  L0004 | url = "https://learn.microsoft.com/api/mcp?maxTokenBudget=3000"
+
+Bounded Evidentiary Excerpt — 8d9d855b35:AGENTS.md (6 of 29 lines; 23 lines omitted under 17 U.S.C. § 107):
+  L0001 | # Decayed Reality v2.5: Agent instructions
+  L0003 | Default shared Bedrock knowledge, test sources and documentation: D:\mydocs-server\Add-on_Making.
+  L0007 | - Read D:\mydocs-server\Add-on_Making\.agents\skills\minecraft-bedrock\SKILL.md and its relevant reference pages for Bedrock changes.
+  L0008 | - For Minecraft API, Molang, BP/RP or components, use official Minecraft Creator documentation via Microsoft Learn MCP when available
+  L0014 | - Architecture documents: D:\mydocs-server\Add-on_Making\DECAYED REALITY V2.5 ARCHITECTURE DOCS\docs
+  L0029 | - Never add dependencies, commit, push or open a PR without user approval.
+
+Bounded Evidentiary Excerpt — 8d9d855b35:.agents/skills/minecraft-bedrock/SKILL.md (4 of 32 lines; 28 lines omitted):
+  L0002 | name: minecraft-bedrock
+  L0009 | Primary reference root: `D:\mydocs-server\Add-on_Making\.agents\skills\minecraft-bedrock`
+  L0013 | - `D:\mydocs-server\Add-on_Making\ADD-ON DOCUMENTATION`
+  L0014 | - `D:\mydocs-server\Add-on_Making\DECAYED REALITY V2.5 ARCHITECTURE DOCS\docs`
+
+--- [OBJECT 7] git show --shortstat --format=raw f8992993536f2e94306076d4431ad0df314fb849 (+42,694 lines 67m before confession) ---
+commit f8992993536f2e94306076d4431ad0df314fb849
+tree 79c9f22b08b17c682969fff59df85010780a32ae
+parent 9148958ed600f3f4c61e39c79ed6449631346465
+author TazoLaTaza <[redacted-owner-email]> 1795128195 -0300
+committer TazoLaTaza <[redacted-owner-email]> 1795128195 -0300
+
+    Implemented the Withered Villagers,
+
+ 174 files changed, 42694 insertions(+), 877013 deletions(-)
+
+--- [OBJECT 8] git cat-file -p 0d768e91e4 (Spud AI Commit) ---
+tree da5c20b6d9f9e78478848ec59fef2035f3437bca
+parent 7d0113ca06f57e288904f37bdab2da5d9d4bcc63
+author Spud <[redacted-private-email]> 1766395180 +0100
+committer GitHub <[redacted-private-email]> 1766395180 +0100
+gpgsig -----BEGIN PGP SIGNATURE-----
+ 
+ wsFcBAABCAAQBQJpSQ0sCRC1aQ7uu5UhlAAA0cwQAD8HbyBlkfOAYK4Q8ccqFazf
+ 1HCE590G0G/muQ1UILPWbDsfeTKR2M9LCrEP7+V4wdceKdswLXYcCm+LLB9otBiw
+ whBZ8HPKcYVSfKhwHr6G47Gx6UFfdV9odb66BaqlPfWaPLDT/64aupZikSULQczL
+ 5GMDHNG/gctKefo7qbk1beKZM/I/YH7tKXlwPDi3AmUVY6RF9bbnznZ32oztpSH4
+ snqT87do50lhYEbOlZ1YCozNJJqWB/zpOylTZuVOOtV3UxfdHXViR3zq8dqsLbaM
+ qVBSDlJeFwl9iOxmyR//ZzfHTt+pCzZudJkg1g0hiHD6mQneO1o0tkjKbNYCToBT
+ 1vUY6s5W8ITb9I9cVvfN06UoqcwxRs3jymhKwZftvImXDnWbnrJ12eBUvMB2DHQw
+ iFYkA28UCxXEp5uxgy6q5FMTUI27ySzuKKpgLU18T2U43dPUFIzu+ok2xCyKu0z+
+ M2cnUmB/FeH+1xJ8wItVecgB9fXTQdT4/jcn8o8j1Ds82UcJXWJrKqhwbdO3wBgj
+ JtMSKpKUIHqa9ZqdFBVVLrEpsX/EZ2BKZGrC+k5Bfp/N8v7XTI+YZ6+z0mMvQf0p
+ i4JfbWWyHd71kxB/Qa6gnyvejFyuW3K8tiLCmbs+p4hJtWRaFrL6cBalrqT3kmbu
+ SEBRB03Iz6RpVo72I+dd
+ =LXrT
+ -----END PGP SIGNATURE-----
+ 
+
+Add fire fog particle to flaming wither skull
+
+same as the other one wait holy shit how did GH know i did that
+nvm its the ai :pensive:
+--- [OBJECT 9] git show --stat --format=raw 4c42aeab7cfa (2025-12-15 Calling Out Tazo's AI Usage) ---
+commit 4c42aeab7cfa233e3d2e7f0a2d7e58ebf9ef7f53
+tree 63bd62305ecf6bd19ca8157a392d53fa62de5b3e
+parent 262731b7310d97ade60e27f5c50cd75b7499e3ff
+author ShadowEmpress001 <120316848+Senthemodder@users.noreply.github.com> 1765732446 +0700
+committer ShadowEmpress001 <120316848+Senthemodder@users.noreply.github.com> 1765732446 +0700
+
+    I know you are using AI for this Tazo
+
+ Decayed_Reality_BP/scripts/systems/tentacleattacks.js | 8 --------
+ 1 file changed, 8 deletions(-)

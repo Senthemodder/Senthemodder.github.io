@@ -1,0 +1,897 @@
+================================================================================
+AUTHORED BY COMPLAINANT (@Senthemodder / 120316848+Senthemodder) - 100% OWNED
+Original Repository Path : Decayed_Reality_BP/scripts/systems/stormAI.js
+Git Blob SHA-1           : 1735e819d23e927fbb0ddae7d6585c22f5417f2b
+Original Byte Size       : 27,373 bytes
+Copyright Status         : Original work of Minh Le (@Senthemodder), published
+                           by the copyright owner as primary authorship proof.
+================================================================================
+
+import { system, world, Player } from "@minecraft/server";
+import { cache } from "./cache.js";
+import { Config } from "../customComponents/config.js";
+
+const num = (k, d) => {
+  const v = Config.get(k, d);
+  const n = typeof v === "number" ? v : Number(v);
+  return Number.isFinite(n) ? n : d;
+};
+const int = (k, d) => Math.floor(num(k, d));
+const bool = (k, d) => Config.get(k, d) !== false;
+const clamp = (v, a, b) => (v < a ? a : v > b ? b : v);
+
+function getFam(ent) {
+  try {
+    return ent.getComponent("minecraft:type_family");
+  } catch {
+    return null;
+  }
+}
+function hasFamily(ent, f) {
+  const fam = getFam(ent);
+  try {
+    return !!fam?.hasTypeFamily?.(f);
+  } catch {
+    return false;
+  }
+}
+function entityHasSheared(ent) {
+  if (!ent) return false;
+  try {
+    const c = ent.getComponent("minecraft:is_sheared");
+    if (c && typeof c.value === "boolean") return c.value;
+    return !!c;
+  } catch {
+    return false;
+  }
+}
+
+// =======================================================
+// STORM AI (OPTIMIZED & TUNED)
+// =======================================================
+export const StormAI = {
+  ACTION_AGGRESSIVE: 0,
+  ACTION_DEFENSIVE: 1,
+  ACTION_SIEGE: 2,
+  ACTIONS: [0, 1, 2],
+
+  currentRotationBias: 0,
+  alertness: 0,
+  sessionData: new Map(),
+
+  // ---- internal config cache ----
+  _cfgTick: -9999,
+  _cfg: null,
+  _refreshCfg() {
+    const t = system.currentTick;
+    if (this._cfg && t - this._cfgTick < 40) return this._cfg; // refresh ~2s
+    this._cfgTick = t;
+
+    const c = {
+      enabled: bool("stormBehavior.stormAI.enabled", true),
+
+      learningRate: clamp(num("stormBehavior.stormAI.learning_rate", 0.2), 0, 1),
+      discount: clamp(num("stormBehavior.stormAI.discount_factor", 0.9), 0, 1),
+
+      // Softmax (Boltzmann) Temperature
+      startTemp: Math.max(0.001, num("stormBehavior.stormAI.start_temp", 2.0)),
+      minTemp: Math.max(0.001, num("stormBehavior.stormAI.min_temp", 0.1)),
+      cooling: clamp(
+        num("stormBehavior.stormAI.cooling_rate", 0.995),
+        0.5,
+        0.99999
+      ),
+
+      decisionInterval: clamp(
+        int("stormBehavior.stormAI.decision_interval", 60),
+        1,
+        600
+      ),
+      // DEFAULT CHANGED: 50 -> 16 to prevent "avoiding" look
+      stopDistance: clamp(num("stormBehavior.stormAI.stop_distance", 16), 0, 200),
+
+      // skull steering
+      skullTickMod: clamp(int("stormBehavior.stormAI.skulls.tick_mod", 2), 1, 40),
+      skullSearchRadius: clamp(
+        num("stormBehavior.stormAI.skulls.search_radius", 30),
+        1,
+        256
+      ),
+      skullBaseHoming: clamp(
+        num("stormBehavior.stormAI.skulls.base_homing", 0.06),
+        0,
+        1
+      ),
+      skullSiegeHoming: clamp(
+        num("stormBehavior.stormAI.skulls.siege_homing", 0.12),
+        0,
+        1
+      ),
+
+      // stuck handling
+      stuckCheckInterval: clamp(
+        int("stormBehavior.stormAI.stuck.check_interval", 80),
+        1,
+        1200
+      ),
+      stuckMinDistSq: Math.max(
+        0,
+        num("stormBehavior.stormAI.stuck.min_dist_sq", 4.0)
+      ),
+      unstickExplosionRadius: clamp(
+        num("stormBehavior.stormAI.stuck.explosion_radius", 2),
+        0,
+        10
+      ),
+
+      // rewards
+      reward: {
+        dmgDealtMult: num("stormBehavior.stormAI.reward.damage_dealt_mult", 3.0),
+        dmgTakenMult: num("stormBehavior.stormAI.reward.damage_taken_mult", 1.0),
+
+        boredomTick: num("stormBehavior.stormAI.reward.boredom_start_ticks", 100),
+        boredomPenalty: num("stormBehavior.stormAI.reward.boredom_penalty", -2.0),
+        frustrationCap: num("stormBehavior.stormAI.reward.frustration_cap", 20),
+        frustrationRate: num("stormBehavior.stormAI.reward.frustration_rate", 10),
+
+        hintAggressiveClose: num(
+          "stormBehavior.stormAI.reward.hint_aggressive_close",
+          0.5
+        ),
+        hintDefensiveHurtSurvive: num(
+          "stormBehavior.stormAI.reward.hint_defensive_hurt_survive",
+          1.0
+        ),
+        hintDefensiveCoward: num(
+          "stormBehavior.stormAI.reward.hint_defensive_coward",
+          -0.5
+        ),
+        hintSiegeKite: num("stormBehavior.stormAI.reward.hint_siege_kite", 0.2),
+      },
+
+      // commanded wither aura
+      aura: {
+        enabled: bool("stormBehavior.stormAI.commanded_aura.enabled", true),
+        baseRadius: clamp(
+          num("stormBehavior.stormAI.commanded_aura.base_radius", 3),
+          0,
+          64
+        ),
+        tickInterval: clamp(
+          int("stormBehavior.stormAI.commanded_aura.tick_interval", 10),
+          1,
+          200
+        ),
+        duration: clamp(
+          int("stormBehavior.stormAI.commanded_aura.effect_duration", 25),
+          1,
+          200
+        ),
+        amplifier: clamp(
+          int("stormBehavior.stormAI.commanded_aura.effect_amplifier", 0),
+          0,
+          10
+        ), // Wither I = 0
+        variantDisable: clamp(
+          int("stormBehavior.stormAI.commanded_aura.disable_if_variant", 1),
+          -1,
+          99
+        ),
+        markStart: clamp(
+          int("stormBehavior.stormAI.commanded_aura.mark_start", 15),
+          0,
+          99
+        ),
+        markScale: clamp(
+          num(
+            "stormBehavior.stormAI.commanded_aura.mark_scale_per_variant",
+            0.05
+          ),
+          0,
+          1
+        ),
+        excludeFamily: String(
+          Config.get(
+            "stormBehavior.stormAI.commanded_aura.exclude_family",
+            "wither_storm"
+          ) ?? "wither_storm"
+        ),
+      },
+    };
+
+    this._cfg = c;
+    return c;
+  },
+
+  // ----------------------------------------------------------------
+  // CORE LOGIC
+  // ----------------------------------------------------------------
+  update(storm) {
+    if (!storm) return;
+    const c = this._refreshCfg();
+    if (!c.enabled) {
+        if (system.currentTick % 100 === 0) console.warn("[StormAI] AI Disabled in Config");
+        return;
+    }
+
+    try {
+      const tick = system.currentTick;
+
+      // core always-on helpers
+      this.checkStuck(storm, tick);
+      this.updateSmartSkulls(storm);
+
+      // SARSA step
+      if (tick % c.decisionInterval === 0) this.performLearningStep(storm);
+
+      // execution
+      this.applyCurrentAction(storm);
+    } catch {}
+  },
+
+  // ----------------------------------------------------------------
+  // Q-LEARNING ENGINE (SARSA + SOFTMAX)
+  // ----------------------------------------------------------------
+  performLearningStep(storm) {
+    const c = this._cfg || this._refreshCfg();
+    const currentState = this.getEnvironmentState(storm);
+    const nextAction = this.chooseAction(storm, currentState);
+
+    const lastState = storm.getDynamicProperty("q_last_state");
+    const lastAction = storm.getDynamicProperty("q_last_action");
+
+    if (lastState !== undefined && lastAction !== undefined) {
+      const reward = this.calculateReward(storm);
+      this.updateQTable(
+        storm,
+        lastState,
+        lastAction,
+        reward,
+        currentState,
+        nextAction
+      );
+    }
+
+    storm.setDynamicProperty("q_last_state", currentState);
+    storm.setDynamicProperty("q_last_action", nextAction);
+
+    this.resetSessionData(storm);
+  },
+
+  getEnvironmentState(storm) {
+    const hp = storm.getComponent("minecraft:health");
+    const hpPct = hp ? hp.currentValue / hp.effectiveMax : 1;
+    const s_hp = hpPct < 0.3 ? "CRIT" : hpPct < 0.7 ? "LOW" : "HIGH";
+
+    const nearestPlayer = this.getNearestPlayer(storm);
+    const distSq = nearestPlayer
+      ? this.distSq(storm.location, nearestPlayer.location)
+      : 9999;
+    const s_dist = distSq < 400 ? "CLOSE" : "FAR"; // 20 blocks
+
+    const frustration = storm.getDynamicProperty("storm_frustration") ?? 0;
+    const s_combat = frustration > 5 ? "RAGE" : "CALM";
+
+    // Hunger check
+    const lastFed = storm.getDynamicProperty("last_fed_tick") ?? -9999;
+    const s_hunger = (system.currentTick - lastFed > 600) ? "HUNGRY" : "FED";
+
+    let s_vert = "LEVEL";
+    if (nearestPlayer) {
+      const dy = nearestPlayer.location.y - storm.location.y;
+      if (dy > 10) s_vert = "ABOVE";
+      else if (dy < -10) s_vert = "BELOW";
+    }
+
+    // crowd
+    let nearbyCount = 0;
+    const players = cache.players || [];
+    for (const p of players) {
+      if (this.distSq(storm.location, p.location) < 4096) nearbyCount++;
+    }
+    const s_count = nearbyCount > 1 ? "SWARM" : "SOLO";
+
+    // LoS
+    let s_los = "CLEAR";
+    if (nearestPlayer) {
+      const eyeLoc = {
+        x: storm.location.x,
+        y: storm.location.y + 5,
+        z: storm.location.z,
+      };
+      const pLoc = {
+        x: nearestPlayer.location.x,
+        y: nearestPlayer.location.y + 1,
+        z: nearestPlayer.location.z,
+      };
+
+      const dx = pLoc.x - eyeLoc.x,
+        dy = pLoc.y - eyeLoc.y,
+        dz = pLoc.z - eyeLoc.z;
+      const dist = Math.sqrt(dx * dx + dy * dy + dz * dz);
+      if (dist > 1) {
+        const dir = { x: dx / dist, y: dy / dist, z: dz / dist };
+        const hit = storm.dimension.getBlockFromRay(eyeLoc, dir, {
+          maxDistance: dist,
+          includeLiquidBlocks: false,
+          includePassableBlocks: false,
+        });
+        if (hit) s_los = "BLOCKED";
+      }
+    }
+
+    return `${s_hp}_${s_dist}_${s_combat}_${s_vert}_${s_count}_${s_los}_${s_hunger}`;
+  },
+
+  chooseAction(storm, state) {
+    const c = this._cfg || this._refreshCfg();
+    let temp = storm.getDynamicProperty("q_temp");
+    if (temp === undefined) temp = c.startTemp;
+
+    const qValues = this.ACTIONS.map((a) => this.getQValue(storm, state, a));
+    const maxQ = Math.max(...qValues);
+    const exps = qValues.map((q) => Math.exp((q - maxQ) / temp));
+    const sumExps = exps.reduce((a, b) => a + b, 0);
+    const probs = exps.map((e) => e / sumExps);
+
+    const rand = Math.random();
+    let cumulative = 0;
+    let chosenAction = this.ACTIONS[0];
+    for (let idx = 0; idx < this.ACTIONS.length; idx++) {
+      cumulative += probs[idx];
+      if (rand <= cumulative) {
+        chosenAction = this.ACTIONS[idx];
+        break;
+      }
+    }
+
+    const nextTemp = Math.max(c.minTemp, temp * c.cooling);
+    storm.setDynamicProperty("q_temp", nextTemp);
+    return chosenAction;
+  },
+
+  getQValue(storm, state, action) {
+    const key = `qtable_${state}_${action}`;
+    const val = storm.getDynamicProperty(key);
+    // FIXED: Default bias toward AGGRESSIVE (0) instead of 0.0 for all.
+    // This solves "dumb AI" doing nothing or running away initially.
+    if (val !== undefined) return val;
+    return action === this.ACTION_AGGRESSIVE ? 10.0 : 0.0;
+  },
+
+  updateQTable(storm, state, action, reward, nextState, nextAction) {
+    const c = this._cfg || this._refreshCfg();
+    const currentQ = this.getQValue(storm, state, action);
+    const actualNextQ = this.getQValue(storm, nextState, nextAction);
+    const newQ =
+      currentQ +
+      c.learningRate *
+        (reward + c.discount * actualNextQ - currentQ);
+
+    storm.setDynamicProperty(`qtable_${state}_${action}`, newQ);
+  },
+
+  calculateReward(storm) {
+    const data = this.sessionData.get(storm.id);
+    if (!data) return 0;
+
+    const c = this._cfg || this._refreshCfg();
+    const R = c.reward;
+
+    let reward = 0;
+    const lastAction = storm.getDynamicProperty("q_last_action");
+
+    // Damage dealt
+    const damageDealt = storm.getDynamicProperty("temp_damage_dealt") ?? 0;
+    reward += damageDealt * R.dmgDealtMult;
+
+    // Damage taken (from HP delta)
+    const hp = storm.getComponent("minecraft:health");
+    let hpPct = 1.0;
+    let hpLost = 0;
+
+    if (hp) {
+      hpPct = hp.currentValue / hp.effectiveMax;
+      hpLost = data.startHP - hp.currentValue;
+      if (hpLost > 0) reward -= hpLost * R.dmgTakenMult;
+    }
+
+    // Boredom penalty
+    const lastHitTick = storm.getDynamicProperty("last_hit_tick") ?? 0;
+    const ticksSinceHit = system.currentTick - lastHitTick;
+
+    let frustration = 0;
+    if (ticksSinceHit > R.boredomTick) {
+      reward += R.boredomPenalty;
+      frustration = Math.min(
+        R.frustrationCap,
+        (ticksSinceHit - R.boredomTick) / Math.max(1, R.frustrationRate)
+      );
+    }
+    storm.setDynamicProperty("storm_frustration", frustration);
+
+    // Shaping rewards
+    const nearest = this.getNearestPlayer(storm);
+    const currentDistSq = nearest
+      ? this.distSq(storm.location, nearest.location)
+      : 99999;
+    const distImprovement = data.startDistSq - currentDistSq;
+
+    if (lastAction === this.ACTION_AGGRESSIVE) {
+      if (distImprovement > 25) reward += R.hintAggressiveClose;
+    } else if (lastAction === this.ACTION_DEFENSIVE) {
+      if (hpPct < 0.5 && hpLost <= 0) reward += R.hintDefensiveHurtSurvive;
+      if (hpPct > 0.8) reward += R.hintDefensiveCoward;
+    } else if (lastAction === this.ACTION_SIEGE) {
+      if (distImprovement < -100) reward += R.hintSiegeKite;
+    } else if (lastAction === this.ACTION_RAGE_LITE) {
+       const isHungry = (system.currentTick - (storm.getDynamicProperty("last_fed_tick") ?? -9999)) > 600;
+       const frustration = storm.getDynamicProperty("storm_frustration") ?? 0;
+       // Reward if we are irritated (frustration > 25) AND hungry
+       if (frustration > 25 && isHungry) reward += 5.0; 
+       else reward -= 2.0; // Penalty if using it when not appropriate
+    }
+
+    return reward;
+  },
+
+  resetSessionData(storm) {
+    const hp = storm.getComponent("minecraft:health");
+    const nearest = this.getNearestPlayer(storm);
+    const distSq = nearest
+      ? this.distSq(storm.location, nearest.location)
+      : 99999;
+
+    this.sessionData.set(storm.id, {
+      startHP: hp ? hp.currentValue : 100,
+      startDistSq: distSq,
+    });
+
+    storm.setDynamicProperty("temp_damage_dealt", 0);
+  },
+
+  // ----------------------------------------------------------------
+  // ACTION EXECUTION
+  // ----------------------------------------------------------------
+  applyCurrentAction(storm) {
+    const c = this._cfg || this._refreshCfg();
+    // Default to AGGRESSIVE if undefined
+    const action =
+      storm.getDynamicProperty("q_last_action") ?? this.ACTION_AGGRESSIVE;
+
+    this.alertness = 0;
+    this.currentRotationBias = 0;
+
+    const nearest = this.getNearestPlayer(storm);
+    const distSq = nearest
+      ? this.distSq(storm.location, nearest.location)
+      : 99999;
+    const dist = Math.sqrt(distSq);
+    const STOP_DISTANCE = c.stopDistance;
+
+    // Reset rage lite status each tick (it's action dependent)
+    if (action !== this.ACTION_RAGE_LITE) {
+        try { storm.setDynamicProperty("rage_lite_active", false); } catch {}
+    }
+
+    try {
+      switch (action) {
+        case this.ACTION_AGGRESSIVE:
+          this.alertness = 3.0;
+          this.currentRotationBias = 0;
+          if (dist > STOP_DISTANCE)
+            storm.addEffect("speed", 25, {
+              amplifier: 1,
+              showParticles: false,
+            });
+          else storm.removeEffect("speed");
+          storm.addEffect("strength", 25, {
+            amplifier: 1,
+            showParticles: false,
+          });
+          break;
+
+        case this.ACTION_DEFENSIVE:
+          this.alertness = 2.0;
+          this.currentRotationBias = 25.0;
+          storm.addEffect("resistance", 25, {
+            amplifier: 1,
+            showParticles: true,
+          });
+          storm.addEffect("regeneration", 25, {
+            amplifier: 4,
+            showParticles: true,
+          });
+          break;
+
+        case this.ACTION_SIEGE:
+          this.alertness = 0.5;
+          this.currentRotationBias = 0;
+
+          // bunker-buster: explode near "real cover" blocks in front of player
+          if (system.currentTick % 120 === 0) {
+            const target = nearest;
+            if (target) {
+              const sLoc = {
+                x: storm.location.x,
+                y: storm.location.y + 5,
+                z: storm.location.z,
+              };
+              const pLoc = {
+                x: target.location.x,
+                y: target.location.y + 1,
+                z: target.location.z,
+              };
+
+              const dx = pLoc.x - sLoc.x,
+                dy = pLoc.y - sLoc.y,
+                dz = pLoc.z - sLoc.z;
+              const d = Math.sqrt(dx * dx + dy * dy + dz * dz);
+              if (d > 1) {
+                const dir = { x: dx / d, y: dy / d, z: dz / d };
+                const hit = storm.dimension.getBlockFromRay(sLoc, dir, {
+                  maxDistance: d,
+                  includeLiquidBlocks: false,
+                  includePassableBlocks: false,
+                });
+
+                    if (hit?.block?.location) {
+                  const hLoc = hit.block.location;
+                  const hDx = hLoc.x - sLoc.x,
+                    hDy = hLoc.y - sLoc.y,
+                    hDz = hLoc.z - sLoc.z;
+                  const hitDist = Math.sqrt(hDx * hDx + hDy * hDy + hDz * hDz);
+
+                  // only "real" cover (closer than player), not the floor behind them
+                  if (hitDist < d - 2.5) {
+                        if (this.canExplode(storm)) {
+                          storm.dimension.createExplosion(hLoc, 5, {
+                            breaksBlocks: true,
+                            source: storm,
+                          });
+                        }
+                  }
+                }
+              }
+            }
+          }
+          break;
+
+        case this.ACTION_RAGE_LITE:
+            this.alertness = 3.5; // High alertness
+            this.currentRotationBias = 0;
+            try { storm.setDynamicProperty("rage_lite_active", true); } catch {}
+            break;
+      }
+    } catch {}
+  },
+
+  // ----------------------------------------------------------------
+  // SMART SKULLS
+  // ----------------------------------------------------------------
+  updateSmartSkulls(storm) {
+    const c = this._cfg || this._refreshCfg();
+    try {
+      if (system.currentTick % c.skullTickMod !== 0) return;
+
+      const action = storm.getDynamicProperty("q_last_action") ?? 0;
+      let homingStr = c.skullBaseHoming;
+      if (action === this.ACTION_SIEGE) homingStr = c.skullSiegeHoming;
+
+      this.runSkullLogic(storm, homingStr, c.skullSearchRadius);
+    } catch {}
+  },
+
+  runSkullLogic(storm, homingStrength, searchRadius) {
+    const skulls = storm.dimension.getEntities({
+      type: "minecraft:wither_skull",
+      location: storm.location,
+      maxDistance: searchRadius,
+    });
+    if (!skulls.length) return;
+
+    const players = cache.players || [];
+    if (!players.length) return;
+
+    for (const skull of skulls) {
+      if (!skull) continue;
+      this.steerSkull(skull, players, homingStrength);
+    }
+  },
+
+  steerSkull(skull, players, strength) {
+    const skullPos = skull.location;
+    const skullVel = skull.getVelocity();
+
+    let nearest = null;
+    let minDistSq = 999999;
+
+    for (const p of players) {
+      const d2 = this.distSq(skullPos, p.location);
+      if (d2 < minDistSq) {
+        minDistSq = d2;
+        nearest = p;
+      }
+    }
+
+    // steer only if target is "near-ish"
+    if (nearest && minDistSq < 3600) {
+      const desired = this.norm(this.sub(nearest.location, skullPos));
+      const currentDir = this.norm(skullVel);
+
+      const steerX = (desired.x - currentDir.x) * strength;
+      const steerY = (desired.y - currentDir.y) * strength;
+      const steerZ = (desired.z - currentDir.z) * strength;
+
+      try {
+        const speed = Math.sqrt(
+          skullVel.x * skullVel.x +
+            skullVel.y * skullVel.y +
+            skullVel.z * skullVel.z
+        );
+        if (speed > 0.1) {
+          skull.applyImpulse({
+            x: steerX * speed * 0.5,
+            y: steerY * speed * 0.5,
+            z: steerZ * speed * 0.5,
+          });
+        }
+      } catch {}
+    }
+  },
+
+  // ----------------------------------------------------------------
+  // STUCK HANDLING
+  // ----------------------------------------------------------------
+  checkStuck(storm, tick) {
+    const c = this._cfg || this._refreshCfg();
+    if (tick - (storm.lastPosTick || 0) < c.stuckCheckInterval * 2) return;
+
+    const lx = storm.getDynamicProperty("last_stuck_x") ?? storm.location.x;
+    const lz = storm.getDynamicProperty("last_stuck_z") ?? storm.location.z;
+
+    const dist = (storm.location.x - lx) ** 2 + (storm.location.z - lz) ** 2;
+    if (dist < c.stuckMinDistSq) this.unstick(storm);
+
+    storm.setDynamicProperty("last_stuck_x", storm.location.x);
+    storm.setDynamicProperty("last_stuck_z", storm.location.z);
+    storm.lastPosTick = tick;
+  },
+
+  unstick(storm) {
+    const c = this._cfg || this._refreshCfg();
+    try {
+      if (this.canExplode(storm)) {
+        storm.dimension.createExplosion(
+          storm.location,
+          c.unstickExplosionRadius,
+          {
+            breaksBlocks: true,
+            source: storm,
+          }
+        );
+      }
+    } catch {}
+  },
+
+  // ----------------------------------------------------------------
+  // UTILS
+  // ----------------------------------------------------------------
+  distSq(a, b) {
+    return (a.x - b.x) ** 2 + (a.y - b.y) ** 2 + (a.z - b.z) ** 2;
+  },
+  sub(a, b) {
+    return { x: a.x - b.x, y: a.y - b.y, z: a.z - b.z };
+  },
+  norm(v) {
+    const l = Math.sqrt(v.x * v.x + v.y * v.y + v.z * v.z);
+    return l === 0
+      ? { x: 0, y: 0, z: 0 }
+      : { x: v.x / l, y: v.y / l, z: v.z / l };
+  },
+
+  // Returns numeric skin id if present, otherwise null
+  getSkinId(entity) {
+    try {
+      const comp = entity.getComponent("minecraft:skin_id");
+      if (!comp) return null;
+      const v = comp.value ?? comp;
+      return typeof v === "number" ? v : Number(v);
+    } catch {
+      return null;
+    }
+  },
+
+  // Determine whether this entity is allowed to create explosions.
+  canExplode(entity) {
+    try {
+      const tid = entity?.typeId ?? "";
+      if (tid === "minecraft:ender_dragon" || tid === "decayed:wither_storm") {
+        const sid = this.getSkinId(entity);
+        if (sid === 2) return false;
+      }
+      // Commanded withers should only be allowed to explode when their
+      // `mark_variant` is above a safe threshold ( > 15 ).
+      try {
+        if (tid === "decayed:commanded_wither") {
+          const mark = entity.getComponent("minecraft:mark_variant")?.value ?? 0;
+          if (!(mark > 15)) return false;
+        }
+      } catch {}
+    } catch {}
+    return true;
+  },
+
+  getNearestPlayer(entity) {
+    const players = cache.players || [];
+    if (!players.length) return null;
+    let nearest = null;
+    let min = 999999;
+    for (const p of players) {
+      const d = this.distSq(entity.location, p.location);
+      if (d < min) {
+        min = d;
+        nearest = p;
+      }
+    }
+    return nearest;
+  },
+};
+
+// =======================================================
+// GLOBAL EVENT SENSORS (INPUTS)
+// =======================================================
+
+// Sensor 1: Pain (marks combat + blind-rage punishment)
+world.afterEvents.entityHurt.subscribe((ev) => {
+  try {
+    const { hurtEntity, damageSource } = ev;
+    if (!hurtEntity?.isValid?.()) return;
+
+    let mainStorm = null;
+
+    if (
+      hurtEntity.typeId === "decayed:wither_storm" ||
+      hurtEntity.typeId === "minecraft:ender_dragon" ||
+      (hurtEntity.typeId === "decayed:commanded_wither" &&
+        entityHasSheared(hurtEntity))
+    ) {
+      mainStorm = hurtEntity;
+    } else if (hurtEntity.typeId === "decayed:storm_head") {
+      const dragons = cache.dragons || [];
+      if (dragons.length) mainStorm = dragons[0];
+      else if ((cache.commandedWithers || []).length)
+        mainStorm = cache.commandedWithers[0];
+
+      if (mainStorm) {
+        let currentFrustration =
+          mainStorm.getDynamicProperty("storm_frustration") ?? 0;
+        currentFrustration += 5.0;
+        mainStorm.setDynamicProperty(
+          "storm_frustration",
+          Math.min(50, currentFrustration)
+        );
+
+        const ls = mainStorm.getDynamicProperty("q_last_state");
+        const la = mainStorm.getDynamicProperty("q_last_action");
+        if (ls !== undefined && la !== undefined) {
+          const key = `qtable_${ls}_${la}`;
+          const currentQ = mainStorm.getDynamicProperty(key) ?? 0;
+          // Apply penalty for getting hurt
+          mainStorm.setDynamicProperty(key, currentQ - 5.0);
+        }
+
+
+      }
+    }
+
+    if (mainStorm)
+      mainStorm.setDynamicProperty("last_hit_tick", system.currentTick);
+  } catch {}
+});
+
+// Sensor 2: Dealing Damage (positive reward accumulator)
+world.afterEvents.entityHitEntity.subscribe((ev) => {
+  try {
+    let { damagingEntity, hitEntity } = ev;
+    if (!damagingEntity) return;
+
+    // Trace projectile ownership (try both ids safely)
+    let proj = null;
+    try {
+      proj = damagingEntity.getComponent("minecraft:projectile");
+    } catch {}
+    if (!proj) {
+      try {
+        proj = damagingEntity.getComponent("projectile");
+      } catch {}
+    }
+    if (proj?.owner) damagingEntity = proj.owner;
+
+    if (
+      damagingEntity?.isValid?.() &&
+      (damagingEntity.typeId === "decayed:wither_storm" ||
+        damagingEntity.typeId === "minecraft:ender_dragon" ||
+        (damagingEntity.typeId === "decayed:commanded_wither" &&
+          entityHasSheared(damagingEntity)))
+    ) {
+      if (hitEntity?.typeId === "minecraft:player") {
+        let currentTotal =
+          damagingEntity.getDynamicProperty("temp_damage_dealt") ?? 0;
+        damagingEntity.setDynamicProperty(
+          "temp_damage_dealt",
+          currentTotal + 1
+        );
+      }
+    }
+  } catch {}
+});
+
+// =======================================================
+// COMMANDED WITHER AURA (OPTIMIZED)
+// =======================================================
+system.runInterval(() => {
+  const c = StormAI._refreshCfg();
+  if (!c.enabled || !c.aura.enabled) return;
+
+  const tick = system.currentTick;
+  if (tick % c.aura.tickInterval !== 0) return;
+
+  const dims = ["overworld", "nether", "the_end"];
+  for (const dn of dims) {
+    let dim;
+    try {
+      dim = world.getDimension(dn);
+    } catch {
+      continue;
+    }
+    let withers = [];
+    try {
+      withers = dim.getEntities({ type: "decayed:commanded_wither" });
+    } catch {
+      withers = [];
+    }
+    if (!withers.length) continue;
+
+    const famEx = c.aura.excludeFamily;
+
+    for (const w of withers) {
+      if (!w?.isValid?.()) continue;
+
+      // Aura disabled if variant matches
+      try {
+        const v = w.getComponent("minecraft:variant")?.value ?? 0;
+        if (c.aura.variantDisable >= 0 && v === c.aura.variantDisable) continue;
+      } catch {}
+
+      // radius scaling by mark_variant (> markStart => +scale each)
+      let radius = c.aura.baseRadius;
+      try {
+        const mark = w.getComponent("minecraft:mark_variant")?.value ?? 0;
+        if (mark > c.aura.markStart)
+          radius *= 1 + (mark - c.aura.markStart) * c.aura.markScale;
+      } catch {}
+
+      let ents = [];
+      try {
+        ents = dim.getEntities({ location: w.location, maxDistance: radius });
+      } catch {
+        ents = [];
+      }
+
+      for (const e of ents) {
+        if (!e?.isValid?.() || e.id === w.id) continue;
+        if (famEx && hasFamily(e, famEx)) continue;
+        try {
+          e.addEffect("wither", c.aura.duration, {
+            amplifier: c.aura.amplifier,
+            showParticles: false,
+          });
+        } catch {}
+      }
+    }
+  }
+}, 5);
+
+
+

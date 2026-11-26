@@ -1,0 +1,70 @@
+================================================================================
+CRYPTOGRAPHIC FORENSIC INSPECTION CARD (17 U.S.C. §§ 102(b), 107 COMPLIANT)
+================================================================================
+Legal Notice: Full verbatim body intentionally omitted so zero executable source
+modules or complete prose documents from TazoLaTaza/Decayed-Reality are hosted.
+This record publishes strictly uncopyrightable cryptographic Git facts (§ 102(b)),
+structural symbol/heading metadata, and a bounded evidentiary excerpt (§ 107)
+establishing autonomous OpenAI Codex harness usage, CWSBP derivation, and cover-up
+deletion commits ('papoi', 'ohmama', 'beca cultural', '1b6facfdcd').
+--------------------------------------------------------------------------------
+Artifact Index           : #56
+Original Repository Path : scripts/procedural-tentacle-tests.ts
+Exact Git Blob SHA-1     : d47bdb6eccfbcb557d1471f70308da19263f0a8f
+Exact Raw SHA-256        : fbc7edea8014ccccf2de7fbe5c96b7c66ac85092804e575fda9610807be6b7b0
+Original Byte Length     : 71,327 bytes (713 lines)
+Provenance / Wipe Commit : Tazo Wiped AI / Codex / Validation / Test File — Tentacle is finished! (wiped 23 automated *-tests.ts suites)
+Forensic Marker Counts   : Codex/Harness refs=0 | CWSBP/tainted refs=0 | Em/En-dashes=0
+--------------------------------------------------------------------------------
+OFFLINE CRYPTOGRAPHIC VERIFICATION (RUN AGAINST BARE COMMIT/TREE GRAPH):
+  git log --all --full-history --stat -- "scripts/procedural-tentacle-tests.ts"
+  # Any local clone holding blob d47bdb6eccfb verifies exact bytes via:
+  git cat-file -t d47bdb6eccfbcb557d1471f70308da19263f0a8f && git cat-file -s d47bdb6eccfbcb557d1471f70308da19263f0a8f   # -> blob, 71327
+--------------------------------------------------------------------------------
+MODULE IMPORT GRAPH (7 imports):
+  * L1: import assert from "node:assert/strict";
+  * L2: import { readFileSync } from "node:fs";
+  * L3: import { test } from "node:test";
+  * L4: import { build } from "esbuild";
+  * L5: import type { Entity } from "@minecraft/server";
+  * L6: import { TENTACLE_CHAIN, TENTACLE_REST, TENTACLE_LOCATOR, TENTACLE_MODEL_SCALE, TENTACLE_LENGTH, TENTACLE_SCAL
+  * L7: import type { TentaclePose } from "../src/systems/proceduralTentacleMath.ts";
+--------------------------------------------------------------------------------
+DECLARED SYMBOL / TEST INVENTORY (up to 25 shown):
+  * L9: read
+  * L10: BP
+  * L11: Client
+  * L12: Animation
+  * L13: bp
+  * L14: molang
+  * L16: Geometry
+  * L17: geometry
+  * L18: visualTip
+  * L19: source
+  * L22: pivot
+  * L23: delta
+  * L24: angles
+  * L26: matrix
+  * L27: offset
+  * L31: visualGrip
+  * L32: tip
+  * L33: center
+  * L36: TestSolid
+  * L38: host
+  * L39: listeners
+  * L40: signal
+  * L41: sounds
+  * L42: solids
+  * L43: raycast
+--------------------------------------------------------------------------------
+BOUNDED FAIR-USE EVIDENTIARY EXCERPT (8 of 713 lines shown; full file omitted):
+  L0104 |  const emit=(name:string,event:Record<string,unknown>)=>listeners.get(name)?.forEach(fn=>fn(event));
+  L0105 |  const tentacle=(scale=1)=>{const e=new TestEntity();e.scale=scale;emit("spawn",{entity:e});return e;};
+  L0107 |  const hurt=(entity:TestEntity,cause="entityAttack",attacker:TestEntity=player,projectile?:TestEntity)=>emit("hurt",{hurtEnti
+  L0114 |  return{sounds,holding,api,solids,rays,pressure,tentacle,player,addPlayer,addMob,hurt,emit,system,advance,tick,gameplay,visua
+  L0209 |  x.emit("remove",{removedEntityId:e.id});e.isValid=false;x.visual();assert.ok(x.particles.every(p=>p.id==="decayed:tentacle_s
+  L0253 |  const pose={...TENTACLE_REST,pitch:45,extension:0.3};for(const[key,value]of Object.entries(pose))e.properties.set(`decayed:t
+  L0279 |   if(reason==="manual")x.emit("script",{id:"decayed:tentacle_release",message:"",sourceEntity:x.player});
+  L0283 |   if(reason==="victim-death"){x.player.health.currentValue=0;x.emit("die",{deadEntity:x.player});}
+  [... 705 lines omitted under 17 U.S.C. § 107 transformative evidentiary scope ...]
+================================================================================

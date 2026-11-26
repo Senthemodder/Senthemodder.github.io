@@ -1,0 +1,42 @@
+================================================================================
+CRYPTOGRAPHIC FORENSIC INSPECTION CARD (17 U.S.C. §§ 102(b), 107 COMPLIANT)
+================================================================================
+Legal Notice: Full verbatim body intentionally omitted so zero executable source
+modules or complete prose documents from TazoLaTaza/Decayed-Reality are hosted.
+This record publishes strictly uncopyrightable cryptographic Git facts (§ 102(b)),
+structural symbol/heading metadata, and a bounded evidentiary excerpt (§ 107)
+establishing autonomous OpenAI Codex harness usage, CWSBP derivation, and cover-up
+deletion commits ('papoi', 'ohmama', 'beca cultural', '1b6facfdcd').
+--------------------------------------------------------------------------------
+Artifact Index           : #30
+Original Repository Path : src/clusters/STORM_DEATH_SCATTER.md
+Exact Git Blob SHA-1     : effa7e97c3dec65653fca1e6d97da02f610ced7d
+Exact Raw SHA-256        : a0ef8982973cfa25948182d4108f99aebfc7a6c2ee1a13356995a1acc6d4e8a6
+Original Byte Length     : 6,539 bytes (140 lines)
+Provenance / Wipe Commit : Tazo Wiped AI / Codex / Validation / Test File — beca cultural (wiped STORM_DEATH_SCATTER.md)
+Forensic Marker Counts   : Codex/Harness refs=0 | CWSBP/tainted refs=3 | Em/En-dashes=0
+--------------------------------------------------------------------------------
+OFFLINE CRYPTOGRAPHIC VERIFICATION (RUN AGAINST BARE COMMIT/TREE GRAPH):
+  git log --all --full-history --stat -- "src/clusters/STORM_DEATH_SCATTER.md"
+  # Any local clone holding blob effa7e97c3de verifies exact bytes via:
+  git cat-file -t effa7e97c3dec65653fca1e6d97da02f610ced7d && git cat-file -s effa7e97c3dec65653fca1e6d97da02f610ced7d   # -> blob, 6539
+--------------------------------------------------------------------------------
+DOCUMENT SECTION HEADING INVENTORY (11 headings):
+  * L1: # Wither Storm Play Dead / Death Cluster Scatter
+  * L3: ## CWSBP reference
+  * L9: ## Decayed Reality implementation
+  * L15: ### Body identity / triggers
+  * L32: ## Visible payload
+  * L45: ## Play Dead density: x5
+  * L56: ## Scripted ballistic scattering
+  * L82: ## Death shower
+  * L96: ## Packaged-runtime compatibility
+  * L108: ## Tuning
+  * L128: ## Runtime validation
+--------------------------------------------------------------------------------
+BOUNDED FAIR-USE EVIDENTIARY EXCERPT (3 of 140 lines shown; full file omitted):
+  L0003 | ## CWSBP reference
+  L0005 | The `Main-Development` CWSBP implementation is split between `BP/src/entities/WitherStorm.ts` and `BP/src/entities/BlockClust
+  L0007 | CWSBP separates debris emission from motion: Play Dead emits debris during the descent, death emits a denser shower, and each
+  [... 137 lines omitted under 17 U.S.C. § 107 transformative evidentiary scope ...]
+================================================================================

@@ -1,0 +1,63 @@
+================================================================================
+CRYPTOGRAPHIC FORENSIC INSPECTION CARD (17 U.S.C. §§ 102(b), 107 COMPLIANT)
+================================================================================
+Legal Notice: Full verbatim body intentionally omitted so zero executable source
+modules or complete prose documents from TazoLaTaza/Decayed-Reality are hosted.
+This record publishes strictly uncopyrightable cryptographic Git facts (§ 102(b)),
+structural symbol/heading metadata, and a bounded evidentiary excerpt (§ 107)
+establishing autonomous OpenAI Codex harness usage, CWSBP derivation, and cover-up
+deletion commits ('papoi', 'ohmama', 'beca cultural', '1b6facfdcd').
+--------------------------------------------------------------------------------
+Artifact Index           : #57
+Original Repository Path : scripts/proximity-revive-tests.ts
+Exact Git Blob SHA-1     : 909b3097275746a941e98c8583867415489a8a15
+Exact Raw SHA-256        : ac328860df9aa42bd3cee5b151da636e0e3d96bc5672303439b90d7035cd0892
+Original Byte Length     : 13,917 bytes (149 lines)
+Provenance / Wipe Commit : Tazo Wiped AI / Codex / Validation / Test File — Tentacle is finished! (wiped 23 automated *-tests.ts suites)
+Forensic Marker Counts   : Codex/Harness refs=0 | CWSBP/tainted refs=0 | Em/En-dashes=0
+--------------------------------------------------------------------------------
+OFFLINE CRYPTOGRAPHIC VERIFICATION (RUN AGAINST BARE COMMIT/TREE GRAPH):
+  git log --all --full-history --stat -- "scripts/proximity-revive-tests.ts"
+  # Any local clone holding blob 909b30972757 verifies exact bytes via:
+  git cat-file -t 909b3097275746a941e98c8583867415489a8a15 && git cat-file -s 909b3097275746a941e98c8583867415489a8a15   # -> blob, 13917
+--------------------------------------------------------------------------------
+MODULE IMPORT GRAPH (6 imports):
+  * L1: import assert from "node:assert/strict";
+  * L2: import {readFileSync} from "node:fs";
+  * L3: import {resolve} from "node:path";
+  * L4: import {runInNewContext} from "node:vm";
+  * L5: import {build} from "esbuild";
+  * L6: import {test} from "node:test";
+--------------------------------------------------------------------------------
+DECLARED SYMBOL / TEST INVENTORY (up to 25 shown):
+  * L7: server
+  * L8: entities
+  * L9: world
+  * L10: system
+  * L11: Entity
+  * L17: Player
+  * L18: Direction
+  * L19: CommandPermissionLevel
+  * L21: mocks
+  * L30: bundle
+  * L31: result
+  * L38: api
+  * L40: dimension
+  * L41: d
+  * L47: segment
+  * L48: e
+  * L50: test('construction deadline yields and resumes without an unconditional 10ms cost')
+  * L52: step
+  * L59: test('revive retains side identity and live transforms, completes once without spawnin')
+  * L60: d
+  * L66: events
+  * L68: test('missing side restores saved pose; unloaded side defers through the same completi')
+  * L69: d
+  * L76: test('nearby storms cannot claim each other')
+  * L77: d
+--------------------------------------------------------------------------------
+BOUNDED FAIR-USE EVIDENTIARY EXCERPT (2 of 149 lines shown; full file omitted):
+  L0097 |  const d=dimension(),s=new api.Entity("corruptor");s.dimension=d;s.getProperty=()=>"devour";s.addTag("decayed:withered_corrup
+  L0104 |  const timeline=JSON.parse(readFileSync("Decayed_Reality_BP/animations/witherstorm_basic.json","utf8")).animations["animation
+  [... 147 lines omitted under 17 U.S.C. § 107 transformative evidentiary scope ...]
+================================================================================

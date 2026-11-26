@@ -1,0 +1,54 @@
+================================================================================
+CRYPTOGRAPHIC FORENSIC INSPECTION CARD (17 U.S.C. §§ 102(b), 107 COMPLIANT)
+================================================================================
+Legal Notice: Full verbatim body intentionally omitted so zero executable source
+modules or complete prose documents from TazoLaTaza/Decayed-Reality are hosted.
+This record publishes strictly uncopyrightable cryptographic Git facts (§ 102(b)),
+structural symbol/heading metadata, and a bounded evidentiary excerpt (§ 107)
+establishing autonomous OpenAI Codex harness usage, CWSBP derivation, and cover-up
+deletion commits ('papoi', 'ohmama', 'beca cultural', '1b6facfdcd').
+--------------------------------------------------------------------------------
+Artifact Index           : #43
+Original Repository Path : scripts/beam-density-tests.ts
+Exact Git Blob SHA-1     : 46b9af694596cbf3dd8a7668c15a6f9d2154aab8
+Exact Raw SHA-256        : 9af89c1d880b0422ce6b07e4a4347caba7d6e25a5e43059d0e93fa9793bc7b0c
+Original Byte Length     : 7,247 bytes (63 lines)
+Provenance / Wipe Commit : Tazo Wiped AI / Codex / Validation / Test File — Tentacle is finished! (wiped 23 automated *-tests.ts suites)
+Forensic Marker Counts   : Codex/Harness refs=0 | CWSBP/tainted refs=0 | Em/En-dashes=0
+--------------------------------------------------------------------------------
+OFFLINE CRYPTOGRAPHIC VERIFICATION (RUN AGAINST BARE COMMIT/TREE GRAPH):
+  git log --all --full-history --stat -- "scripts/beam-density-tests.ts"
+  # Any local clone holding blob 46b9af694596 verifies exact bytes via:
+  git cat-file -t 46b9af694596cbf3dd8a7668c15a6f9d2154aab8 && git cat-file -s 46b9af694596cbf3dd8a7668c15a6f9d2154aab8   # -> blob, 7247
+--------------------------------------------------------------------------------
+MODULE IMPORT GRAPH (6 imports):
+  * L1: import assert from "node:assert/strict";
+  * L2: import {readFileSync} from "node:fs";
+  * L3: import {resolve} from "node:path";
+  * L4: import {runInNewContext} from "node:vm";
+  * L5: import {build} from "esbuild";
+  * L6: import {test} from "node:test";
+--------------------------------------------------------------------------------
+DECLARED SYMBOL / TEST INVENTORY (up to 25 shown):
+  * L7: legacy
+  * L8: mocks
+  * L9: bundle
+  * L10: result
+  * L26: api
+  * L28: setup
+  * L30: removed
+  * L32: b
+  * L34: head
+  * L35: body
+  * L37: source
+  * L40: test('stationary cliff continuously yields models and common singles without the body ')
+  * L44: made
+  * L49: test('moving beam generates along the current sweep without stopping or repeat convers')
+  * L53: made
+  * L56: test('same-tick reruns and full capture queues cannot produce runaway debris')
+  * L63: test('grass cliff rejection falls back to grass singular debris')
+--------------------------------------------------------------------------------
+BOUNDED FAIR-USE EVIDENTIARY EXCERPT (1 of 63 lines shown; full file omitted):
+  L0058 |  for(let n=0;n<api.GROUND_BEAM_CFG.pendingCaptureLimit;n++)api.pendingCaptures.set("hold-"+n,{cluster:{isValid:true},source:{
+  [... 62 lines omitted under 17 U.S.C. § 107 transformative evidentiary scope ...]
+================================================================================

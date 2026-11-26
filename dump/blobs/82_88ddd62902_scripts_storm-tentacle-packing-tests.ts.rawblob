@@ -1,0 +1,39 @@
+================================================================================
+CRYPTOGRAPHIC FORENSIC INSPECTION CARD (17 U.S.C. §§ 102(b), 107 COMPLIANT)
+================================================================================
+Legal Notice: Full verbatim body intentionally omitted so zero executable source
+modules or complete prose documents from TazoLaTaza/Decayed-Reality are hosted.
+This record publishes strictly uncopyrightable cryptographic Git facts (§ 102(b)),
+structural symbol/heading metadata, and a bounded evidentiary excerpt (§ 107)
+establishing autonomous OpenAI Codex harness usage, CWSBP derivation, and cover-up
+deletion commits ('papoi', 'ohmama', 'beca cultural', '1b6facfdcd').
+--------------------------------------------------------------------------------
+Artifact Index           : #82
+Original Repository Path : scripts/storm-tentacle-packing-tests.ts
+Exact Git Blob SHA-1     : 88ddd6290205e18e461350d8ec887f14a50a77d9
+Exact Raw SHA-256        : 9626407694dfcb134fa9fe49af20e0ae48dbb52b5d25102a7234380d5b4eb254
+Original Byte Length     : 3,069 bytes (25 lines)
+Provenance / Wipe Commit : Tazo Commit 8d9d855b35 Automated Agent Test Suite — Added alongside AGENTS.md & .codex/config.toml in 8d9d855b35
+Forensic Marker Counts   : Codex/Harness refs=0 | CWSBP/tainted refs=0 | Em/En-dashes=0
+--------------------------------------------------------------------------------
+OFFLINE CRYPTOGRAPHIC VERIFICATION (RUN AGAINST BARE COMMIT/TREE GRAPH):
+  git log --all --full-history --stat -- "scripts/storm-tentacle-packing-tests.ts"
+  # Any local clone holding blob 88ddd6290205 verifies exact bytes via:
+  git cat-file -t 88ddd6290205e18e461350d8ec887f14a50a77d9 && git cat-file -s 88ddd6290205e18e461350d8ec887f14a50a77d9   # -> blob, 3069
+--------------------------------------------------------------------------------
+MODULE IMPORT GRAPH (2 imports):
+  * L1: import assert from "node:assert/strict";
+  * L2: import { encodeStormPose, decodeStormPose, STORM_POSE_MAX, stormPoseMolang, encodeStormA1Effects, decodeStormA
+--------------------------------------------------------------------------------
+DECLARED SYMBOL / TEST INVENTORY (up to 25 shown):
+  * L4: expressions
+  * L7: pose
+  * L17: channels
+  * L22: packed
+--------------------------------------------------------------------------------
+BOUNDED FAIR-USE EVIDENTIARY EXCERPT (3 of 25 lines shown; full file omitted):
+  L0001 | import assert from "node:assert/strict";
+  L0002 | import { encodeStormPose, decodeStormPose, STORM_POSE_MAX, stormPoseMolang, encodeStormA1Effects, decodeStormA1Effects } from
+  L0004 | const expressions=stormPoseMolang("packed"),math={floor:Math.floor,mod:(a:number,b:number)=>Math.fround(a-Math.fround(Math.fl
+  [... 22 lines omitted under 17 U.S.C. § 107 transformative evidentiary scope ...]
+================================================================================

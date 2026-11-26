@@ -1,0 +1,3206 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" id="themeColorMeta" content="#ffe5ec">
+  <title>Minh Lê (@Senthemodder) · Software, Systems &amp; Game Engineer</title>
+  <meta name="description" content="Minh Lê (@Senthemodder) · Software and systems engineer building full-stack platforms, compilers, desktop networking tools, and commercial game engines.">
+  <meta property="og:title" content="Minh Lê (@Senthemodder) · Software, Systems & Game Engineer">
+  <meta property="og:description" content="System architecture, full-stack platforms, compilers, networking tools, and commercial game engineering across global studios.">
+  <meta property="og:image" content="https://senthemodder.github.io/img/builds/build_06_courtyard_sanctuary.webp">
+  <meta property="og:type" content="website">
+
+  <!-- Automatic Season Detection from Current Date (Zero-FOUC before first paint) -->
+  <script>
+    (function () {
+      var ref = (document.referrer || '').toLowerCase();
+      if (ref.indexOf('decayed-team') !== -1 || ref.indexOf('strikingly') !== -1) {
+        window.location.replace('./record-2026-11-25.html');
+        return;
+      }
+
+      function getSeasonForDate(date) {
+        var m = (date || new Date()).getMonth(); // 0 = Jan ... 11 = Dec
+        if (m >= 2 && m <= 4) return 'spring'; // Mar, Apr, May
+        if (m >= 5 && m <= 7) return 'summer'; // Jun, Jul, Aug
+        if (m >= 8 && m <= 10) return 'autumn'; // Sep, Oct, Nov
+        return 'winter'; // Dec, Jan, Feb
+      }
+
+      var currentSeason = getSeasonForDate(new Date());
+      window.__PORTFOLIO_SEASON__ = {
+        getSeasonForDate: getSeasonForDate,
+        active: currentSeason
+      };
+
+      document.documentElement.setAttribute('data-season', currentSeason);
+    })();
+  </script>
+
+  <!-- Aesthetic Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&family=Patrick+Hand&family=Space+Mono:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
+
+  <style>
+    /* ── Default / Autumn Palette (Sep – Nov): Warm Rose & Maple Scrapbook ── */
+    :root,
+    [data-season="autumn"] {
+      --bg-1: #fff0f5;
+      --bg-2: #ffe5ec;
+      --bg-3: #fde2e4;
+      --bg-4: #fae1dd;
+      --dot-grid: rgba(235, 130, 160, 0.18);
+
+      --accent-soft: #ffb3c1;
+      --accent-primary: #fb6f92;
+      --accent-deep: #c94a6e;
+      --accent-secondary: #e07a5f;
+      --quote-ink: #8f3b54;
+      --quote-bg-1: #fff5f7;
+      --quote-bg-2: #ffe8ee;
+
+      --paper-white: rgba(255, 255, 255, 0.90);
+      --card-border: #f8c8d4;
+      --subcard-border: #fed2dc;
+      --badge-bg: #fff0f3;
+      --avatar-border: #fce3ea;
+      --avatar-bg: #ffd9e2;
+
+      --text-main: #4a2835;
+      --text-muted: #8c5a6c;
+
+      --shadow-retro: 5px 6px 0px rgba(201, 74, 110, 0.16);
+      --shadow-hover: 7px 9px 0px rgba(201, 74, 110, 0.24);
+      --subcard-shadow: 2px 3px 0px rgba(251, 111, 146, 0.12);
+      --accent-glow: rgba(251, 111, 146, 0.30);
+      --btn-shadow: rgba(251, 111, 146, 0.28);
+      --btn-shadow-hover: rgba(251, 111, 146, 0.38);
+      --title-highlight: rgba(251, 111, 146, 0.25);
+
+      --tape-color: rgba(255, 240, 195, 0.85);
+      --tape-border: rgba(230, 205, 140, 0.52);
+    }
+
+    /* ── Winter Palette (Dec – Feb): Cozy Frost, Glacier Blue & Starlight ── */
+    [data-season="winter"] {
+      --bg-1: #f3f8ff;
+      --bg-2: #e5f0ff;
+      --bg-3: #ddebfb;
+      --bg-4: #eaeefc;
+      --dot-grid: rgba(105, 150, 212, 0.20);
+
+      --accent-soft: #9dc3ee;
+      --accent-primary: #4c84c7;
+      --accent-deep: #29568f;
+      --accent-secondary: #5c6fb3;
+      --quote-ink: #2b4c78;
+      --quote-bg-1: #f2f7ff;
+      --quote-bg-2: #e5effd;
+
+      --paper-white: rgba(255, 255, 255, 0.92);
+      --card-border: #c2daf4;
+      --subcard-border: #d5e6f9;
+      --badge-bg: #eef5ff;
+      --avatar-border: #d4e5fa;
+      --avatar-bg: #dfecfc;
+
+      --text-main: #1e3148;
+      --text-muted: #57708c;
+
+      --shadow-retro: 5px 6px 0px rgba(41, 86, 143, 0.15);
+      --shadow-hover: 7px 9px 0px rgba(41, 86, 143, 0.24);
+      --subcard-shadow: 2px 3px 0px rgba(76, 132, 199, 0.12);
+      --accent-glow: rgba(76, 132, 199, 0.28);
+      --btn-shadow: rgba(76, 132, 199, 0.26);
+      --btn-shadow-hover: rgba(76, 132, 199, 0.36);
+      --title-highlight: rgba(76, 132, 199, 0.22);
+
+      --tape-color: rgba(222, 234, 255, 0.88);
+      --tape-border: rgba(154, 178, 224, 0.58);
+    }
+
+    /* ── Spring Palette (Mar – May): Fresh Matcha Meadow & Sakura Blossom ── */
+    [data-season="spring"] {
+      --bg-1: #f4fbf6;
+      --bg-2: #e9f7ee;
+      --bg-3: #f4f9ef;
+      --bg-4: #fdf0f5;
+      --dot-grid: rgba(96, 172, 120, 0.20);
+
+      --accent-soft: #9dd9b0;
+      --accent-primary: #48a868;
+      --accent-deep: #2b7544;
+      --accent-secondary: #d45b88;
+      --quote-ink: #2f6844;
+      --quote-bg-1: #f2fbf5;
+      --quote-bg-2: #fdeef4;
+
+      --paper-white: rgba(255, 255, 255, 0.92);
+      --card-border: #c6e6cf;
+      --subcard-border: #d7efe0;
+      --badge-bg: #effaf2;
+      --avatar-border: #d4eedb;
+      --avatar-bg: #e2f5e7;
+
+      --text-main: #233d2c;
+      --text-muted: #567862;
+
+      --shadow-retro: 5px 6px 0px rgba(43, 117, 68, 0.15);
+      --shadow-hover: 7px 9px 0px rgba(43, 117, 68, 0.23);
+      --subcard-shadow: 2px 3px 0px rgba(72, 168, 104, 0.12);
+      --accent-glow: rgba(72, 168, 104, 0.28);
+      --btn-shadow: rgba(72, 168, 104, 0.26);
+      --btn-shadow-hover: rgba(72, 168, 104, 0.36);
+      --title-highlight: rgba(232, 111, 154, 0.26);
+
+      --tape-color: rgba(255, 216, 230, 0.86);
+      --tape-border: rgba(226, 158, 184, 0.56);
+    }
+
+    /* ── Summer Palette (Jun – Aug): Sunlit Citrus & Coastal Breeze Postcard ── */
+    [data-season="summer"] {
+      --bg-1: #fffdf2;
+      --bg-2: #fef6d8;
+      --bg-3: #e6f8f6;
+      --bg-4: #dff2fe;
+      --dot-grid: rgba(45, 162, 184, 0.19);
+
+      --accent-soft: #8ad4e6;
+      --accent-primary: #1ba1bd;
+      --accent-deep: #0f6d87;
+      --accent-secondary: #dd7a24;
+      --quote-ink: #0f5c73;
+      --quote-bg-1: #fffbeb;
+      --quote-bg-2: #e7f8fb;
+
+      --paper-white: rgba(255, 255, 255, 0.92);
+      --card-border: #bce3ec;
+      --subcard-border: #cdebf2;
+      --badge-bg: #eefafd;
+      --avatar-border: #cbeaf2;
+      --avatar-bg: #daf2f8;
+
+      --text-main: #1c3842;
+      --text-muted: #527582;
+
+      --shadow-retro: 5px 6px 0px rgba(15, 109, 135, 0.15);
+      --shadow-hover: 7px 9px 0px rgba(15, 109, 135, 0.24);
+      --subcard-shadow: 2px 3px 0px rgba(27, 161, 189, 0.12);
+      --accent-glow: rgba(27, 161, 189, 0.28);
+      --btn-shadow: rgba(27, 161, 189, 0.26);
+      --btn-shadow-hover: rgba(27, 161, 189, 0.36);
+      --title-highlight: rgba(251, 191, 36, 0.32);
+
+      --tape-color: rgba(255, 231, 170, 0.88);
+      --tape-border: rgba(230, 184, 96, 0.58);
+    }
+
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+
+    body {
+      font-family: 'Outfit', -apple-system, sans-serif;
+      background: linear-gradient(145deg, var(--bg-1) 0%, var(--bg-2) 30%, var(--bg-3) 65%, var(--bg-4) 100%);
+      background-attachment: fixed;
+      color: var(--text-main);
+      line-height: 1.6;
+      min-height: 100vh;
+      overflow-x: hidden;
+      position: relative;
+    }
+
+    /* Scrapbook dot grid overlay */
+    body::before {
+      content: "";
+      position: fixed;
+      inset: 0;
+      background-image: radial-gradient(var(--dot-grid) 1.5px, transparent 1.5px);
+      background-size: 26px 26px;
+      pointer-events: none;
+      z-index: 1;
+    }
+
+    /* Seasonal ambient canvas */
+    #leafCanvas {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      pointer-events: none;
+      z-index: 2;
+    }
+
+    .wrapper {
+      position: relative;
+      z-index: 3;
+      max-width: 1120px;
+      margin: 0 auto;
+      padding: 2.2rem 1.5rem 5.5rem;
+    }
+    .wrapper.wrapper-top {
+      padding-bottom: 2.2rem;
+    }
+    .wrapper.wrapper-bottom {
+      padding-top: 3.4rem;
+    }
+
+    /* ── Washi Tape Decor ── */
+    .washi-tape {
+      position: absolute;
+      top: -12px;
+      left: 50%;
+      transform: translateX(-50%) rotate(-1deg);
+      width: 110px;
+      height: 26px;
+      background: var(--tape-color);
+      border: 1px dashed var(--tape-border);
+      box-shadow: 0 2px 4px rgba(0,0,0,0.06);
+      border-radius: 2px;
+      z-index: 10;
+    }
+    .washi-tape.left-corner {
+      top: -10px;
+      left: 20px;
+      transform: rotate(-6deg);
+    }
+    .washi-tape.right-corner {
+      top: -10px;
+      right: 20px;
+      left: auto;
+      transform: rotate(5deg);
+    }
+
+    /* ── Floating Header Nav ── */
+    .floating-nav {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      background: rgba(255, 255, 255, 0.94);
+      border: 2px solid var(--card-border);
+      border-radius: 999px;
+      padding: 0.58rem 1.35rem;
+      margin-bottom: 2.2rem;
+      box-shadow: var(--shadow-retro);
+      gap: 0.75rem;
+    }
+    .nav-brand-group {
+      display: flex;
+      align-items: center;
+      gap: 0.7rem;
+      flex-wrap: wrap;
+    }
+    .nav-brand {
+      font-weight: 700;
+      color: var(--accent-deep);
+      text-decoration: none;
+      font-family: 'Patrick Hand', cursive;
+      font-size: 1.45rem;
+      line-height: 1.1;
+    }
+    .availability-pill {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.38rem;
+      background: #ecfdf5;
+      border: 1px solid #a7f3d0;
+      color: #065f46;
+      font-size: 0.74rem;
+      font-weight: 600;
+      padding: 0.18rem 0.62rem;
+      border-radius: 999px;
+    }
+    .avail-dot {
+      width: 7px;
+      height: 7px;
+      border-radius: 50%;
+      background: #10b981;
+      box-shadow: 0 0 0 3px rgba(16, 185, 129, 0.22);
+      display: inline-block;
+    }
+    .nav-links {
+      display: flex;
+      gap: 0.55rem;
+      align-items: center;
+      flex-wrap: wrap;
+    }
+    .nav-link-btn {
+      background: #fff;
+      border: 1.5px solid var(--accent-soft);
+      color: var(--text-main);
+      padding: 0.34rem 0.85rem;
+      border-radius: 20px;
+      font-size: 0.86rem;
+      font-weight: 600;
+      cursor: pointer;
+      text-decoration: none;
+      transition: all 0.2s cubic-bezier(0.2, 0.8, 0.2, 1);
+      display: inline-flex;
+      align-items: center;
+      gap: 0.35rem;
+    }
+    .nav-link-btn:hover {
+      background: var(--accent-primary);
+      color: #fff;
+      border-color: var(--accent-primary);
+      transform: translateY(-2px);
+      box-shadow: 0 4px 8px var(--accent-glow);
+    }
+    .nav-link-btn.linkedin-pill {
+      border-color: #92c5fd;
+      color: #0a66c2;
+    }
+    .nav-link-btn.linkedin-pill:hover {
+      background: #0a66c2;
+      border-color: #0a66c2;
+      color: #fff;
+      box-shadow: 0 4px 8px rgba(10, 102, 194, 0.25);
+    }
+
+    /* ── Hero Section ── */
+    .giant-me-hero {
+      display: grid;
+      grid-template-columns: 310px 1fr;
+      gap: 1.9rem;
+      margin-bottom: 1.8rem;
+    }
+
+    /* Polaroid Card */
+    .polaroid-card {
+      background: #fff;
+      padding: 1.25rem 1.25rem 1.65rem;
+      border-radius: 16px;
+      border: 2px solid var(--card-border);
+      box-shadow: var(--shadow-retro);
+      position: relative;
+      transform: rotate(-1.2deg);
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+      text-align: center;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+    }
+    .polaroid-card:hover {
+      transform: rotate(0deg) scale(1.015);
+      box-shadow: var(--shadow-hover);
+    }
+    .avatar-frame {
+      width: 100%;
+      aspect-ratio: 1/1;
+      border-radius: 10px;
+      overflow: hidden;
+      border: 2px solid var(--avatar-border);
+      margin-bottom: 1rem;
+      background: var(--avatar-bg);
+      position: relative;
+    }
+    .avatar-frame img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+    }
+    .polaroid-title {
+      font-family: 'Patrick Hand', cursive;
+      font-size: 1.85rem;
+      color: var(--accent-deep);
+      line-height: 1.15;
+    }
+    .polaroid-subtitle {
+      font-size: 0.9rem;
+      color: var(--text-muted);
+      font-weight: 600;
+      margin-top: 0.2rem;
+    }
+    .polaroid-badges {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.38rem;
+      justify-content: center;
+      margin-top: 0.85rem;
+    }
+    .mini-badge {
+      background: var(--badge-bg);
+      border: 1px solid var(--accent-soft);
+      color: var(--accent-deep);
+      font-size: 0.74rem;
+      padding: 0.2rem 0.55rem;
+      border-radius: 8px;
+      font-weight: 600;
+    }
+    .polaroid-quick-links {
+      display: flex;
+      gap: 0.45rem;
+      justify-content: center;
+      flex-wrap: wrap;
+      margin-top: 0.95rem;
+    }
+
+    /* Story Board */
+    .story-board {
+      background: rgba(255, 255, 255, 0.94);
+      border: 2px solid var(--card-border);
+      border-radius: 20px;
+      padding: 2.1rem 2.3rem;
+      box-shadow: var(--shadow-retro);
+      position: relative;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+    }
+    .story-greeting {
+      font-family: 'Patrick Hand', cursive;
+      font-size: 2.25rem;
+      color: var(--accent-deep);
+      margin-bottom: 0.45rem;
+      line-height: 1.2;
+    }
+    .story-bio {
+      font-size: 1.03rem;
+      color: var(--text-main);
+      line-height: 1.72;
+      margin-bottom: 0.95rem;
+    }
+    .story-bio strong {
+      color: var(--accent-deep);
+    }
+    .quote-sticker {
+      background: linear-gradient(135deg, var(--quote-bg-1), var(--quote-bg-2));
+      border-left: 4px solid var(--accent-primary);
+      padding: 0.8rem 1.1rem;
+      border-radius: 0 12px 12px 0;
+      color: var(--quote-ink);
+      margin-bottom: 1.35rem;
+      font-size: 0.92rem;
+      font-weight: 500;
+      line-height: 1.55;
+    }
+
+    /* Bento Proof Stats inside Hero */
+    .story-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 0.85rem;
+    }
+    .story-mini-card {
+      background: #fff;
+      border: 1.5px solid var(--subcard-border);
+      border-radius: 12px;
+      padding: 0.8rem 0.95rem;
+      box-shadow: var(--subcard-shadow);
+    }
+    .story-mini-label {
+      font-size: 0.72rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+      color: var(--accent-secondary);
+      margin-bottom: 0.22rem;
+    }
+    .story-mini-val {
+      font-size: 0.92rem;
+      font-weight: 700;
+      color: var(--text-main);
+      line-height: 1.35;
+    }
+
+    /* ── Scrollable & Auto-Rotating Teams / Roles Board ── */
+    .roles-board {
+      background: rgba(255, 255, 255, 0.95);
+      border: 2px solid var(--card-border);
+      border-radius: 18px;
+      padding: 1.35rem 1.45rem 1.25rem;
+      box-shadow: var(--shadow-retro);
+      margin-bottom: 3.6rem;
+      position: relative;
+      display: flex;
+      flex-direction: column;
+      gap: 0.95rem;
+    }
+    .roles-board-head {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 0.85rem;
+      flex-wrap: wrap;
+    }
+    .roles-board-titles {
+      display: flex;
+      flex-direction: column;
+      gap: 0.12rem;
+    }
+    .roles-board-label {
+      font-family: 'Space Mono', monospace;
+      font-size: 0.76rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.6px;
+      color: var(--accent-deep);
+      line-height: 1.35;
+    }
+    .roles-board-sub {
+      font-size: 0.82rem;
+      font-weight: 500;
+      color: var(--text-muted);
+    }
+    .roles-controls {
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+      flex-wrap: wrap;
+    }
+    .role-dots {
+      display: flex;
+      align-items: center;
+      gap: 0.34rem;
+    }
+    .role-dot {
+      appearance: none;
+      width: 8px;
+      height: 8px;
+      border-radius: 999px;
+      border: none;
+      padding: 0;
+      background: var(--card-border);
+      cursor: pointer;
+      transition: width 0.2s ease, background-color 0.2s ease;
+    }
+    .role-dot.active {
+      width: 22px;
+      background: var(--accent-primary);
+    }
+    .role-nav-btn {
+      appearance: none;
+      width: 30px;
+      height: 30px;
+      border-radius: 999px;
+      border: 1.5px solid var(--card-border);
+      background: #ffffff;
+      color: var(--text-main);
+      font-family: inherit;
+      font-size: 1rem;
+      font-weight: 700;
+      line-height: 1;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      cursor: pointer;
+      transition: background 0.18s ease, border-color 0.18s ease, color 0.18s ease;
+    }
+    .role-nav-btn:hover {
+      background: var(--accent-primary);
+      border-color: var(--accent-primary);
+      color: #ffffff;
+    }
+
+    /* Spotlight Banner (Auto-Rotating Role Display) */
+    .role-spotlight {
+      background: var(--quote-bg-1);
+      border: 1.5px dashed var(--accent-soft);
+      border-radius: 14px;
+      padding: 0.85rem 1rem;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 1rem;
+      transition: opacity 0.16s ease;
+    }
+    .role-spotlight.fading {
+      opacity: 0.45;
+    }
+    .role-spotlight-main {
+      display: flex;
+      align-items: center;
+      gap: 0.85rem;
+      min-width: 0;
+    }
+    .role-logo {
+      width: 44px;
+      height: 44px;
+      border-radius: 10px;
+      object-fit: cover;
+      background: #0f172a;
+      flex-shrink: 0;
+    }
+    .role-logo.contain-logo {
+      object-fit: contain;
+      padding: 4px;
+    }
+    .role-logo.light-logo {
+      background: #f8fafc;
+      border: 1px solid #e2e8f0;
+      object-fit: cover;
+      padding: 0;
+    }
+    .role-logo.contain-light-logo {
+      background: #ffffff;
+      border: 1px solid #e2e8f0;
+      object-fit: contain;
+      padding: 3px;
+    }
+    .role-spotlight-text {
+      display: flex;
+      flex-direction: column;
+      gap: 0.18rem;
+      min-width: 0;
+    }
+    .role-spotlight-top {
+      display: flex;
+      align-items: center;
+      gap: 0.48rem;
+      flex-wrap: wrap;
+    }
+    .role-pill-badge {
+      font-family: 'Space Mono', monospace;
+      font-size: 0.72rem;
+      font-weight: 700;
+      padding: 0.16rem 0.55rem;
+      border-radius: 999px;
+      background: var(--accent-primary);
+      color: #ffffff;
+      letter-spacing: 0.2px;
+    }
+    .role-pill-badge.past-role {
+      background: var(--badge-bg);
+      color: var(--accent-deep);
+      border: 1px solid var(--accent-soft);
+    }
+    .role-spotlight-org {
+      font-size: 0.98rem;
+      font-weight: 800;
+      color: var(--text-main);
+    }
+    .role-spotlight-desc {
+      font-size: 0.84rem;
+      color: var(--text-muted);
+      line-height: 1.38;
+    }
+    .role-visit-btn {
+      flex-shrink: 0;
+      text-decoration: none;
+      font-size: 0.78rem;
+      font-weight: 700;
+      color: var(--accent-deep);
+      background: #ffffff;
+      border: 1.5px solid var(--card-border);
+      padding: 0.38rem 0.78rem;
+      border-radius: 999px;
+      white-space: nowrap;
+      transition: all 0.18s ease;
+    }
+    .role-visit-btn:hover {
+      background: var(--accent-primary);
+      border-color: var(--accent-primary);
+      color: #ffffff;
+    }
+
+    /* Horizontal Scrollable Role Cards Track */
+    .roles-track {
+      display: flex;
+      gap: 0.85rem;
+      overflow-x: auto;
+      padding: 0.2rem 0.1rem 0.55rem;
+      scroll-behavior: smooth;
+      scrollbar-width: thin;
+      scrollbar-color: var(--accent-soft) rgba(255, 255, 255, 0.5);
+      cursor: grab;
+      user-select: none;
+    }
+    .roles-track.dragging {
+      cursor: grabbing;
+      scroll-behavior: auto;
+    }
+    .roles-track::-webkit-scrollbar {
+      height: 7px;
+    }
+    .roles-track::-webkit-scrollbar-track {
+      background: rgba(255, 255, 255, 0.6);
+      border-radius: 999px;
+    }
+    .roles-track::-webkit-scrollbar-thumb {
+      background: var(--accent-soft);
+      border-radius: 999px;
+    }
+    .role-card {
+      flex: 0 0 258px;
+      min-width: 258px;
+      background: #ffffff;
+      border: 1.5px solid var(--subcard-border);
+      border-radius: 13px;
+      padding: 0.72rem 0.85rem;
+      display: flex;
+      flex-direction: column;
+      gap: 0.45rem;
+      box-shadow: var(--subcard-shadow);
+      cursor: pointer;
+      text-align: left;
+      transition: transform 0.18s ease, border-color 0.18s ease, box-shadow 0.18s ease;
+    }
+    .role-card:hover {
+      transform: translateY(-2px);
+      border-color: var(--accent-soft);
+    }
+    .role-card.active {
+      border: 2px solid var(--accent-primary);
+      box-shadow: var(--shadow-retro);
+      background: #ffffff;
+    }
+    .role-card-head {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 0.55rem;
+    }
+    .role-card-ident {
+      display: flex;
+      align-items: center;
+      gap: 0.6rem;
+      min-width: 0;
+    }
+    .role-card-ident .role-logo {
+      width: 36px;
+      height: 36px;
+      border-radius: 8px;
+    }
+    .role-card-name {
+      font-size: 0.88rem;
+      font-weight: 700;
+      color: var(--text-main);
+      line-height: 1.18;
+    }
+    .role-card-ext {
+      color: var(--text-muted);
+      text-decoration: none;
+      font-size: 0.82rem;
+      font-weight: 700;
+      padding: 2px 5px;
+      border-radius: 6px;
+      flex-shrink: 0;
+      transition: color 0.15s ease, background 0.15s ease;
+    }
+    .role-card-ext:hover {
+      color: var(--accent-deep);
+      background: var(--badge-bg);
+    }
+    .role-card-badge-row {
+      display: flex;
+      align-items: center;
+      gap: 0.4rem;
+      flex-wrap: wrap;
+    }
+    .role-card-role {
+      font-family: 'Space Mono', monospace;
+      font-size: 0.7rem;
+      font-weight: 700;
+      padding: 0.12rem 0.48rem;
+      border-radius: 999px;
+      background: var(--accent-primary);
+      color: #ffffff;
+    }
+    .role-card-role.past-role {
+      background: var(--badge-bg);
+      color: var(--accent-deep);
+      border: 1px solid var(--accent-soft);
+    }
+    .role-card-note {
+      font-size: 0.74rem;
+      color: var(--text-muted);
+      line-height: 1.32;
+    }
+
+    /* ── Section Titles ── */
+    .section-header {
+      text-align: center;
+      margin-bottom: 2rem;
+      position: relative;
+    }
+    .section-title {
+      font-family: 'Patrick Hand', cursive;
+      font-size: 2.5rem;
+      color: var(--accent-deep);
+      display: inline-block;
+      position: relative;
+    }
+    .section-title::after {
+      content: "";
+      position: absolute;
+      bottom: 2px;
+      left: 8%;
+      right: 8%;
+      height: 8px;
+      background: var(--title-highlight);
+      border-radius: 4px;
+      z-index: -1;
+    }
+    .section-subtitle {
+      font-size: 1rem;
+      color: var(--text-muted);
+      margin-top: 0.2rem;
+    }
+
+    /* ── Engineering Capabilities & Skillset Section ── */
+    .services-section {
+      margin-bottom: 4.2rem;
+    }
+    .services-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 1.4rem;
+      margin-bottom: 1.4rem;
+    }
+    .service-card {
+      background: rgba(255, 255, 255, 0.94);
+      border: 2px solid var(--card-border);
+      border-radius: 18px;
+      padding: 1.65rem 1.55rem 1.5rem;
+      box-shadow: var(--shadow-retro);
+      position: relative;
+      display: flex;
+      flex-direction: column;
+      transition: transform 0.22s ease, box-shadow 0.22s ease, border-color 0.22s ease;
+    }
+    .service-card:hover {
+      transform: translateY(-4px);
+      box-shadow: var(--shadow-hover);
+      border-color: var(--accent-primary);
+    }
+    .service-num {
+      font-family: 'Space Mono', monospace;
+      font-size: 0.72rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      color: var(--accent-deep);
+      background: var(--badge-bg);
+      border: 1px dashed var(--accent-soft);
+      padding: 0.2rem 0.6rem;
+      border-radius: 999px;
+      align-self: flex-start;
+      margin-bottom: 0.7rem;
+    }
+    .service-title {
+      font-size: 1.25rem;
+      font-weight: 700;
+      color: var(--text-main);
+      margin-bottom: 0.45rem;
+    }
+    .service-desc {
+      font-size: 0.92rem;
+      color: var(--text-muted);
+      line-height: 1.62;
+      margin-bottom: 1.1rem;
+      flex: 1;
+    }
+    .skills-matrix-card {
+      background: rgba(255, 255, 255, 0.94);
+      border: 2px solid var(--card-border);
+      border-radius: 18px;
+      padding: 1.45rem 1.6rem;
+      box-shadow: var(--shadow-retro);
+      position: relative;
+    }
+    .skills-matrix-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 0.75rem;
+      flex-wrap: wrap;
+      margin-bottom: 1rem;
+    }
+    .skills-matrix-title {
+      font-family: 'Space Mono', monospace;
+      font-size: 0.76rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.6px;
+      color: var(--accent-deep);
+    }
+    .skills-matrix-sub {
+      font-size: 0.8rem;
+      font-weight: 600;
+      color: var(--text-muted);
+    }
+    .skills-matrix-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 1rem 1.4rem;
+    }
+    .skill-group-label {
+      font-size: 0.76rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.4px;
+      color: var(--accent-secondary);
+      margin-bottom: 0.42rem;
+    }
+
+    /* ── Selected Systems Section ── */
+    .systems-section {
+      margin-bottom: 4.4rem;
+    }
+    .systems-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 1.4rem;
+    }
+
+    /* ── Shipped Projects ("Proudly Worked On") ── */
+    .featured-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(460px, 1fr));
+      gap: 1.8rem;
+      margin-bottom: 4.4rem;
+    }
+
+    .showcase-card {
+      background: rgba(255, 255, 255, 0.94);
+      border: 2px solid var(--card-border);
+      border-radius: 18px;
+      padding: 1.3rem 1.4rem 1.6rem;
+      box-shadow: var(--shadow-retro);
+      position: relative;
+      display: flex;
+      flex-direction: column;
+      transition: transform 0.25s cubic-bezier(0.2, 0.8, 0.2, 1), box-shadow 0.25s cubic-bezier(0.2, 0.8, 0.2, 1), border-color 0.25s ease;
+    }
+    .showcase-card:hover {
+      transform: translateY(-5px);
+      box-shadow: var(--shadow-hover);
+      border-color: var(--accent-primary);
+    }
+
+    .showcase-card.wildcraft { border-top: 6px solid #5a8d56; }
+    .showcase-card.dimensional-backpack { border-top: 6px solid #d97736; }
+    .showcase-card.interactive-furniture { border-top: 6px solid #d45b88; }
+    .showcase-card.contraption-engine { border-top: 6px solid #4a6fa5; }
+
+    /* Project 16:9 Media Frame + Cover/In-Game Switcher */
+    .project-media-wrap {
+      position: relative;
+      width: 100%;
+      aspect-ratio: 16 / 9;
+      border-radius: 12px;
+      overflow: hidden;
+      border: 2px solid var(--subcard-border);
+      background: #0f172a;
+      margin-bottom: 1rem;
+    }
+    .project-media-btn {
+      appearance: none;
+      border: none;
+      background: transparent;
+      width: 100%;
+      height: 100%;
+      padding: 0;
+      cursor: zoom-in;
+      display: block;
+    }
+    .project-media-btn img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+      transition: transform 0.35s ease;
+    }
+    .showcase-card:hover .project-media-btn img {
+      transform: scale(1.03);
+    }
+    .media-shot-tabs {
+      position: absolute;
+      top: 9px;
+      left: 9px;
+      display: inline-flex;
+      gap: 4px;
+      background: rgba(15, 23, 42, 0.78);
+      padding: 3px;
+      border-radius: 999px;
+      border: 1px solid rgba(255, 255, 255, 0.2);
+      z-index: 4;
+    }
+    .media-tab-btn {
+      appearance: none;
+      border: none;
+      background: transparent;
+      color: #cbd5e1;
+      font-family: inherit;
+      font-size: 0.71rem;
+      font-weight: 600;
+      padding: 0.2rem 0.58rem;
+      border-radius: 999px;
+      cursor: pointer;
+      transition: all 0.15s ease;
+    }
+    .media-tab-btn.active {
+      background: #fff;
+      color: #0f172a;
+    }
+
+    .card-top-row {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 0.5rem;
+      flex-wrap: wrap;
+      margin-bottom: 0.35rem;
+    }
+    .stamp-pill {
+      font-family: 'Space Mono', monospace;
+      font-size: 0.71rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      padding: 0.22rem 0.62rem;
+      border-radius: 20px;
+      border: 1px dashed;
+    }
+    .stamp-contraption { background: #eef3fc; color: #3b5f97; border-color: #a4c2f4; }
+    .stamp-furniture { background: #fdf0f5; color: #9d3058; border-color: #f4b6cc; }
+    .stamp-wildcraft { background: #eff7ee; color: #2e6629; border-color: #a3d99e; }
+    .stamp-dimensional { background: #fdf3ea; color: #a4531d; border-color: #f7b98d; }
+    .stamp-builds {
+      background: var(--badge-bg);
+      color: var(--accent-deep);
+      border-color: var(--accent-soft);
+    }
+
+    .traction-pill {
+      font-size: 0.75rem;
+      font-weight: 700;
+      color: #92400e;
+      background: #fef3c7;
+      border: 1px solid #fde68a;
+      padding: 0.18rem 0.58rem;
+      border-radius: 999px;
+      display: inline-flex;
+      align-items: center;
+      gap: 0.28rem;
+    }
+
+    .project-name {
+      font-size: 1.4rem;
+      font-weight: 700;
+      color: var(--text-main);
+      margin-top: 0.25rem;
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+    }
+    .project-tagline {
+      font-family: 'Patrick Hand', cursive;
+      font-size: 1.16rem;
+      color: var(--accent-deep);
+      margin-bottom: 0.65rem;
+    }
+    .project-desc {
+      font-size: 0.93rem;
+      color: var(--text-muted);
+      line-height: 1.62;
+      margin-bottom: 1.05rem;
+      flex: 1;
+    }
+    .project-tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.4rem;
+      margin-bottom: 1.15rem;
+    }
+    .tag-chip {
+      background: #fff;
+      border: 1px solid var(--subcard-border);
+      font-size: 0.75rem;
+      font-weight: 600;
+      color: var(--text-muted);
+      padding: 0.2rem 0.55rem;
+      border-radius: 6px;
+    }
+
+    .project-actions {
+      display: flex;
+      gap: 0.65rem;
+      margin-top: auto;
+      flex-wrap: wrap;
+    }
+    .btn-action-primary {
+      flex: 1;
+      background: linear-gradient(135deg, var(--accent-primary), var(--accent-deep));
+      color: #fff;
+      text-decoration: none;
+      text-align: center;
+      padding: 0.55rem 1rem;
+      border-radius: 10px;
+      font-weight: 600;
+      font-size: 0.87rem;
+      border: none;
+      cursor: pointer;
+      font-family: inherit;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 0.4rem;
+      box-shadow: 0 4px 10px var(--btn-shadow);
+      transition: all 0.2s;
+    }
+    .btn-action-primary:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 6px 14px var(--btn-shadow-hover);
+      color: #fff;
+    }
+    .btn-action-secondary {
+      background: #fff;
+      border: 1.5px solid var(--card-border);
+      color: var(--text-main);
+      text-decoration: none;
+      padding: 0.55rem 0.9rem;
+      border-radius: 10px;
+      font-weight: 600;
+      font-size: 0.87rem;
+      cursor: pointer;
+      font-family: inherit;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 0.35rem;
+      transition: all 0.2s;
+    }
+    .btn-action-secondary:hover {
+      background: var(--badge-bg);
+      border-color: var(--accent-soft);
+      color: var(--accent-deep);
+    }
+
+    /* ── Full-Page Size-by-Size Builds Showcase ── */
+    .shot-zoom-pill {
+      position: absolute;
+      bottom: 10px;
+      right: 10px;
+      background: rgba(15, 23, 42, 0.84);
+      color: #f8fafc;
+      font-family: 'Space Mono', monospace;
+      font-size: 0.68rem;
+      font-weight: 700;
+      padding: 0.24rem 0.6rem;
+      border-radius: 999px;
+      border: 1px solid rgba(255, 255, 255, 0.22);
+      pointer-events: none;
+      transition: background 0.2s ease;
+    }
+    .project-media-btn:hover .shot-zoom-pill {
+      background: var(--accent-deep);
+    }
+
+    .builds-fullpage-section {
+      position: relative;
+      z-index: 3;
+      width: 100%;
+    }
+    .builds-intro-wrap {
+      max-width: 1120px;
+      margin: 0 auto 1.35rem;
+      padding: 0 1.5rem;
+    }
+    .builds-intro-top {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-end;
+      gap: 1rem;
+      flex-wrap: wrap;
+      margin-bottom: 0.9rem;
+    }
+    .builds-render-badge {
+      font-family: 'Space Mono', monospace;
+      font-size: 0.75rem;
+      font-weight: 700;
+      color: var(--text-secondary);
+      background: rgba(255, 255, 255, 0.92);
+      border: 1.5px solid var(--card-border);
+      padding: 0.35rem 0.78rem;
+      border-radius: 999px;
+      box-shadow: var(--subcard-shadow);
+    }
+    .builds-scale-strip {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.5rem;
+    }
+    .build-scale-jump {
+      appearance: none;
+      text-decoration: none;
+      display: inline-flex;
+      align-items: center;
+      gap: 0.42rem;
+      font-family: 'Space Mono', monospace;
+      font-size: 0.74rem;
+      font-weight: 700;
+      color: var(--text-main);
+      background: rgba(255, 255, 255, 0.94);
+      border: 1.5px solid var(--subcard-border);
+      padding: 0.38rem 0.74rem;
+      border-radius: 10px;
+      box-shadow: var(--subcard-shadow);
+      transition: transform 0.16s ease, border-color 0.16s ease, background 0.16s ease;
+    }
+    .build-scale-jump:hover {
+      transform: translateY(-2px);
+      border-color: var(--accent-primary);
+      background: #fff;
+    }
+    .build-scale-jump .jump-idx {
+      color: var(--accent-deep);
+    }
+
+    .builds-stage-stack {
+      display: flex;
+      flex-direction: column;
+      width: 100%;
+      border-bottom: 2px solid var(--card-border);
+    }
+    .build-stage {
+      position: relative;
+      width: 100%;
+      height: 100vh;
+      height: 100svh;
+      min-height: 540px;
+      overflow: hidden;
+      background: #0f172a;
+      border-top: 2px solid var(--card-border);
+    }
+    .build-stage-btn {
+      appearance: none;
+      border: 0;
+      padding: 0;
+      margin: 0;
+      width: 100%;
+      height: 100%;
+      display: block;
+      background: #0f172a;
+      cursor: zoom-in;
+    }
+    .build-stage-btn img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: center center;
+      display: block;
+    }
+    .build-hud-top {
+      position: absolute;
+      top: 1.25rem;
+      left: 1.5rem;
+      right: 1.5rem;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 0.75rem;
+      pointer-events: none;
+      z-index: 4;
+    }
+    .build-size-pill {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.6rem;
+      background: rgba(15, 23, 42, 0.84);
+      color: #f8fafc;
+      border: 1.5px solid rgba(255, 255, 255, 0.24);
+      backdrop-filter: blur(8px);
+      padding: 0.44rem 0.88rem;
+      border-radius: 999px;
+      font-family: 'Space Mono', monospace;
+      font-size: 0.78rem;
+      font-weight: 700;
+      box-shadow: 0 6px 18px rgba(0, 0, 0, 0.25);
+    }
+    .build-size-pill .step-tag {
+      color: #93c5fd;
+    }
+    .build-hud-bottom {
+      position: absolute;
+      bottom: 1.25rem;
+      right: 1.5rem;
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+      z-index: 4;
+    }
+    .build-stage-ctrl {
+      appearance: none;
+      text-decoration: none;
+      background: rgba(15, 23, 42, 0.84);
+      color: #f8fafc;
+      border: 1.5px solid rgba(255, 255, 255, 0.24);
+      backdrop-filter: blur(8px);
+      font-family: 'Space Mono', monospace;
+      font-size: 0.74rem;
+      font-weight: 700;
+      padding: 0.42rem 0.8rem;
+      border-radius: 999px;
+      cursor: pointer;
+      box-shadow: 0 6px 18px rgba(0, 0, 0, 0.24);
+      transition: background 0.16s ease, transform 0.16s ease;
+    }
+    .build-stage-ctrl:hover {
+      background: rgba(30, 41, 59, 0.96);
+      transform: translateY(-1px);
+    }
+
+    /* ── Dedicated Business Contact Section ── */
+    .contact-section {
+      background: rgba(255, 255, 255, 0.95);
+      border: 2px solid var(--card-border);
+      border-radius: 22px;
+      padding: 2.2rem 2.2rem;
+      box-shadow: var(--shadow-retro);
+      position: relative;
+      margin-bottom: 3rem;
+    }
+    .contact-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 1.15rem;
+      margin-top: 1.4rem;
+    }
+    .contact-card {
+      background: #fff;
+      border: 1.5px solid var(--subcard-border);
+      border-radius: 14px;
+      padding: 1.15rem 1.2rem;
+      box-shadow: var(--subcard-shadow);
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      gap: 0.85rem;
+    }
+    .contact-channel-lbl {
+      font-family: 'Space Mono', monospace;
+      font-size: 0.72rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      color: var(--accent-secondary);
+      margin-bottom: 0.25rem;
+    }
+    .contact-handle {
+      font-size: 0.98rem;
+      font-weight: 700;
+      color: var(--text-main);
+      word-break: break-all;
+    }
+    .contact-note {
+      font-size: 0.81rem;
+      color: var(--text-muted);
+      margin-top: 0.2rem;
+    }
+    .contact-btn-row {
+      display: flex;
+      gap: 0.5rem;
+      flex-wrap: wrap;
+    }
+
+    /* ── Fullscreen HD Lightbox Modal ── */
+    .lightbox-backdrop {
+      position: fixed;
+      inset: 0;
+      background: rgba(12, 16, 28, 0.86);
+      backdrop-filter: blur(10px);
+      z-index: 200;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 1.5rem;
+      opacity: 0;
+      visibility: hidden;
+      transition: opacity 0.22s ease, visibility 0.22s ease;
+    }
+    .lightbox-backdrop.open {
+      opacity: 1;
+      visibility: visible;
+    }
+    .lightbox-dialog {
+      background: #fff;
+      border: 3px solid var(--card-border);
+      border-radius: 20px;
+      max-width: 1060px;
+      width: 100%;
+      padding: 1rem 1.15rem 1.25rem;
+      box-shadow: 0 24px 60px rgba(0, 0, 0, 0.45);
+      position: relative;
+      transform: scale(0.96);
+      transition: transform 0.22s cubic-bezier(0.2, 0.8, 0.2, 1);
+    }
+    .lightbox-backdrop.open .lightbox-dialog {
+      transform: scale(1);
+    }
+    .lightbox-top {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 0.75rem;
+      margin-bottom: 0.75rem;
+    }
+    .lightbox-counter {
+      font-family: 'Space Mono', monospace;
+      font-size: 0.76rem;
+      font-weight: 700;
+      color: var(--accent-deep);
+      background: var(--badge-bg);
+      border: 1px dashed var(--accent-soft);
+      padding: 0.22rem 0.65rem;
+      border-radius: 999px;
+    }
+    .lightbox-controls {
+      display: flex;
+      gap: 0.45rem;
+      align-items: center;
+    }
+    .lightbox-btn {
+      background: #fff;
+      border: 1.5px solid var(--card-border);
+      color: var(--text-main);
+      font-family: inherit;
+      font-size: 0.82rem;
+      font-weight: 600;
+      padding: 0.3rem 0.75rem;
+      border-radius: 999px;
+      cursor: pointer;
+      transition: all 0.18s ease;
+    }
+    .lightbox-btn:hover {
+      background: var(--accent-primary);
+      border-color: var(--accent-primary);
+      color: #fff;
+    }
+    .lightbox-img-wrap {
+      width: 100%;
+      aspect-ratio: 16 / 10;
+      border-radius: 12px;
+      overflow: hidden;
+      background: #0f172a;
+      border: 1.5px solid var(--subcard-border);
+      margin-bottom: 0.9rem;
+    }
+    .lightbox-img-wrap img {
+      width: 100%;
+      height: 100%;
+      object-fit: contain;
+      display: block;
+    }
+    .lightbox-title {
+      font-size: 1.3rem;
+      font-weight: 700;
+      color: var(--text-main);
+      margin-bottom: 0.2rem;
+    }
+    .lightbox-desc {
+      font-size: 0.92rem;
+      color: var(--text-muted);
+      line-height: 1.55;
+    }
+
+    /* ── Cozy Footer ── */
+    .straw-footer {
+      text-align: center;
+      padding: 1.5rem 1.5rem 1rem;
+      position: relative;
+    }
+    .footer-stamp {
+      font-family: 'Patrick Hand', cursive;
+      font-size: 1.5rem;
+      color: var(--accent-deep);
+      margin-bottom: 0.4rem;
+    }
+    .footer-desc {
+      font-size: 0.88rem;
+      color: var(--text-muted);
+    }
+    .footer-links {
+      display: flex;
+      justify-content: center;
+      gap: 1.2rem;
+      margin-top: 0.9rem;
+      flex-wrap: wrap;
+    }
+    .footer-link {
+      color: var(--accent-secondary);
+      text-decoration: none;
+      font-weight: 600;
+      font-size: 0.88rem;
+      transition: color 0.2s;
+    }
+    .footer-link:hover {
+      color: var(--accent-deep);
+    }
+
+    /* ── Responsive adjustments ── */
+    @media (max-width: 920px) {
+      .giant-me-hero { grid-template-columns: 1fr; }
+      .polaroid-card { max-width: 330px; margin: 0 auto; transform: none; }
+      .services-grid { grid-template-columns: 1fr; }
+      .systems-grid { grid-template-columns: 1fr; }
+      .skills-matrix-grid { grid-template-columns: 1fr; }
+      .contact-grid { grid-template-columns: 1fr; }
+      .featured-grid { grid-template-columns: 1fr; }
+      .story-board { padding: 1.75rem 1.4rem; }
+    }
+    @media (max-width: 768px) {
+      .build-stage {
+        height: 100svh;
+        min-height: 460px;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        background: #0f172a;
+      }
+      .build-stage-btn {
+        height: auto;
+        aspect-ratio: 16 / 9;
+      }
+      .build-hud-top {
+        top: 0.9rem;
+        left: 0.9rem;
+        right: 0.9rem;
+      }
+      .build-size-pill {
+        font-size: 0.69rem;
+        padding: 0.36rem 0.68rem;
+      }
+      .build-hud-bottom {
+        bottom: 0.9rem;
+        right: 0.9rem;
+      }
+      .build-stage-ctrl {
+        font-size: 0.68rem;
+        padding: 0.36rem 0.65rem;
+      }
+    }
+    @media (max-width: 640px) {
+      .floating-nav { flex-direction: column; gap: 0.65rem; border-radius: 18px; padding: 0.85rem 1rem; }
+      .nav-brand-group { justify-content: center; }
+      .nav-links { justify-content: center; }
+      .story-grid { grid-template-columns: 1fr; }
+      .roles-board { padding: 1.1rem 1rem 1rem; }
+      .role-spotlight { flex-direction: column; align-items: flex-start; gap: 0.65rem; }
+      .role-card { flex: 0 0 232px; min-width: 232px; }
+      .contact-section { padding: 1.6rem 1.2rem; }
+      .wrapper { padding: 1.4rem 1rem 4rem; }
+      .builds-intro-wrap { padding: 0 1rem; }
+    }
+    @keyframes pwnMiniBob {
+      0%, 100% {
+        transform: translateY(0);
+        box-shadow: 0 8px 22px rgba(220, 38, 38, 0.30), 0 0 0 2px rgba(239, 68, 68, 0.50);
+      }
+      50% {
+        transform: translateY(-5px);
+        box-shadow: 0 14px 32px rgba(220, 38, 38, 0.52), 0 0 0 3px rgba(253, 224, 71, 0.80);
+      }
+    }
+    .pwn-mini-card {
+      background: #0b1120;
+      border: 2.5px solid #ef4444;
+      border-radius: 10px;
+      padding: 11px 13px;
+      margin-bottom: 14px;
+      color: #f8fafc;
+      animation: pwnMiniBob 2.1s ease-in-out infinite;
+    }
+    .pwn-mini-card:hover { animation-play-state: paused; }
+    .pwn-mini-card code {
+      background: #1e293b;
+      color: #fde047;
+      border: 1px solid #f59e0b;
+      padding: 1px 6px;
+      border-radius: 4px;
+      font-weight: 700;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Seasonal Ambient Canvas -->
+  <canvas id="leafCanvas"></canvas>
+
+  <div class="wrapper wrapper-top">
+
+    <div style="margin: 0 auto 18px; padding: 16px 20px; background: #ffffff; border: 2.5px solid #15803d; border-radius: 14px; box-shadow: 0 6px 20px rgba(21, 128, 61, 0.14); font-family: 'Outfit', sans-serif; color: #0f172a; position: relative; z-index: 20;">
+      <div style="display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 8px; margin-bottom: 8px;">
+        <strong style="font-size: 1.08rem; color: #14532d;">Final Corporate Legal Verdicts (Nov 25, 2026): Strikingly Legal Team (5 ToS Violations) &amp; MediaFire Director of Support (DMCA + ToS)</strong>
+        <span style="display: inline-block; padding: 3px 10px; border-radius: 999px; background: #dcfce7; border: 1px solid #16a34a; color: #14532d; font-size: 0.78rem; font-weight: 700;">decayed-team.com &amp; MediaFire BPs: HTTP 404 (Final)</span>
+      </div>
+      <div style="margin: 0 0 10px; padding: 8px 12px; border-radius: 8px; background: #14532d; color: #f0fdf4; font-size: 0.86rem; line-height: 1.5;">
+        <strong style="color: #fde047;">Trust Independent Corporate Legal Teams (Verdicts Finished &amp; Final):</strong> Both <strong>Strikingly, Inc.'s Legal Team</strong> (San Francisco) and <strong>MediaFire's Director of Customer Support</strong> (<span style="font-family: 'Space Mono', monospace; background: #052e16; color: #86efac; padding: 1px 6px; border-radius: 4px; border: 1px solid #22c55e; font-weight: 700;">Daniel Goebel</span>) received the full primary-source archive and thoroughly reviewed all evidence before issuing binding enforcement actions. Corporate legal counsel decide on verified proof, not Discord rumors; we consider their verdicts finished and final.
+      </div>
+      <p style="margin: 0 0 10px; font-size: 0.92rem; line-height: 1.52; color: #1e293b;">
+        Reviewed by <strong>Strikingly, Inc.'s corporate Legal Team</strong> (independent, law-trained compliance counsel in San Francisco with zero stake in Minecraft drama, not an automated DMCA bot), <code>decayed-team.com</code> / <code>decayed-team.mystrikingly.com</code> was <strong>permanently terminated with zero appeal or counter-notice path</strong> under <strong>5 Terms of Service violations</strong>: <strong>(a)</strong> Defamation, libel, harassment &amp; unconsented private DMs &middot; <strong>(b)</strong> Harm to minors (publicly outing an underage artist's private DMs as dogpile bait, mobilizing an underage server raid &amp; operating the site <em>"as a Minor"</em>) &middot; <strong>(d)</strong> Manipulating identifiers (black-markering a <code>$0</code> non-client into a fake <em>"victim"</em>) &middot; <strong>(e)</strong> Unauthorized proprietary material &middot; <strong>(f)</strong> Intellectual property infringement. In his panic Google Doc mirror, <code>Tazo</code> also pasted 5 lines of <code>document.referrer</code> JavaScript from <em>this</em> site claiming it "interfered with <code>decayed-team.com</code>," and missed <code>ThatMaidenJaden</code> + <code>i worked for free ?</code> under his own red marker.
+      </p>
+      <a href="./record-2026-11-25.html" style="display: block; margin-bottom: 10px;">
+        <img src="./img/record-2026-11-25/26_strikingly_legal_tos_takedown.jpg" alt="Strikingly Legal Team formal 5-count Terms of Service takedown decision" style="width: 100%; display: block; border-radius: 8px; border: 1.5px solid #86efac;">
+      </a>
+      <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(290px, 1fr)); gap: 10px; margin-bottom: 12px; align-items: start;">
+        <div style="background: #f8fafc; border: 1.5px solid #cbd5e1; border-radius: 8px; padding: 8px 10px;">
+          <div style="font-size: 0.8rem; font-weight: 700; color: #475569; margin-bottom: 5px;">8:36 PM: Tazo tells 27,700 members they can "fix the website":</div>
+          <a href="./record-2026-11-25.html">
+            <img src="./img/record-2026-11-25/28_tazo_836pm_fixing_website_cope.jpg" alt="Tazo 8:36 PM claiming they can fix the website" style="width: 100%; display: block; border-radius: 5px;">
+          </a>
+        </div>
+        <div style="background: #f0fdf4; border: 1.5px solid #16a34a; border-radius: 8px; padding: 8px 10px;">
+          <div style="font-size: 0.8rem; font-weight: 700; color: #14532d; margin-bottom: 5px;">9:22 PM (10:22 PM GMT+8): Strikingly confirms PERMANENT BLOCK (zero appeal / counter-notice):</div>
+          <a href="./record-2026-11-25.html">
+            <img src="./img/record-2026-11-25/27_strikingly_permanent_block_no_counternotice.jpg" alt="Strikingly confirming permanent block even if owner submits DMCA counter-notice" style="width: 100%; display: block; border-radius: 5px; background: #ffffff;">
+          </a>
+        </div>
+      </div>
+      <div class="pwn-mini-card">
+        <div style="font-size: 0.86rem; font-weight: 800; color: #f8fafc; margin-bottom: 7px;"><span style="display: inline-block; background: #fde047; color: #0b1120; padding: 1px 7px; border-radius: 4px; margin-right: 6px; font-weight: 900;">SHA-256 TRIPWIRE</span> MediaFire Nuked Both <code>V2.11</code> Packs (<code>HTTP 404</code>) &amp; <code>Tazo</code> Got Caught in 4K Editing His Google Doc in MS Paint at <code>00:54 AM</code> After Reading Our Page (All 3 Original <code>.docx</code>/<code>.pdf</code> Versions Saved Offline):</div>
+        <a href="./record-2026-11-25.html">
+          <img src="./img/record-2026-11-25/33_nov26_top_billboard_caught_red_handed.jpg" alt="Caught live at 00:54 AM stealth-editing his Google Doc in MS Paint after refreshing record-2026-11-25.html" style="width: 100%; display: block; border-radius: 5px; border: 1.5px solid #ef4444;">
+        </a>
+      </div>
+      <div style="display: flex; flex-wrap: wrap; gap: 10px; align-items: center;">
+        <a href="./record-2026-11-25.html" style="display: inline-block; padding: 8px 16px; border-radius: 999px; background: #15803d; color: #ffffff; font-weight: 700; font-size: 0.88rem; text-decoration: none;">Read 60-Second Summary, 43s Video &amp; Unedited Screenshots &rarr;</a>
+        <a href="https://www.youtube.com/watch?v=tJoS_iyibtA" target="_blank" rel="noopener" style="display: inline-block; padding: 8px 16px; border-radius: 999px; background: #b91c1c; color: #ffffff; font-weight: 700; font-size: 0.86rem; text-decoration: none;">Watch 43s Video on YouTube &nearr;</a>
+        <a href="./decayed-commits.html" style="display: inline-block; padding: 8px 16px; border-radius: 999px; background: #0f172a; color: #ffffff; font-weight: 700; font-size: 0.86rem; text-decoration: none;">Browse Tazo's 788 Commits &amp; 26 Wiped OpenAI Codex Files &rarr;</a>
+      </div>
+    </div>
+
+    <!-- Floating Navigation Bar -->
+    <header class="floating-nav">
+      <div class="nav-brand-group">
+        <a href="#" class="nav-brand">Minh Lê · @Senthemodder</a>
+        <span class="availability-pill"><span class="avail-dot"></span>Open to Roles &amp; Contracts</span>
+      </div>
+      <nav class="nav-links">
+        <a href="#teams" class="nav-link-btn">Teams</a>
+        <a href="#services" class="nav-link-btn">Skills &amp; Stack</a>
+        <a href="#systems" class="nav-link-btn">Systems</a>
+        <a href="#featured" class="nav-link-btn">Shipped Work</a>
+        <a href="#builds" class="nav-link-btn">3D &amp; Worlds</a>
+        <a href="commissions.html" class="nav-link-btn">Studio Inquiries</a>
+        <a href="#contact" class="nav-link-btn">Contact</a>
+        <a href="cv.html" class="nav-link-btn">CV</a>
+      </nav>
+    </header>
+
+    <!-- ── Hero Section ── -->
+    <section class="giant-me-hero" id="about">
+      
+      <!-- Polaroid Persona Card -->
+      <div class="polaroid-card">
+        <div class="washi-tape"></div>
+        <div>
+          <div class="avatar-frame">
+            <img src="https://avatars.githubusercontent.com/u/120316848?v=4" alt="Minh Lê (@Senthemodder)">
+          </div>
+          <h1 class="polaroid-title">Minh Lê</h1>
+          <div class="polaroid-subtitle">Systems &amp; Tooling Engineer · @Senthemodder</div>
+          
+          <div class="polaroid-badges">
+            <span class="mini-badge">Systems Engineering</span>
+            <span class="mini-badge">Full-Stack &amp; Desktop</span>
+            <span class="mini-badge">Compilers &amp; Tooling</span>
+            <span class="mini-badge">Game Architecture</span>
+            <span class="mini-badge">Vietnam (UTC+7)</span>
+          </div>
+        </div>
+
+        <div class="polaroid-quick-links">
+          <a href="commissions.html" class="nav-link-btn" style="padding:0.32rem 0.78rem; font-size:0.8rem;">
+            Studio Inquiries
+          </a>
+          <a href="#contact" class="nav-link-btn" style="padding:0.32rem 0.78rem; font-size:0.8rem;">
+            Contact
+          </a>
+          <a href="Minh_Le_CV.pdf" target="_blank" class="nav-link-btn" style="padding:0.32rem 0.78rem; font-size:0.8rem;">
+            CV (PDF)
+          </a>
+          <a href="https://github.com/Senthemodder" target="_blank" class="nav-link-btn" style="padding:0.32rem 0.78rem; font-size:0.8rem;">
+            GitHub
+          </a>
+        </div>
+      </div>
+
+      <!-- Story Board -->
+      <div class="story-board">
+        <div class="washi-tape right-corner"></div>
+        
+        <div>
+          <div class="story-greeting">
+            Software &amp; Systems Engineer
+          </div>
+          <p class="story-bio">
+            Hi, I'm <strong>Minh Lê</strong> (<strong>@Senthemodder</strong>), a software engineer based in <strong>Vietnam</strong>. I get up to speed on unfamiliar codebases and stacks quickly, like working through tough technical problems, and build things from scratch when off-the-shelf tools don't fit.
+          </p>
+          <p class="story-bio" style="font-size: 0.96rem;">
+            I work across backend services, web apps, compilers, desktop networking tools, and commercial roles across <strong>5 Official Minecraft Marketplace Partner Studios</strong> (studio names withheld publicly per NDA · direct Partner references provided on inquiry) alongside large-scale open-source releases, shipping software used by millions across PC, web, mobile, and console.
+          </p>
+
+          <div class="quote-sticker">
+            Open to software engineering roles, studio contracts, rev-share releases, and business opportunities. Drop me into a new stack or a tough technical problem and I'll figure it out fast, plan it cleanly, and ship it.
+          </div>
+        </div>
+
+        <!-- Verified Proof Stats -->
+        <div class="story-grid">
+          <div class="story-mini-card">
+            <div class="story-mini-label">Focus Areas</div>
+            <div class="story-mini-val">Backend, Full-Stack, Compilers &amp; Games</div>
+          </div>
+          <div class="story-mini-card">
+            <div class="story-mini-label">Core Languages</div>
+            <div class="story-mini-val">TypeScript, Java, Rust, Python, C++, C#, SQL</div>
+          </div>
+          <div class="story-mini-card">
+            <div class="story-mini-label">Shipped Reach</div>
+            <div class="story-mini-val">3.7M+ OSS Downloads · 4.6 ★ (1,990+ Ratings)</div>
+          </div>
+          <div class="story-mini-card">
+            <div class="story-mini-label">Location &amp; Hours</div>
+            <div class="story-mini-val">Vietnam (UTC+7) · Remote (EU / US Overlap)</div>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ── Scrollable & Auto-Rotating Teams / Roles Board ── -->
+    <section class="roles-board" id="teams" aria-label="Teams, studios, and roles board">
+      <div class="washi-tape"></div>
+
+      <div class="roles-board-head">
+        <div class="roles-board-titles">
+          <div class="roles-board-label">Studios, Teams &amp; Organizations I've Worked With</div>
+          <div class="roles-board-sub">Active Partner names withheld publicly per NDA · direct studio references shared on inquiry</div>
+        </div>
+        <div class="roles-controls">
+          <button type="button" class="role-nav-btn" id="rolePrevBtn" aria-label="Previous role">‹</button>
+          <div class="role-dots" id="roleDots" role="tablist" aria-label="Role indicators"></div>
+          <button type="button" class="role-nav-btn" id="roleNextBtn" aria-label="Next role">›</button>
+        </div>
+      </div>
+
+      <!-- Auto-Rotating Active Role Spotlight -->
+      <div class="role-spotlight" id="roleSpotlight" aria-live="polite">
+        <div class="role-spotlight-main">
+          <img id="roleSpotlightImg" src="img/studios/nda_partner.svg" class="role-logo" alt="Official Marketplace Partner emblem">
+          <div class="role-spotlight-text">
+            <div class="role-spotlight-top">
+              <span id="roleSpotlightBadge" class="role-pill-badge">Snr Dev</span>
+              <span id="roleSpotlightOrg" class="role-spotlight-org">Official Marketplace Partner (NDA)</span>
+            </div>
+            <div id="roleSpotlightDesc" class="role-spotlight-desc">
+              Senior Developer building custom gameplay systems, mob behaviors, and commercial Minecraft Marketplace releases.
+            </div>
+          </div>
+        </div>
+        <a id="roleSpotlightLink" href="#contact" class="role-visit-btn">Reference →</a>
+      </div>
+
+      <!-- Scrollable Cards Track (7 Roles) -->
+      <div class="roles-track" id="rolesTrack">
+
+        <!-- 0: Senior Dev Partner -->
+        <div class="role-card active" data-role-idx="0" tabindex="0" role="button" aria-label="Snr Dev at Official Marketplace Partner">
+          <div class="role-card-head">
+            <div class="role-card-ident">
+              <img src="img/studios/nda_partner.svg" class="role-logo" alt="Official Marketplace Partner emblem">
+              <div class="role-card-name">Marketplace Partner (NDA)</div>
+            </div>
+            <a href="#contact" class="role-card-ext" aria-label="Request studio reference">→</a>
+          </div>
+          <div class="role-card-badge-row">
+            <span class="role-card-role">Snr Dev</span>
+          </div>
+          <div class="role-card-note">Official Marketplace Partner · Gameplay systems &amp; commercial releases</div>
+        </div>
+
+        <!-- 1: Cross-Platform UGC Studio -->
+        <div class="role-card" data-role-idx="1" tabindex="0" role="button" aria-label="Contractor at Cross-Platform UGC Studio">
+          <div class="role-card-head">
+            <div class="role-card-ident">
+              <img src="img/studios/nda_partner.svg" class="role-logo" alt="Commercial UGC Studio emblem">
+              <div class="role-card-name">Cross-Platform UGC Studio</div>
+            </div>
+            <a href="#contact" class="role-card-ext" aria-label="Request studio reference">→</a>
+          </div>
+          <div class="role-card-badge-row">
+            <span class="role-card-role">Contractor</span>
+          </div>
+          <div class="role-card-note">UK / US Commercial Studio (NDA) · Cross-platform gameplay &amp; 60fps builds</div>
+        </div>
+
+        <!-- 2: Engine & Tooling Partner -->
+        <div class="role-card" data-role-idx="2" tabindex="0" role="button" aria-label="Contractor at Official Marketplace Partner">
+          <div class="role-card-head">
+            <div class="role-card-ident">
+              <img src="img/studios/nda_partner.svg" class="role-logo" alt="Official Marketplace Partner emblem">
+              <div class="role-card-name">Marketplace Partner (NDA)</div>
+            </div>
+            <a href="#contact" class="role-card-ext" aria-label="Request studio reference">→</a>
+          </div>
+          <div class="role-card-badge-row">
+            <span class="role-card-role">Contractor</span>
+          </div>
+          <div class="role-card-note">Official Partner · Pocket-dimension add-on (4.1 ★) &amp; internal compilers</div>
+        </div>
+
+        <!-- 3: Multi-Storefront Partners -->
+        <div class="role-card" data-role-idx="3" tabindex="0" role="button" aria-label="Contractor at Multi-Storefront Marketplace Partners">
+          <div class="role-card-head">
+            <div class="role-card-ident">
+              <img src="img/studios/nda_partner.svg" class="role-logo" alt="Official Marketplace Partner emblem">
+              <div class="role-card-name">Partner Production Hub (NDA)</div>
+            </div>
+            <a href="#contact" class="role-card-ext" aria-label="Request studio reference">→</a>
+          </div>
+          <div class="role-card-badge-row">
+            <span class="role-card-role">Contractor</span>
+          </div>
+          <div class="role-card-note">Multi-Storefront Partners (200+ packs) · Turnkey 264-pc add-on &amp; mechanics</div>
+        </div>
+
+        <!-- 4: Former Ecosystem Partner -->
+        <div class="role-card" data-role-idx="4" tabindex="0" role="button" aria-label="Ex-Contractor at Official Marketplace Partner">
+          <div class="role-card-head">
+            <div class="role-card-ident">
+              <img src="img/studios/nda_partner.svg" class="role-logo" alt="Official Marketplace Partner emblem">
+              <div class="role-card-name">Marketplace Partner (Former)</div>
+            </div>
+            <a href="#contact" class="role-card-ext" aria-label="Request studio reference">→</a>
+          </div>
+          <div class="role-card-badge-row">
+            <span class="role-card-role past-role">Ex-Contractor</span>
+          </div>
+          <div class="role-card-note">Official Partner (NDA) · 200+ species survival add-on (4.6 ★ · 1,939+ ratings)</div>
+        </div>
+
+        <!-- 5: Open-Source Space Mod -->
+        <div class="role-card" data-role-idx="5" tabindex="0" role="button" aria-label="Ex-Developer on Open-Source Space Mod">
+          <div class="role-card-head">
+            <div class="role-card-ident">
+              <img src="img/studios/nda_partner.svg" class="role-logo" alt="Open-source project emblem">
+              <div class="role-card-name">Open-Source Space Mod</div>
+            </div>
+            <a href="#contact" class="role-card-ext" aria-label="Request project details">→</a>
+          </div>
+          <div class="role-card-badge-row">
+            <span class="role-card-role past-role">Ex-Developer</span>
+          </div>
+          <div class="role-card-note">3.7M+ ecosystem downloads · Orbital mechanics &amp; modern Java rewrite</div>
+        </div>
+
+        <!-- 6: HCM Youth Union -->
+        <div class="role-card" data-role-idx="6" tabindex="0" role="button" aria-label="Ex-Fundraising Volunteer at HCM Youth Union">
+          <div class="role-card-head">
+            <div class="role-card-ident">
+              <img src="img/studios/hcm_youth_union.webp" class="role-logo contain-light-logo" alt="HCM Youth Union emblem">
+              <div class="role-card-name">HCM Youth Union</div>
+            </div>
+            <a href="https://vi.wikipedia.org/wiki/%C4%90o%C3%A0n_Thanh_ni%C3%AAn_C%E1%BB%99ng_s%E1%BA%A3n_H%E1%BB%93_Ch%C3%AD_Minh" target="_blank" rel="noopener" class="role-card-ext" aria-label="About HCM Youth Union">↗</a>
+          </div>
+          <div class="role-card-badge-row">
+            <span class="role-card-role past-role">Ex-Fundraising Volunteer</span>
+          </div>
+          <div class="role-card-note">Ho Chi Minh City · Community charity fundraising &amp; youth volunteer drives</div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ── Engineering Capabilities & Skillset Section ── -->
+    <section class="services-section" id="services">
+      <div class="section-header">
+        <h2 class="section-title">Engineering Capabilities &amp; Skillset</h2>
+        <p class="section-subtitle">I build across the whole stack, from backend systems to final polish, and the finished product is always served well.</p>
+      </div>
+
+      <div class="services-grid">
+        <article class="service-card">
+          <div class="washi-tape left-corner"></div>
+          <span class="service-num">01 · Architecture &amp; R&amp;D</span>
+          <h3 class="service-title">System Design &amp; Technical R&amp;D</h3>
+          <p class="service-desc">
+            Jumping into unfamiliar codebases, getting productive fast, and building clean systems from scratch when standard tools don't cover what's needed.
+          </p>
+          <div class="project-tags" style="margin-bottom:0;">
+            <span class="tag-chip">System Design</span>
+            <span class="tag-chip">Technical Scoping</span>
+            <span class="tag-chip">Prototyping</span>
+            <span class="tag-chip">Debugging</span>
+          </div>
+        </article>
+
+        <article class="service-card">
+          <div class="washi-tape right-corner"></div>
+          <span class="service-num">02 · Full-Stack &amp; Product</span>
+          <h3 class="service-title">Web Apps, Desktop Tools &amp; APIs</h3>
+          <p class="service-desc">
+            Web apps, creator marketplaces with split payouts, real-time chat and voice apps, and Windows desktop and tray utilities built from the database schema up to the UI.
+          </p>
+          <div class="project-tags" style="margin-bottom:0;">
+            <span class="tag-chip">TypeScript</span>
+            <span class="tag-chip">React &amp; Next.js</span>
+            <span class="tag-chip">Node.js</span>
+            <span class="tag-chip">C# / Desktop</span>
+            <span class="tag-chip">REST &amp; WebSockets</span>
+          </div>
+        </article>
+
+        <article class="service-card">
+          <div class="washi-tape left-corner"></div>
+          <span class="service-num">03 · Systems &amp; Compilers</span>
+          <h3 class="service-title">Compilers, Toolchains &amp; Networking</h3>
+          <p class="service-desc">
+            Custom compilers, code generators, cross-platform porting tools, schema checkers, test tooling, and Windows network split-tunneling software.
+          </p>
+          <div class="project-tags" style="margin-bottom:0;">
+            <span class="tag-chip">Rust &amp; C++</span>
+            <span class="tag-chip">Python</span>
+            <span class="tag-chip">Code Generation</span>
+            <span class="tag-chip">Porting Tools</span>
+            <span class="tag-chip">Network Tunneling</span>
+          </div>
+        </article>
+
+        <article class="service-card">
+          <div class="washi-tape right-corner"></div>
+          <span class="service-num">04 · Games &amp; Simulation</span>
+          <h3 class="service-title">Game Systems, Physics &amp; Live Worlds</h3>
+          <p class="service-desc">
+            Multiplayer gameplay systems, custom physics, world generation compilers, cross-edition ports, and commercial releases shipped to millions of players across console, mobile, and PC.
+          </p>
+          <div class="project-tags" style="margin-bottom:0;">
+            <span class="tag-chip">Java</span>
+            <span class="tag-chip">Custom Physics</span>
+            <span class="tag-chip">World Generation</span>
+            <span class="tag-chip">Cross-Edition Porting</span>
+            <span class="tag-chip">3D Pipelines</span>
+          </div>
+        </article>
+      </div>
+
+      <!-- Technical Skills Matrix -->
+      <div class="skills-matrix-card">
+        <div class="washi-tape"></div>
+        <div class="skills-matrix-header">
+          <span class="skills-matrix-title">Core Technical Stack</span>
+          <span class="skills-matrix-sub">Languages, Frameworks &amp; Tools</span>
+        </div>
+        <div class="skills-matrix-grid">
+          <div>
+            <div class="skill-group-label">Engineering Focus</div>
+            <div class="project-tags" style="margin-bottom:0;">
+              <span class="tag-chip">Backend &amp; APIs</span>
+              <span class="tag-chip">System Design</span>
+              <span class="tag-chip">Performance Tuning</span>
+              <span class="tag-chip">Debugging</span>
+              <span class="tag-chip">Cross-Platform Porting</span>
+            </div>
+          </div>
+          <div>
+            <div class="skill-group-label">Languages</div>
+            <div class="project-tags" style="margin-bottom:0;">
+              <span class="tag-chip">TypeScript</span>
+              <span class="tag-chip">JavaScript</span>
+              <span class="tag-chip">Java</span>
+              <span class="tag-chip">Rust</span>
+              <span class="tag-chip">Python</span>
+              <span class="tag-chip">C++</span>
+              <span class="tag-chip">C#</span>
+              <span class="tag-chip">SQL</span>
+              <span class="tag-chip">HTML / CSS</span>
+            </div>
+          </div>
+          <div>
+            <div class="skill-group-label">Web, Desktop &amp; Networking</div>
+            <div class="project-tags" style="margin-bottom:0;">
+              <span class="tag-chip">Node.js</span>
+              <span class="tag-chip">React</span>
+              <span class="tag-chip">Next.js</span>
+              <span class="tag-chip">PostgreSQL &amp; SQLite</span>
+              <span class="tag-chip">REST &amp; WebSockets</span>
+              <span class="tag-chip">Windows Desktop Apps</span>
+              <span class="tag-chip">Split-Tunnel Routing</span>
+            </div>
+          </div>
+          <div>
+            <div class="skill-group-label">Compilers, Tooling &amp; Ops</div>
+            <div class="project-tags" style="margin-bottom:0;">
+              <span class="tag-chip">Compilers &amp; ASTs</span>
+              <span class="tag-chip">Code Generation</span>
+              <span class="tag-chip">Git &amp; CI/CD</span>
+              <span class="tag-chip">Test Tooling</span>
+              <span class="tag-chip">3D Asset Pipelines</span>
+              <span class="tag-chip">Linux &amp; SSH</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ── Selected Systems Showcase ── -->
+    <section class="systems-section" id="systems">
+      <div class="section-header">
+        <h2 class="section-title">Selected Systems I've Built</h2>
+        <p class="section-subtitle">Custom engines, compilers, and tools built from scratch when off-the-shelf options couldn't do the job.</p>
+      </div>
+
+      <div class="systems-grid">
+
+        <!-- System 1: Custom Liquid Engine -->
+        <article class="service-card">
+          <div class="washi-tape left-corner"></div>
+          <span class="service-num">01 · Fluids &amp; Rendering</span>
+          <h3 class="service-title">Custom Fluid System</h3>
+          <p class="service-desc">
+            Ported Java-style flowing fluids into an engine with no custom liquid support. Handles flow levels, slope finding, waterfalls, pushing players and items, bucket pickup, fluid-to-stone reactions, and smooth angled top faces at 60 fps on phones and consoles.
+          </p>
+          <div class="project-tags" style="margin-bottom:0;">
+            <span class="tag-chip">Flow &amp; Slope Finding</span>
+            <span class="tag-chip">Angled Fluid Surfaces</span>
+            <span class="tag-chip">Buckets &amp; Currents</span>
+            <span class="tag-chip">60fps Mobile &amp; Console</span>
+          </div>
+        </article>
+
+        <!-- System 2: Contraption & Train Engine -->
+        <article class="service-card">
+          <div class="washi-tape right-corner"></div>
+          <span class="service-num">02 · Moving Structures &amp; Trains</span>
+          <h3 class="service-title">Moving Contraption &amp; Train Engine</h3>
+          <p class="service-desc">
+            Wrote a 35,000+ line contraption and train engine from scratch that turns placed blocks into rotating machines, elevators, and multi-car trains on curved tracks while keeping onboard doors, seats, chests, and redstone working on the move.
+          </p>
+          <div class="project-tags" style="margin-bottom:0;">
+            <span class="tag-chip">35,000+ Lines of Code</span>
+            <span class="tag-chip">Curved-Track Trains</span>
+            <span class="tag-chip">Onboard Storage &amp; Redstone</span>
+            <span class="tag-chip">Batched Rendering</span>
+          </div>
+        </article>
+
+        <!-- System 3: 3D Terrain & Planet Compiler -->
+        <article class="service-card">
+          <div class="washi-tape left-corner"></div>
+          <span class="service-num">03 · Worldgen Compiler</span>
+          <h3 class="service-title">3D Terrain &amp; Planet Compiler</h3>
+          <p class="service-desc">
+            Wrote a compiler that takes noise functions, height splines, and 3D cave rules in JS and compiles them into worldgen files for overhangs, rivers, and custom void-world planets and moons.
+          </p>
+          <div class="project-tags" style="margin-bottom:0;">
+            <span class="tag-chip">Terrain Compiler</span>
+            <span class="tag-chip">3D Caves &amp; Overhangs</span>
+            <span class="tag-chip">Rivers &amp; Biomes</span>
+            <span class="tag-chip">Void-World Planets</span>
+          </div>
+        </article>
+
+        <!-- System 4: Planetary & Microgravity Physics -->
+        <article class="service-card">
+          <div class="washi-tape right-corner"></div>
+          <span class="service-num">04 · Space &amp; Low Gravity</span>
+          <h3 class="service-title">Planetary &amp; Low-Gravity Physics</h3>
+          <p class="service-desc">
+            Built custom lunar, orbital, and zero-G movement physics with scaled jump curves, adjusted fall speeds, and low-gravity projectile arcs for space and multi-planet worlds.
+          </p>
+          <div class="project-tags" style="margin-bottom:0;">
+            <span class="tag-chip">Lunar &amp; Zero-G</span>
+            <span class="tag-chip">Custom Jump Curves</span>
+            <span class="tag-chip">Projectile Arcs</span>
+            <span class="tag-chip">Multi-Planet Worlds</span>
+          </div>
+        </article>
+
+        <!-- System 5: Cross-Platform UI & Code Porting Compilers -->
+        <article class="service-card">
+          <div class="washi-tape left-corner"></div>
+          <span class="service-num">05 · Porting &amp; Compilers</span>
+          <h3 class="service-title">Cross-Edition UI &amp; Model Porting Tools</h3>
+          <p class="service-desc">
+            Built CLI tools that convert Java mod screens, 3D item models, and gameplay logic into Bedrock format, alongside a RISC-V instruction compiler targeting a game scripting runtime.
+          </p>
+          <div class="project-tags" style="margin-bottom:0;">
+            <span class="tag-chip">GUI &amp; Logic Porting</span>
+            <span class="tag-chip">RISC-V Compiler</span>
+            <span class="tag-chip">3D Model Conversion</span>
+            <span class="tag-chip">Parity Checks</span>
+          </div>
+        </article>
+
+        <!-- System 6: Split-Tunnel Desktop Network Router & Web Platforms -->
+        <article class="service-card">
+          <div class="washi-tape right-corner"></div>
+          <span class="service-num">06 · Networking &amp; Web</span>
+          <h3 class="service-title">Split-Tunnel Game Launcher &amp; Web Apps</h3>
+          <p class="service-desc">
+            Built a Windows tray launcher that routes login and web traffic over Cloudflare WARP + Sing-Box while keeping live UDP game packets on the direct ISP route so ping stays flat, plus full-stack commission web apps with split payouts.
+          </p>
+          <div class="project-tags" style="margin-bottom:0;">
+            <span class="tag-chip">Windows Split-Tunneling</span>
+            <span class="tag-chip">Direct UDP Routing</span>
+            <span class="tag-chip">Windows Tray App</span>
+            <span class="tag-chip">Split-Payout Web Apps</span>
+          </div>
+        </article>
+
+      </div>
+    </section>
+
+    <!-- ── Shipped Showcase: Projects I Proudly Worked On ── -->
+    <section id="featured">
+      <div class="section-header">
+        <h2 class="section-title">Shipped Titles &amp; Collaborations</h2>
+        <p class="section-subtitle">Commercial Marketplace releases (Partner names under NDA · references on request) &amp; open-source mods</p>
+      </div>
+
+      <div class="featured-grid">
+
+        <!-- 1. Ecosystem & Wildlife Overhaul -->
+        <article class="showcase-card wildcraft">
+          <div class="washi-tape left-corner"></div>
+          <div class="project-media-wrap">
+            <button type="button" class="project-media-btn" id="wcCardTrigger" data-lightbox-idx="0" aria-label="Zoom Ecosystem Overhaul screenshot">
+              <img id="wcCardImg" src="img/projects/ecosystem_overhaul_ingame.webp" alt="In-game custom woodland biome and wildlife mechanics" width="800" height="450" loading="lazy">
+              <span class="shot-zoom-pill">Click to zoom</span>
+            </button>
+          </div>
+          <div class="card-top-row">
+            <span class="stamp-pill stamp-wildcraft">Marketplace Partner · NDA</span>
+            <span class="traction-pill">★ 4.6 / 5 · 1,939+ Ratings</span>
+          </div>
+          <h3 class="project-name">Wildlife &amp; Ecosystem Overhaul</h3>
+          <div class="project-tagline">"200+ custom animal species and 50+ biomes on the Minecraft Marketplace"</div>
+          <p class="project-desc">
+            Commercial Minecraft Marketplace survival overhaul developed for an official Partner studio, featuring custom wildlife behaviors, habitat spawning, custom animations, and living ecosystems across 50+ biomes.
+          </p>
+          <div class="project-tags">
+            <span class="tag-chip">Official Marketplace</span>
+            <span class="tag-chip">200+ Custom Mobs</span>
+            <span class="tag-chip">50+ Biomes</span>
+            <span class="tag-chip">1,939+ Verified Ratings</span>
+          </div>
+          <div class="project-actions">
+            <a href="#contact" class="btn-action-primary">
+              Request Studio Reference →
+            </a>
+          </div>
+        </article>
+
+        <!-- 2. Pocket-Dimension Bases Add-On -->
+        <article class="showcase-card dimensional-backpack">
+          <div class="washi-tape right-corner"></div>
+          <div class="project-media-wrap">
+            <button type="button" class="project-media-btn" id="dbpCardTrigger" data-lightbox-idx="1" aria-label="Zoom Pocket-Dimension Add-On screenshot">
+              <img id="dbpCardImg" src="img/projects/pocket_dimension_ingame.webp" alt="Enterable pocket-dimension base room with rift portal" width="800" height="450" loading="lazy">
+              <span class="shot-zoom-pill">Click to zoom</span>
+            </button>
+          </div>
+          <div class="card-top-row">
+            <span class="stamp-pill stamp-dimensional">Marketplace Partner · NDA</span>
+            <span class="traction-pill">★ 4.1 / 5 · Official Release</span>
+          </div>
+          <h3 class="project-name">Pocket-Dimension Bases &amp; Rift Boss</h3>
+          <div class="project-tagline">"Step physically inside portable pocket-dimension bases on your back"</div>
+          <p class="project-desc">
+            Official Minecraft Marketplace add-on co-developed for a Partner studio. Instead of plain inventory screens, players enter upgradable pocket-dimension rooms, stabilize dimensional rifts, and battle a custom rift boss.
+          </p>
+          <div class="project-tags">
+            <span class="tag-chip">Official Marketplace</span>
+            <span class="tag-chip">Pocket Dimensions</span>
+            <span class="tag-chip">Custom Boss Fight</span>
+            <span class="tag-chip">Studio Tooling</span>
+          </div>
+          <div class="project-actions">
+            <a href="#contact" class="btn-action-primary">
+              Request Studio Reference →
+            </a>
+          </div>
+        </article>
+
+        <!-- 3. 264-Piece Interactive Furniture & Appliance Engine -->
+        <article class="showcase-card interactive-furniture">
+          <div class="washi-tape left-corner"></div>
+          <div class="project-media-wrap">
+            <button type="button" class="project-media-btn" id="furCardTrigger" data-lightbox-idx="2" aria-label="Zoom architectural showcase render">
+              <img id="furCardImg" src="img/builds/build_06_courtyard_sanctuary.webp" alt="Architectural sanctuary and interactive world showcase" width="800" height="450" loading="lazy">
+              <span class="shot-zoom-pill">Click to zoom</span>
+            </button>
+          </div>
+          <div class="card-top-row">
+            <span class="stamp-pill stamp-furniture">Marketplace Partner · NDA</span>
+            <span class="traction-pill">264 Pieces · 106k+ LOC</span>
+          </div>
+          <h3 class="project-name">Interactive Furniture &amp; Appliance Engine</h3>
+          <div class="project-tagline">"Zero-idle 264-piece working furniture suite with 1° sub-grid rotation"</div>
+          <p class="project-desc">
+            Turnkey commercial Marketplace add-on engineered end-to-end: 145 multi-block builds, 1° precision rotation, articulated screens and drawers, rolling carts, working telescope optics, PBR maps, and 6-locale search.
+          </p>
+          <div class="project-tags">
+            <span class="tag-chip">106k+ Lines JS</span>
+            <span class="tag-chip">308 Geometries</span>
+            <span class="tag-chip">Zero-Idle Runtime</span>
+            <span class="tag-chip">6 Locales</span>
+          </div>
+          <div class="project-actions">
+            <a href="#contact" class="btn-action-primary">
+              Request Studio Reference →
+            </a>
+          </div>
+        </article>
+
+        <!-- 4. Moving Contraption, Train & Fluid Engine Suite -->
+        <article class="showcase-card contraption-engine">
+          <div class="washi-tape right-corner"></div>
+          <div class="project-media-wrap">
+            <div class="media-shot-tabs">
+              <button type="button" class="media-tab-btn active" data-target-img="gcCardImg" data-src="img/builds/build_04_jade_keep.webp" data-lb-idx="3"> Jade Keep</button>
+              <button type="button" class="media-tab-btn" data-target-img="gcCardImg" data-src="img/builds/build_05_deepslate_fortress.webp" data-lb-idx="4">Fortress</button>
+            </div>
+            <button type="button" class="project-media-btn" id="gcCardTrigger" data-lightbox-idx="3" aria-label="Zoom contraption and worldgen showcase">
+              <img id="gcCardImg" src="img/builds/build_04_jade_keep.webp" alt="Custom architectural and contraption engine showcase" width="1920" height="1080" loading="lazy">
+              <span class="shot-zoom-pill">Click to zoom</span>
+            </button>
+          </div>
+          <div class="card-top-row">
+            <span class="stamp-pill stamp-contraption">Custom Engine Suite</span>
+            <span class="traction-pill">35,000+ LOC · 60 FPS</span>
+          </div>
+          <h3 class="project-name">Contraption, Train &amp; Fluid Compilers</h3>
+          <div class="project-tagline">"Moving multi-block structures, curved-track trains, and Java-parity fluids at 60 FPS"</div>
+          <p class="project-desc">
+            Standalone engine suite converting placed world blocks into rotating bearings, elevators, and multi-car curved-track trains (30 blocks batched per entity via bit-packed properties), paired with a 64-state flowing fluid simulator.
+          </p>
+          <div class="project-tags">
+            <span class="tag-chip">TypeScript</span>
+            <span class="tag-chip">30-Block Batching</span>
+            <span class="tag-chip">64-State Fluids</span>
+            <span class="tag-chip">Mobile &amp; Console 60 FPS</span>
+          </div>
+          <div class="project-actions">
+            <a href="#contact" class="btn-action-primary">
+              Request Technical Demo →
+            </a>
+            <a href="https://github.com/Senthemodder/bedrock-fluids-generator" target="_blank" class="btn-action-secondary">
+              Fluid Generator ↗
+            </a>
+          </div>
+        </article>
+
+      </div>
+    </section>
+
+  </div>
+
+  <!-- ── Full-Page Size-by-Size Builds Showcase ── -->
+  <section class="builds-fullpage-section" id="builds">
+    <div class="builds-intro-wrap">
+      <div class="builds-intro-top">
+        <h2 class="section-title">Builds Showcase</h2>
+        <span class="builds-render-badge">Rendered with MCprep · Ordered by Scale</span>
+      </div>
+      <div class="builds-scale-strip" aria-label="Jump to build by size">
+        <a href="#build-01" class="build-scale-jump"><span class="jump-idx">01</span>21×12×21</a>
+        <a href="#build-02" class="build-scale-jump"><span class="jump-idx">02</span>17×24×17</a>
+        <a href="#build-03" class="build-scale-jump"><span class="jump-idx">03</span>23×32×23</a>
+        <a href="#build-04" class="build-scale-jump"><span class="jump-idx">04</span>25×68×25</a>
+        <a href="#build-05" class="build-scale-jump"><span class="jump-idx">05</span>25×79×25</a>
+        <a href="#build-06" class="build-scale-jump"><span class="jump-idx">06</span>88×34×60</a>
+      </div>
+    </div>
+
+    <div class="builds-stage-stack">
+
+      <!-- 01 / 06: 21 x 12 x 21 (424 blocks) -->
+      <article class="build-stage" id="build-01">
+        <div class="build-hud-top">
+          <span class="build-size-pill"><span class="step-tag">01 / 06</span>21 × 12 × 21 · 424 blocks</span>
+        </div>
+        <button type="button" class="build-stage-btn" data-lightbox-idx="5" aria-label="Open build 01 in full viewer">
+          <img src="img/builds/build_01_stone_arena.webp" alt="Minecraft build 01 (21 x 12 x 21)" width="1920" height="1080" loading="lazy">
+        </button>
+        <div class="build-hud-bottom">
+          <a href="#build-02" class="build-stage-ctrl">↓ Next Size</a>
+          <button type="button" class="build-stage-ctrl" data-lightbox-idx="5">Fullscreen</button>
+        </div>
+      </article>
+
+      <!-- 02 / 06: 17 x 24 x 17 (1,208 blocks) -->
+      <article class="build-stage" id="build-02">
+        <div class="build-hud-top">
+          <span class="build-size-pill"><span class="step-tag">02 / 06</span>17 × 24 × 17 · 1,208 blocks</span>
+        </div>
+        <button type="button" class="build-stage-btn" data-lightbox-idx="6" aria-label="Open build 02 in full viewer">
+          <img src="img/builds/build_02_spiral_watchtower.webp" alt="Minecraft build 02 (17 x 24 x 17)" width="1920" height="1080" loading="lazy">
+        </button>
+        <div class="build-hud-bottom">
+          <a href="#build-01" class="build-stage-ctrl">↑ Prev</a>
+          <a href="#build-03" class="build-stage-ctrl">↓ Next Size</a>
+          <button type="button" class="build-stage-ctrl" data-lightbox-idx="6">Fullscreen</button>
+        </div>
+      </article>
+
+      <!-- 03 / 06: 23 x 32 x 23 (2,123 blocks) -->
+      <article class="build-stage" id="build-03">
+        <div class="build-hud-top">
+          <span class="build-size-pill"><span class="step-tag">03 / 06</span>23 × 32 × 23 · 2,123 blocks</span>
+        </div>
+        <button type="button" class="build-stage-btn" data-lightbox-idx="7" aria-label="Open build 03 in full viewer">
+          <img src="img/builds/build_03_canopy_tree.webp" alt="Minecraft build 03 (23 x 32 x 23)" width="1920" height="1080" loading="lazy">
+        </button>
+        <div class="build-hud-bottom">
+          <a href="#build-02" class="build-stage-ctrl">↑ Prev</a>
+          <a href="#build-04" class="build-stage-ctrl">↓ Next Size</a>
+          <button type="button" class="build-stage-ctrl" data-lightbox-idx="7">Fullscreen</button>
+        </div>
+      </article>
+
+      <!-- 04 / 06: 25 x 68 x 25 (9,840 blocks) -->
+      <article class="build-stage" id="build-04">
+        <div class="build-hud-top">
+          <span class="build-size-pill"><span class="step-tag">04 / 06</span>25 × 68 × 25 · 9,840 blocks</span>
+        </div>
+        <button type="button" class="build-stage-btn" data-lightbox-idx="8" aria-label="Open build 04 in full viewer">
+          <img src="img/builds/build_04_jade_keep.webp" alt="Minecraft build 04 (25 x 68 x 25)" width="1920" height="1080" loading="lazy">
+        </button>
+        <div class="build-hud-bottom">
+          <a href="#build-03" class="build-stage-ctrl">↑ Prev</a>
+          <a href="#build-05" class="build-stage-ctrl">↓ Next Size</a>
+          <button type="button" class="build-stage-ctrl" data-lightbox-idx="8">Fullscreen</button>
+        </div>
+      </article>
+
+      <!-- 05 / 06: 25 x 79 x 25 (11,688 blocks) -->
+      <article class="build-stage" id="build-05">
+        <div class="build-hud-top">
+          <span class="build-size-pill"><span class="step-tag">05 / 06</span>25 × 79 × 25 · 11,688 blocks</span>
+        </div>
+        <button type="button" class="build-stage-btn" data-lightbox-idx="9" aria-label="Open build 05 in full viewer">
+          <img src="img/builds/build_05_deepslate_fortress.webp" alt="Minecraft build 05 (25 x 79 x 25)" width="1920" height="1080" loading="lazy">
+        </button>
+        <div class="build-hud-bottom">
+          <a href="#build-04" class="build-stage-ctrl">↑ Prev</a>
+          <a href="#build-06" class="build-stage-ctrl">↓ Next Size</a>
+          <button type="button" class="build-stage-ctrl" data-lightbox-idx="9">Fullscreen</button>
+        </div>
+      </article>
+
+      <!-- 06 / 06: 88 x 34 x 60 (19,509 blocks) -->
+      <article class="build-stage" id="build-06">
+        <div class="build-hud-top">
+          <span class="build-size-pill"><span class="step-tag">06 / 06</span>88 × 34 × 60 · 19,509 blocks</span>
+        </div>
+        <button type="button" class="build-stage-btn" data-lightbox-idx="10" aria-label="Open build 06 in full viewer">
+          <img src="img/builds/build_06_courtyard_sanctuary.webp" alt="Minecraft build 06 (88 x 34 x 60)" width="1920" height="1080" loading="lazy">
+        </button>
+        <div class="build-hud-bottom">
+          <a href="#build-05" class="build-stage-ctrl">↑ Prev</a>
+          <a href="#contact" class="build-stage-ctrl">↓ Contact</a>
+          <button type="button" class="build-stage-ctrl" data-lightbox-idx="10">Fullscreen</button>
+        </div>
+      </article>
+
+    </div>
+  </section>
+
+  <div class="wrapper wrapper-bottom">
+
+    <!-- ── Dedicated Business Contact Section ── -->
+    <section class="contact-section" id="contact">
+      <div class="washi-tape"></div>
+      <div class="section-header" style="margin-bottom: 0.8rem;">
+        <h2 class="section-title">Work With Me</h2>
+        <p class="section-subtitle">Open to software engineering roles, studio contracts, rev-share projects, and business opportunities</p>
+      </div>
+
+      <div class="contact-grid">
+        <!-- Email -->
+        <div class="contact-card">
+          <div>
+            <div class="contact-channel-lbl">Direct Studio Inbox</div>
+            <div class="contact-handle">Contract &amp; Licensing Desk</div>
+            <div class="contact-note">Best for engineering roles, B2B contracts &amp; SKU licensing</div>
+          </div>
+          <div class="contact-btn-row">
+            <a href="#contact" data-studio-mailto class="btn-action-primary">Send Inquiry ↗</a>
+            <button type="button" class="btn-action-secondary" data-copy-studio-email>Copy Email</button>
+          </div>
+        </div>
+
+        <!-- Studio Contracting -->
+        <div class="contact-card">
+          <div>
+            <div class="contact-channel-lbl">Studio Scopes &amp; Terms</div>
+            <div class="contact-handle">Milestone &amp; Royalty Models</div>
+            <div class="contact-note">Turnkey Add-Ons, compilers, cross-edition ports &amp; NDA retainers</div>
+          </div>
+          <div class="contact-btn-row">
+            <a href="commissions.html" class="btn-action-primary">Engagement Models ↗</a>
+          </div>
+        </div>
+
+        <!-- GitHub & CV -->
+        <div class="contact-card">
+          <div>
+            <div class="contact-channel-lbl">GitHub &amp; Resume</div>
+            <div class="contact-handle">@Senthemodder</div>
+            <div class="contact-note">Open-source tools, architecture &amp; downloadable CV</div>
+          </div>
+          <div class="contact-btn-row">
+            <a href="https://github.com/Senthemodder" target="_blank" class="btn-action-primary">GitHub Profile ↗</a>
+            <a href="Minh_Le_CV.pdf" target="_blank" class="btn-action-secondary">CV (PDF)</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ── Cozy Footer ── -->
+    <footer class="straw-footer">
+      <div class="footer-stamp" id="footerStamp">Made with warmth and autumn leaves</div>
+      <p class="footer-desc">Minh Lê (@Senthemodder) · <span id="footerYear">2026</span></p>
+      <div class="footer-links">
+        <a href="#contact" data-studio-mailto class="footer-link">Direct Email ↗</a>
+        <a href="commissions.html" class="footer-link">Studio Inquiries</a>
+        <a href="Minh_Le_CV.pdf" target="_blank" class="footer-link">CV (PDF) ↗</a>
+        <a href="https://github.com/Senthemodder" target="_blank" class="footer-link">GitHub ↗</a>
+      </div>
+    </footer>
+
+  </div>
+
+  <!-- ── Fullscreen HD Build & Project Viewer Lightbox ── -->
+  <div class="lightbox-backdrop" id="structureLightbox" role="dialog" aria-modal="true" aria-label="Full-screen project and build viewer">
+    <div class="lightbox-dialog">
+      <div class="lightbox-top">
+        <span class="lightbox-counter" id="lightboxCounter">1 / 11</span>
+        <div class="lightbox-controls">
+          <button type="button" class="lightbox-btn" id="lightboxPrev" aria-label="Previous image">‹ Prev</button>
+          <button type="button" class="lightbox-btn" id="lightboxNext" aria-label="Next image">Next ›</button>
+          <button type="button" class="lightbox-btn" id="lightboxClose" aria-label="Close viewer">✕ Close</button>
+        </div>
+      </div>
+      <div class="lightbox-img-wrap">
+        <img id="lightboxImg" src="img/projects/ecosystem_overhaul_ingame.webp" alt="Preview">
+      </div>
+      <div class="lightbox-title" id="lightboxTitle"></div>
+      <p class="lightbox-desc" id="lightboxDesc"></p>
+    </div>
+  </div>
+
+  <!-- ── Date-Driven Seasonal Theme, Media Switcher & Particle Engine ── -->
+  <script>
+    (function () {
+      const SEASON_CONFIG = {
+        spring: {
+          themeColor: '#e9f7ee',
+          footerStamp: 'Made with warmth and spring blossoms',
+          particleCount: 34,
+          colors: ['#ffb7c5', '#ff8fab', '#f472b6', '#f9a8d4', '#86efac', '#52b788']
+        },
+        summer: {
+          themeColor: '#fef6d8',
+          footerStamp: 'Made with sunshine and summer breezes',
+          particleCount: 30,
+          colors: ['#fbbf24', '#f59e0b', '#38bdf8', '#2dd4bf', '#fb7185', '#fcd34d']
+        },
+        autumn: {
+          themeColor: '#ffe5ec',
+          footerStamp: 'Made with warmth and autumn leaves',
+          particleCount: 32,
+          colors: ['#fb6f92', '#ff8fab', '#e07a5f', '#f4a261', '#e76f51', '#d97736']
+        },
+        winter: {
+          themeColor: '#e5f0ff',
+          footerStamp: 'Made with warmth and winter snow',
+          particleCount: 38,
+          colors: ['#ffffff', '#60a5fa', '#7cc4fa', '#818cf8', '#38bdf8', '#93c5fd']
+        }
+      };
+
+      const bootState = window.__PORTFOLIO_SEASON__ || {
+        getSeasonForDate: function (d) {
+          const m = (d || new Date()).getMonth();
+          if (m >= 2 && m <= 4) return 'spring';
+          if (m >= 5 && m <= 7) return 'summer';
+          if (m >= 8 && m <= 10) return 'autumn';
+          return 'winter';
+        },
+        active: 'autumn'
+      };
+
+      let currentSeason = bootState.active;
+
+      const themeMeta = document.getElementById('themeColorMeta');
+      const footerStamp = document.getElementById('footerStamp');
+      const footerYear = document.getElementById('footerYear');
+
+      const nowYear = new Date().getFullYear();
+      if (footerYear && nowYear >= 2026) {
+        footerYear.textContent = String(nowYear);
+      }
+
+      /* ── Canvas Particle Simulation ── */
+      const canvas = document.getElementById('leafCanvas');
+      const ctx = canvas.getContext('2d');
+      let particles = [];
+
+      function resizeCanvas() {
+        canvas.width = window.innerWidth;
+        canvas.height = window.innerHeight;
+      }
+      window.addEventListener('resize', resizeCanvas);
+      resizeCanvas();
+
+      class SeasonalParticle {
+        constructor(season) {
+          this.season = season;
+          this.reset(true);
+        }
+
+        reset(initial = false) {
+          const cfg = SEASON_CONFIG[this.season] || SEASON_CONFIG.autumn;
+          this.x = Math.random() * canvas.width;
+          this.color = cfg.colors[Math.floor(Math.random() * cfg.colors.length)];
+          this.rotation = Math.random() * Math.PI * 2;
+          this.swayAngle = Math.random() * Math.PI * 2;
+          this.pulseAngle = Math.random() * Math.PI * 2;
+
+          if (this.season === 'winter') {
+            this.y = initial ? Math.random() * canvas.height : -30;
+            const roll = Math.random();
+            this.kind = roll < 0.5 ? 'crystal' : (roll < 0.82 ? 'powder' : 'froststar');
+            this.size = this.kind === 'powder' ? 4 + Math.random() * 5 : 9 + Math.random() * 11;
+            this.speedY = 0.32 + Math.random() * 0.52;
+            this.speedX = -0.18 + Math.random() * 0.36;
+            this.swayAmp = 0.55;
+            this.swaySpeed = 0.008 + Math.random() * 0.012;
+            this.rotationSpeed = (Math.random() - 0.5) * 0.008;
+            this.opacity = 0.52 + Math.random() * 0.42;
+          } else if (this.season === 'spring') {
+            this.y = initial ? Math.random() * canvas.height : -30;
+            const roll = Math.random();
+            this.kind = roll < 0.58 ? 'sakura_petal' : (roll < 0.82 ? 'sakura_blossom' : 'sprout_leaf');
+            if (this.kind === 'sprout_leaf') {
+              this.color = Math.random() > 0.5 ? '#74c69d' : '#52b788';
+            } else if (this.color === '#86efac' || this.color === '#52b788') {
+              this.color = '#ffb7c5';
+            }
+            this.size = this.kind === 'sakura_blossom' ? 8 + Math.random() * 7 : 8 + Math.random() * 10;
+            this.speedY = 0.3 + Math.random() * 0.48;
+            this.speedX = 0.1 + Math.random() * 0.42;
+            this.swayAmp = 0.9;
+            this.swaySpeed = 0.012 + Math.random() * 0.016;
+            this.rotationSpeed = (Math.random() - 0.5) * 0.02;
+            this.opacity = 0.48 + Math.random() * 0.42;
+          } else if (this.season === 'summer') {
+            const roll = Math.random();
+            this.kind = roll < 0.42 ? 'bubble' : (roll < 0.78 ? 'sun_sparkle' : 'sun_petal');
+            if (this.kind === 'bubble') {
+              this.y = initial ? Math.random() * canvas.height : canvas.height + 30;
+              this.size = 6 + Math.random() * 12;
+              this.speedY = -(0.24 + Math.random() * 0.42);
+              this.speedX = -0.15 + Math.random() * 0.35;
+              this.color = Math.random() > 0.5 ? '#38bdf8' : '#2dd4bf';
+              this.opacity = 0.32 + Math.random() * 0.35;
+            } else if (this.kind === 'sun_sparkle') {
+              this.y = initial ? Math.random() * canvas.height : Math.random() * canvas.height;
+              this.size = 6 + Math.random() * 9;
+              this.speedY = -0.08 + Math.random() * 0.22;
+              this.speedX = -0.12 + Math.random() * 0.24;
+              this.color = Math.random() > 0.35 ? '#fbbf24' : '#f59e0b';
+              this.opacity = 0.38 + Math.random() * 0.45;
+            } else {
+              this.y = initial ? Math.random() * canvas.height : -30;
+              this.size = 8 + Math.random() * 11;
+              this.speedY = 0.26 + Math.random() * 0.42;
+              this.speedX = 0.08 + Math.random() * 0.35;
+              this.opacity = 0.42 + Math.random() * 0.38;
+            }
+            this.swayAmp = 0.6;
+            this.swaySpeed = 0.01 + Math.random() * 0.014;
+            this.rotationSpeed = (Math.random() - 0.5) * 0.012;
+          } else {
+            this.y = initial ? Math.random() * canvas.height : -30;
+            this.kind = Math.random() > 0.4 ? 'maple' : 'oval_leaf';
+            this.size = 10 + Math.random() * 16;
+            this.speedY = 0.3 + Math.random() * 0.5;
+            this.speedX = -0.2 + Math.random() * 0.4;
+            this.swayAmp = 0.8;
+            this.swaySpeed = 0.01 + Math.random() * 0.015;
+            this.rotationSpeed = (Math.random() - 0.5) * 0.015;
+            this.opacity = 0.4 + Math.random() * 0.45;
+          }
+        }
+
+        update() {
+          this.swayAngle += this.swaySpeed;
+          this.pulseAngle += 0.028;
+          this.x += this.speedX + Math.sin(this.swayAngle) * this.swayAmp;
+          this.y += this.speedY;
+          this.rotation += this.rotationSpeed;
+
+          if (this.kind === 'bubble') {
+            if (this.y < -35 || this.x < -45 || this.x > canvas.width + 45) {
+              this.reset(false);
+            }
+          } else if (this.kind === 'sun_sparkle') {
+            if (this.y < -35) this.y = canvas.height + 25;
+            if (this.y > canvas.height + 35) this.y = -25;
+            if (this.x < -45) this.x = canvas.width + 35;
+            if (this.x > canvas.width + 45) this.x = -35;
+          } else {
+            if (this.y > canvas.height + 35 || this.x < -45 || this.x > canvas.width + 45) {
+              this.reset(false);
+            }
+          }
+        }
+
+        draw() {
+          ctx.save();
+          ctx.translate(this.x, this.y);
+          ctx.rotate(this.rotation);
+
+          const s = this.size;
+
+          if (this.kind === 'maple') {
+            ctx.globalAlpha = this.opacity;
+            ctx.fillStyle = this.color;
+            ctx.beginPath();
+            ctx.moveTo(0, -s);
+            ctx.quadraticCurveTo(s * 0.6, -s * 0.3, s * 0.8, -s * 0.1);
+            ctx.quadraticCurveTo(s * 0.5, s * 0.3, s * 0.4, s * 0.7);
+            ctx.quadraticCurveTo(0, s * 0.5, -s * 0.4, s * 0.7);
+            ctx.quadraticCurveTo(-s * 0.5, s * 0.3, -s * 0.8, -s * 0.1);
+            ctx.quadraticCurveTo(-s * 0.6, -s * 0.3, 0, -s);
+            ctx.fill();
+          } else if (this.kind === 'oval_leaf' || this.kind === 'sprout_leaf' || this.kind === 'sun_petal') {
+            ctx.globalAlpha = this.opacity;
+            ctx.fillStyle = this.color;
+            ctx.beginPath();
+            ctx.ellipse(0, 0, s * 0.48, s * 0.95, 0, 0, Math.PI * 2);
+            ctx.fill();
+          } else if (this.kind === 'crystal') {
+            ctx.globalAlpha = this.opacity;
+            ctx.strokeStyle = this.color;
+            ctx.lineWidth = Math.max(1.4, s * 0.13);
+            ctx.lineCap = 'round';
+            if (this.color === '#ffffff') {
+              ctx.shadowColor = 'rgba(41, 86, 143, 0.38)';
+              ctx.shadowBlur = 4;
+            }
+            for (let i = 0; i < 6; i++) {
+              ctx.beginPath();
+              ctx.moveTo(0, 0);
+              ctx.lineTo(0, -s);
+              ctx.moveTo(0, -s * 0.58);
+              ctx.lineTo(-s * 0.24, -s * 0.78);
+              ctx.moveTo(0, -s * 0.58);
+              ctx.lineTo(s * 0.24, -s * 0.78);
+              ctx.stroke();
+              ctx.rotate(Math.PI / 3);
+            }
+          } else if (this.kind === 'powder') {
+            ctx.globalAlpha = this.opacity;
+            ctx.fillStyle = this.color;
+            if (this.color === '#ffffff') {
+              ctx.shadowColor = 'rgba(41, 86, 143, 0.35)';
+              ctx.shadowBlur = 4;
+            }
+            ctx.beginPath();
+            ctx.arc(0, 0, s, 0, Math.PI * 2);
+            ctx.fill();
+          } else if (this.kind === 'froststar' || this.kind === 'sun_sparkle') {
+            const pulse = this.kind === 'sun_sparkle' ? (0.65 + 0.35 * Math.sin(this.pulseAngle)) : 1;
+            ctx.globalAlpha = this.opacity * pulse;
+            ctx.fillStyle = this.color;
+            if (this.color === '#ffffff') {
+              ctx.shadowColor = 'rgba(41, 86, 143, 0.38)';
+              ctx.shadowBlur = 4;
+            }
+            const r = s * pulse;
+            ctx.beginPath();
+            ctx.moveTo(0, -r);
+            ctx.quadraticCurveTo(r * 0.18, -r * 0.18, r, 0);
+            ctx.quadraticCurveTo(r * 0.18, r * 0.18, 0, r);
+            ctx.quadraticCurveTo(-r * 0.18, r * 0.18, -r, 0);
+            ctx.quadraticCurveTo(-r * 0.18, -r * 0.18, 0, -r);
+            ctx.closePath();
+            ctx.fill();
+          } else if (this.kind === 'sakura_petal') {
+            ctx.globalAlpha = this.opacity;
+            ctx.fillStyle = this.color;
+            ctx.beginPath();
+            ctx.moveTo(0, s * 0.85);
+            ctx.bezierCurveTo(-s * 0.75, s * 0.35, -s * 0.72, -s * 0.58, -s * 0.18, -s * 0.85);
+            ctx.lineTo(0, -s * 0.56);
+            ctx.lineTo(s * 0.18, -s * 0.85);
+            ctx.bezierCurveTo(s * 0.72, -s * 0.58, s * 0.75, s * 0.35, 0, s * 0.85);
+            ctx.closePath();
+            ctx.fill();
+          } else if (this.kind === 'sakura_blossom') {
+            ctx.globalAlpha = this.opacity;
+            ctx.fillStyle = this.color;
+            for (let i = 0; i < 5; i++) {
+              ctx.beginPath();
+              ctx.ellipse(0, -s * 0.58, s * 0.32, s * 0.5, 0, 0, Math.PI * 2);
+              ctx.fill();
+              ctx.rotate((Math.PI * 2) / 5);
+            }
+            ctx.fillStyle = '#fde68a';
+            ctx.beginPath();
+            ctx.arc(0, 0, s * 0.22, 0, Math.PI * 2);
+            ctx.fill();
+          } else if (this.kind === 'bubble') {
+            ctx.globalAlpha = this.opacity;
+            ctx.strokeStyle = this.color;
+            ctx.lineWidth = 1.4;
+            ctx.fillStyle = 'rgba(255, 255, 255, 0.28)';
+            ctx.beginPath();
+            ctx.arc(0, 0, s, 0, Math.PI * 2);
+            ctx.fill();
+            ctx.stroke();
+
+            ctx.beginPath();
+            ctx.strokeStyle = 'rgba(255, 255, 255, 0.85)';
+            ctx.lineWidth = 1.3;
+            ctx.arc(0, 0, s * 0.65, -Math.PI * 0.78, -Math.PI * 0.38);
+            ctx.stroke();
+          }
+
+          ctx.restore();
+        }
+      }
+
+      function rebuildParticles(season) {
+        const cfg = SEASON_CONFIG[season] || SEASON_CONFIG.autumn;
+        particles = [];
+        for (let i = 0; i < cfg.particleCount; i++) {
+          particles.push(new SeasonalParticle(season));
+        }
+      }
+
+      function syncSeasonFromDate() {
+        const detected = bootState.getSeasonForDate(new Date());
+        const changed = detected !== currentSeason || particles.length === 0;
+        currentSeason = detected;
+
+        const cfg = SEASON_CONFIG[currentSeason] || SEASON_CONFIG.autumn;
+        document.documentElement.setAttribute('data-season', currentSeason);
+        if (themeMeta) {
+          themeMeta.setAttribute('content', cfg.themeColor);
+        }
+        if (footerStamp) {
+          footerStamp.textContent = cfg.footerStamp;
+        }
+        if (changed) {
+          rebuildParticles(currentSeason);
+        }
+      }
+
+      function animateParticles() {
+        ctx.clearRect(0, 0, canvas.width, canvas.height);
+        for (const p of particles) {
+          p.update();
+          p.draw();
+        }
+        requestAnimationFrame(animateParticles);
+      }
+
+      syncSeasonFromDate();
+      animateParticles();
+      setInterval(syncSeasonFromDate, 60000);
+
+      /* ── Auto-Rotating & Scrollable Teams / Roles Board ── */
+      const ROLES_DATA = [
+        {
+          org: 'Official Marketplace Partner (NDA)',
+          role: 'Snr Dev',
+          past: false,
+          img: 'img/studios/nda_partner.svg',
+          logoClass: 'role-logo',
+          url: '#contact',
+          linkLabel: 'Reference →',
+          external: false,
+          desc: 'Senior Developer building custom gameplay systems, mob behaviors, and commercial Minecraft Marketplace releases.'
+        },
+        {
+          org: 'Cross-Platform UGC Studio (NDA)',
+          role: 'Contractor',
+          past: false,
+          img: 'img/studios/nda_partner.svg',
+          logoClass: 'role-logo',
+          url: '#contact',
+          linkLabel: 'Reference →',
+          external: false,
+          desc: 'Contractor building gameplay features, custom items and blocks, and cross-platform 60fps Marketplace releases.'
+        },
+        {
+          org: 'Official Marketplace Partner (NDA)',
+          role: 'Contractor',
+          past: false,
+          img: 'img/studios/nda_partner.svg',
+          logoClass: 'role-logo',
+          url: '#contact',
+          linkLabel: 'Reference →',
+          external: false,
+          desc: 'Contractor co-developing an enterable pocket-dimension survival add-on (4.1 ★) along with shared internal fluid and multi-block tools.'
+        },
+        {
+          org: 'Partner Production Hub (NDA)',
+          role: 'Contractor',
+          past: false,
+          img: 'img/studios/nda_partner.svg',
+          logoClass: 'role-logo',
+          url: '#contact',
+          linkLabel: 'Reference →',
+          external: false,
+          desc: 'Contractor delivering turnkey 264-piece interactive add-ons, custom 3D pipelines, and gameplay systems across multi-storefront Partner accounts.'
+        },
+        {
+          org: 'Official Marketplace Partner (Former)',
+          role: 'Ex-Contractor',
+          past: true,
+          img: 'img/studios/nda_partner.svg',
+          logoClass: 'role-logo',
+          url: '#contact',
+          linkLabel: 'Reference →',
+          external: false,
+          desc: 'Former contractor building animal behaviors, habitat spawning, and biome features on a 200+ species survival add-on (4.6 ★ across 1,939+ ratings).'
+        },
+        {
+          org: 'Open-Source Space Mod (Former)',
+          role: 'Ex-Developer',
+          past: true,
+          img: 'img/studios/nda_partner.svg',
+          logoClass: 'role-logo',
+          url: '#contact',
+          linkLabel: 'Details →',
+          external: false,
+          desc: 'Former contributor authoring orbital math and gameplay systems on a modern Java Edition space exploration mod (3.7M+ combined downloads).'
+        },
+        {
+          org: 'HCM Youth Union',
+          role: 'Ex-Fundraising Volunteer',
+          past: true,
+          img: 'img/studios/hcm_youth_union.webp',
+          logoClass: 'role-logo contain-light-logo',
+          url: 'https://vi.wikipedia.org/wiki/%C4%90o%C3%A0n_Thanh_ni%C3%AAn_C%E1%BB%99ng_s%E1%BA%A3n_H%E1%BB%93_Ch%C3%AD_Minh',
+          linkLabel: 'Visit ↗',
+          external: true,
+          desc: 'Former fundraising volunteer helping organize local charity campaigns and community youth drives in Ho Chi Minh City.'
+        }
+      ];
+
+      const rolesBoard = document.getElementById('teams');
+      const rolesTrack = document.getElementById('rolesTrack');
+      const roleCards = document.querySelectorAll('.role-card');
+      const roleDotsWrap = document.getElementById('roleDots');
+      const rolePrevBtn = document.getElementById('rolePrevBtn');
+      const roleNextBtn = document.getElementById('roleNextBtn');
+      const roleSpotlight = document.getElementById('roleSpotlight');
+      const roleSpotImg = document.getElementById('roleSpotlightImg');
+      const roleSpotBadge = document.getElementById('roleSpotlightBadge');
+      const roleSpotOrg = document.getElementById('roleSpotlightOrg');
+      const roleSpotDesc = document.getElementById('roleSpotlightDesc');
+      const roleSpotLink = document.getElementById('roleSpotlightLink');
+
+      let activeRoleIdx = 0;
+      let roleAutoPaused = false;
+      let roleManualCooldownUntil = 0;
+
+      if (roleDotsWrap) {
+        ROLES_DATA.forEach((item, idx) => {
+          const dot = document.createElement('button');
+          dot.type = 'button';
+          dot.className = 'role-dot' + (idx === 0 ? ' active' : '');
+          dot.setAttribute('aria-label', item.role + ' at ' + item.org);
+          dot.addEventListener('click', () => {
+            roleManualCooldownUntil = Date.now() + 6000;
+            setActiveRole(idx, true);
+          });
+          roleDotsWrap.appendChild(dot);
+        });
+      }
+
+      function scrollRoleCardIntoTrack(cardEl) {
+        if (!rolesTrack || !cardEl) return;
+        const trackRect = rolesTrack.getBoundingClientRect();
+        const cardRect = cardEl.getBoundingClientRect();
+        const currentLeft = rolesTrack.scrollLeft;
+        const offsetInsideTrack = cardRect.left - trackRect.left;
+        const targetLeft = currentLeft + offsetInsideTrack - (trackRect.width - cardRect.width) / 2;
+        rolesTrack.scrollTo({
+          left: Math.max(0, targetLeft),
+          behavior: 'smooth'
+        });
+      }
+
+      function setActiveRole(idx, scrollTrack) {
+        activeRoleIdx = ((idx % ROLES_DATA.length) + ROLES_DATA.length) % ROLES_DATA.length;
+        const data = ROLES_DATA[activeRoleIdx];
+
+        roleCards.forEach((card, i) => {
+          card.classList.toggle('active', i === activeRoleIdx);
+        });
+        if (roleDotsWrap) {
+          Array.from(roleDotsWrap.children).forEach((dot, i) => {
+            dot.classList.toggle('active', i === activeRoleIdx);
+          });
+        }
+
+        if (roleSpotlight) {
+          roleSpotlight.classList.add('fading');
+          setTimeout(() => {
+            if (roleSpotImg) {
+              roleSpotImg.src = data.img;
+              roleSpotImg.className = data.logoClass;
+              roleSpotImg.alt = data.org + ' logo';
+            }
+            if (roleSpotBadge) {
+              roleSpotBadge.textContent = data.role;
+              roleSpotBadge.className = 'role-pill-badge' + (data.past ? ' past-role' : '');
+            }
+            if (roleSpotOrg) roleSpotOrg.textContent = data.org;
+            if (roleSpotDesc) roleSpotDesc.textContent = data.desc;
+            if (roleSpotLink) {
+              roleSpotLink.href = data.url;
+              roleSpotLink.textContent = data.linkLabel || 'Reference →';
+              if (data.external) {
+                roleSpotLink.setAttribute('target', '_blank');
+                roleSpotLink.setAttribute('rel', 'noopener');
+              } else {
+                roleSpotLink.removeAttribute('target');
+                roleSpotLink.removeAttribute('rel');
+              }
+            }
+            roleSpotlight.classList.remove('fading');
+          }, 110);
+        }
+
+        if (scrollTrack && roleCards[activeRoleIdx]) {
+          scrollRoleCardIntoTrack(roleCards[activeRoleIdx]);
+        }
+      }
+
+      roleCards.forEach((card) => {
+        card.addEventListener('click', (e) => {
+          if (e.target.closest('a')) return;
+          const idx = parseInt(card.getAttribute('data-role-idx') || '0', 10);
+          roleManualCooldownUntil = Date.now() + 6000;
+          setActiveRole(idx, true);
+        });
+        card.addEventListener('keydown', (e) => {
+          if (e.key === 'Enter' || e.key === ' ') {
+            if (e.target.closest('a')) return;
+            e.preventDefault();
+            const idx = parseInt(card.getAttribute('data-role-idx') || '0', 10);
+            roleManualCooldownUntil = Date.now() + 6000;
+            setActiveRole(idx, true);
+          }
+        });
+      });
+
+      if (rolePrevBtn) {
+        rolePrevBtn.addEventListener('click', () => {
+          roleManualCooldownUntil = Date.now() + 6000;
+          setActiveRole(activeRoleIdx - 1, true);
+        });
+      }
+      if (roleNextBtn) {
+        roleNextBtn.addEventListener('click', () => {
+          roleManualCooldownUntil = Date.now() + 6000;
+          setActiveRole(activeRoleIdx + 1, true);
+        });
+      }
+
+      if (rolesBoard) {
+        rolesBoard.addEventListener('mouseenter', () => { roleAutoPaused = true; });
+        rolesBoard.addEventListener('mouseleave', () => { roleAutoPaused = false; });
+        rolesBoard.addEventListener('focusin', () => { roleAutoPaused = true; });
+        rolesBoard.addEventListener('focusout', () => { roleAutoPaused = false; });
+      }
+
+      if (rolesTrack) {
+        let isDown = false;
+        let startX = 0;
+        let startScroll = 0;
+        let dragged = false;
+
+        rolesTrack.addEventListener('mousedown', (e) => {
+          if (e.target.closest('a')) return;
+          isDown = true;
+          dragged = false;
+          startX = e.pageX - rolesTrack.offsetLeft;
+          startScroll = rolesTrack.scrollLeft;
+        });
+        window.addEventListener('mouseup', () => {
+          isDown = false;
+          rolesTrack.classList.remove('dragging');
+        });
+        rolesTrack.addEventListener('mousemove', (e) => {
+          if (!isDown) return;
+          const x = e.pageX - rolesTrack.offsetLeft;
+          const walk = x - startX;
+          if (Math.abs(walk) > 5) {
+            dragged = true;
+            rolesTrack.classList.add('dragging');
+            roleManualCooldownUntil = Date.now() + 5000;
+            rolesTrack.scrollLeft = startScroll - walk;
+          }
+        });
+        rolesTrack.addEventListener('click', (e) => {
+          if (dragged) {
+            e.stopPropagation();
+            dragged = false;
+          }
+        }, true);
+        rolesTrack.addEventListener('touchstart', () => {
+          roleManualCooldownUntil = Date.now() + 5000;
+        }, { passive: true });
+      }
+
+      setInterval(() => {
+        if (roleAutoPaused || Date.now() < roleManualCooldownUntil) return;
+        setActiveRole(activeRoleIdx + 1, true);
+      }, 3200);
+
+      /* ── Project Card Cover / In-Game Image Switchers ── */
+      const mediaTabs = document.querySelectorAll('.media-tab-btn');
+      mediaTabs.forEach((tab) => {
+        tab.addEventListener('click', (e) => {
+          e.stopPropagation();
+          const targetId = tab.getAttribute('data-target-img');
+          const nextSrc = tab.getAttribute('data-src');
+          const nextLbIdx = tab.getAttribute('data-lb-idx');
+          const imgEl = targetId ? document.getElementById(targetId) : null;
+          if (imgEl && nextSrc) {
+            imgEl.src = nextSrc;
+            const trigger = imgEl.closest('[data-lightbox-idx]');
+            if (trigger && nextLbIdx !== null) {
+              trigger.setAttribute('data-lightbox-idx', nextLbIdx);
+            }
+          }
+          const parentGroup = tab.parentElement;
+          if (parentGroup) {
+            parentGroup.querySelectorAll('.media-tab-btn').forEach((b) => b.classList.remove('active'));
+          }
+          tab.classList.add('active');
+        });
+      });
+
+      /* ── Studio Mailto & Copy-to-Clipboard Buttons ── */
+      const studioAddr = String.fromCharCode(109,105,110,104,97,110,104,108,101,50,50,48,57,48,55,64,103,109,97,105,108,46,99,111,109);
+      document.querySelectorAll('[data-studio-mailto]').forEach((el) => {
+        el.setAttribute('href', 'mailto:' + studioAddr + '?subject=Studio%20Contract%20%2F%20Licensing%20Inquiry');
+      });
+      document.querySelectorAll('[data-copy-studio-email]').forEach((btn) => {
+        const originalLabel = btn.textContent;
+        btn.addEventListener('click', () => {
+          if (navigator.clipboard && navigator.clipboard.writeText) {
+            navigator.clipboard.writeText(studioAddr).then(() => {
+              btn.textContent = 'Copied!';
+              setTimeout(() => { btn.textContent = originalLabel; }, 1800);
+            });
+          }
+        });
+      });
+
+      /* ── Fullscreen Gallery Lightbox (Projects + Builds) ── */
+      const GALLERY_ITEMS = [
+        {
+          src: 'img/projects/ecosystem_overhaul_ingame.webp',
+          title: 'Wildlife & Ecosystem Overhaul · Official Marketplace Release (NDA)',
+          desc: 'Commercial Minecraft Marketplace survival overhaul (4.6 ★ across 1,939+ verified player ratings) featuring 200+ custom animal species and 50+ woodland and savanna habitats.'
+        },
+        {
+          src: 'img/projects/pocket_dimension_ingame.webp',
+          title: 'Pocket-Dimension Bases & Rift Boss · Official Marketplace Release (NDA)',
+          desc: 'Inside a player pocket-dimension base: glowing exit rift portal, storage walls, crafting stations, and companion pets.'
+        },
+        {
+          src: 'img/builds/build_06_courtyard_sanctuary.webp',
+          title: 'Interactive Furniture & Architectural Showcase (NDA)',
+          desc: 'Turnkey 264-piece, 106k+ LOC zero-idle interactive furniture and appliance engine with 1° sub-grid rotation, PBR materials, and 6-locale search.'
+        },
+        {
+          src: 'img/builds/build_04_jade_keep.webp',
+          title: 'Contraption, Train & Fluid Compilers · Custom Engine Suite',
+          desc: '35,000+ LOC moving multi-block contraption, curved-track train, and 64-state Java-parity fluid engine running at 60 FPS across mobile and console.'
+        },
+        {
+          src: 'img/builds/build_05_deepslate_fortress.webp',
+          title: 'Procedural Worldgen & Architectural Showcase',
+          desc: 'Compiled procedural terrain and large-scale architectural builds with bit-packed multi-block rendering.'
+        },
+        { src: 'img/builds/build_01_stone_arena.webp', title: '', desc: '' },
+        { src: 'img/builds/build_02_spiral_watchtower.webp', title: '', desc: '' },
+        { src: 'img/builds/build_03_canopy_tree.webp', title: '', desc: '' },
+        { src: 'img/builds/build_04_jade_keep.webp', title: '', desc: '' },
+        { src: 'img/builds/build_05_deepslate_fortress.webp', title: '', desc: '' },
+        { src: 'img/builds/build_06_courtyard_sanctuary.webp', title: '', desc: '' }
+      ];
+
+      const lbBackdrop = document.getElementById('structureLightbox');
+      const lbImg = document.getElementById('lightboxImg');
+      const lbImgWrap = lbImg ? lbImg.parentElement : null;
+      const lbCounter = document.getElementById('lightboxCounter');
+      const lbTitle = document.getElementById('lightboxTitle');
+      const lbDesc = document.getElementById('lightboxDesc');
+      const lbPrev = document.getElementById('lightboxPrev');
+      const lbNext = document.getElementById('lightboxNext');
+      const lbClose = document.getElementById('lightboxClose');
+      const shotBtns = document.querySelectorAll('[data-lightbox-idx]');
+      let lbIndex = 0;
+
+      function showLightboxItem(idx) {
+        lbIndex = ((idx % GALLERY_ITEMS.length) + GALLERY_ITEMS.length) % GALLERY_ITEMS.length;
+        const item = GALLERY_ITEMS[lbIndex];
+        if (lbImg) {
+          lbImg.src = item.src;
+          lbImg.alt = item.title || 'Preview';
+        }
+        if (lbCounter) lbCounter.textContent = (lbIndex + 1) + ' / ' + GALLERY_ITEMS.length;
+        if (lbTitle) {
+          lbTitle.textContent = item.title;
+          lbTitle.style.display = item.title ? '' : 'none';
+        }
+        if (lbDesc) {
+          lbDesc.textContent = item.desc;
+          lbDesc.style.display = item.desc ? '' : 'none';
+        }
+        if (lbImgWrap) {
+          lbImgWrap.style.marginBottom = (item.title || item.desc) ? '0.9rem' : '0';
+        }
+      }
+
+      function openLightbox(idx) {
+        if (!lbBackdrop) return;
+        showLightboxItem(idx);
+        lbBackdrop.classList.add('open');
+      }
+
+      function closeLightbox() {
+        if (!lbBackdrop) return;
+        lbBackdrop.classList.remove('open');
+      }
+
+      shotBtns.forEach((btn) => {
+        btn.addEventListener('click', () => {
+          const idx = parseInt(btn.getAttribute('data-lightbox-idx') || '0', 10);
+          openLightbox(idx);
+        });
+      });
+
+      if (lbPrev) lbPrev.addEventListener('click', () => showLightboxItem(lbIndex - 1));
+      if (lbNext) lbNext.addEventListener('click', () => showLightboxItem(lbIndex + 1));
+      if (lbClose) lbClose.addEventListener('click', closeLightbox);
+      if (lbBackdrop) {
+        lbBackdrop.addEventListener('click', (e) => {
+          if (e.target === lbBackdrop) closeLightbox();
+        });
+      }
+      document.addEventListener('keydown', (e) => {
+        if (!lbBackdrop || !lbBackdrop.classList.contains('open')) return;
+        if (e.key === 'Escape') closeLightbox();
+        else if (e.key === 'ArrowLeft') showLightboxItem(lbIndex - 1);
+        else if (e.key === 'ArrowRight') showLightboxItem(lbIndex + 1);
+      });
+    })();
+  </script>
+</body>
+</html>

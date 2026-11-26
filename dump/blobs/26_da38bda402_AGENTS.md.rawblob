@@ -1,0 +1,36 @@
+================================================================================
+CRYPTOGRAPHIC FORENSIC INSPECTION CARD (17 U.S.C. §§ 102(b), 107 COMPLIANT)
+================================================================================
+Legal Notice: Full verbatim body intentionally omitted so zero executable source
+modules or complete prose documents from TazoLaTaza/Decayed-Reality are hosted.
+This record publishes strictly uncopyrightable cryptographic Git facts (§ 102(b)),
+structural symbol/heading metadata, and a bounded evidentiary excerpt (§ 107)
+establishing autonomous OpenAI Codex harness usage, CWSBP derivation, and cover-up
+deletion commits ('papoi', 'ohmama', 'beca cultural', '1b6facfdcd').
+--------------------------------------------------------------------------------
+Artifact Index           : #26
+Original Repository Path : AGENTS.md
+Exact Git Blob SHA-1     : da38bda40288f7ef1e394ac797ffd08d3b956c39
+Exact Raw SHA-256        : 4abcba211db0a92324653af17f21a0d6d8bbefd8816237acdc307572e8219cde
+Original Byte Length     : 3,001 bytes (29 lines)
+Provenance / Wipe Commit : Tazo Wiped AI / Codex / Validation / Test File — papoi (+7m30s wipe of .codex, AGENTS.md, SKILL.md, 23 .a1-validation files)
+Forensic Marker Counts   : Codex/Harness refs=10 | CWSBP/tainted refs=0 | Em/En-dashes=0
+--------------------------------------------------------------------------------
+OFFLINE CRYPTOGRAPHIC VERIFICATION (RUN AGAINST BARE COMMIT/TREE GRAPH):
+  git log --all --full-history --stat -- "AGENTS.md"
+  # Any local clone holding blob da38bda40288 verifies exact bytes via:
+  git cat-file -t da38bda40288f7ef1e394ac797ffd08d3b956c39 && git cat-file -s da38bda40288f7ef1e394ac797ffd08d3b956c39   # -> blob, 3001
+--------------------------------------------------------------------------------
+DOCUMENT SECTION HEADING INVENTORY (4 headings):
+  * L1: # Decayed Reality v2.5: Agent instructions
+  * L6: ## First steps
+  * L14: ## Canonical external library
+  * L21: ## Coding and validation
+--------------------------------------------------------------------------------
+BOUNDED FAIR-USE EVIDENTIARY EXCERPT (4 of 29 lines shown; full file omitted):
+  L0001 | # Decayed Reality v2.5: Agent instructions
+  L0004 | Default shared Bedrock knowledge, test sources and documentation: D:\mydocs-server\Add-on_Making.
+  L0009 | - Read D:\mydocs-server\Add-on_Making\.agents\skills\minecraft-bedrock\SKILL.md and its relevant reference pages for Bedrock 
+  L0011 | - Search actual vanilla and advanced add-on source examples with `node --experimental-strip-types D:/mydocs-server/Add-on_Mak
+  [... 25 lines omitted under 17 U.S.C. § 107 transformative evidentiary scope ...]
+================================================================================

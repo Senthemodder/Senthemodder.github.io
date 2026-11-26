@@ -1,0 +1,13 @@
+================================================================================
+AUTHORED BY COMPLAINANT (@Senthemodder / 120316848+Senthemodder) - 100% OWNED
+Original Repository Path : Decayed_Reality_BP/scripts/systems/clusterData.js
+Git Blob SHA-1           : 9821134066f51cff4f162bd27d613723ad971a19
+Original Byte Size       : 197 bytes
+Copyright Status         : Original work of Minh Le (@Senthemodder), published
+                           by the copyright owner as primary authorship proof.
+================================================================================
+
+// Stores relationships for multi-block cluster "chunks"
+// Key: childEntityId (string)
+// Value: { leader: Entity, leaderId?: string, offset: {x, y, z} }
+export const clusterHierarchy = new Map();

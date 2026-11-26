@@ -1,0 +1,68 @@
+================================================================================
+CRYPTOGRAPHIC FORENSIC INSPECTION CARD (17 U.S.C. §§ 102(b), 107 COMPLIANT)
+================================================================================
+Legal Notice: Full verbatim body intentionally omitted so zero executable source
+modules or complete prose documents from TazoLaTaza/Decayed-Reality are hosted.
+This record publishes strictly uncopyrightable cryptographic Git facts (§ 102(b)),
+structural symbol/heading metadata, and a bounded evidentiary excerpt (§ 107)
+establishing autonomous OpenAI Codex harness usage, CWSBP derivation, and cover-up
+deletion commits ('papoi', 'ohmama', 'beca cultural', '1b6facfdcd').
+--------------------------------------------------------------------------------
+Artifact Index           : #52
+Original Repository Path : scripts/destroyer-selection-tests.ts
+Exact Git Blob SHA-1     : 41d7be11bfc56eea8e14106779acb0f5d3fe503c
+Exact Raw SHA-256        : 9a920f47bf206165c4534f8e97d9d844a8d4b71dd302a72470671cba271bd880
+Original Byte Length     : 7,270 bytes (86 lines)
+Provenance / Wipe Commit : Tazo Wiped AI / Codex / Validation / Test File — Tentacle is finished! (wiped 23 automated *-tests.ts suites)
+Forensic Marker Counts   : Codex/Harness refs=0 | CWSBP/tainted refs=0 | Em/En-dashes=0
+--------------------------------------------------------------------------------
+OFFLINE CRYPTOGRAPHIC VERIFICATION (RUN AGAINST BARE COMMIT/TREE GRAPH):
+  git log --all --full-history --stat -- "scripts/destroyer-selection-tests.ts"
+  # Any local clone holding blob 41d7be11bfc5 verifies exact bytes via:
+  git cat-file -t 41d7be11bfc56eea8e14106779acb0f5d3fe503c && git cat-file -s 41d7be11bfc56eea8e14106779acb0f5d3fe503c   # -> blob, 7270
+--------------------------------------------------------------------------------
+MODULE IMPORT GRAPH (6 imports):
+  * L1: import assert from "node:assert/strict";
+  * L2: import {readFileSync} from "node:fs";
+  * L3: import {resolve} from "node:path";
+  * L4: import {runInNewContext} from "node:vm";
+  * L5: import {build,transformSync} from "esbuild";
+  * L6: import {test} from "node:test";
+--------------------------------------------------------------------------------
+DECLARED SYMBOL / TEST INVENTORY (up to 25 shown):
+  * L7: legacy
+  * L8: mocks
+  * L9: result
+  * L14: api
+  * L15: json
+  * L16: ground
+  * L17: changed
+  * L18: dimension
+  * L24: source
+  * L27: destroyer
+  * L28: test('all renderer variants unlock by Destroyer 5.5 independently of weights')
+  * L29: rc
+  * L38: test('later Destroyer weights reduce the early range while keeping it possible')
+  * L43: stage
+  * L48: test('grass family proportions progress from flat 75 percent to 95 percent')
+  * L50: counts
+  * L57: test('real grass selector heavily prefers flat without increasing support reads')
+  * L64: test('isolated exposed grass can still produce flat terrain clusters')
+  * L65: g
+  * L69: test('terrain exposure and crater guards still reject invalid anchors')
+  * L72: test('Destroyer singular and glued extraction accept grass while Devour remains restri')
+  * L76: job
+  * L81: test('Devour and Commanded variant ranges remain unchanged')
+  * L84: g
+--------------------------------------------------------------------------------
+BOUNDED FAIR-USE EVIDENTIARY EXCERPT (8 of 86 lines shown; full file omitted):
+  L0001 | import assert from "node:assert/strict";
+  L0002 | import {readFileSync} from "node:fs";
+  L0003 | import {resolve} from "node:path";
+  L0004 | import {runInNewContext} from "node:vm";
+  L0005 | import {build,transformSync} from "esbuild";
+  L0006 | import {test} from "node:test";
+  L0007 | const legacy=readFileSync("scripts/storm-regression-tests.mjs","utf8");
+  L0008 | const mocks=runInNewContext(legacy.slice(legacy.indexOf("const mocks="),legacy.indexOf("const modules="))+"\nmocks;") as Reco
+  [... 78 lines omitted under 17 U.S.C. § 107 transformative evidentiary scope ...]
+================================================================================

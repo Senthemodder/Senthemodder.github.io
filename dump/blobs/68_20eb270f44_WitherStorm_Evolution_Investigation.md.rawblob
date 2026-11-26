@@ -1,0 +1,46 @@
+================================================================================
+CRYPTOGRAPHIC FORENSIC INSPECTION CARD (17 U.S.C. §§ 102(b), 107 COMPLIANT)
+================================================================================
+Legal Notice: Full verbatim body intentionally omitted so zero executable source
+modules or complete prose documents from TazoLaTaza/Decayed-Reality are hosted.
+This record publishes strictly uncopyrightable cryptographic Git facts (§ 102(b)),
+structural symbol/heading metadata, and a bounded evidentiary excerpt (§ 107)
+establishing autonomous OpenAI Codex harness usage, CWSBP derivation, and cover-up
+deletion commits ('papoi', 'ohmama', 'beca cultural', '1b6facfdcd').
+--------------------------------------------------------------------------------
+Artifact Index           : #68
+Original Repository Path : WitherStorm_Evolution_Investigation.md
+Exact Git Blob SHA-1     : 20eb270f446ab2db2a41c93a11bd99934fa564ff
+Exact Raw SHA-256        : d58ef5b005b8053cf7f47c2a7906a13c23d883a48479602726f4a89cde9f75da
+Original Byte Length     : 4,861 bytes (111 lines)
+Provenance / Wipe Commit : Tazo Wiped AI / Codex / Validation / Test File — fortnite (wiped RuntimeRegressionTests.ts, WitherStorm_Evolution_Investigation.md, NOTE.md)
+Forensic Marker Counts   : Codex/Harness refs=0 | CWSBP/tainted refs=0 | Em/En-dashes=0
+--------------------------------------------------------------------------------
+OFFLINE CRYPTOGRAPHIC VERIFICATION (RUN AGAINST BARE COMMIT/TREE GRAPH):
+  git log --all --full-history --stat -- "WitherStorm_Evolution_Investigation.md"
+  # Any local clone holding blob 20eb270f446a verifies exact bytes via:
+  git cat-file -t 20eb270f446ab2db2a41c93a11bd99934fa564ff && git cat-file -s 20eb270f446ab2db2a41c93a11bd99934fa564ff   # -> blob, 4861
+--------------------------------------------------------------------------------
+DOCUMENT SECTION HEADING INVENTORY (14 headings):
+  * L1: # Wither Storm Evolution & Systems Investigation: Decayed Reality
+  * L7: ## 1. Procedural Evolution & Scaling (The "Mutation" System)
+  * L11: ### 1.1. Behavioral Logic (`ws_proc_points.js`)
+  * L28: ### 1.2. Molang Persistence Trick (`wither_storm.json`)
+  * L39: ## 2. Dynamic Tentacle System (Combat AI)
+  * L43: ### 2.1. The "Drilling" Mechanic
+  * L63: ### 2.2. Height-Aware Targeting
+  * L70: ## 3. Modular Model Architecture
+  * L74: ### 3.1. Phase Swapping
+  * L77: ### 3.2. Growth Bone Strategy
+  * L84: ## 4. Skybox & Atmosphere System
+  * L88: ### 4.1. Entity-Based Skybox (`decayed:skybox`)
+  * L94: ### 4.2. Fog Integration
+  * L100: ## 5. Evolution Tracks
+--------------------------------------------------------------------------------
+BOUNDED FAIR-USE EVIDENTIARY EXCERPT (4 of 111 lines shown; full file omitted):
+  L0001 | # Wither Storm Evolution & Systems Investigation: Decayed Reality
+  L0003 | This document outlines the technical architecture of the Wither Storm in the "Decayed Reality" project, focusing on its proce
+  L0005 | ---
+  L0007 | ## 1. Procedural Evolution & Scaling (The "Mutation" System)
+  [... 107 lines omitted under 17 U.S.C. § 107 transformative evidentiary scope ...]
+================================================================================

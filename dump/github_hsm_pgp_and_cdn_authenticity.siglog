@@ -1,0 +1,163 @@
+================================================================================
+CRYPTOGRAPHIC AUTHENTICITY CERTIFICATE: GITHUB HSM PGP SIGNATURES, STRIKINGLY
+SELF-HOSTED CDN EXHIBITS (SITE ID 14340141), & DISCORD 64-BIT SNOWFLAKES
+================================================================================
+
+A. GITHUB, INC. HARDWARE SECURITY MODULE (HSM) RSA PGP DIGITAL SIGNATURES
+   Public Verification Key: https://github.com/web-flow.gpg
+   Total Commits in Decayed-Reality: 1,310
+   GitHub-HSM PGP-Signed Commits (committer GitHub <[redacted-private-email]>): 304
+   GitHub-HSM PGP-Signed Commits Cryptographically Locking My 53 v2 Commits (12d892f0fadb): 2
+--------------------------------------------------------------------------------
+Because Git is a cryptographic Merkle DAG (each commit hashes its parent commit
+SHA-1s and root tree SHA-1), and both 59ae42d26516db9f8a5dd1869c2015a2d23553a6
+(Tazo!, 2026-02-12) and cbb6bbc036d8a2727105820384276501f60b67e2 (doofus, 2026-06-18)
+are signed by GitHub Inc.'s private HSM key AND descend directly from my 53 pre-v2.1
+commits (a19521d65196..12d892f0fadb, Oct 2025 - Jan 2026) and Persom's V2 downgrade
+(e7ea1ccb83, Oct 1, 2025), altering or backdating even 1 bit of my 53 commits
+is mathematically impossible without forging GitHub Inc.'s RSA PGP key.
+
+--- RAW PGP-SIGNED COMMIT 1: cbb6bbc036d8a2727105820384276501f60b67e2 (doofus, 2026-06-18) ---
+tree a0c43b8be441c71645b9fa8359d1c8972d7ee0cb
+parent c0947784e724edae7eda50eb637304ee0918b506
+author doofus <[redacted-private-email]> 1781802288 -0400
+committer GitHub <[redacted-private-email]> 1781802288 -0400
+gpgsig -----BEGIN PGP SIGNATURE-----
+ 
+ wsFcBAABCAAQBQJqNCUwCRC1aQ7uu5UhlAAA3OMQAIUYm2UBcP9HjDAagtXe98hc
+ ifVHwzwhjPv37+usVQ4exhIQNXCRbsDI2zgxu0absN7DuTI7uc2CGEqQ1fkLTAso
+ 9bFtBt6iZ89C8OGLbXGz2takxhZ93PxBT6iuFnmgqybMhetc/98m1YDdFAVXwBsX
+ WWyjwdfJB5cPmoG5y31ueBzU8jccEHKWIX7WwqRZf0mTz4SBY6vZ12dGIZer3Uj1
+ HJEnNS8vEr+sjig7HACZqRsJwMGd0Xtdm9PqCBVO0g+WcAyMC/P3MpGpaAlgRZAr
+ G8/d/mdW7ft5YK6mcrWMeM8r5hy3vk+6jX396Gp8b7leuvz94PwuV+qsUSXsVeoG
+ 0yyIWeDHlXyVV2z1pTrkVLl6NBWXDFgMs7FQIprXjsmunrgbondFOYU4i2KWf2l7
+ 7p3WuH8YuuppcfOgwE7IczUs/5A9QbrK/HSJ7Pu0uCai/OQ4HrwEsMV4dT+NOFix
+ LoXALIAX86q2g3sd4KwESFxLhLY4iqZR8ldv9NPWfuPKqZTpjn1yqoejorRUVfMp
+ t8uygulrWpmJ2jHgP1YLCkSdyMARCtRGEWcnjJBOv3Xs1cAeK/X5A4tKgaIK6LuZ
+ oBT8IJ+RixK7EYQTW7rnbslMsOLn8LaHAqKhG/nRCm5NybuMfUv4cvhbDWd03IpA
+ owBkigacfzGcqKAO7f5u
+ =rHhE
+ -----END PGP SIGNATURE-----
+ 
+
+Update project version in README (free to change back)
+
+--- RAW PGP-SIGNED COMMIT 2: 59ae42d26516db9f8a5dd1869c2015a2d23553a6 (Tazo!, 2026-02-12) ---
+tree fb1077e71da5ec30c62d236d962cc14d56a4b7a2
+parent ed670c47fbe3c1eb1bb25fb67952660e81db5f6e
+parent 0bf7c63bfa5b238db1e1c04aed9b71cc6f73a3cd
+author Tazo! <[redacted-owner-email]> 1770866644 -0300
+committer GitHub <[redacted-private-email]> 1770866644 -0300
+gpgsig -----BEGIN PGP SIGNATURE-----
+ 
+ wsFcBAABCAAQBQJpjUfUCRC1aQ7uu5UhlAAAfKEQACIlvB1pc3UyibxHrERpFawZ
+ AHS/qg+KRLsf/1cbxOc4mpLBcg2BmCgXUEL7M5CK71eXstbcw0qAPpmaOt2MnLR1
+ X2dDeQMc8oRZ1CyowmnFTLzCCef01+WoFFxfrTtgnG+1dtvvB9yyqF6G+Bvx9mSc
+ kHFBc/vHwgSLeUDfJA6rimaPi6R0OTY/GZgWEd2EQpXWShBEjFnaIbytA/0VxrYH
+ sdHS0mIBsEYcfF5Jj+rdHZkA4x9RLUaLCSx0UvqUNUCTdQH06GZHAxMuhdxQr6sD
+ JUjOz8j/aADOrZcAQCpaW2iNk1gOUoJe8PCxFhVTEVJ6gEM/pB3wOBTdF4CuxeTo
+ x7VTifjDoYDf97CcUCFEQWij/dSQaJRq1LBlVfDgxMv3ibymH2bNqo7gh1kLcTLc
+ tHDNQUNEpiKacEytjZlW5Hxmgjtaj9y3dO9xjQcpy1lWXpD4u2oGt7GuM/mrAHms
+ MYtgZIDqdfvXCBqFGuszOEVLF2WTAaowFRaA816Z7AUUV1X2OJoUhL1FcVTV+1UT
+ r7FUjmF+wwEyuOzqCdKmGH6X9sdbFBn7Tk/jbpx5f6A//f+UBEYzmbLOw5pwAJyU
+ uVgoL88xcHlrJ6Dw1YCxD4IcRgatVysFkjXVI7cdpI32eHYwmtt4/P5BpSbclqNh
+ buCU9cCbed8ZnmeWHJtY
+ =MTWt
+ -----END PGP SIGNATURE-----
+ 
+
+this could go really badly
+
+Optimize dragon targeting, centralize entity cache, and refactor multiple runtime systems
+
+B. SELF-AUTHENTICATING STRIKINGLY CLOUDINARY CDN ASSETS (SITE ID 14340141)
+   Uploaded directly by respondent [redacted-owner-email] to Strikingly's servers:
+   datePublished: 2026-11-24T05:14:11-08:00 | dateModified: 2026-11-24T11:27:50-08:00
+--------------------------------------------------------------------------------
+368946bf5d0bf6b18e56c162b87b5e6d59f584b9e522a97c97c99393a0285f07      968x824    158482 B  01_step_36_shot_1.png
+c646ae78778a8ba465ba1ec8944880d3a3fb1963b8943d2161ef2b2d155b3810      968x824     57150 B  02_step_36_shot_2.png
+22a4d120427d2146f34b80a5785aefeece26cb262362e1342bb42d002a511110      968x824     45522 B  03_step_36_shot_3.png
+fffc7f25ffbf463c8a068cf8199b32835636c50f19f60b3a045d9b7d980acc40      968x824     42836 B  04_step_36_shot_4.png
+509eea617550916c40f37a2ba9e79b9270f58263e3ada33ac8fae6b49852f129      968x824    124968 B  05_step_36_shot_5.png
+ac9ca17b81eb349f4f5ffbb1c51420eacfbb79f587dc49facb24cc9d8c722361      968x824    457820 B  06_step_36_shot_6.png
+b06d40b6a25de8895dad8d0e9cac4dedb47b946ca5a1310c1aed5e6b5aa11b9f      968x824    488835 B  07_step_36_shot_7.png
+b06d40b6a25de8895dad8d0e9cac4dedb47b946ca5a1310c1aed5e6b5aa11b9f      968x824    488835 B  08_step_36_shot_8.png
+21677d17aaf7b695ecc8fe2091cf21f7ca650907e57a214c94f1a6295880a115      968x824    155613 B  09_step_36_shot_9.png
+17c8e901fcbede59c0e75896d0c277b721702f866caadc58d0e3fad6e509f0c6      968x824    347471 B  10_step_36_shot_10.png
+8bee4e75986ac8287a3b7e35fcb1f545094dd3bfce9a5313f53692872d39d0b4      968x824    202846 B  11_step_36_shot_11.png
+baf8eb70046f9be1580b1ba97fda3158ae4af7892b0ada1d462e0d791b02710f      968x824     65654 B  12_step_36_shot_12.png
+f33b416f2a1bba7a68fc9558ecef9189ad2a442eb27eeb0fa6f973298808baea      968x824    461771 B  13_step_36_shot_13.png
+846161c08f6b5a4e19daadad5eb457b353d671ee77a59ffcead2dbc9f5a70bd4      968x824    697712 B  14_step_36_shot_14.png
+778c4d06297316f22d0ec6409239cae6f1ce06598a7b6527146f235be7f2d943      968x824    538601 B  15_step_36_shot_15.png
+96e5813935c7710877e23abd96dabd58c0fe4f09fa5999e2f94b4f9a271e21d6      968x824    502122 B  16_step_38_shot_1.png
+862069396a37145482ca77db5d62e3d9fa49cd79b9248cbb4bb6095a0b406de8      968x824    621857 B  17_step_38_shot_2.png
+862069396a37145482ca77db5d62e3d9fa49cd79b9248cbb4bb6095a0b406de8      968x824    621857 B  18_step_38_shot_3.png
+b1c37d43a42b5e74eb017acd31365d833592e1b509a671a95c1386ef53a7f452      968x824     83329 B  19_step_38_shot_4.png
+72110f07a2a75c5af0adf0ae4b331d27f1dd99c6d3cfa20aa24ab2f099a43157      968x824    416805 B  20_step_38_shot_5.png
+45c0ec636e7f84a05854587876fdfa6c3c42ad5352b93387e28a41d0c6385ea5      968x824    821053 B  21_step_38_shot_6.png
+b3e92af372b97c48f3fd4b01053ce72fe76b82c78589233620d563aee56504ef      968x824    675405 B  22_step_38_shot_7.png
+4a1bfe3f108212ea3700d6923d3d66e2cddacb604c282a43ad8f3189391faceb      968x824    209949 B  23_step_38_shot_8.png
+5d1269ef4f61d3b7917484966412ae06f6f49dd7ede0c030549df50aadb78b95      968x824    176398 B  24_step_38_shot_9.png
+f82e34cc7e1a0820f1e64109b0db53abb31e89498946b9a92071f7228882c33f      968x824    574648 B  25_step_38_shot_10.png
+414b693d9a35b9ea2e474bb4401243e194df59fc9af21916826834371ba2b488      968x824    207978 B  26_step_38_shot_11.png
+e49a08643748c7eb4c0022bedf2e89409d6fd20adae92b022a3853676e594b93      968x824    231894 B  27_step_38_shot_12.png
+c6abb4d5b0f67c8da5de98ed7357ae46ebdaeda598528530253fca4ca6aa9cb6      968x824    247033 B  28_step_38_shot_13.png
+9b0ed4fb4344e9cf597117affad6e22e9844e2ff8248017ff99991fe66622535      968x824    249021 B  29_step_38_shot_14.png
+88ada311638c40dd45582f0b8e9fab922e77bc5c3ac0cc130dfc089571ffa2d9      968x824    209941 B  30_step_38_shot_15.png
+73dd4c751dd82516046cc79bef7385e975337143b5b9768bab1f9e7edfd08d28      968x824    207558 B  31_step_40_shot_1.png
+422adcff3bcac9e7563c4a8f43c941bea18be269a07633c280fbaa4072f2a7c5      968x824    215010 B  32_step_40_shot_2.png
+00561282b1a7b136a51e7956e837121da0d93e4256ad9003ff8ab458ff52ed81      968x824    209857 B  33_step_40_shot_3.png
+cedea20c94305051c3417fb3e19c0648b57bfe2b744cb77b7a075a025e3f4f75      968x824    239091 B  34_step_40_shot_4.png
+efddbf4cf9f42ddc30d126d803220630041446b37f6411b3285baead56102d72      968x824    249043 B  35_step_40_shot_5.png
+36e458fc93a6f955261402f20637b5b552f077e0c1b930aef60dab400161ee77      968x824    375505 B  36_step_40_shot_6.png
+c3087e0032efaa03f11a83f2411de256a939b2b8464869483a33fc4f290cceb8      968x824     80802 B  37_step_40_shot_7.png
+231c9f3a4723513b65a7063f13ca4ffb860cfc7734f18e612ad088f5938bca08      968x824    335691 B  38_step_40_shot_8.png
+ac77483edcde2c2cd356b0060813eaee209cfd8df6d2aa71b8332aa4e05adf99      968x824     77455 B  39_step_40_shot_9.png
+98bb3122bb8d148a64edc30d9d0441e25ca710f8327eebdbf9403b3c313e9d47      968x824     35188 B  40_step_40_shot_10.png
+1f405478f789649de1265d94a3d004ed4c0f48d73b7a1465a5dcb0b6a913a702      968x824     23108 B  41_step_40_shot_11.png
+3e9d6d807cfbba934270463c25cd6c25efbaa29da21494cfe728936800953d6c      968x824     54560 B  42_step_40_shot_12.png
+d063ecc7f4b8426a71fc3c88640d982c80349e425c671a9eea479d7c87603214      968x824     38046 B  43_step_40_shot_13.png
+d063ecc7f4b8426a71fc3c88640d982c80349e425c671a9eea479d7c87603214      968x824     38046 B  44_final_step_40_comments.png
+
+C. EVIDENTIARY SCREENSHOT CHAIN-OF-CUSTODY MANIFEST (SHA-256 & PIXEL DIMENSIONS)
+--------------------------------------------------------------------------------
+d542a569aa29999dcae99a03d0bca2dc2791486cf2c1a75d666966c6d40a6ac6    1280x3859   2053524 B  00_ouroboros_receipt_card.png
+b3abc0d769938d9445d20c8528be9d45a5d6146eb1499506896f5fce7599fd63     1024x542     81483 B  01_pledge_2301_cant_find_screenshots.jpg
+a72026362e0d0076cd4e8fb582a7f8dc98554b86abf811c77a2f66d180be34a2      841x736     73696 B  02_pledge_2303_doofus_1111pm_crop.jpg
+de8b385f812bbab45ef64118488cec37ea4cc9c4232506419de631d08393dc85      865x724     80590 B  03_pledge_2304_sentence_implies_it.jpg
+ddb0c8e22f48f0a40dac8a2fd78547601423db48e7e975975991f77ec473c7b5     1024x590     84058 B  04_pledge_2310_drops_scam_claim.jpg
+422adcff3bcac9e7563c4a8f43c941bea18be269a07633c280fbaa4072f2a7c5      968x824    215010 B  05_newsletter_redacted_jaden_as_victim.png
+36e458fc93a6f955261402f20637b5b552f077e0c1b930aef60dab400161ee77      968x824    375505 B  06_newsletter_jadenxgamer_searchbar_and_liza_edit.png
+b830df69d95424bd319d6c66c35f55592c2bf5708ac766a9cbb43383fd22f431     1024x473     69692 B  07_liza_2153_unsolicited_dm_pronouns_bio.jpg
+c7993874f07b606727defefbf944f69deb0e7492c655bb4ee042083bb34434fb     1024x604     67909 B  08_liza_2214_original_unedited_ok.jpg
+45c0ec636e7f84a05854587876fdfa6c3c42ad5352b93387e28a41d0c6385ea5      968x824    821053 B  09_newsletter_tazo_authorship_admission_img15.png
+4a1bfe3f108212ea3700d6923d3d66e2cddacb604c282a43ad8f3189391faceb      968x824    209949 B  10_newsletter_tazo_license_rejection_img16.png
+5d1269ef4f61d3b7917484966412ae06f6f49dd7ede0c030549df50aadb78b95      968x824    176398 B  11_newsletter_honeypot_misread_as_prompt_img18.png
+231c9f3a4723513b65a7063f13ca4ffb860cfc7734f18e612ad088f5938bca08      968x824    335691 B  12_newsletter_teacup303_git_blame_img30.png
+b06d40b6a25de8895dad8d0e9cac4dedb47b946ca5a1310c1aed5e6b5aa11b9f      968x824    488835 B  13_newsletter_june19_emoji_comment_img01.png
+ec8c47450e8f78b34afefda1e1dbf9bf6bf80782112d0d3b231656f58ef731f7     1024x547     76920 B  14_doofus_1111pm_leaked_crop_via_liza.jpg
+6cf2c97cccf8ff38d56ecb8eac305845a857d6ffc9d663cfeeb7ba57dc2ed990      805x516    125916 B  15_doofus_1906_denies_sharing_info.png
+b1028de72afa39bb47c7527654269e93b6f5afb2e6351a70770e1c5e0e887a7f      922x517     78997 B  16_crackers_dyno_ban_nov23_1513.png
+83423d6c0c46ecbe81088b0b56e5735920e856502c5bc4024ba4f5a8109cec9d      921x685     90936 B  17_jaden_not_my_client_2306.jpg
+f47d029e28ac6995da6778ea66353e380b7472f21e7b166d391b3ff2258c4e53      922x763     86820 B  18_jaden_full_context_part1_2307.jpg
+928242712d5f92b373676a81c31177b28a7b003166647a03f1109c139aeac461     1024x682     91327 B  19_jaden_full_context_part2_2308.jpg
+7aa3b926647d29a6d9b40883e5c6cdeb6cf15770bf61df4e15ee2fc5e8921a8e      967x550     60181 B  20_nov25_riley_burnout_excuse_1104.jpg
+7add7105afedd726fdffa406722d876efe2fef2a672199e8a82b2f692e980ae2      978x723     65506 B  21_nov25_riley_proof_wont_change_it_1106.jpg
+25f5057563a181155aa7e5fe3ce51a3ca11db63f4d4a60deeb1c43d36ae21504      931x732     83624 B  22_nov25_clover_bank_charge_definition_1110.jpg
+2477ef32a93fb6aeb9ae9397d3d0965c7321e7f39f229e2d082e0200e00be834      939x736     64378 B  23_nov25_goalpost_shift_to_05_link_1111.jpg
+45cc9f74be715f40990ce28a8a77fddec4e94acebd0717cd3a58beb5113b8bae      976x723     80846 B  24_nov25_riley_impossible_double_bind_1114.jpg
+6f606e82e1c95cd2a313a4fe49eb1dfd0db90ed0e42bcf735597d86e7f212f0e      963x649     89858 B  25_decayed_locked_announcements_everyone_ping.jpg
+
+D. IMMUTABLE 64-BIT DISCORD SERVER SNOWFLAKE CRYPTOGRAPHIC TIMESTAMPS
+   Formula: Unix_ms = (Snowflake_ID >> 22) + 1420070400000
+--------------------------------------------------------------------------------
+1001457341985726465  ->  1658836436507 ms  ->  2022-07-26 11:53:56.507 UTC  (2022-07-26 18:53:56.507 UTC+7)  [Decayed Discord Guild ID]
+1001457342824591402  ->  1658836436707 ms  ->  2022-07-26 11:53:56.707 UTC  (2022-07-26 18:53:56.707 UTC+7)  [Decayed #announcements Channel ID]
+1574862145340842005  ->  1795546794973 ms  ->  2026-11-24 18:59:54.973 UTC  (2026-11-25 01:59:54.973 UTC+7)  [Tazo! @everyone Defamation Broadcast Message ID]
+987817685293355028  ->  1655584488939 ms  ->  2022-06-18 20:34:48.939 UTC  (2022-06-19 03:34:48.939 UTC+7)  [Cracker's Modded Community Guild ID]
+
+CRITICAL SNOWFLAKE PROOF:
+  Broadcast Message 1574862145340842005 fired at 2026-11-24T18:59:54.973Z,
+  whereas Strikingly's server JSON-LD dateModified is 2026-11-24T11:27:50-08:00
+  (2026-11-24T19:27:50.000Z) -- proving respondent edited the live blog post
+  27 minutes and 55 seconds AFTER blasting it to @everyone in a locked server.

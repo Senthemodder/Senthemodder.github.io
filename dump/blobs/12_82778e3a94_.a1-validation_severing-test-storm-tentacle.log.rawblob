@@ -1,0 +1,28 @@
+================================================================================
+CRYPTOGRAPHIC FORENSIC INSPECTION CARD (17 U.S.C. §§ 102(b), 107 COMPLIANT)
+================================================================================
+Legal Notice: Full verbatim body intentionally omitted so zero executable source
+modules or complete prose documents from TazoLaTaza/Decayed-Reality are hosted.
+This record publishes strictly uncopyrightable cryptographic Git facts (§ 102(b)),
+structural symbol/heading metadata, and a bounded evidentiary excerpt (§ 107)
+establishing autonomous OpenAI Codex harness usage, CWSBP derivation, and cover-up
+deletion commits ('papoi', 'ohmama', 'beca cultural', '1b6facfdcd').
+--------------------------------------------------------------------------------
+Artifact Index           : #12
+Original Repository Path : .a1-validation/severing-test-storm-tentacle.log
+Exact Git Blob SHA-1     : 82778e3a946fb8cd17a2bb095b9f2245805b6c2c
+Exact Raw SHA-256        : 3715f5b85dcc385fc26c64fcbcbb97407e2138a8c210eedd5307921336dfa96a
+Original Byte Length     : 5,899 bytes (47 lines)
+Provenance / Wipe Commit : Tazo Wiped AI / Codex / Validation / Test File — papoi (+7m30s wipe of .codex, AGENTS.md, SKILL.md, 23 .a1-validation files)
+Forensic Marker Counts   : Codex/Harness refs=0 | CWSBP/tainted refs=0 | Em/En-dashes=1
+--------------------------------------------------------------------------------
+OFFLINE CRYPTOGRAPHIC VERIFICATION (RUN AGAINST BARE COMMIT/TREE GRAPH):
+  git log --all --full-history --stat -- ".a1-validation/severing-test-storm-tentacle.log"
+  # Any local clone holding blob 82778e3a946f verifies exact bytes via:
+  git cat-file -t 82778e3a946fb8cd17a2bb095b9f2245805b6c2c && git cat-file -s 82778e3a946fb8cd17a2bb095b9f2245805b6c2c   # -> blob, 5899
+--------------------------------------------------------------------------------
+BOUNDED FAIR-USE EVIDENTIARY EXCERPT (2 of 47 lines shown; full file omitted):
+  L0014 | Four active owners acquired on the same enrollment pass and held under pressure; offline combined mock update mean=0.771ms/ti
+  L0030 | [rtk] /!\ No hook installed — run `rtk init -g` for automatic token savings
+  [... 45 lines omitted under 17 U.S.C. § 107 transformative evidentiary scope ...]
+================================================================================

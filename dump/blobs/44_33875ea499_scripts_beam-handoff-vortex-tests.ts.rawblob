@@ -1,0 +1,56 @@
+================================================================================
+CRYPTOGRAPHIC FORENSIC INSPECTION CARD (17 U.S.C. §§ 102(b), 107 COMPLIANT)
+================================================================================
+Legal Notice: Full verbatim body intentionally omitted so zero executable source
+modules or complete prose documents from TazoLaTaza/Decayed-Reality are hosted.
+This record publishes strictly uncopyrightable cryptographic Git facts (§ 102(b)),
+structural symbol/heading metadata, and a bounded evidentiary excerpt (§ 107)
+establishing autonomous OpenAI Codex harness usage, CWSBP derivation, and cover-up
+deletion commits ('papoi', 'ohmama', 'beca cultural', '1b6facfdcd').
+--------------------------------------------------------------------------------
+Artifact Index           : #44
+Original Repository Path : scripts/beam-handoff-vortex-tests.ts
+Exact Git Blob SHA-1     : 33875ea499f6c261959a062dd43ef075caaf1e8e
+Exact Raw SHA-256        : 5ffde2c18cfbfac76bea60bb77b42f39088fe844b8d398a8896a040aa90fc754
+Original Byte Length     : 7,747 bytes (90 lines)
+Provenance / Wipe Commit : Tazo Wiped AI / Codex / Validation / Test File — Tentacle is finished! (wiped 23 automated *-tests.ts suites)
+Forensic Marker Counts   : Codex/Harness refs=0 | CWSBP/tainted refs=0 | Em/En-dashes=0
+--------------------------------------------------------------------------------
+OFFLINE CRYPTOGRAPHIC VERIFICATION (RUN AGAINST BARE COMMIT/TREE GRAPH):
+  git log --all --full-history --stat -- "scripts/beam-handoff-vortex-tests.ts"
+  # Any local clone holding blob 33875ea499f6 verifies exact bytes via:
+  git cat-file -t 33875ea499f6c261959a062dd43ef075caaf1e8e && git cat-file -s 33875ea499f6c261959a062dd43ef075caaf1e8e   # -> blob, 7747
+--------------------------------------------------------------------------------
+MODULE IMPORT GRAPH (6 imports):
+  * L1: import assert from "node:assert/strict";
+  * L2: import {readFileSync} from "node:fs";
+  * L3: import {resolve} from "node:path";
+  * L4: import {runInNewContext} from "node:vm";
+  * L5: import {build} from "esbuild";
+  * L6: import {test} from "node:test";
+--------------------------------------------------------------------------------
+DECLARED SYMBOL / TEST INVENTORY (up to 25 shown):
+  * L7: legacy
+  * L8: mocks
+  * L9: modules
+  * L10: extra
+  * L11: bundle
+  * L16: api
+  * L17: setup
+  * L21: dim
+  * L22: entity
+  * L23: storm
+  * L25: head
+  * L26: cluster
+  * L31: before
+  * L41: closer
+  * L68: source
+  * L69: state
+  * L80: before
+  * L84: child
+--------------------------------------------------------------------------------
+BOUNDED FAIR-USE EVIDENTIARY EXCERPT (2 of 90 lines shown; full file omitted):
+  L0057 | await test("failed capture retries are bounded then permit vortex fallback",()=>{
+  L0066 |   assert.equal(cfg.basePull,1.16);assert.equal(cfg.directPullSpeed,3);assert.equal(cfg.vortexImpulseLimit,.84);assert.equal(c
+  [... 88 lines omitted under 17 U.S.C. § 107 transformative evidentiary scope ...]
+================================================================================

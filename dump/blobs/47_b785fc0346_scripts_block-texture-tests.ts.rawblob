@@ -1,0 +1,44 @@
+================================================================================
+CRYPTOGRAPHIC FORENSIC INSPECTION CARD (17 U.S.C. §§ 102(b), 107 COMPLIANT)
+================================================================================
+Legal Notice: Full verbatim body intentionally omitted so zero executable source
+modules or complete prose documents from TazoLaTaza/Decayed-Reality are hosted.
+This record publishes strictly uncopyrightable cryptographic Git facts (§ 102(b)),
+structural symbol/heading metadata, and a bounded evidentiary excerpt (§ 107)
+establishing autonomous OpenAI Codex harness usage, CWSBP derivation, and cover-up
+deletion commits ('papoi', 'ohmama', 'beca cultural', '1b6facfdcd').
+--------------------------------------------------------------------------------
+Artifact Index           : #47
+Original Repository Path : scripts/block-texture-tests.ts
+Exact Git Blob SHA-1     : b785fc03460d61198cadca1f063f5c2e5c1315bc
+Exact Raw SHA-256        : 5b857a5a7b7767fffb33d9c5404e9525c1c5256475d49f3aeeb74d5dc4e54813
+Original Byte Length     : 2,906 bytes (43 lines)
+Provenance / Wipe Commit : Tazo Wiped AI / Codex / Validation / Test File — Tentacle is finished! (wiped 23 automated *-tests.ts suites)
+Forensic Marker Counts   : Codex/Harness refs=0 | CWSBP/tainted refs=0 | Em/En-dashes=0
+--------------------------------------------------------------------------------
+OFFLINE CRYPTOGRAPHIC VERIFICATION (RUN AGAINST BARE COMMIT/TREE GRAPH):
+  git log --all --full-history --stat -- "scripts/block-texture-tests.ts"
+  # Any local clone holding blob b785fc03460d verifies exact bytes via:
+  git cat-file -t b785fc03460d61198cadca1f063f5c2e5c1315bc && git cat-file -s b785fc03460d61198cadca1f063f5c2e5c1315bc   # -> blob, 2906
+--------------------------------------------------------------------------------
+MODULE IMPORT GRAPH (4 imports):
+  * L1: import assert from "node:assert/strict";
+  * L2: import {existsSync,readFileSync,readdirSync} from "node:fs";
+  * L3: import {dirname,basename} from "node:path";
+  * L4: import {corruptedGround} from "../src/biology/rules.ts";
+--------------------------------------------------------------------------------
+DECLARED SYMBOL / TEST INVENTORY (up to 25 shown):
+  * L5: rp
+  * L6: walk
+  * L7: exists
+  * L8: inheritedMissing
+  * L14: text
+  * L28: set
+  * L37: sand
+--------------------------------------------------------------------------------
+BOUNDED FAIR-USE EVIDENTIARY EXCERPT (3 of 43 lines shown; full file omitted):
+  L0026 |  assert.ok(!/decayed_decayed_|decayed_withered_|mushroon/.test(basename(file)),"Redundant or misspelled name "+file);
+  L0034 | assert.ok(exists(root+"withered_stone/withered_stone"));
+  L0035 | assert.ok(exists(root+"withered_foliage/withered_bush"));
+  [... 40 lines omitted under 17 U.S.C. § 107 transformative evidentiary scope ...]
+================================================================================

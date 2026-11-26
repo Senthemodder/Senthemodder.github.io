@@ -1,0 +1,37 @@
+================================================================================
+CRYPTOGRAPHIC FORENSIC INSPECTION CARD (17 U.S.C. §§ 102(b), 107 COMPLIANT)
+================================================================================
+Legal Notice: Full verbatim body intentionally omitted so zero executable source
+modules or complete prose documents from TazoLaTaza/Decayed-Reality are hosted.
+This record publishes strictly uncopyrightable cryptographic Git facts (§ 102(b)),
+structural symbol/heading metadata, and a bounded evidentiary excerpt (§ 107)
+establishing autonomous OpenAI Codex harness usage, CWSBP derivation, and cover-up
+deletion commits ('papoi', 'ohmama', 'beca cultural', '1b6facfdcd').
+--------------------------------------------------------------------------------
+Artifact Index           : #34
+Original Repository Path : docs/flat-clusters.md
+Exact Git Blob SHA-1     : 01d81a7d65575d00060014cd23b99ed1041e6fb9
+Exact Raw SHA-256        : 2d014006d47d69551e1ff5e18e109f24af607f1057d926772b71046307624417
+Original Byte Length     : 5,409 bytes (52 lines)
+Provenance / Wipe Commit : Tazo Wiped AI / Codex / Validation / Test File — ohmama (wiped 6 docs/*.md AI specs)
+Forensic Marker Counts   : Codex/Harness refs=0 | CWSBP/tainted refs=0 | Em/En-dashes=0
+--------------------------------------------------------------------------------
+OFFLINE CRYPTOGRAPHIC VERIFICATION (RUN AGAINST BARE COMMIT/TREE GRAPH):
+  git log --all --full-history --stat -- "docs/flat-clusters.md"
+  # Any local clone holding blob 01d81a7d6557 verifies exact bytes via:
+  git cat-file -t 01d81a7d65575d00060014cd23b99ed1041e6fb9 && git cat-file -s 01d81a7d65575d00060014cd23b99ed1041e6fb9   # -> blob, 5409
+--------------------------------------------------------------------------------
+DOCUMENT SECTION HEADING INVENTORY (6 headings):
+  * L1: # Flat terrain clusters
+  * L4: ## Behavior
+  * L14: ## Files changed in this task
+  * L32: ## Validation
+  * L44: ## In-game checks
+  * L51: ## Approximation limits
+--------------------------------------------------------------------------------
+BOUNDED FAIR-USE EVIDENTIARY EXCERPT (3 of 52 lines shown; full file omitted):
+  L0002 | Branch: ohgod. No commit or push made. Existing storm stabilization changes and current user-edited normal geometry were pres
+  L0012 | - Terrain jobs retain the queue limit of 16, six removals and 24 probes per update, loaded-chunk checks and natural-block fil
+  L0052 | Layer rectangles fill small concavities and omit sloped edge fragments narrower than a block center. Arbitrary-yaw rounding c
+  [... 49 lines omitted under 17 U.S.C. § 107 transformative evidentiary scope ...]
+================================================================================

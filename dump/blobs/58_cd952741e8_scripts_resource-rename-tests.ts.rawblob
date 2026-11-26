@@ -1,0 +1,61 @@
+================================================================================
+CRYPTOGRAPHIC FORENSIC INSPECTION CARD (17 U.S.C. §§ 102(b), 107 COMPLIANT)
+================================================================================
+Legal Notice: Full verbatim body intentionally omitted so zero executable source
+modules or complete prose documents from TazoLaTaza/Decayed-Reality are hosted.
+This record publishes strictly uncopyrightable cryptographic Git facts (§ 102(b)),
+structural symbol/heading metadata, and a bounded evidentiary excerpt (§ 107)
+establishing autonomous OpenAI Codex harness usage, CWSBP derivation, and cover-up
+deletion commits ('papoi', 'ohmama', 'beca cultural', '1b6facfdcd').
+--------------------------------------------------------------------------------
+Artifact Index           : #58
+Original Repository Path : scripts/resource-rename-tests.ts
+Exact Git Blob SHA-1     : cd952741e8e57531132bb13f8244e0d23bf21316
+Exact Raw SHA-256        : e7bb91347a69fa2d4921d2b4a054a06e0c2c4ade7960399078d3009c07ff35db
+Original Byte Length     : 6,495 bytes (79 lines)
+Provenance / Wipe Commit : Tazo Wiped AI / Codex / Validation / Test File — Tentacle is finished! (wiped 23 automated *-tests.ts suites)
+Forensic Marker Counts   : Codex/Harness refs=0 | CWSBP/tainted refs=4 | Em/En-dashes=0
+--------------------------------------------------------------------------------
+OFFLINE CRYPTOGRAPHIC VERIFICATION (RUN AGAINST BARE COMMIT/TREE GRAPH):
+  git log --all --full-history --stat -- "scripts/resource-rename-tests.ts"
+  # Any local clone holding blob cd952741e8e5 verifies exact bytes via:
+  git cat-file -t cd952741e8e57531132bb13f8244e0d23bf21316 && git cat-file -s cd952741e8e57531132bb13f8244e0d23bf21316   # -> blob, 6495
+--------------------------------------------------------------------------------
+MODULE IMPORT GRAPH (6 imports):
+  * L1: import assert from "node:assert/strict";
+  * L2: import {readFileSync,existsSync} from "node:fs";
+  * L3: import {execFileSync} from "node:child_process";
+  * L4: import nbt from "prismarine-nbt";
+  * L5: import ts from "typescript";
+  * L6: import {corruptedGround} from "../src/biology/rules.ts";
+--------------------------------------------------------------------------------
+DECLARED SYMBOL / TEST INVENTORY (up to 25 shown):
+  * L7: read
+  * L8: report
+  * L9: files
+  * L10: ids
+  * L11: documents
+  * L13: text
+  * L19: terrain
+  * L20: inheritedVanilla
+  * L21: isInheritedVanilla
+  * L23: original
+  * L28: existsTexture
+  * L29: walk
+  * L46: text
+  * L47: ast
+  * L48: duplicates
+  * L59: remap
+  * L61: file
+  * L63: next
+  * L64: expected
+  * L68: mapping
+  * L70: old
+  * L71: rename
+--------------------------------------------------------------------------------
+BOUNDED FAIR-USE EVIDENTIARY EXCERPT (3 of 79 lines shown; full file omitted):
+  L0034 |     if(key==="texture"&&/^(decayed_|withered_)/.test(v)&&!terrain[v]&&!icons[v])failures.push(file+": missing atlas "+v);
+  L0057 |   if(d.original&&d.id.startsWith("decayed:withered_"))assert.ok(corruptedGround(d.to),"Lost corruption eligibility "+d.to);
+  L0059 | const remap=(value:string):string=>value.replace(/[A-Za-z0-9_]+/g,token=>token.includes("tainted_")?token.replaceAll("tainted
+  [... 76 lines omitted under 17 U.S.C. § 107 transformative evidentiary scope ...]
+================================================================================

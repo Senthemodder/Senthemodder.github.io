@@ -1,0 +1,37 @@
+================================================================================
+CRYPTOGRAPHIC FORENSIC INSPECTION CARD (17 U.S.C. §§ 102(b), 107 COMPLIANT)
+================================================================================
+Legal Notice: Full verbatim body intentionally omitted so zero executable source
+modules or complete prose documents from TazoLaTaza/Decayed-Reality are hosted.
+This record publishes strictly uncopyrightable cryptographic Git facts (§ 102(b)),
+structural symbol/heading metadata, and a bounded evidentiary excerpt (§ 107)
+establishing autonomous OpenAI Codex harness usage, CWSBP derivation, and cover-up
+deletion commits ('papoi', 'ohmama', 'beca cultural', '1b6facfdcd').
+--------------------------------------------------------------------------------
+Artifact Index           : #65
+Original Repository Path : .a1-validation/phase-comparison.json
+Exact Git Blob SHA-1     : 097db306f3925514b4a4458f7716c7944187a386
+Exact Raw SHA-256        : 1c3daca91aed15074d969f178daaca3881cec790b2b2120d31ad12b52164072b
+Original Byte Length     : 16,803 bytes (674 lines)
+Provenance / Wipe Commit : Tazo Wiped AI / Codex / Validation / Test File — fortnite (wiped RuntimeRegressionTests.ts, WitherStorm_Evolution_Investigation.md, NOTE.md)
+Forensic Marker Counts   : Codex/Harness refs=0 | CWSBP/tainted refs=0 | Em/En-dashes=0
+--------------------------------------------------------------------------------
+OFFLINE CRYPTOGRAPHIC VERIFICATION (RUN AGAINST BARE COMMIT/TREE GRAPH):
+  git log --all --full-history --stat -- ".a1-validation/phase-comparison.json"
+  # Any local clone holding blob 097db306f392 verifies exact bytes via:
+  git cat-file -t 097db306f3925514b4a4458f7716c7944187a386 && git cat-file -s 097db306f3925514b4a4458f7716c7944187a386   # -> blob, 16803
+--------------------------------------------------------------------------------
+JSON SCHEMA / TOP-LEVEL KEY INVENTORY:
+  * root: array[24 items]
+--------------------------------------------------------------------------------
+BOUNDED FAIR-USE EVIDENTIARY EXCERPT (8 of 674 lines shown; full file omitted):
+  L0001 | [
+  L0002 |   {
+  L0003 |     "phase": "phase4",
+  L0004 |     "variant": 1,
+  L0005 |     "mode": "Creative",
+  L0006 |     "root": {
+  L0007 |       "x": 7.658778300292454,
+  L0008 |       "y": 84.1034459695794,
+  [... 666 lines omitted under 17 U.S.C. § 107 transformative evidentiary scope ...]
+================================================================================

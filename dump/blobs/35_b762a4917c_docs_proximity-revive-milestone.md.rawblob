@@ -1,0 +1,41 @@
+================================================================================
+CRYPTOGRAPHIC FORENSIC INSPECTION CARD (17 U.S.C. §§ 102(b), 107 COMPLIANT)
+================================================================================
+Legal Notice: Full verbatim body intentionally omitted so zero executable source
+modules or complete prose documents from TazoLaTaza/Decayed-Reality are hosted.
+This record publishes strictly uncopyrightable cryptographic Git facts (§ 102(b)),
+structural symbol/heading metadata, and a bounded evidentiary excerpt (§ 107)
+establishing autonomous OpenAI Codex harness usage, CWSBP derivation, and cover-up
+deletion commits ('papoi', 'ohmama', 'beca cultural', '1b6facfdcd').
+--------------------------------------------------------------------------------
+Artifact Index           : #35
+Original Repository Path : docs/proximity-revive-milestone.md
+Exact Git Blob SHA-1     : b762a4917c4f5614f0adcecd89ecfd3111b5cdfe
+Exact Raw SHA-256        : 3ad5c03141e31dbef2ea2d403c1955d1a00787bd574613291042145186359fb5
+Original Byte Length     : 7,163 bytes (80 lines)
+Provenance / Wipe Commit : Tazo Wiped AI / Codex / Validation / Test File — ohmama (wiped 6 docs/*.md AI specs)
+Forensic Marker Counts   : Codex/Harness refs=0 | CWSBP/tainted refs=1 | Em/En-dashes=2
+--------------------------------------------------------------------------------
+OFFLINE CRYPTOGRAPHIC VERIFICATION (RUN AGAINST BARE COMMIT/TREE GRAPH):
+  git log --all --full-history --stat -- "docs/proximity-revive-milestone.md"
+  # Any local clone holding blob b762a4917c4f verifies exact bytes via:
+  git cat-file -t b762a4917c4f5614f0adcecd89ecfd3111b5cdfe && git cat-file -s b762a4917c4f5614f0adcecd89ecfd3111b5cdfe   # -> blob, 7163
+--------------------------------------------------------------------------------
+DOCUMENT SECTION HEADING INVENTORY (7 headings):
+  * L1: # Proximity grabbing, construction budget, revive layout and corruption command
+  * L5: ## Reused behavior
+  * L13: ## Revive lifecycle
+  * L23: ## Admin command
+  * L41: ## Files changed by this milestone
+  * L61: ## Validation
+  * L73: ## In-game checks remaining
+--------------------------------------------------------------------------------
+BOUNDED FAIR-USE EVIDENTIARY EXCERPT (6 of 80 lines shown; full file omitted):
+  L0003 | Implemented on `ohgod`. No commit or push was made.
+  L0035 | - Sickness calls the real `exposeSickness` function. Exposure is 1–400, default 400. Survival/Adventure restrictions, existin
+  L0037 | - Terrain uses the same `corruptionMap` and conversion function as automatic tainted corruption. Radius is an integer 0–8, de
+  L0053 | - `Decayed_Reality_BP/animations/witherstorm_basic.json`
+  L0069 | - Latest general storm suite: 35/45 passed. Three additional classification assertions fail after a concurrent workspace edit
+  L0070 | - Both changed behavior-pack JSON files parse successfully; the changed TypeScript files contain no stale CWSBP namespace ide
+  [... 74 lines omitted under 17 U.S.C. § 107 transformative evidentiary scope ...]
+================================================================================

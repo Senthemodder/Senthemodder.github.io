@@ -1,0 +1,57 @@
+================================================================================
+CRYPTOGRAPHIC FORENSIC INSPECTION CARD (17 U.S.C. §§ 102(b), 107 COMPLIANT)
+================================================================================
+Legal Notice: Full verbatim body intentionally omitted so zero executable source
+modules or complete prose documents from TazoLaTaza/Decayed-Reality are hosted.
+This record publishes strictly uncopyrightable cryptographic Git facts (§ 102(b)),
+structural symbol/heading metadata, and a bounded evidentiary excerpt (§ 107)
+establishing autonomous OpenAI Codex harness usage, CWSBP derivation, and cover-up
+deletion commits ('papoi', 'ohmama', 'beca cultural', '1b6facfdcd').
+--------------------------------------------------------------------------------
+Artifact Index           : #48
+Original Repository Path : scripts/catalyst-behavior-tests.ts
+Exact Git Blob SHA-1     : c95e1908f913641b52e2ca194b6bfc46a9062b29
+Exact Raw SHA-256        : cbcfb7cd635d1781fcbfb535e88caba7c18e7481d30fee4b995da53dd501952e
+Original Byte Length     : 8,623 bytes (71 lines)
+Provenance / Wipe Commit : Tazo Wiped AI / Codex / Validation / Test File — Tentacle is finished! (wiped 23 automated *-tests.ts suites)
+Forensic Marker Counts   : Codex/Harness refs=0 | CWSBP/tainted refs=0 | Em/En-dashes=0
+--------------------------------------------------------------------------------
+OFFLINE CRYPTOGRAPHIC VERIFICATION (RUN AGAINST BARE COMMIT/TREE GRAPH):
+  git log --all --full-history --stat -- "scripts/catalyst-behavior-tests.ts"
+  # Any local clone holding blob c95e1908f913 verifies exact bytes via:
+  git cat-file -t c95e1908f913641b52e2ca194b6bfc46a9062b29 && git cat-file -s c95e1908f913641b52e2ca194b6bfc46a9062b29   # -> blob, 8623
+--------------------------------------------------------------------------------
+MODULE IMPORT GRAPH (6 imports):
+  * L1: import assert from "node:assert/strict";
+  * L2: import {readFileSync} from "node:fs";
+  * L3: import {resolve} from "node:path";
+  * L4: import {runInNewContext} from "node:vm";
+  * L5: import {build} from "esbuild";
+  * L6: import {test} from "node:test";
+--------------------------------------------------------------------------------
+DECLARED SYMBOL / TEST INVENTORY (up to 25 shown):
+  * L7: legacy
+  * L8: mocks
+  * L15: modules
+  * L16: extra
+  * L17: built
+  * L22: api
+  * L23: dimension
+  * L27: commanded
+  * L31: bee
+  * L34: count
+  * L41: owner
+  * L43: points
+  * L45: b
+  * L54: stage
+  * L56: owner
+  * L61: dim
+  * L63: states
+  * L64: random
+--------------------------------------------------------------------------------
+BOUNDED FAIR-USE EVIDENTIARY EXCERPT (3 of 71 lines shown; full file omitted):
+  L0029 |  for(const name of ["zombie","skeleton","pillager","vindicator","creeper","phantom","spider","wolf","iron_golem"])assert.equa
+  L0030 |  for(const name of ["cow","pig","chicken","cat","parrot","villager"])assert.equal(api.canWitheredMobFlee(new api.Entity(name,
+  L0031 |  const bee=new api.Entity("bee","decayed:withered_bee");bee.components["minecraft:angry"]={};assert.equal(api.canWitheredMobF
+  [... 68 lines omitted under 17 U.S.C. § 107 transformative evidentiary scope ...]
+================================================================================

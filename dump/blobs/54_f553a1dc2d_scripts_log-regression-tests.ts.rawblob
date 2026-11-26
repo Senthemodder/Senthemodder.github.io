@@ -1,0 +1,62 @@
+================================================================================
+CRYPTOGRAPHIC FORENSIC INSPECTION CARD (17 U.S.C. §§ 102(b), 107 COMPLIANT)
+================================================================================
+Legal Notice: Full verbatim body intentionally omitted so zero executable source
+modules or complete prose documents from TazoLaTaza/Decayed-Reality are hosted.
+This record publishes strictly uncopyrightable cryptographic Git facts (§ 102(b)),
+structural symbol/heading metadata, and a bounded evidentiary excerpt (§ 107)
+establishing autonomous OpenAI Codex harness usage, CWSBP derivation, and cover-up
+deletion commits ('papoi', 'ohmama', 'beca cultural', '1b6facfdcd').
+--------------------------------------------------------------------------------
+Artifact Index           : #54
+Original Repository Path : scripts/log-regression-tests.ts
+Exact Git Blob SHA-1     : f553a1dc2d52eb3e9c76fec9632f897e8ab10805
+Exact Raw SHA-256        : 9c6010ad4bac7c071d79ead0cafccde11f92bee9f74a802baa6556aa1549fd48
+Original Byte Length     : 5,367 bytes (50 lines)
+Provenance / Wipe Commit : Tazo Wiped AI / Codex / Validation / Test File — Tentacle is finished! (wiped 23 automated *-tests.ts suites)
+Forensic Marker Counts   : Codex/Harness refs=0 | CWSBP/tainted refs=0 | Em/En-dashes=0
+--------------------------------------------------------------------------------
+OFFLINE CRYPTOGRAPHIC VERIFICATION (RUN AGAINST BARE COMMIT/TREE GRAPH):
+  git log --all --full-history --stat -- "scripts/log-regression-tests.ts"
+  # Any local clone holding blob f553a1dc2d52 verifies exact bytes via:
+  git cat-file -t f553a1dc2d52eb3e9c76fec9632f897e8ab10805 && git cat-file -s f553a1dc2d52eb3e9c76fec9632f897e8ab10805   # -> blob, 5367
+--------------------------------------------------------------------------------
+MODULE IMPORT GRAPH (5 imports):
+  * L1: import assert from "node:assert/strict";
+  * L2: import {readFileSync,readdirSync,existsSync} from "node:fs";
+  * L3: import {runInNewContext} from "node:vm";
+  * L4: import ts from "typescript";
+  * L5: import {test} from "node:test";
+--------------------------------------------------------------------------------
+DECLARED SYMBOL / TEST INVENTORY (up to 25 shown):
+  * L6: json
+  * L7: prop
+  * L8: test('entity float property defaults and ranges use float literals')
+  * L10: p
+  * L11: visit
+  * L14: test('Commanded environment sensor declares triggers')
+  * L15: e
+  * L16: sensor
+  * L21: test('reported animation tracks do not combine expressions with precomputed cubic inte')
+  * L23: j
+  * L27: test('ported block placements and item icons resolve')
+  * L28: ids
+  * L30: atlas
+  * L32: blocks
+  * L34: compile
+  * L35: test('config reads wait for world readiness and persisted settings survive reload')
+  * L36: store
+  * L37: world
+  * L42: test('removed entities do not trigger native component or death snapshot reads')
+  * L43: out
+  * L46: context
+  * L47: helpers
+  * L48: snapshot
+--------------------------------------------------------------------------------
+BOUNDED FAIR-USE EVIDENTIARY EXCERPT (4 of 50 lines shown; full file omitted):
+  L0029 |  for(const f of ["withered_dust","withered_mushroom"]){const j=json("Decayed_Reality_BP/blocks/decayed_content/"+f+".json");f
+  L0031 |  for(const f of ["withered_dust","withered_flesh_veins","withered_mushroom","withered_torch"]){const p=atlas["decayed_content
+  L0032 |  const blocks=json("Decayed_Reality_RP/blocks.json");for(const [id,v]of Object.entries(blocks) as any)if(/^decayed:(withered_
+  L0043 |  const out:any={},invalid:any={id:"removed",isValid:false,getComponent(){assert.fail("invalid component read")},getProperty()
+  [... 46 lines omitted under 17 U.S.C. § 107 transformative evidentiary scope ...]
+================================================================================

@@ -1,0 +1,32 @@
+================================================================================
+CRYPTOGRAPHIC FORENSIC INSPECTION CARD (17 U.S.C. §§ 102(b), 107 COMPLIANT)
+================================================================================
+Legal Notice: Full verbatim body intentionally omitted so zero executable source
+modules or complete prose documents from TazoLaTaza/Decayed-Reality are hosted.
+This record publishes strictly uncopyrightable cryptographic Git facts (§ 102(b)),
+structural symbol/heading metadata, and a bounded evidentiary excerpt (§ 107)
+establishing autonomous OpenAI Codex harness usage, CWSBP derivation, and cover-up
+deletion commits ('papoi', 'ohmama', 'beca cultural', '1b6facfdcd').
+--------------------------------------------------------------------------------
+Artifact Index           : #24
+Original Repository Path : .agents/skills/minecraft-bedrock/SKILL.md
+Exact Git Blob SHA-1     : 9c41a3093ced894cda671095acb4fd0b97d9ad44
+Exact Raw SHA-256        : 601ef1d847ea39c81ff90ed3badd6f1fa71ba0eb949cf04d76e1438fb170a01d
+Original Byte Length     : 1,427 bytes (20 lines)
+Provenance / Wipe Commit : Tazo Wiped AI / Codex / Validation / Test File — papoi (+7m30s wipe of .codex, AGENTS.md, SKILL.md, 23 .a1-validation files)
+Forensic Marker Counts   : Codex/Harness refs=6 | CWSBP/tainted refs=0 | Em/En-dashes=0
+--------------------------------------------------------------------------------
+OFFLINE CRYPTOGRAPHIC VERIFICATION (RUN AGAINST BARE COMMIT/TREE GRAPH):
+  git log --all --full-history --stat -- ".agents/skills/minecraft-bedrock/SKILL.md"
+  # Any local clone holding blob 9c41a3093ced verifies exact bytes via:
+  git cat-file -t 9c41a3093ced894cda671095acb4fd0b97d9ad44 && git cat-file -s 9c41a3093ced894cda671095acb4fd0b97d9ad44   # -> blob, 1427
+--------------------------------------------------------------------------------
+DOCUMENT SECTION HEADING INVENTORY (1 headings):
+  * L6: # Decayed Reality Bedrock reference entry point
+--------------------------------------------------------------------------------
+BOUNDED FAIR-USE EVIDENTIARY EXCERPT (3 of 20 lines shown; full file omitted):
+  L0009 | D:\mydocs-server\Add-on_Making\.agents\skills\minecraft-bedrock\SKILL.md
+  L0014 | - D:\mydocs-server\Add-on_Making\ADD-ON DOCUMENTATION
+  L0015 | - D:\mydocs-server\Add-on_Making\ADDON_EXAMPLES
+  [... 17 lines omitted under 17 U.S.C. § 107 transformative evidentiary scope ...]
+================================================================================

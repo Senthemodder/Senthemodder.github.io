@@ -1,0 +1,354 @@
+================================================================================
+SECTION 12 CRYPTOGRAPHIC RAW COMMIT & SNOWFLAKE PROOF LOG (2026-11-25)
+Target: Respondent's 16-Page Google Doc Mirror (1Trq0MViq7FkDYDxv2Js3IYhTfVe3iOoqzqDiJa8wiBE)
+Source Repository: TazoLaTaza/Decayed-Reality (304 GitHub HSM RSA PGP Signatures)
+================================================================================
+
+--- PART 1: RAW GIT COMMIT OBJECTS & MERKLE ANCESTRY UNDER GITHUB HSM PGP SIGNATURES ---
+
+### [Dec 15, 2025: Senthemodder already caught Tazo using AI 11 months before Nov 2026]
+Full SHA-1: 4c42aeab7cfa233e3d2e7f0a2d7e58ebf9ef7f53
+Locked beneath GitHub HSM PGP-signed commit 59ae42d26516 (Tazo!, 2026-02-12): True
+Locked beneath GitHub HSM PGP-signed commit cbb6bbc036d8 (doofus, 2026-06-18): True
+Raw Commit Object (`git cat-file -p`):
+tree 63bd62305ecf6bd19ca8157a392d53fa62de5b3e
+parent 262731b7310d97ade60e27f5c50cd75b7499e3ff
+author ShadowEmpress001 <120316848+Senthemodder@users.noreply.github.com> 1765732446 +0700
+committer ShadowEmpress001 <120316848+Senthemodder@users.noreply.github.com> 1765732446 +0700
+
+I know you are using AI for this Tazo
+Changed Paths (1 total, showing up to 15):
+  M	Decayed_Reality_BP/scripts/systems/tentacleattacks.js
+
+### [Dec 16, 2025 01:08: Senthemodder clusterPull.js update]
+Full SHA-1: 90af8a6d98386d16ababfbe2aaa0e192d79b7202
+Locked beneath GitHub HSM PGP-signed commit 59ae42d26516 (Tazo!, 2026-02-12): True
+Locked beneath GitHub HSM PGP-signed commit cbb6bbc036d8 (doofus, 2026-06-18): True
+Raw Commit Object (`git cat-file -p`):
+tree 82413171e19aa245797d92e3559ca0c25f689410
+parent bf22b3048ff05edab0b1537a938d3b0c725cf96a
+author ShadowEmpress001 <120316848+Senthemodder@users.noreply.github.com> 1765822132 +0700
+committer ShadowEmpress001 <120316848+Senthemodder@users.noreply.github.com> 1765822132 +0700
+
+smarter and eviler
+Changed Paths (4 total, showing up to 15):
+  M	Decayed_Reality_BP/scripts/beam.js
+  M	Decayed_Reality_BP/scripts/systems/clusterPull.js
+  M	Decayed_Reality_BP/scripts/systems/dragonBehavior.js
+  M	Decayed_Reality_BP/scripts/systems/stormAI.js
+
+### [Dec 16, 2025 02:02: TazoLaTaza pulls Senthemodder clusterPull.js -> 'refracted OMG YOUA RE COOKINGGG']
+Full SHA-1: ba6abcdd412deba545398fbe721efc3da0488a7c
+Locked beneath GitHub HSM PGP-signed commit 59ae42d26516 (Tazo!, 2026-02-12): True
+Locked beneath GitHub HSM PGP-signed commit cbb6bbc036d8 (doofus, 2026-06-18): True
+Raw Commit Object (`git cat-file -p`):
+tree 8499bd438461d877183af07fc9db4877d98e5823
+parent 5a4918f093e6f271c1d1b18f8ecd39dd2181c606
+author TazoLaTaza <[redacted-owner-email]> 1765861327 -0300
+committer TazoLaTaza <[redacted-owner-email]> 1765861327 -0300
+
+refracted OMG YOUA RE COOKINGGG
+Changed Paths (22 total, showing up to 15):
+  M	Decayed_Reality_BP/animations/cluster.json
+  M	Decayed_Reality_BP/animations/witherstorm_basic.json
+  M	Decayed_Reality_BP/entities/wither_storm/tentacle_shockwave.json
+  M	Decayed_Reality_BP/entities/wither_storm/wither_admin.json
+  M	Decayed_Reality_BP/scripts/WitherStormTick.js
+  M	Decayed_Reality_BP/scripts/customComponents/config.js
+  M	Decayed_Reality_BP/scripts/customComponents/guidebook.js
+  M	Decayed_Reality_BP/scripts/main.js
+  M	Decayed_Reality_BP/scripts/mobflee.js
+  M	Decayed_Reality_BP/scripts/systems/WitherCombat.js
+  M	Decayed_Reality_BP/scripts/systems/clusterPull.js
+  M	Decayed_Reality_BP/scripts/systems/dragonBehavior.js
+  M	Decayed_Reality_BP/scripts/systems/stormAI.js
+  M	Decayed_Reality_BP/scripts/systems/tentacleattacks.js
+  M	Decayed_Reality_RP/animations/wither_admin/commanded_wither_spawn.animation.json
+
+### [Dec 26, 2025: Senthemodder dynamic cluster acceleration]
+Full SHA-1: 59c37e6bd1ef8b0de1413090981c24e57092002b
+Locked beneath GitHub HSM PGP-signed commit 59ae42d26516 (Tazo!, 2026-02-12): True
+Locked beneath GitHub HSM PGP-signed commit cbb6bbc036d8 (doofus, 2026-06-18): True
+Raw Commit Object (`git cat-file -p`):
+tree ac209ca9f12c881f9d0b6ca0a4ffe3e9e8c4407f
+parent 9fa6fa5f32bf1fb3a23f1ceb0c887fa6217b1b80
+author ShadowEmpress001 <120316848+Senthemodder@users.noreply.github.com> 1766760682 +0700
+committer ShadowEmpress001 <120316848+Senthemodder@users.noreply.github.com> 1766760682 +0700
+
+dynamic cluster acceleration
+Changed Paths (2 total, showing up to 15):
+  M	Decayed_Reality_BP/scripts/respawn.js
+  M	Decayed_Reality_BP/scripts/systems/clusterPull.js
+
+### [Aug 8, 2026: TazoLaTaza 'implemented cwsbp skybox systems into decayed.']
+Full SHA-1: 526e38b76cf8a2fde774c6f9889a38c6905bbccb
+Locked beneath GitHub HSM PGP-signed commit 59ae42d26516 (Tazo!, 2026-02-12): False
+Locked beneath GitHub HSM PGP-signed commit cbb6bbc036d8 (doofus, 2026-06-18): False
+Raw Commit Object (`git cat-file -p`):
+tree 590ba20aeb78238d573c7d18a8b5c3f040cb9a2d
+parent 2f0d423b34f4fbe6b2a8d3eeddb580da1306f52d
+author TazoLaTaza <[redacted-owner-email]> 1786211534 -0300
+committer TazoLaTaza <[redacted-owner-email]> 1786211534 -0300
+
+implemented cwsbp skybox systems into decayed.
+Changed Paths (10 total, showing up to 15):
+  M	Decayed_Reality_BP/entities/important/player.json
+  M	Decayed_Reality_BP/scripts/main.js
+  M	Decayed_Reality_RP/animation_controllers/wither_admin_stages/wither_storm_phases.json
+  M	Decayed_Reality_RP/animations/skybox.animation.json
+  M	Decayed_Reality_RP/render_controllers/important/decayed_modified_player.json
+  D	src/customComponents/guidebook.js
+  A	src/customComponents/guidebook.ts
+  M	src/main.js
+  A	src/systems/skybox.ts
+  M	src/systems/stormHunt.ts
+
+### [Sep 5, 2026: TazoLaTaza 'implemented more CWSBP files']
+Full SHA-1: 4597a194a887862a0d8f07027c25e15b756a0dd3
+Locked beneath GitHub HSM PGP-signed commit 59ae42d26516 (Tazo!, 2026-02-12): False
+Locked beneath GitHub HSM PGP-signed commit cbb6bbc036d8 (doofus, 2026-06-18): False
+Raw Commit Object (`git cat-file -p`):
+tree 49efe6c8cf53ddadca5e0bbdb1bd30d0268219f4
+parent a5f16fee54155691991b159b62e57eee30e78c77
+author TazoLaTaza <[redacted-owner-email]> 1788649740 -0300
+committer TazoLaTaza <[redacted-owner-email]> 1788649740 -0300
+
+implemented more CWSBP files
+Changed Paths (16 total, showing up to 15):
+  A	Decayed_Reality_RP/models/entity/ambient_occlusion/cluster2_ambient.geo.json
+  A	Decayed_Reality_RP/models/entity/ambient_occlusion/cluster4_ambient.geo.json
+  A	Decayed_Reality_RP/models/entity/ambient_occlusion/cluster5_ambient.geo.json
+  A	Decayed_Reality_RP/models/entity/ambient_occlusion/cluster6_ambient.geo.json
+  A	Decayed_Reality_RP/models/entity/ambient_occlusion/cluster7_ambient.geo.json
+  A	Decayed_Reality_RP/models/entity/ambient_occlusion/cluster8_ambient.geo.json
+  A	Decayed_Reality_RP/textures/misc/ambient_occlusion.png
+  A	Decayed_Reality_RP/textures/misc/beam_spooky.png
+  A	Decayed_Reality_RP/textures/misc/beam_xmas.png
+  A	Decayed_Reality_RP/textures/misc/glare.png
+  A	Decayed_Reality_RP/textures/misc/glare.texture_set.json
+  A	Decayed_Reality_RP/textures/misc/glare_mer.tga
+  A	Decayed_Reality_RP/textures/misc/glow.png
+  A	Decayed_Reality_RP/textures/misc/pink_wither_storm.png
+  A	Decayed_Reality_RP/textures/misc/pink_wither_storm_emissive_decal.png
+
+### [Sep 9, 2026 01:28: TazoLaTaza imports 1,619 CWSBP 0.5 files & stamps 'license: MIT']
+Full SHA-1: ccb25d2819d4c17f43dddd3d81435fe60106b389
+Locked beneath GitHub HSM PGP-signed commit 59ae42d26516 (Tazo!, 2026-02-12): False
+Locked beneath GitHub HSM PGP-signed commit cbb6bbc036d8 (doofus, 2026-06-18): False
+Raw Commit Object (`git cat-file -p`):
+tree 49dee48772729fbcb013634d2d23fbe0231dc503
+parent 0d693cb85cb5d7e66ef6775cd6796f43ca9717de
+author TazoLaTaza <[redacted-owner-email]> 1788928139 -0300
+committer TazoLaTaza <[redacted-owner-email]> 1788928139 -0300
+
+CWSBP assets for the compat
+Changed Paths (1619 total, showing up to 15):
+  A	storm_decompiled_phases/CWSBP INTEGRATION/BP/animation_controllers/commanded_wither.json
+  A	storm_decompiled_phases/CWSBP INTEGRATION/BP/animation_controllers/wither_storm.json
+  A	storm_decompiled_phases/CWSBP INTEGRATION/BP/animation_controllers/withered_symbiont.json
+  A	storm_decompiled_phases/CWSBP INTEGRATION/BP/animations/ambient.json
+  A	storm_decompiled_phases/CWSBP INTEGRATION/BP/animations/block/command_block.json
+  A	storm_decompiled_phases/CWSBP INTEGRATION/BP/animations/block/formidibomb.json
+  A	storm_decompiled_phases/CWSBP INTEGRATION/BP/animations/commanded_wither.json
+  A	storm_decompiled_phases/CWSBP INTEGRATION/BP/animations/formidiblade.json
+  A	storm_decompiled_phases/CWSBP INTEGRATION/BP/animations/wither_storm.json
+  A	storm_decompiled_phases/CWSBP INTEGRATION/BP/animations/wither_storm_dead.json
+  A	storm_decompiled_phases/CWSBP INTEGRATION/BP/animations/withered_symbiont.json
+  A	storm_decompiled_phases/CWSBP INTEGRATION/BP/blocks/firework_bundle.json
+  A	storm_decompiled_phases/CWSBP INTEGRATION/BP/blocks/formidibomb.json
+  A	storm_decompiled_phases/CWSBP INTEGRATION/BP/blocks/hardened_flesh.json
+  A	storm_decompiled_phases/CWSBP INTEGRATION/BP/blocks/infected_flesh.json
+
+### [Sep 9, 2026 02:54: TazoLaTaza 'Implemented CWSBP tainted blocks, Phaseometer, Beacon, and more (to alter rework them and adapt them!)']
+Full SHA-1: e7ba793e715b8f98cd6666810c5ecd41a1b5fb9a
+Locked beneath GitHub HSM PGP-signed commit 59ae42d26516 (Tazo!, 2026-02-12): False
+Locked beneath GitHub HSM PGP-signed commit cbb6bbc036d8 (doofus, 2026-06-18): False
+Raw Commit Object (`git cat-file -p`):
+tree a3765d40099b7abf83642f013c12932fa119f239
+parent ccb25d2819d4c17f43dddd3d81435fe60106b389
+author TazoLaTaza <[redacted-owner-email]> 1788933291 -0300
+committer TazoLaTaza <[redacted-owner-email]> 1788933291 -0300
+
+Implemented CWSBP tainted blocks, Phaseometer, Beacon, and more (to alter rework them and adapt them!)
+Changed Paths (262 total, showing up to 15):
+  A	Decayed_Reality_BP/blocks/decayed_content/stripped_tainted_log.json
+  A	Decayed_Reality_BP/blocks/decayed_content/stripped_tainted_wood.json
+  A	Decayed_Reality_BP/blocks/decayed_content/super_beacon.json
+  A	Decayed_Reality_BP/blocks/decayed_content/tainted_bone_pile.json
+  A	Decayed_Reality_BP/blocks/decayed_content/tainted_button.json
+  A	Decayed_Reality_BP/blocks/decayed_content/tainted_carved_pumpkin.json
+  A	Decayed_Reality_BP/blocks/decayed_content/tainted_chiseled_sandstone.json
+  A	Decayed_Reality_BP/blocks/decayed_content/tainted_cobblestone.json
+  A	Decayed_Reality_BP/blocks/decayed_content/tainted_cobblestone_slab.json
+  A	Decayed_Reality_BP/blocks/decayed_content/tainted_cobblestone_stairs.json
+  A	Decayed_Reality_BP/blocks/decayed_content/tainted_cobblestone_wall.json
+  A	Decayed_Reality_BP/blocks/decayed_content/tainted_cut_sandstone.json
+  A	Decayed_Reality_BP/blocks/decayed_content/tainted_cut_sandstone_slab.json
+  A	Decayed_Reality_BP/blocks/decayed_content/tainted_dirt.json
+  A	Decayed_Reality_BP/blocks/decayed_content/tainted_door.json
+
+### [TazoLaTaza 'Textures Reorder' renaming tainted_*/sickened_* -> withered_* inside Decayed-Reality]
+Full SHA-1: 9cfe187f475a1b7946d25bbddee9b2891637f998
+Locked beneath GitHub HSM PGP-signed commit 59ae42d26516 (Tazo!, 2026-02-12): False
+Locked beneath GitHub HSM PGP-signed commit cbb6bbc036d8 (doofus, 2026-06-18): False
+Raw Commit Object (`git cat-file -p`):
+tree 3bb709cf0882deaa723b19798076aaa62d50a4da
+parent 984da4d4a46f4f0b910b0d9bc3a2325076675231
+author TazoLaTaza <[redacted-owner-email]> 1789156383 -0300
+committer TazoLaTaza <[redacted-owner-email]> 1789156383 -0300
+
+Textures Reorder
+Changed Paths (1018 total, showing up to 15):
+  A	Decayed_Reality_BP/blocks/decayed_blocks/decayed_sand.json
+  M	Decayed_Reality_BP/blocks/decayed_content/withered_dust.json
+  M	Decayed_Reality_BP/blocks/decayed_content/withered_mushroom.json
+  D	Decayed_Reality_BP/blocks/decayed_content/withered_sand.json
+  M	Decayed_Reality_BP/item_catalog/crafting_item_catalog.json
+  M	Decayed_Reality_BP/scripts/main.js
+  M	Decayed_Reality_RP/attachables/armors/decayed_ellegard_chestplate.json
+  M	Decayed_Reality_RP/attachables/armors/decayed_ellegard_leggins.json
+  M	Decayed_Reality_RP/attachables/armors/decayed_magnus_chestplate.json
+  M	Decayed_Reality_RP/attachables/armors/decayed_magnus_leggins.json
+  M	Decayed_Reality_RP/attachables/armors/decayed_white_pumpkin.json
+  M	Decayed_Reality_RP/attachables/decayed_content/phaseometer.json
+  M	Decayed_Reality_RP/attachables/decayed_content/phaseometer_upgrade.json
+  M	Decayed_Reality_RP/attachables/formidibomb.json
+  M	Decayed_Reality_RP/attachables/order_shield.json
+
+### [Oct 16, 2026: Designation Vee (120316848+Senthemodder) clusterConfig/clusterData/clusterPull at main HEAD]
+Full SHA-1: 5c6385ef5ae05f1575dc21f9a1485d64869f36fe
+Locked beneath GitHub HSM PGP-signed commit 59ae42d26516 (Tazo!, 2026-02-12): False
+Locked beneath GitHub HSM PGP-signed commit cbb6bbc036d8 (doofus, 2026-06-18): False
+Raw Commit Object (`git cat-file -p`):
+tree 6af78330ecdc467edb737f9ddae55bba02aa912f
+parent debb35c9e0a2394d8bffb75745cb49de7c2ab0aa
+author Designation Vee <120316848+Senthemodder@users.noreply.github.com> 1792089199 +0700
+committer Designation Vee <120316848+Senthemodder@users.noreply.github.com> 1792089199 +0700
+
+e
+Changed Paths (12 total, showing up to 15):
+  M	Decayed_Reality_BP/scripts/main.js
+  M	Decayed_Reality_RP/entity/wither_storm/wither_storm.json
+  M	src/clusters/clusterConfig.ts
+  M	src/clusters/clusterData.ts
+  M	src/clusters/clusterPull.ts
+  M	src/clusters/index.ts
+  M	src/systems/stormGiantRig.ts
+  M	src/systems/stormTentacleRig.ts
+  M	src/ticking/WitherStormTick_evolution.ts
+  M	src/ticking/WitherStormTick_modular.ts
+  M	tools/gen/rp-tentacle-controllers.mjs
+  M	tools/gen/storm/stormTentacleGeneration.ts
+
+================================================================================
+--- PART 2: AUG 9, 2026 V2.5 CLUSTER OPENAI CODEX MARATHON BY Tazo! ---
+(Refutes Respondent's claim that he only used ChatGPT 'since v2.11' and refutes
+ his Page 14 claim about V2.5 cluster authorship)
+================================================================================
+
+01 | b521bc9604e7 | 2026-08-09 01:09:16 -0300 ( START) | TazoLaTaza | finished debris vortex fade and skybox | ['Decayed_Reality_BP/scripts/main.js', 'Decayed_Reality_RP/textures/environment/skyboxes/phase4_skybox_day.png', 'src/systems/severedOrbit.ts']
+02 | dccf939045e7 | 2026-08-09 13:11:56 -0300 (+43360s) | Tazo!      | refactor: add unified storm head and beam config | ['src/storm_head/config.ts']
+03 | 7cbd68787e68 | 2026-08-09 13:12:15 -0300 (  +19s) | Tazo!      | refactor: add shared storm head math | ['src/storm_head/math.ts']
+04 | 5d3698b525eb | 2026-08-09 13:12:30 -0300 (  +15s) | Tazo!      | refactor: add unified storm head runtime state | ['src/storm_head/state.ts']
+05 | b9bc09ae0156 | 2026-08-09 13:12:58 -0300 (  +28s) | Tazo!      | refactor: centralize storm head and beam source geometry | ['src/storm_head/source.ts']
+06 | 9c808dc7549c | 2026-08-09 13:13:41 -0300 (  +43s) | Tazo!      | refactor: rebuild storm head motion controller | ['src/storm_head/headController.ts']
+07 | 48aa2ff07579 | 2026-08-09 13:14:01 -0300 (  +20s) | Tazo!      | refactor: unify beam availability and outage state | ['src/storm_head/availability.ts']
+08 | c910817403eb | 2026-08-09 13:15:56 -0300 ( +115s) | Tazo!      | refactor: rebuild live tractor beam controller | ['src/storm_head/beamController.ts']
+09 | 4103e9f598ee | 2026-08-09 13:16:21 -0300 (  +25s) | Tazo!      | refactor: rebuild beam ground cluster acquisition | ['src/storm_head/beamClusters.ts']
+10 | 147f3a97e542 | 2026-08-09 13:16:47 -0300 (  +26s) | Tazo!      | refactor: add storm system health endpoints | ['src/storm_head/health.ts']
+11 | b51b421fbcfb | 2026-08-09 13:17:03 -0300 (  +16s) | Tazo!      | refactor: add unified storm head beam debug view | ['src/storm_head/debug.ts']
+12 | f1edd94c5e83 | 2026-08-09 13:17:15 -0300 (  +12s) | Tazo!      | refactor: add single storm head beam scheduler | ['src/storm_head/runtime.ts']
+13 | f111eb2c1e00 | 2026-08-09 13:17:25 -0300 (  +10s) | Tazo!      | refactor: add storm head beam subsystem entrypoint | ['src/storm_head/index.ts']
+14 | 586c42c4399d | 2026-08-09 13:17:49 -0300 (  +24s) | Tazo!      | feat: add storm head beam developer commands | ['src/commands/stormSystemCommands.ts']
+15 | 91b50a6cbda9 | 2026-08-09 13:18:08 -0300 (  +19s) | Tazo!      | refactor: replace legacy head and beam schedulers | ['src/main.js']
+16 | d557ace25564 | 2026-08-09 13:18:59 -0300 (  +51s) | Tazo!      | feat: register storm system developer command directly | ['src/commands/stormSystemCommands.ts']
+17 | 05f6dba72ecb | 2026-08-09 13:19:26 -0300 (  +27s) | Tazo!      | feat: load storm system developer commands | ['src/main.js']
+18 | 94c8c4e53b77 | 2026-08-09 13:19:58 -0300 (  +32s) | Tazo!      | refactor: make legacy beam entrypoint passive | ['src/beam_functions/beam.ts']
+19 | 6054df266d2c | 2026-08-09 13:20:10 -0300 (  +12s) | Tazo!      | refactor: make legacy tractor lock a compatibility facade | ['src/beam_functions/tractor_beam_lock.ts']
+20 | 5e7485182f3e | 2026-08-09 13:20:20 -0300 (  +10s) | Tazo!      | refactor: make legacy beam cluster module passive | ['src/beam_functions/beam_ground_clusters.ts']
+21 | 60fd2ecb9dd6 | 2026-08-09 13:20:32 -0300 (  +12s) | Tazo!      | refactor: route legacy beam state through unified runtime | ['src/beam_functions/storm_head_beam_state.ts']
+22 | 41420fea7661 | 2026-08-09 13:20:39 -0300 (   +7s) | Tazo!      | refactor: route legacy visualizer through unified debug | ['src/beam_functions/beam_visualizer.ts']
+23 | c0c8ca6ec6c7 | 2026-08-09 13:20:49 -0300 (  +10s) | Tazo!      | refactor: retire legacy distant head scheduler | ['src/systems/distant_head.ts']
+24 | 96d569bc209c | 2026-08-09 13:21:12 -0300 (  +23s) | Tazo!      | fix: apply beam force modes immediately | ['src/storm_head/availability.ts']
+25 | 2a42b1dbaa0b | 2026-08-09 13:23:32 -0300 ( +140s) | Tazo!      | docs: document unified storm head and beam runtime | ['src/storm_head/README.md']
+26 | 1528ea5900dc | 2026-08-09 13:25:17 -0300 ( +105s) | Tazo!      | fix: make stormsystem source and target selection resilient | ['src/commands/stormSystemCommands.ts']
+27 | 875c746628be | 2026-08-09 13:25:38 -0300 (  +21s) | Tazo!      | feat: add smooth positional head behavior profiles | ['src/storm_head/config.ts']
+28 | 0a4cd7ba7cff | 2026-08-09 13:26:15 -0300 (  +37s) | Tazo!      | feat: give idle tracking and attack distinct smooth head motion | ['src/storm_head/headController.ts']
+29 | 2bf3dc9ea3a1 | 2026-08-09 13:27:22 -0300 (  +67s) | Tazo!      | feat: track independent head attack candidates | ['src/storm_head/state.ts']
+30 | 49bf17122a21 | 2026-08-09 13:28:13 -0300 (  +51s) | Tazo!      | feat: add CWS-style pre-lock head attack acquisition | ['src/storm_head/headController.ts']
+31 | 5584cb6cf7a9 | 2026-08-09 13:29:24 -0300 (  +71s) | Tazo!      | ci: validate storm system rewrite bundle | ['.github/workflows/storm-system-branch-check.yml']
+32 | 466aac9e7f6a | 2026-08-09 13:29:44 -0300 (  +20s) | Tazo!      | ci: run storm system check on pull requests | ['.github/workflows/storm-system-branch-check.yml']
+33 | e66eac45b90a | 2026-08-09 13:31:14 -0300 (  +90s) | Tazo!      | fix: keep beam direction aligned with scripted head rotation | ['src/storm_head/source.ts']
+34 | 87da54103d51 | 2026-08-09 13:31:48 -0300 (  +34s) | Tazo!      | chore: remove temporary branch validation workflow | ['.github/workflows/storm-system-branch-check.yml']
+35 | d802b347fb42 | 2026-08-09 13:34:46 -0300 ( +178s) | Tazo!      | docs: clarify storm system target and validation commands | ['src/storm_head/README.md']
+36 | e792a3cdb6fc | 2026-08-09 14:53:26 -0300 (+4720s) | Tazo!      | Add shared storm surface proximity checks | ['src/clusters/surfaceProximity.ts']
+37 | 746a9922dbef | 2026-08-09 14:53:58 -0300 (  +32s) | Tazo!      | Restrict direct storm cluster generation to 40 blocks | ['src/clusters/clusterConfig.ts']
+38 | f8195ad356bb | 2026-08-09 14:54:20 -0300 (  +22s) | Tazo!      | Increase nearby beam cluster output by 50 percent | ['src/storm_head/config.ts']
+39 | b9510aff80a1 | 2026-08-09 14:54:55 -0300 (  +35s) | Tazo!      | Gate beam cluster extraction to the storm surface radius | ['src/storm_head/beamClusters.ts']
+40 | e35e8b2bb598 | 2026-08-09 14:56:07 -0300 (  +72s) | Tazo!      | Re-enable body cluster groups only near 40-block surfaces | ['src/clusters/floatingChunks.ts']
+41 | cdb805acd74f | 2026-08-09 14:57:09 -0300 (  +62s) | Tazo!      | Document 40-block cluster generation rules | ['src/storm_head/README.md']
+42 | 6d68cf152d5f | 2026-08-09 14:59:17 -0300 ( +128s) | Tazo!      | Tighten body surface gating cadence | ['src/clusters/clusterConfig.ts']
+43 | 8da773f24c82 | 2026-08-09 15:00:08 -0300 (  +51s) | Tazo!      | Keep full body cluster groups inside the 40-block radius | ['src/clusters/floatingChunks.ts']
+44 | 7269ed5d7ede | 2026-08-09 15:00:32 -0300 (  +24s) | Tazo!      | Bind beam cluster generation to the owning storm body | ['src/storm_head/beamClusters.ts']
+45 | be0e3eae302f | 2026-08-09 15:00:56 -0300 (  +24s) | Tazo!      | Measure storm surfaces on the actual world axes | ['src/clusters/surfaceProximity.ts']
+46 | 4779f520a654 | 2026-08-09 16:05:22 -0300 (+3866s) | Tazo!      | Tune autonomous storm clusters to 20-block outer-biased radius | ['src/clusters/clusterConfig.ts']
+47 | ed9dad71eca3 | 2026-08-09 16:06:08 -0300 (  +46s) | Tazo!      | Bias body clusters outward and restore beam-owned grouped extraction | ['src/clusters/floatingChunks.ts']
+48 | 979f8945c190 | 2026-08-09 16:07:08 -0300 (  +60s) | Tazo!      | Allow full-range beam terrain groups with glued cluster members | ['src/storm_head/beamClusters.ts']
+49 | bebbcb51a099 | 2026-08-09 16:07:32 -0300 (  +24s) | Tazo!      | Document full-range beam clusters and 20-block body generation | ['src/storm_head/README.md']
+50 | 25bc826a9107 | 2026-08-09 18:51:57 -0300 (+9865s) | TazoLaTaza | Update health.ts | ['src/storm_head/health.ts']
+51 | 308e0454caae | 2026-08-09 19:10:36 -0300 (+1119s) | Tazo!      | Tune autonomous body cluster density inward | ['src/clusters/clusterConfig.ts']
+52 | e3a4c794ded0 | 2026-08-09 19:11:15 -0300 (  +39s) | Tazo!      | Bias autonomous body cluster waves toward storm center | ['src/clusters/floatingChunks.ts']
+53 | 3395e327597a | 2026-08-09 19:11:46 -0300 (  +31s) | Tazo!      | Add autonomous body cluster diagnostic command | ['src/commands/stormSystemCommands.ts']
+54 | 730f77ddf5b7 | 2026-08-09 19:12:09 -0300 (  +23s) | Tazo!      | Document inward body cluster tuning | ['src/storm_head/README.md']
+55 | 477760542dad | 2026-08-09 19:30:12 -0300 (+1083s) | TazoLaTaza | god | ['Decayed_Reality_BP/entities/wither_skulls/flaming_wither_skull.json', 'Decayed_Reality_BP/scripts/main.js', 'src/main.js']
+56 | 4ced8e654016 | 2026-08-09 19:40:39 -0300 ( +627s) | Tazo!      | Fix body cluster storm classification | ['src/clusters/clusterUtils.ts']
+57 | 6200b3db3a3b | 2026-08-09 19:41:05 -0300 (  +26s) | Tazo!      | Centralize autonomous body cluster tuning | ['src/clusters/clusterConfig.ts']
+58 | c7bc7e6ddd39 | 2026-08-09 19:41:49 -0300 (  +44s) | Tazo!      | Restrict autonomous clusters to storm dragon body | ['src/clusters/floatingChunks.ts']
+59 | f087ee9f6f48 | 2026-08-09 19:42:14 -0300 (  +25s) | Tazo!      | Improve body cluster diagnostics | ['src/commands/stormSystemCommands.ts']
+60 | a39f9ccbc6d3 | 2026-08-09 19:43:00 -0300 (  +46s) | Tazo!      | Document dragon-only body cluster generation | ['src/storm_head/README.md']
+61 | 1a8957dd0fee | 2026-08-09 19:44:45 -0300 ( +105s) | Tazo!      | Keep body terrain picks inside true radius | ['src/clusters/floatingChunks.ts']
+62 | d4e065ba0a25 | 2026-08-09 19:59:01 -0300 ( +856s) | TazoLaTaza | Implemented clusters body absorbing! | ['Decayed_Reality_BP/scripts/main.js', 'src/clusters/clusterConfig.ts', 'src/main.js']
+63 | e9ca52c954f2 | 2026-08-09 20:08:12 -0300 ( +551s) | Tazo!      | Add CWS-style storm death cluster scatter | ['src/clusters/stormDeathScatter.ts']
+64 | 0697abe15edc | 2026-08-09 20:08:24 -0300 (  +12s) | Tazo!      | Start storm death scatter cluster system | ['src/clusters/index.ts']
+65 | aaa92c3387ba | 2026-08-09 20:09:10 -0300 (  +46s) | Tazo!      | Document CWS-style storm cluster scatter | ['src/clusters/STORM_DEATH_SCATTER.md']
+66 | f289ccf02d5f | 2026-08-09 20:09:44 -0300 (  +34s) | TazoLaTaza | patches to cluster speed | ['Decayed_Reality_BP/scripts/main.js', 'src/clusters/clusterConfig.ts', 'src/storm_head/README.md']
+67 | 16de2d5fbceb | 2026-08-09 20:19:40 -0300 ( +596s) | Tazo!      | Fix storm death scatter triggers and flesh payloads | ['src/clusters/stormDeathScatter.ts']
+68 | 1eccfaa1d646 | 2026-08-09 20:20:00 -0300 (  +20s) | Tazo!      | Add runtime bridge for storm death scatter | ['Decayed_Reality_BP/scripts/runtime.js']
+69 | c5cbe87a4dc7 | 2026-08-09 20:20:24 -0300 (  +24s) | Tazo!      | Run storm death scatter in packaged runtime | ['Decayed_Reality_BP/scripts/stormDeathScatter.runtime.js']
+70 | 41ec2675afbe | 2026-08-09 20:20:36 -0300 (  +12s) | Tazo!      | Route Bedrock runtime through scatter bridge | ['Decayed_Reality_BP/manifest.json']
+71 | 65f8ceca6a19 | 2026-08-09 20:22:34 -0300 ( +118s) | Tazo!      | Harden packaged storm scatter runtime | ['Decayed_Reality_BP/scripts/stormDeathScatter.runtime.js']
+72 | d3cd0bffd364 | 2026-08-09 20:23:20 -0300 (  +46s) | Tazo!      | Document storm scatter runtime fixes | ['src/clusters/STORM_DEATH_SCATTER.md']
+73 | f9bb3badb790 | 2026-08-09 21:15:39 -0300 (+3139s) | Tazo!      | Add display-only cluster tag | ['src/clusters/clusterConfig.ts']
+74 | 696683577fab | 2026-08-09 21:15:57 -0300 (  +18s) | Tazo!      | Add display-only cluster creation path | ['src/clusters/displayEntity.ts']
+75 | 7bb4dfc9cbd7 | 2026-08-09 21:16:24 -0300 (  +27s) | Tazo!      | Exclude display-only debris from cluster lifecycle | ['src/clusters/clusterSpawn.ts']
+76 | c3adcc170891 | 2026-08-09 21:17:10 -0300 (  +46s) | Tazo!      | Rework storm death scatter as display-only ballistic debris | ['src/clusters/stormDeathScatter.ts']
+77 | 20980fe315b1 | 2026-08-09 21:17:40 -0300 (  +30s) | Tazo!      | Make packaged storm debris display-only and 5x denser | ['Decayed_Reality_BP/scripts/stormDeathScatter.runtime.js']
+78 | 3bbd081e750d | 2026-08-09 21:18:25 -0300 (  +45s) | Tazo!      | Harden storm death scatter triggers | ['src/clusters/stormDeathScatter.ts']
+79 | bb2fd7ceeeca | 2026-08-09 21:18:49 -0300 (  +24s) | Tazo!      | Harden packaged death scatter triggers | ['Decayed_Reality_BP/scripts/stormDeathScatter.runtime.js']
+80 | 72121a531625 | 2026-08-09 21:19:35 -0300 (  +46s) | Tazo!      | Document display-only storm debris behavior | ['src/clusters/STORM_DEATH_SCATTER.md']
+81 | 95818e67171e | 2026-08-09 21:20:36 -0300 (  +61s) | Tazo!      | Exclude display-only debris from cluster caches | ['src/clusters/cache.ts']
+82 | 26a95360acc6 | 2026-08-09 22:10:59 -0300 (+3023s) | TazoLaTaza | beca cultural | ['Decayed_Reality_BP/scripts/main.js', 'src/clusters/STORM_DEATH_SCATTER.md', 'src/clusters/stormDeathScatter.ts']
+83 | 7f9ea5e28a49 | 2026-08-09 22:12:18 -0300 (  +79s) | Tazo!      | Trigger death scatter below five health | ['src/clusters/stormDeathScatter.ts']
+84 | 967d2b7f3433 | 2026-08-09 22:12:48 -0300 (  +30s) | Tazo!      | Trigger packaged death scatter below five health | ['Decayed_Reality_BP/scripts/stormDeathScatter.runtime.js']
+85 | 80c83acf9ee4 | 2026-08-09 22:43:20 -0300 (+1832s) | TazoLaTaza | bleh | ['Decayed_Reality_BP/entities/wither_storm/cluster.json', 'Decayed_Reality_BP/scripts/main.js', 'src/clusters/stormDeathScatter.ts']
+86 | 0db2c2a48c3e | 2026-08-09 23:16:26 -0300 (+1986s) | Tazo!      | Fix death scatter triggers and place landed flesh blocks | ['src/clusters/stormDeathScatter.ts']
+87 | 69a15fb25842 | 2026-08-09 23:17:18 -0300 (  +52s) | Tazo!      | Make packaged death scatter reliable and deposit flesh blocks | ['Decayed_Reality_BP/scripts/stormDeathScatter.runtime.js']
+88 | 298c9e405f33 | 2026-08-09 23:17:28 -0300 (  +10s) | Tazo!      | Run packaged scatter before stale generated bundle | ['Decayed_Reality_BP/scripts/runtime.js']
+89 | e472f1b42c1a | 2026-08-09 23:19:02 -0300 (  +94s) | Tazo!      | Use swept collision for landed death flesh | ['src/clusters/stormDeathScatter.ts']
+90 | 29141b2de9b3 | 2026-08-09 23:40:06 -0300 (+1264s) | TazoLaTaza | fixed behavior | ['Decayed_Reality_BP/manifest.json', 'Decayed_Reality_BP/scripts/main.js', 'Decayed_Reality_BP/scripts/runtime.js']
+91 | 25ede8117dce | 2026-08-09 23:44:48 -0300 ( +282s) | Tazo!      | Fix source-only storm death scatter triggers and landing blocks | ['src/clusters/stormDeathScatter.ts']
+
+================================================================================
+--- PART 3: 64-BIT DISCORD SNOWFLAKE TIMELINE OF POST-TAKEDOWN BAN EVASION ---
+================================================================================
+
+Broadcast #1 (@everyone Newsletter 1):
+  Snowflake ID : 1574862145340842005
+  Formula      : (1574862145340842005 >> 22) + 1420070400000 = 1795546794973 ms
+  Exact UTC    : 2026-11-24 18:59:54.973 UTC
+
+Broadcast #2 (Google Doc Evasion Mirror):
+  Snowflake ID : 1575129782675443883
+  Formula      : (1575129782675443883 >> 22) + 1420070400000 = 1795610604686 ms
+  Exact UTC    : 2026-11-25 12:43:24.686 UTC
+

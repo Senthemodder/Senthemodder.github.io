@@ -1,0 +1,39 @@
+================================================================================
+CRYPTOGRAPHIC FORENSIC INSPECTION CARD (17 U.S.C. §§ 102(b), 107 COMPLIANT)
+================================================================================
+Legal Notice: Full verbatim body intentionally omitted so zero executable source
+modules or complete prose documents from TazoLaTaza/Decayed-Reality are hosted.
+This record publishes strictly uncopyrightable cryptographic Git facts (§ 102(b)),
+structural symbol/heading metadata, and a bounded evidentiary excerpt (§ 107)
+establishing autonomous OpenAI Codex harness usage, CWSBP derivation, and cover-up
+deletion commits ('papoi', 'ohmama', 'beca cultural', '1b6facfdcd').
+--------------------------------------------------------------------------------
+Artifact Index           : #31
+Original Repository Path : src/clusters/STORM_FALLING_BLOCKS.md
+Exact Git Blob SHA-1     : f1bfed4f40779db08c30fb5b9518b72587f2b913
+Exact Raw SHA-256        : ebae280bd98c7d2d7f8d43ce9846fd50a914e561e8034f786efee47253aca772
+Original Byte Length     : 3,839 bytes (86 lines)
+Provenance / Wipe Commit : Tazo Wiped AI / Codex / Validation / Test File — a quite config change! (wiped STORM_FALLING_BLOCKS.md)
+Forensic Marker Counts   : Codex/Harness refs=0 | CWSBP/tainted refs=4 | Em/En-dashes=0
+--------------------------------------------------------------------------------
+OFFLINE CRYPTOGRAPHIC VERIFICATION (RUN AGAINST BARE COMMIT/TREE GRAPH):
+  git log --all --full-history --stat -- "src/clusters/STORM_FALLING_BLOCKS.md"
+  # Any local clone holding blob f1bfed4f4077 verifies exact bytes via:
+  git cat-file -t f1bfed4f40779db08c30fb5b9518b72587f2b913 && git cat-file -s f1bfed4f40779db08c30fb5b9518b72587f2b913   # -> blob, 3839
+--------------------------------------------------------------------------------
+DOCUMENT SECTION HEADING INVENTORY (7 headings):
+  * L1: # Storm falling blocks
+  * L3: ## CWSBP reference
+  * L18: ## Payloads
+  * L29: ## Trigger table
+  * L43: ## Devour developer toggle
+  * L71: ## Landing
+  * L82: ## Integration boundaries
+--------------------------------------------------------------------------------
+BOUNDED FAIR-USE EVIDENTIARY EXCERPT (4 of 86 lines shown; full file omitted):
+  L0003 | ## CWSBP reference
+  L0005 | Decayed's storm debris now follows the CWSBP `BP/entities/blocks/falling_block.json` + `BP/src/entities/BlockCluster.ts` mode
+  L0007 | CWSBP's `witherstormmod:falling_block`:
+  L0077 | 3. for `mark_variant=5`, place 2-4 additional random registered withered/flesh blocks nearby, approximating CWSBP's large-deb
+  [... 82 lines omitted under 17 U.S.C. § 107 transformative evidentiary scope ...]
+================================================================================

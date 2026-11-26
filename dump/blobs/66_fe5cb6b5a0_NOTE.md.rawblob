@@ -1,0 +1,32 @@
+================================================================================
+CRYPTOGRAPHIC FORENSIC INSPECTION CARD (17 U.S.C. §§ 102(b), 107 COMPLIANT)
+================================================================================
+Legal Notice: Full verbatim body intentionally omitted so zero executable source
+modules or complete prose documents from TazoLaTaza/Decayed-Reality are hosted.
+This record publishes strictly uncopyrightable cryptographic Git facts (§ 102(b)),
+structural symbol/heading metadata, and a bounded evidentiary excerpt (§ 107)
+establishing autonomous OpenAI Codex harness usage, CWSBP derivation, and cover-up
+deletion commits ('papoi', 'ohmama', 'beca cultural', '1b6facfdcd').
+--------------------------------------------------------------------------------
+Artifact Index           : #66
+Original Repository Path : NOTE.md
+Exact Git Blob SHA-1     : fe5cb6b5a0665a38938304a0fdca97250e18d857
+Exact Raw SHA-256        : 61239a148c3d12f4d35ae80d4481975731ec397afa2ea2e288a1ed4fd432f902
+Original Byte Length     : 637 bytes (15 lines)
+Provenance / Wipe Commit : Tazo Wiped AI / Codex / Validation / Test File — fortnite (wiped RuntimeRegressionTests.ts, WitherStorm_Evolution_Investigation.md, NOTE.md)
+Forensic Marker Counts   : Codex/Harness refs=0 | CWSBP/tainted refs=0 | Em/En-dashes=0
+--------------------------------------------------------------------------------
+OFFLINE CRYPTOGRAPHIC VERIFICATION (RUN AGAINST BARE COMMIT/TREE GRAPH):
+  git log --all --full-history --stat -- "NOTE.md"
+  # Any local clone holding blob fe5cb6b5a066 verifies exact bytes via:
+  git cat-file -t fe5cb6b5a0665a38938304a0fdca97250e18d857 && git cat-file -s fe5cb6b5a0665a38938304a0fdca97250e18d857   # -> blob, 637
+--------------------------------------------------------------------------------
+DOCUMENT SECTION HEADING INVENTORY (3 headings):
+  * L2: ## Scripts & Commands
+  * L8: ## Project Structure Changes
+  * L13: ## Prerequisites
+--------------------------------------------------------------------------------
+BOUNDED FAIR-USE EVIDENTIARY EXCERPT (1 of 15 lines shown; full file omitted):
+  L0002 | ## Scripts & Commands
+  [... 14 lines omitted under 17 U.S.C. § 107 transformative evidentiary scope ...]
+================================================================================

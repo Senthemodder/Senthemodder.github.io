@@ -1,0 +1,62 @@
+================================================================================
+CRYPTOGRAPHIC FORENSIC INSPECTION CARD (17 U.S.C. §§ 102(b), 107 COMPLIANT)
+================================================================================
+Legal Notice: Full verbatim body intentionally omitted so zero executable source
+modules or complete prose documents from TazoLaTaza/Decayed-Reality are hosted.
+This record publishes strictly uncopyrightable cryptographic Git facts (§ 102(b)),
+structural symbol/heading metadata, and a bounded evidentiary excerpt (§ 107)
+establishing autonomous OpenAI Codex harness usage, CWSBP derivation, and cover-up
+deletion commits ('papoi', 'ohmama', 'beca cultural', '1b6facfdcd').
+--------------------------------------------------------------------------------
+Artifact Index           : #59
+Original Repository Path : scripts/runtime-resource-tests.ts
+Exact Git Blob SHA-1     : 2db35ebfdc2fbc64432171db0e51eed2f80e66e2
+Exact Raw SHA-256        : e7178ee55c8f973f743be9984fb705fb27b1a49037e5a087c76252452bbd2c34
+Original Byte Length     : 9,445 bytes (71 lines)
+Provenance / Wipe Commit : Tazo Wiped AI / Codex / Validation / Test File — Tentacle is finished! (wiped 23 automated *-tests.ts suites)
+Forensic Marker Counts   : Codex/Harness refs=0 | CWSBP/tainted refs=0 | Em/En-dashes=0
+--------------------------------------------------------------------------------
+OFFLINE CRYPTOGRAPHIC VERIFICATION (RUN AGAINST BARE COMMIT/TREE GRAPH):
+  git log --all --full-history --stat -- "scripts/runtime-resource-tests.ts"
+  # Any local clone holding blob 2db35ebfdc2f verifies exact bytes via:
+  git cat-file -t 2db35ebfdc2fbc64432171db0e51eed2f80e66e2 && git cat-file -s 2db35ebfdc2fbc64432171db0e51eed2f80e66e2   # -> blob, 9445
+--------------------------------------------------------------------------------
+MODULE IMPORT GRAPH (7 imports):
+  * L1: import assert from "node:assert/strict";
+  * L2: import {readFileSync} from "node:fs";
+  * L3: import {execFileSync} from "node:child_process";
+  * L4: import {resolve} from "node:path";
+  * L5: import {runInNewContext} from "node:vm";
+  * L6: import {build} from "esbuild";
+  * L7: import {test} from "node:test";
+--------------------------------------------------------------------------------
+DECLARED SYMBOL / TEST INVENTORY (up to 25 shown):
+  * L8: legacy
+  * L9: mocks
+  * L17: modules
+  * L18: extra
+  * L19: built
+  * L24: api
+  * L26: setup
+  * L29: dim
+  * L30: head
+  * L32: player
+  * L33: health
+  * L34: capture
+  * L35: step
+  * L39: catalog
+  * L41: paths
+  * L46: client
+  * L47: animation
+  * L48: s
+  * L51: paths
+  * L53: pool
+  * L54: deposit
+  * L60: cluster
+  * L65: beam
+  * L69: rp
+--------------------------------------------------------------------------------
+BOUNDED FAIR-USE EVIDENTIARY EXCERPT (1 of 71 lines shown; full file omitted):
+  L0053 |  const pool=readFileSync("src/clusters/stormDeathScatter.ts","utf8").match(/export const STORM_WITHERED_BLOCK_IDS=\[([\s\S]*?
+  [... 70 lines omitted under 17 U.S.C. § 107 transformative evidentiary scope ...]
+================================================================================

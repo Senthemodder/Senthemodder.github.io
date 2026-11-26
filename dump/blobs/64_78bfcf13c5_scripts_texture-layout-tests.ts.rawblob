@@ -1,0 +1,41 @@
+================================================================================
+CRYPTOGRAPHIC FORENSIC INSPECTION CARD (17 U.S.C. §§ 102(b), 107 COMPLIANT)
+================================================================================
+Legal Notice: Full verbatim body intentionally omitted so zero executable source
+modules or complete prose documents from TazoLaTaza/Decayed-Reality are hosted.
+This record publishes strictly uncopyrightable cryptographic Git facts (§ 102(b)),
+structural symbol/heading metadata, and a bounded evidentiary excerpt (§ 107)
+establishing autonomous OpenAI Codex harness usage, CWSBP derivation, and cover-up
+deletion commits ('papoi', 'ohmama', 'beca cultural', '1b6facfdcd').
+--------------------------------------------------------------------------------
+Artifact Index           : #64
+Original Repository Path : scripts/texture-layout-tests.ts
+Exact Git Blob SHA-1     : 78bfcf13c5a6f1be00b32f54265e70fa7bbbc6e4
+Exact Raw SHA-256        : c2f5ff9532e63314767a3e32737299cf9470f4a387b6c03ce379184612c144ed
+Original Byte Length     : 2,221 bytes (24 lines)
+Provenance / Wipe Commit : Tazo Wiped AI / Codex / Validation / Test File — Tentacle is finished! (wiped 23 automated *-tests.ts suites)
+Forensic Marker Counts   : Codex/Harness refs=0 | CWSBP/tainted refs=0 | Em/En-dashes=0
+--------------------------------------------------------------------------------
+OFFLINE CRYPTOGRAPHIC VERIFICATION (RUN AGAINST BARE COMMIT/TREE GRAPH):
+  git log --all --full-history --stat -- "scripts/texture-layout-tests.ts"
+  # Any local clone holding blob 78bfcf13c5a6 verifies exact bytes via:
+  git cat-file -t 78bfcf13c5a6f1be00b32f54265e70fa7bbbc6e4 && git cat-file -s 78bfcf13c5a6f1be00b32f54265e70fa7bbbc6e4   # -> blob, 2221
+--------------------------------------------------------------------------------
+MODULE IMPORT GRAPH (3 imports):
+  * L1: import assert from "node:assert/strict";
+  * L2: import {existsSync,readFileSync,readdirSync} from "node:fs";
+  * L3: import {dirname} from "node:path";
+--------------------------------------------------------------------------------
+DECLARED SYMBOL / TEST INVENTORY (up to 25 shown):
+  * L4: rp
+  * L5: exists
+  * L6: roots
+  * L19: set
+--------------------------------------------------------------------------------
+BOUNDED FAIR-USE EVIDENTIARY EXCERPT (4 of 24 lines shown; full file omitted):
+  L0001 | import assert from "node:assert/strict";
+  L0002 | import {existsSync,readFileSync,readdirSync} from "node:fs";
+  L0003 | import {dirname} from "node:path";
+  L0004 | const rp="Decayed_Reality_RP/",walk=(dir:string):string[]=>readdirSync(dir,{withFileTypes:true}).flatMap(e=>e.isDirectory()?w
+  [... 20 lines omitted under 17 U.S.C. § 107 transformative evidentiary scope ...]
+================================================================================

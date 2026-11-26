@@ -1,0 +1,425 @@
+# Git Repository & License Audit Log: ThatJadenXgamer (ThatMaidenJaden)
+
+## 1. Subject & Cryptographic Verification Parameters
+
+```text
+GitHub Account    : https://github.com/ThatJadenXgamer (display: JadenXgamer / ThatMaidenJaden)
+Author Emails     : [redacted-private-email]
+                    [redacted-private-email]
+                    114387521+ThatJadenXgamer@users.noreply.github.com
+Committer Timezone: +0530 (IST)
+PGP Signer Key    : GitHub Web-Flow RSA Key 0xB5690EEEBB952194 (https://github.com/web-flow.gpg)
+
+Repositories Audited:
+1. https://github.com/ThatJadenXgamer/Jadens-Nether-Expansion.git (538 commits, 9 branches)
+   - Branch 1.21.1 PGP-Signed Anchor: cd0a5f75439e8e77e53bec07b9ef546274e9fe23 (2026-11-16)
+2. https://github.com/ThatJadenXgamer/Gleam.git (42 commits, 2 branches)
+   - Branch 1.21.1-neo PGP-Signed HEAD: 92421398fd757ac5407cb42e1680af6f522e3c94 (2026-11-14)
+3. https://github.com/ThatJadenXgamer/ElysiumAPI.git (177+ commits, 7 branches)
+   - Branch Asphodel-1.20.1-1.21.1 HEAD: a1306d039e18915286fb5844e8aea78f8335a69a (2026-11-21)
+4. https://github.com/ThatJadenXgamer/AsphodelGradle.git (13 commits, 1 branch)
+   - Branch main HEAD: a0a06b49658573bf2660a638c8d62df8b6ebe8e8 (2026-11-01)
+```
+
+### Independent Reproduction Commands
+
+Every commit object, PGP signature, diff, and byte sequence below can be verified independently from public clones or archived `.bundle` files:
+
+```bash
+# 1. Import GitHub's official public PGP key
+curl -s https://github.com/web-flow.gpg | gpg --import
+
+# 2. Clone bare repositories (or clone from archived .bundle files)
+git clone --bare https://github.com/ThatJadenXgamer/Jadens-Nether-Expansion.git jne.git
+git clone --bare https://github.com/ThatJadenXgamer/Gleam.git gleam.git
+git clone --bare https://github.com/ThatJadenXgamer/ElysiumAPI.git elysium.git
+git clone --bare https://github.com/ThatJadenXgamer/AsphodelGradle.git asphodel.git
+
+# 3. Cryptographically verify GitHub RSA signatures on key anchor commits
+git --git-dir=jne.git verify-commit 35da7059144e6fa662b2e63f6ae96400589540c8
+git --git-dir=jne.git verify-commit 966c08d65e5e9176039e7807082824ab0b7e4579
+git --git-dir=jne.git verify-commit cd0a5f75439e8e77e53bec07b9ef546274e9fe23
+git --git-dir=gleam.git verify-commit 92421398fd757ac5407cb42e1680af6f522e3c94
+
+# 4. Verify SHA-1 Merkle ancestry locking unsigned commits beneath PGP-signed descendants
+git --git-dir=jne.git merge-base --is-ancestor 3d6606a1a784da16059fe2c1814887fb61f46c23 35da7059144e6fa662b2e63f6ae96400589540c8 && echo "LOCKED"
+git --git-dir=jne.git merge-base --is-ancestor 7d77fb1a2562474f4a72950110be29d68bf3c455 cd0a5f75439e8e77e53bec07b9ef546274e9fe23 && echo "LOCKED"
+git --git-dir=jne.git merge-base --is-ancestor 9dcac09339b6e7af7067b581fbc80c365de121a8 cd0a5f75439e8e77e53bec07b9ef546274e9fe23 && echo "LOCKED"
+git --git-dir=gleam.git merge-base --is-ancestor ae3265ac9acca94f588c865682ed6b6d44820037 92421398fd757ac5407cb42e1680af6f522e3c94 && echo "LOCKED"
+```
+
+---
+
+## 2. `Jadens-Nether-Expansion`: The 5-Commit `Claude Opus 4.8` Code-Laundering Sequence
+
+Target file: `src/main/java/net/jadenxgamer/netherexp/core/block/entity/PetrifiedSwirlsBlockEntity.java` on branch `1.21.1`.
+
+### 2.1 Chronological Commit Chain
+
+1. **`3d6606a1a784da16059fe2c1814887fb61f46c23`** (`2026-06-01 08:50:03Z`, author `ThatJadenXgamer <[redacted-private-email]>`, subject: `a lot of stuff I just forgot to commit`, `2,021` insertions):
+   * Commits `PetrifiedSwirlsBlockEntity.java` containing two non-ASCII `U+2013` (`0xE2 0x80 0x93`) en-dash comments (`lines 128, 137`) and an unguarded `@OnlyIn(Dist.CLIENT)` call inside `triggerEvent(int id, int type)` that crashes dedicated servers via NeoForge `RuntimeDistCleaner`.
+2. **`35da7059144e6fa662b2e63f6ae96400589540c8`** (`2026-06-03 14:53:56Z` / `20:23:56 +0530`, author `Ethan White <42824671+n0es@users.noreply.github.com>`, committer `GitHub <[redacted-private-email]> +0530`, **PGP-signed**):
+   * `ThatJadenXgamer` squash-merges Pull Request `#283` through the GitHub web interface (`+0530` committer offset). The commit message contains the explicit trailer `Co-authored-by: Claude Opus 4.8 <noreply@anthropic.com>`.
+   * Refactors `triggerEvent` from 3 braced multi-line `case` blocks into 3 single-line arrow statements nested inside `if (this.level.isClientSide())`, keeping `return true;` outside the client check so `ServerLevel#doBlockEvent` still relays `ClientboundBlockEventPacket` to clients. Remains live on `1.21.1` for `27` days.
+3. **`966c08d65e5e9176039e7807082824ab0b7e4579`** (`2026-06-30 10:30:29Z` / `16:00:29 +0530`, author `JadenXgamer <114387521+ThatJadenXgamer@users.noreply.github.com>`, **PGP-signed**):
+   * Reverts `35da7059144e6fa662b2e63f6ae96400589540c8` via Pull Request `#294`.
+   * PR `#294` body by `ThatJadenXgamer`:
+     ```text
+     It has come to attention that the following PR was AI generated using Claude
+     and as such is being reverted. I do not condone nor support generative AI use in my personal projects, everything about JNE is 100% human made and I intend on keeping it that way.
+     ```
+4. **`7d77fb1a2562474f4a72950110be29d68bf3c455`** (`2026-06-30 10:36:28Z`, **`359` seconds after `966c08d65e`**, `parent: 966c08d65e5e9176039e7807082824ab0b7e4579`, author `ThatJadenXgamer <[redacted-private-email]>`, subject: `Fix Petrified Soul Swirls Server Crash`):
+   * Re-commits the single-line arrow `switch` + trailing `return true;` structure from `35da705914` under `ThatJadenXgamer`'s authorship, deleting the 5-line comment from `35da705914` and moving `this.level.isClientSide()` into the outer `if` condition.
+   * Because `ServerLevel#runBlockEvents` calls `triggerEvent` server-side first and only broadcasts `ClientboundBlockEventPacket` when `triggerEvent` returns `true`, moving `isClientSide()` to the outer `if` caused server calls to fall through to `super.triggerEvent()` (`false`), breaking Petrified Swirls particles in both singleplayer and multiplayer.
+   * `166` seconds later (`2026-06-30 10:39:14Z`), `ThatJadenXgamer` posts on PR `#283`: `"This PR has been reverted due to the use of generative AI"`.
+5. **`9dcac09339b6e7af7067b581fbc80c365de121a8`** (`2026-07-15 14:16:33Z`, `15` days later, author `ThatJadenXgamer <[redacted-private-email]>`, subject: `car ass`, `+1,369 / -37` across repo):
+   * Restores the exact nested `if (this.level.isClientSide()) { switch (type) { ... } } return true;` control flow authored by `Claude Opus 4.8` in `35da705914`, omitting the explanatory comment and `n0es` / `Claude Opus 4.8` attribution.
+
+### 2.2 Exact Code Comparison Across Commits
+
+```java
+// [A] Pre-#283 (3d6606a1a7, 2026-06-01, ThatJadenXgamer):
+if (this.level != null && id == 1) {
+    switch (type) {
+        case 0 -> {
+            PetrifiedSwirlsBlock.Client.petrificationParticle(level, level.random, getBlockPos());
+            return true;
+        }
+        case 1 -> {
+            PetrifiedSwirlsBlock.Client.unpetrifyParticle(level, level.random, getBlockPos());
+            return true;
+        }
+        case 2 -> {
+            PetrifiedSwirlsBlock.Client.attractToPetrifierParticle(level, level.random, getBlockPos());
+            return true;
+        }
+    }
+}
+
+// [B] PR #283 (35da705914, 2026-06-03, n0es + Claude Opus 4.8):
+if (this.level != null && id == 1 && type >= 0 && type <= 2) {
+    // The particle helpers live in PetrifiedSwirlsBlock.Client, which is @OnlyIn(Dist.CLIENT).
+    // triggerEvent is dispatched on the server too (ServerLevel#blockEvent -> doBlockEvent),
+    // so touching that class server-side trips RuntimeDistCleaner and crashes dedicated servers.
+    // Only spawn particles on the client; on the server just acknowledge the event (return true)
+    // so it is still relayed to nearby clients.
+    if (this.level.isClientSide()) {
+        switch (type) {
+            case 0 -> PetrifiedSwirlsBlock.Client.petrificationParticle(level, level.random, getBlockPos());
+            case 1 -> PetrifiedSwirlsBlock.Client.unpetrifyParticle(level, level.random, getBlockPos());
+            case 2 -> PetrifiedSwirlsBlock.Client.attractToPetrifierParticle(level, level.random, getBlockPos());
+        }
+    }
+    return true;
+}
+
+// [C] +359s Post-Revert Rewrite (7d77fb1a25, 2026-06-30 10:36:28Z, ThatJadenXgamer - breaks server relay):
+if (this.level != null && this.level.isClientSide() && id == 1) {
+    switch (type) {
+        case 0 -> PetrifiedSwirlsBlock.Client.petrificationParticle(level, level.random, getBlockPos());
+        case 1 -> PetrifiedSwirlsBlock.Client.unpetrifyParticle(level, level.random, getBlockPos());
+        case 2 -> PetrifiedSwirlsBlock.Client.attractToPetrifierParticle(level, level.random, getBlockPos());
+    }
+    return true;
+}
+
+// [D] Commit "car ass" (9dcac09339, 2026-07-15, ThatJadenXgamer - live on 1.21.1 HEAD):
+if (this.level != null && id == 1) {
+    if (this.level.isClientSide()) {
+        switch (type) {
+            case 0 -> PetrifiedSwirlsBlock.Client.petrificationParticle(level, level.random, getBlockPos());
+            case 1 -> PetrifiedSwirlsBlock.Client.unpetrifyParticle(level, level.random, getBlockPos());
+            case 2 -> PetrifiedSwirlsBlock.Client.attractToPetrifierParticle(level, level.random, getBlockPos());
+        }
+    }
+    return true;
+}
+```
+
+### 2.3 Raw PGP-Signed Commit Objects (`Jadens-Nether-Expansion`)
+
+```text
+# Commit 35da7059144e6fa662b2e63f6ae96400589540c8
+tree 32b7873a153d5996d1e7afe4dcc2af2de637427b
+parent 3d6606a1a784da16059fe2c1814887fb61f46c23
+author Ethan White <42824671+n0es@users.noreply.github.com> 1780498436 -0400
+committer GitHub <[redacted-private-email]> 1780498436 +0530
+gpgsig -----BEGIN PGP SIGNATURE-----
+ 
+ wsFcBAABCAAQBQJqIEAECRC1aQ7uu5UhlAAAmTEQACBaLgwmOMlHg+JNPq8g5U4L
+ m0YqO/nZYgEITLfxllFTDv5PNDGk++soDXsQdkL4Ov95JU23ISh3p6MAGvTRg+Um
+ 85HNoKvqyB+QQmKjstGc7plzOo0yWYGSSQZSzIXjswBkkJHZk9vQXyfWZu+Sfb02
+ 03dg7pfmIZLgyhddg4vHZMO8Wi/DQl9NazFV5optFcYNKa71AJK7+c5B3f+ixpaO
+ 1R0KksT80lzpUKVWbkrA/kjX4IeegNOwpwE5Prvl2Xjeh467FCwVZAIoVGQK5InO
+ 8pLJn8UHB1oRYjY7/8CuK/TIgkOBwa5vhnz5W5jypfGNsSRQJxpwVpq9CJvgMLq9
+ KAJ0UOyEpCU9qWb3WoSu+juS39nVMQvFEP1WJfz2O++0EKMD3cjPc9AAcTgiLPj/
+ 7SH8Xp2ArkvLMBWrXfWHcfk/+BvNGmdwfkOOaUCA1TTfw2J2umlXE/1qtkGw+xTh
+ DrGPckPNxdcnRkEWC7UfosANy7+6cJlpcHEs7vmF9WhFOJlthJ7K4o7d85pxtBUb
+ Mdxqrv+IVp/GknRY7IXKc9kODh1uWrGwkE0Ov0I9+7T5jm1Adb3/SIVZuavPZffV
+ Kb5NUe+zS7ZDArq5ezSvO9lZoRV7i93gKYURkkGrsLeu8g+deyldNGLpGI8wp1Zt
+ Vx+cwjs6Fhkj09n6NuPA
+ =pmAd
+ -----END PGP SIGNATURE-----
+
+Fix dedicated server crash from PetrifiedSwirlsBlockEntity#triggerEvent (#283)
+
+triggerEvent unconditionally called PetrifiedSwirlsBlock.Client particle
+helpers, which live in an @OnlyIn(Dist.CLIENT) class. Because block events
+are dispatched server-side too (ServerLevel#blockEvent -> doBlockEvent),
+this tripped NeoForge's RuntimeDistCleaner and crashed dedicated servers
+whenever a Petrified Swirls block ticked its event.
+
+Guard the particle calls behind level.isClientSide(); on the server simply
+return true so the event is still relayed to clients. Same pattern used to
+resolve the earlier ParticleRenderType dist crash (#269).
+
+Fixes #282
+
+Co-authored-by: Claude Opus 4.8 <noreply@anthropic.com>
+```
+
+```text
+# Commit 966c08d65e5e9176039e7807082824ab0b7e4579 (direct parent of 7d77fb1a2562474f4a72950110be29d68bf3c455)
+tree 5d2d8b5ba7c4ea099b2bd19acb06ba4645fd5320
+parent 3b53abb138aa007d55223847d64b261a6c427ddb
+author JadenXgamer <114387521+ThatJadenXgamer@users.noreply.github.com> 1782815429 +0530
+committer GitHub <[redacted-private-email]> 1782815429 +0530
+gpgsig -----BEGIN PGP SIGNATURE-----
+ 
+ wsFcBAABCAAQBQJqQ5rFCRC1aQ7uu5UhlAAAVSAQAGXEfaSOgDl6rgiEtONXJqUS
+ ZwHbtXxOolIGLp/CvPfuY18uRs0VR8Y6cED/KuLyl1st0jrPrlYbvibjghEH0Lpl
+ 14FO6EkJPyoYmR020o1wK8N52YHaBv8rcBj0EHFLfv6lMYkPzIvNH4oGNxE7V1Qq
+ yk0yqCmiTrW/Xpc022swMM7AFIfr1l5k3jo/aWs0QgBXweK5tzsJWnAVCV659qi3
+ wXIwaL7NTDowvw8igO4mDk0ZSSK85VO6z/skE9Wzhr3Yz/jHrd2p6+kiIGliSXk+
+ ChmmP4F3lpU1fS/gRuKsNW6pRP4TfbPYVry1TDQT26efys8geBbIC7+L/Kcpk+Ym
+ wnojE/ygdZMUDC4ylMoxIt+3DG/duwk521+WLP3g+/6yIjVAwn/vvtgcHbY+IUj9
+ eB2P5YiAYpWt/aXPxeO+O6o80Rvi3IaUNogym67Yg5rZSzFpR9Dog7Mh8L54ujFO
+ EpLFQ8m6RCp/lpR2MtinJoysYAdRBqfc/WAkHdwxcewiXx2Us6/E87DEujtLeRdm
+ UwQhA7wZVw0QqYkIVtwEagf0znUXoX04OqKMU344HT8roGItu9euC0AW9/xvqXdo
+ Sz4d44MKgseDUUyy3ctdjr3EmzGNL60qTfezmTkhNHm5Xx1yz0qfc+QOTIcipJPQ
+ yJ1SJKo6YTyfzt5bcTjm
+ =gPw6
+ -----END PGP SIGNATURE-----
+
+Revert "Fix dedicated server crash from PetrifiedSwirlsBlockEntity#triggerEve..." (#294)
+
+This reverts commit 35da7059144e6fa662b2e63f6ae96400589540c8.
+```
+
+```text
+# Commit cd0a5f75439e8e77e53bec07b9ef546274e9fe23 (2026-11-16 descendant locking 9dcac09339)
+tree a85738e259d55669a5849ce6503be34e59254949
+parent 7ce1a253efeb0707c1f1c63552d8f0c87e890dcf
+author Derp_gamer22 <147771102+Derpgamer22@users.noreply.github.com> 1794854305 -0500
+committer GitHub <[redacted-private-email]> 1794854305 +0530
+gpgsig -----BEGIN PGP SIGNATURE-----
+ 
+ wsFcBAABCAAQBQJq+02hCRC1aQ7uu5UhlAAAZCIQACYKxnyQpHgwNB9mwyq67wwA
+ JYvCxwPWmfo6hk51zYhXkLBfbTQ4RtctmbWy0LpdVYvu6Bugmo363kFaCCqgpU6O
+ bq9CbWI9Xx9wtkDFNsG3YJhWEs0lxA1/Rzt2O3sn63GiKPZSP44KQbvNwrOWP2Go
+ JKXIzK9lhJkDKylxgIIKub89fX25P+zOumIz8IZ4EMgN+bZfC23WAL0GW4uPPmqt
+ SYZULlFjoSB9xN6Nt66pnOhSlUUc4fCQJgCGun47wymEGwytdwqsNTzcTolAMNkz
+ TPxJws7lH/L8HVlEwMXH6CeKITICCL1QPZsP52NBw7ZtcDOgyIZXcFlk0oMUkocP
+ 7Nc+5sRITaqG0+0bO1V+qjqMNsgkTpjRD7SBWn54UcGJQDLDmmoASIsIjCvScJre
+ KULsJG/53p6MwHkKzMjHu6/pgnsNCeaEHtgXFFy313Aa4KZGk86Y1xKfQa/OUH33
+ NFA77paa+wZETseiTE/80JLEhliATIHKWG7To7tNh8JvQtmWeemeVAQMSdo9lv0v
+ KuOuiNeMPcPfGARQs0GKtrs7BTviR3VqFOqw8cxkPxAo4kGTkIZ4nyDL0dt3ByKK
+ eh1N8lB03oN3iBiHJRhRGnJW7Ptj/jNgxk7It47Ym9UJQm3KtRd8wRVw+JSzgu+/
+ EGzyST8G/T/UMNyh2oB4
+ =4VYi
+ -----END PGP SIGNATURE-----
+
+Fixes (#363)
+
+I fixed the stuff myself
+```
+
+---
+
+## 3. `Gleam`: `Low-Drag-MC/Shimmer` (`MIT`) License Breach, Variable Scrubbing, and OpenGL 4.3 Defects
+
+### 3.1 `Low-Drag-MC/Shimmer` (`MIT`) License Violation
+
+1. **Upstream License (`https://github.com/Low-Drag-MC/Shimmer`, branch `1.20`, file `LICENSE`):**
+   ```text
+   MIT License
+   Copyright (c) 2022 Low-Drag-MC
+   ...
+   The above copyright notice and this permission notice shall be included in all
+   copies or substantial portions of the Software.
+   ```
+2. **Written Admission of Derivation (`ThatJadenXgamer/Gleam`, `README.md` line `137`, added in `2bb5dd5`):**
+   ```text
+   **[Shimmer](https://modrinth.com/mod/shimmer!)** - A small chunk of Gleam's colored lights code was derived from Shimmer's as a starting-off point, which I've since iterated on and changed quite drastically to fit my own needs for the project; though it is still important to remember that without Shimmer there would likely be no Gleam.
+   ```
+3. **Omission of `MIT` Notice & Incompatible Relicensing (`Gleam @ 92421398fd`):**
+   Root directory listing of `ThatJadenXgamer/Gleam` (`1.21.1-neo` `HEAD`):
+   ```text
+   .gitignore, README.md, build.gradle, gradle.properties, gradle/, gradlew, gradlew.bat, libs/, settings.gradle, src/
+   ```
+   `Gleam` contains **no `LICENSE` file**, omits `Copyright (c) 2022 Low-Drag-MC` and the mandatory `MIT` permission notice from all source and resource files, and declares at `README.md:169`:
+   ```text
+   Gleam (c) 2026 by ThatJadenXgamer (ThatMaidenJaden) is licensed under CC BY-NC-ND 4.0
+   ```
+
+### 3.2 Side-by-Side Comparison: `Shimmer` (`shimmer.glsl`) vs. `Gleam` First Code Commit (`ae3265ac9a`, `2026-08-23`)
+
+```glsl
+// Low-Drag-MC/Shimmer: Common/src/main/resources/assets/minecraft/shaders/include/shimmer.glsl
+struct Light {
+    vec4 color;
+    vec3 position;
+    float radius;
+};
+layout (std140) uniform Lights {
+    Light lights[2048];
+};
+layout (std140) uniform Env {
+    int uvLightCout;
+    int nouvLightCout;
+    vec3 camPos;
+};
+vec3 jodieReinhardTonemap(vec3 c){
+    float l = dot(c, vec3(0.2126, 0.7152, 0.0722));
+    vec3 tc = c / (c + 1.0);
+
+    return mix(c / (l + 1.0), tc, tc);
+}
+```
+
+```glsl
+// ThatJadenXgamer/Gleam Commit ae3265ac9acca94f588c865682ed6b6d44820037 (GleamShaderPatcher.java)
+struct GleamLightSource {
+    vec4 color;
+    vec3 position;
+    float radius;
+};
+layout(std140, binding = 10) uniform GleamLight {
+    GleamLightSource lights[64];
+};
+layout(std140, binding = 11) uniform GleamScene {
+    int lightCount;
+    vec3 cameraPos;
+};
+vec3 applyTonemap(vec3 color) {
+    float lum = dot(color, vec3(0.2126, 0.7152, 0.0722));
+    vec3 mapped = color / (color + 1.0);
+    return mix(color / (lum + 1.0), mapped, mapped);
+}
+```
+
+* Commit `ae3265ac9a` (`2026-08-23 20:31:29 +0530`) simultaneously introduced three `public final class` utility classes with `private` empty constructors (`GleamEmitterRegistry`, `GleamLightEngine`, `GleamShaderPatcher`), compared against `0` `private` utility constructors across `303` classes (`34,041` LOC) of `Jadens-Nether-Expansion`.
+* Five days later (`ef0597140d`, `2026-08-28 03:38:11 +0530`, `"HEAVILY optimized gleam"`), `GleamLightEngine` was replaced with an OpenGL `4.3` `std430` `GL_SHADER_STORAGE_BUFFER` (`SSBO`) `32x32x32` spatial grid featuring `0xFFFF` twin-`uint16` overflow packing at `currentCount == 127`, `MapMaker().weakKeys()` concurrent section tracking, Rec.709 luminance saturation math, and cubic Hermite smoothstep LOD (`t * t * (3.0f - 2.0f * t)`), containing **`0` Javadoc blocks and `2` single-line comments across `1,988` LOC**.
+* In Commit `2bb5dd5` (`2026-09-08 20:42:09 +0530`, **prior to Issue `#1`**), `ThatJadenXgamer` added two separate denials to `README.md` (`line 27`: *"NO generative AI was used; because Gleam is a 'shining' example of how you dont need to use ai"* and `lines 159-161`: *"Q: Is this mod AI-generated? A: As stated earlier, NO."*).
+
+### 3.3 Documented Shader & OpenGL Defects in `Gleam` Issue Tracker
+
+1. **Issue `#7` (`2026-09-15`, open and unanswered): Permanent Freeze on macOS (`OpenGL 4.1` Hardware Ceiling vs. `#version 430 core`):**
+   * `Shimmer` used `#version 150` + `GL31` `UBO`s (`2,048` lights) because Apple's macOS OpenGL driver stack terminates at OpenGL `4.1` (`#version 410`) and does not support OpenGL `4.3` (`#version 430` / `GL_SHADER_STORAGE_BUFFER`). `Gleam` rewrites shaders to `#version 430 core` with `std430` SSBOs (`GleamSodiumPatcher.java:7`, `GleamVeilPreProcessor.java:46`), hanging macOS clients at `Gleam: patched vertex shader 'rendertype_solid'`.
+2. **Issue `#10` (`2026-10-31`, open and unfixed): Naive `#extension` String Splicing Crashes `Polytone`:**
+   * `GleamSodiumPatcher` and `GleamVanillaPatcher` splice `#extension GL_ARB_shader_storage_buffer_object : enable` via raw `source.indexOf("\n", versionIdx)`. When `Polytone` modifies shader headers, OpenGL aborts compilation with `1:87(1): error: #extension directive is not allowed in the middle of a shader`.
+3. **Issue `#3` (`2026-09-12`) -> PR `#12` (`aef59ea`, `2026-11-12` by `MikelR1`): `62`-Day Unfixed 2-Line Tint Bug:**
+   * `GleamShaderSources.java` overwrote biome block tints for `62` days until external contributor `MikelR1` fixed `2` lines in PR `#12` (`1 file changed, 2 insertions(+), 2 deletions(-)`).
+4. **PR `#11` (`4e7b584`, `2026-11-11` by `Zonix-Official`):**
+   * `RebuildTaskMixin` and `ChunkBuilderMeshingTaskMixin` used fixed literal vanilla Y-bounds `-64` to `319` instead of querying `getMinBuildHeight()` and `getMaxBuildHeight() - 1`.
+
+### 3.4 Raw PGP-Signed `HEAD` Commit Locking `Gleam` History (`92421398fd757ac5407cb42e1680af6f522e3c94`)
+
+```text
+tree 2af97586d19d9982cd69b7cdd0c818135b948596
+parent 52bc5835ed1d0480eb3d4e39099f044006d60abe
+parent 214f93abfe339effd0b45587c949ee471d02706d
+author JadenXgamer <114387521+ThatJadenXgamer@users.noreply.github.com> 1794676310 +0530
+committer GitHub <[redacted-private-email]> 1794676310 +0530
+gpgsig -----BEGIN PGP SIGNATURE-----
+ 
+ wsFcBAABCAAQBQJq+JZWCRC1aQ7uu5UhlAAAwyMQAG8o4GgqvW9xTKXYOUipaLTL
+ 4TLXH/HqkrP4kqg8zPjlYG9LKiiJ4WqpwJ2TtaT5M9YBSXGAggw2ooNC7WbRH99Z
+ 5LnVw3mNl7WfIP7JmkVV7YFNwGIe9a3IeiAjTsZ2+lwXFuBglRwcSb2rpzlbaUM2
+ 7gFkfukSnz6z6b38/fJBNdfxWJaKywA8xUCgKwaSTAv7h9ru0uDDtQGPdGMeFYks
+ pkV05NVWs4t8TMsKim8KPCfcPTDd3fzoLBxoxVDJcNU/eEx+Zptbs1dvITH8/VNt
+ vagm56qJsA3vUXDs2GJB+Zb5eSYgrUHM9iW8uA+PWQSBZstUzUu4HPHEEOxON1iZ
+ Su9EhSSWhxeadcv1SbvUkAjJhtp0IyYgJs/WpX1jYbiLsSIWWyRNly3wjlcTyVE9
+ uLw2h7FxBcikb9xPpeTy/7j0iDU7RlzuSdTCcj95imYzwQc3z1Ls07hzWH4hwQ6v
+ zXV3kSi2Pwm67qB11D3f2+cd7SgxQe3xEpobZpNlye2fVMdH1x7W4RKhWbp5gwEG
+ 3/iGpuJuT1Sr7tMJaw9dIkPZeqLUP1mXzh184U4a118eo/72Z+Z/XPPyJ5TWxDr3
+ vDdDgc97+9cO+r/K7/ZfMCyHl34yXgEY9vjUxP2N5KIsq8EHsR/SmKtJdbqtukO0
+ 5ZKc8kCykNeF3nGx6CAb
+ =0apc
+ -----END PGP SIGNATURE-----
+
+Merge pull request #13 from Zonix-Official/1.21.1-neo
+
+Minor code adjustments + Copper Torch changes/fixes
+```
+
+---
+
+## 4. Non-Keyboard `U+2013` (`0xE2 0x80 0x93`) En-Dashes in `ThatJadenXgamer` Solo Commits
+
+Standard keyboards do not map `U+2013` (`EN DASH`, UTF-8 bytes `0xE2 0x80 0x93`), and IntelliJ IDEA does not convert ASCII `-` (`0x2D`) into `0xE2 0x80 0x93` inside Java comments. Across `Jadens-Nether-Expansion`, `ThatJadenXgamer`'s normal separator is ASCII ` - ` (`101` occurrences). Four `U+2013` lines appear in solo commits authored by `ThatJadenXgamer <[redacted-private-email]>`:
+
+1. **`Jadens-Nether-Expansion` Commit `3d6606a1a784da16059fe2c1814887fb61f46c23` (`2026-06-01`, `PetrifiedSwirlsBlockEntity.java` lines `128` & `137`, live on `1.21.1`):**
+   ```java
+   // Do NOT save pendingUnpetrify – it would cause premature unpetrification on reload
+   // Always reset pending flag on load – never restore from saved data
+   ```
+2. **`Jadens-Nether-Expansion` Commit `f8ba33139429e7ac82df4952854c47b12255b311` (`2026-03-25`), transferred in `ElysiumAPI` Commit `40c06041fced08e71f3a8a05ed4fc7a49d20ca7d` (`2026-06-27`, `ElysiumArrowItem.java` lines `27` & `29`, live on `1.21.1` and `1.20.1`):**
+   ```java
+   *   <li>{@code (Level, LivingEntity, ItemStack, ItemStack)} – used when the arrow is shot by an entity
+   *       (via {@link #createArrow(Level, ItemStack, LivingEntity, ItemStack)}).</li>
+   *   <li>{@code (Level, double, double, double, ItemStack, ItemStack)} – used when the arrow is placed in the world
+   *       (via {@link #asProjectile(Level, Position, ItemStack, Direction)}).</li>
+   ```
+
+---
+
+## 5. Multi-Repository Stylometric Discontinuity (`AsphodelGradle` & `ElysiumAPI @ Asphodel-1.20.1-1.21.1`)
+
+Both `AsphodelGradle` (`main`) and `ElysiumAPI` (`Asphodel-1.20.1-1.21.1`, `19,101` LOC committed between `2026-10-26` and `2026-11-21`, including `3` commits on `2026-11-21`: `466be53073`, `6351041c81`, `a1306d039e`) have **`0` external contributors** (`100%` committed under `ThatJadenXgamer`).
+
+### 5.1 Quantitative Code & Documentation Metrics Across Eras
+
+| Repository / Branch | Date Range | Java Files / LOC | `public final class` | `private Ctor() {}` | Javadoc `<p>` | `{@code}` / `{@link}` | Oxford Commas (`a, b, and c`) |
+| :--- | :--- | :---: | :---: | :---: | :---: | :---: | :---: |
+| `JNE` (`1.20.1`) | `2023-2024` | `300` / `30,711` | `0` (`0.0%`) | `0` | `0` | `0` / `0` | `0` |
+| `JNE` (`1.21.1`) | `2025-Aug 2026` | `303` / `34,041` | `2` (`0.7%`) | `0` | `3` | `1` / `3` | `0` (`12` non-Oxford) |
+| `Gleam` (`1.21.1-neo`) | `Aug-Nov 2026` | `28` / `1,988` | `6` (`21.4%`) | `4` | `0` | `0` / `0` | `0` |
+| `AsphodelGradle` (`main`) | `Sep-Nov 2026` | `20` / `2,357` | `5` (`25.0%`) | `4` | `0` | `0` / `0` | `3` (`0` non-Oxford) |
+| `ElysiumAPI` (`Asphodel-1.20.1-1.21.1`) | `Oct 26-Nov 21, 2026` | `235` / `19,101` | `45` (`19.1%`) | `36` | `87` | `213` / `129` | `4+` in Javadocs (`5` non-Oxford in `.md`) |
+
+### 5.2 Same-Author Prose Contrast Within `ElysiumAPI` & `AsphodelGradle`
+
+* **Handwritten `CODE_CONVENTION.md` (`ElysiumAPI` Commit `ee37983ca3`, `2026-10-26`, no Oxford comma, comma splices):**
+  ```text
+  Hello, hello! If you're reading this then it probably means you want to contribute to Elysium API,
+  if that's the case then this document will catch you up to speed on our various domain-specific conventions.
+  ... right now our scope and targets are for the versions: `1.20.1` and `1.21.1` and the loaders: `fabric`, `forge` and `neoforge`.
+  ```
+* **`ElysiumAttachments.java` (`ElysiumAPI` Commit `3300787e5a`, `2026-11-07`, `5` consecutive Oxford commas + `<p>`/`{@code}`/`{@link}`):**
+  ```java
+  /**
+   * The central facade for all data attachment operations in Elysium API.
+   * <p>
+   * This class provides a unified, cross-loader, and cross-version entry point
+   * for reading and writing attachments on entities, block entities, and level
+   * chunks. Whether you are running on 1.20.1 or 1.21.1, and regardless of
+   * whether the underlying mod loader is Fabric, Forge, or NeoForge, the methods
+   * here behave identically.
+   * <p>
+   * To register your attachment types, call {@link #register(String, Consumer)}
+   * from your mod's common initialization phase. Once registered, use the various
+   * {@code getData}, {@code setData}, {@code hasData}, and {@code removeData}
+   * methods to work with attachment values on live holders.
+   */
+  ```
+* **Intra-Commit Paragraph Alternation (`AsphodelGradle/README.md`, Commit `a0a06b49658573bf2660a638c8d62df8b6ebe8e8`, `2026-11-01`):**
+  ```text
+  [Line 195 - Opening paragraph]:
+  `asphodel::mixin` is a resources-side directive made purely for convenience and utility sake. this one rewrites your mixin JSON config so that a mixin class gets added to the right array without you having to keep the config in sync by hand, which vastly reduces boilerplate in an enviornment like asphodel where you must curate delegate mixins carefull across the differing source sets.
+
+  [Lines 207-214 - Immediately following paragraphs in same commit]:
+  Conditions work exactly like the other directives, including the comparison operators. The directive must be placed above the `@Mixin` annotation on the class; anywhere else and the build warns and ignores it.
+
+  A few things will get you a warning instead of an addition: a class without an `@Mixin` annotation, a directive placed below the annotation, a `file=` that escapes the resources root, a class outside the mixin config's `package`, and an entry that is already present in the array.
+  ```

@@ -1,0 +1,67 @@
+================================================================================
+CRYPTOGRAPHIC FORENSIC INSPECTION CARD (17 U.S.C. §§ 102(b), 107 COMPLIANT)
+================================================================================
+Legal Notice: Full verbatim body intentionally omitted so zero executable source
+modules or complete prose documents from TazoLaTaza/Decayed-Reality are hosted.
+This record publishes strictly uncopyrightable cryptographic Git facts (§ 102(b)),
+structural symbol/heading metadata, and a bounded evidentiary excerpt (§ 107)
+establishing autonomous OpenAI Codex harness usage, CWSBP derivation, and cover-up
+deletion commits ('papoi', 'ohmama', 'beca cultural', '1b6facfdcd').
+--------------------------------------------------------------------------------
+Artifact Index           : #45
+Original Repository Path : scripts/beam-stability-tests.ts
+Exact Git Blob SHA-1     : e7d4551f43e39b1019acced84d02120458fcd4ab
+Exact Raw SHA-256        : f740ca7b5b66254a98f5eec1841b9bad967c1c8cea606efe97789841b8fe9f88
+Original Byte Length     : 10,776 bytes (92 lines)
+Provenance / Wipe Commit : Tazo Wiped AI / Codex / Validation / Test File — Tentacle is finished! (wiped 23 automated *-tests.ts suites)
+Forensic Marker Counts   : Codex/Harness refs=0 | CWSBP/tainted refs=0 | Em/En-dashes=0
+--------------------------------------------------------------------------------
+OFFLINE CRYPTOGRAPHIC VERIFICATION (RUN AGAINST BARE COMMIT/TREE GRAPH):
+  git log --all --full-history --stat -- "scripts/beam-stability-tests.ts"
+  # Any local clone holding blob e7d4551f43e3 verifies exact bytes via:
+  git cat-file -t e7d4551f43e39b1019acced84d02120458fcd4ab && git cat-file -s e7d4551f43e39b1019acced84d02120458fcd4ab   # -> blob, 10776
+--------------------------------------------------------------------------------
+MODULE IMPORT GRAPH (6 imports):
+  * L1: import assert from "node:assert/strict";
+  * L2: import {readFileSync} from "node:fs";
+  * L3: import {resolve} from "node:path";
+  * L4: import {runInNewContext} from "node:vm";
+  * L5: import {build} from "esbuild";
+  * L6: import {test} from "node:test";
+--------------------------------------------------------------------------------
+DECLARED SYMBOL / TEST INVENTORY (up to 25 shown):
+  * L7: legacy
+  * L8: mocks
+  * L16: modules
+  * L17: extra
+  * L18: built
+  * L23: api
+  * L25: setup
+  * L28: dim
+  * L29: head
+  * L31: player
+  * L32: health
+  * L33: capture
+  * L34: step
+  * L39: state
+  * L41: impulses
+  * L48: sensor
+  * L53: next
+  * L54: ordinary
+  * L66: a
+  * L68: cluster
+  * L75: c
+  * L79: bp
+  * L81: rp
+--------------------------------------------------------------------------------
+BOUNDED FAIR-USE EVIDENTIARY EXCERPT (8 of 92 lines shown; full file omitted):
+  L0001 | import assert from "node:assert/strict";
+  L0002 | import {readFileSync} from "node:fs";
+  L0003 | import {resolve} from "node:path";
+  L0004 | import {runInNewContext} from "node:vm";
+  L0005 | import {build} from "esbuild";
+  L0006 | import {test} from "node:test";
+  L0007 | const legacy=readFileSync("scripts/storm-regression-tests.mjs","utf8");
+  L0008 | const mocks=runInNewContext(legacy.slice(legacy.indexOf("const mocks="),legacy.indexOf("const modules="))+"\nmocks;") as Reco
+  [... 84 lines omitted under 17 U.S.C. § 107 transformative evidentiary scope ...]
+================================================================================

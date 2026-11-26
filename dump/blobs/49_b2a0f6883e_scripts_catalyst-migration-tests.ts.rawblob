@@ -1,0 +1,68 @@
+================================================================================
+CRYPTOGRAPHIC FORENSIC INSPECTION CARD (17 U.S.C. §§ 102(b), 107 COMPLIANT)
+================================================================================
+Legal Notice: Full verbatim body intentionally omitted so zero executable source
+modules or complete prose documents from TazoLaTaza/Decayed-Reality are hosted.
+This record publishes strictly uncopyrightable cryptographic Git facts (§ 102(b)),
+structural symbol/heading metadata, and a bounded evidentiary excerpt (§ 107)
+establishing autonomous OpenAI Codex harness usage, CWSBP derivation, and cover-up
+deletion commits ('papoi', 'ohmama', 'beca cultural', '1b6facfdcd').
+--------------------------------------------------------------------------------
+Artifact Index           : #49
+Original Repository Path : scripts/catalyst-migration-tests.ts
+Exact Git Blob SHA-1     : b2a0f6883eb39667e1b0f4589fcdc245d0b8c858
+Exact Raw SHA-256        : 70c3c7652a3626901d4dedb5501131d964893eaf49396cf29e541fdf29cd7f06
+Original Byte Length     : 37,456 bytes (312 lines)
+Provenance / Wipe Commit : Tazo Wiped AI / Codex / Validation / Test File — Tentacle is finished! (wiped 23 automated *-tests.ts suites)
+Forensic Marker Counts   : Codex/Harness refs=0 | CWSBP/tainted refs=0 | Em/En-dashes=0
+--------------------------------------------------------------------------------
+OFFLINE CRYPTOGRAPHIC VERIFICATION (RUN AGAINST BARE COMMIT/TREE GRAPH):
+  git log --all --full-history --stat -- "scripts/catalyst-migration-tests.ts"
+  # Any local clone holding blob b2a0f6883eb3 verifies exact bytes via:
+  git cat-file -t b2a0f6883eb39667e1b0f4589fcdc245d0b8c858 && git cat-file -s b2a0f6883eb39667e1b0f4589fcdc245d0b8c858   # -> blob, 37456
+--------------------------------------------------------------------------------
+MODULE IMPORT GRAPH (7 imports):
+  * L1: import assert from "node:assert/strict";
+  * L2: import { readFileSync,readdirSync,existsSync } from "node:fs";
+  * L3: import { resolve,join } from "node:path";
+  * L4: import { runInNewContext } from "node:vm";
+  * L5: import { build } from "esbuild";
+  * L6: import { test } from "node:test";
+  * L7: import ts from "typescript";
+--------------------------------------------------------------------------------
+DECLARED SYMBOL / TEST INVENTORY (up to 25 shown):
+  * L9: read
+  * L10: legacy
+  * L11: mocks
+  * L12: stabilization
+  * L16: worldProperties
+  * L22: modules
+  * L23: bundled
+  * L28: dragon
+  * L29: shim
+  * L30: definitions
+  * L31: commands
+  * L32: matches
+  * L34: value
+  * L36: expected
+  * L39: rebuild
+  * L40: d
+  * L42: health
+  * L44: execute
+  * L55: list
+  * L58: flush
+  * L60: dimension
+  * L61: e
+  * L62: d
+  * L64: event
+  * L69: reset
+--------------------------------------------------------------------------------
+BOUNDED FAIR-USE EVIDENTIARY EXCERPT (6 of 312 lines shown; full file omitted):
+  L0022 | const modules=["storm_head/state","core/stormIdentity","storm_head/commandedHeads","storm_head/source","storm_head/headContro
+  L0105 |   const start=read("Decayed_Reality_BP/animations/witherstorm_basic.json").animations[dragon.description.animations.storm_bir
+  L0146 |   const original=dimension.spawnEntity;dimension.spawnEntity=function(...args:any[]){const body=original.apply(this,args);con
+  L0147 |   e.setDynamicProperty("custom:fail",true);api.migrateLegacyCatalyst(e);dimension.spawnEntity=original;
+  L0149 |   e.setDynamicProperty("custom:fail",undefined);api.migrateLegacyCatalyst(e);assert.equal(e.isValid,false);assert.ok(api.isCa
+  L0202 |   reset();const birth=read("Decayed_Reality_BP/animations/witherstorm_basic.json").animations[dragon.description.animations.s
+  [... 306 lines omitted under 17 U.S.C. § 107 transformative evidentiary scope ...]
+================================================================================

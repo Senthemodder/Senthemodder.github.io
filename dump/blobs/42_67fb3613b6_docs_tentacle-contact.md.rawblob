@@ -1,0 +1,39 @@
+================================================================================
+CRYPTOGRAPHIC FORENSIC INSPECTION CARD (17 U.S.C. §§ 102(b), 107 COMPLIANT)
+================================================================================
+Legal Notice: Full verbatim body intentionally omitted so zero executable source
+modules or complete prose documents from TazoLaTaza/Decayed-Reality are hosted.
+This record publishes strictly uncopyrightable cryptographic Git facts (§ 102(b)),
+structural symbol/heading metadata, and a bounded evidentiary excerpt (§ 107)
+establishing autonomous OpenAI Codex harness usage, CWSBP derivation, and cover-up
+deletion commits ('papoi', 'ohmama', 'beca cultural', '1b6facfdcd').
+--------------------------------------------------------------------------------
+Artifact Index           : #42
+Original Repository Path : docs/tentacle-contact.md
+Exact Git Blob SHA-1     : 67fb3613b63c39cf5418b30edb5e10c353f9a003
+Exact Raw SHA-256        : 7f5e9f88136d5161bd13c7216437bd2475245236e76af28d9e04fc1f2bdc3a3b
+Original Byte Length     : 8,802 bytes (86 lines)
+Provenance / Wipe Commit : Tazo Wiped AI / Codex / Validation / Test File — TENTACLES REWORK (wiped 3 docs/tentacle-*.md specs)
+Forensic Marker Counts   : Codex/Harness refs=0 | CWSBP/tainted refs=0 | Em/En-dashes=0
+--------------------------------------------------------------------------------
+OFFLINE CRYPTOGRAPHIC VERIFICATION (RUN AGAINST BARE COMMIT/TREE GRAPH):
+  git log --all --full-history --stat -- "docs/tentacle-contact.md"
+  # Any local clone holding blob 67fb3613b63c verifies exact bytes via:
+  git cat-file -t 67fb3613b63c39cf5418b30edb5e10c353f9a003 && git cat-file -s 67fb3613b63c39cf5418b30edb5e10c353f9a003   # -> blob, 8802
+--------------------------------------------------------------------------------
+DOCUMENT SECTION HEADING INVENTORY (6 headings):
+  * L1: # Integrated tentacle contact
+  * L5: ## Combat migration
+  * L31: ## Approximate contact profiles
+  * L39: ## Scheduling and limits
+  * L58: ## Configuration
+  * L76: ## Shared protection and deliberate limits
+--------------------------------------------------------------------------------
+BOUNDED FAIR-USE EVIDENTIARY EXCERPT (5 of 86 lines shown; full file omitted):
+  L0001 | # Integrated tentacle contact
+  L0003 | The physical contact system uses the post-migration 28-owner channels. It does not read `decayed:tentacle_attack`, parse RP a
+  L0005 | ## Combat migration
+  L0007 | | Previous helper path | Current behavior |
+  L0008 | | --- | --- |
+  [... 81 lines omitted under 17 U.S.C. § 107 transformative evidentiary scope ...]
+================================================================================

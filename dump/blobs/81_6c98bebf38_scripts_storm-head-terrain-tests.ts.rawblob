@@ -1,0 +1,50 @@
+================================================================================
+CRYPTOGRAPHIC FORENSIC INSPECTION CARD (17 U.S.C. §§ 102(b), 107 COMPLIANT)
+================================================================================
+Legal Notice: Full verbatim body intentionally omitted so zero executable source
+modules or complete prose documents from TazoLaTaza/Decayed-Reality are hosted.
+This record publishes strictly uncopyrightable cryptographic Git facts (§ 102(b)),
+structural symbol/heading metadata, and a bounded evidentiary excerpt (§ 107)
+establishing autonomous OpenAI Codex harness usage, CWSBP derivation, and cover-up
+deletion commits ('papoi', 'ohmama', 'beca cultural', '1b6facfdcd').
+--------------------------------------------------------------------------------
+Artifact Index           : #81
+Original Repository Path : scripts/storm-head-terrain-tests.ts
+Exact Git Blob SHA-1     : 6c98bebf385a2c1149477597593e424380415fdb
+Exact Raw SHA-256        : 7331a27d8e805286b71675d1eb422aa08f5327630dd207023939bc582d007d4d
+Original Byte Length     : 8,577 bytes (39 lines)
+Provenance / Wipe Commit : Tazo Commit 8d9d855b35 Automated Agent Test Suite — Added alongside AGENTS.md & .codex/config.toml in 8d9d855b35
+Forensic Marker Counts   : Codex/Harness refs=0 | CWSBP/tainted refs=0 | Em/En-dashes=0
+--------------------------------------------------------------------------------
+OFFLINE CRYPTOGRAPHIC VERIFICATION (RUN AGAINST BARE COMMIT/TREE GRAPH):
+  git log --all --full-history --stat -- "scripts/storm-head-terrain-tests.ts"
+  # Any local clone holding blob 6c98bebf385a verifies exact bytes via:
+  git cat-file -t 6c98bebf385a2c1149477597593e424380415fdb && git cat-file -s 6c98bebf385a2c1149477597593e424380415fdb   # -> blob, 8577
+--------------------------------------------------------------------------------
+MODULE IMPORT GRAPH (3 imports):
+  * L1: import assert from "node:assert/strict";
+  * L2: import {createRequire} from "node:module";
+  * L3: import {build} from "esbuild";
+--------------------------------------------------------------------------------
+DECLARED SYMBOL / TEST INVENTORY (up to 25 shown):
+  * L4: events
+  * L6: system
+  * L7: dimension
+  * L8: Head
+  * L14: heads
+  * L15: env
+  * L17: result
+  * L21: mod
+  * L28: realRandom
+  * L30: advance
+  * L34: previous
+--------------------------------------------------------------------------------
+BOUNDED FAIR-USE EVIDENTIARY EXCERPT (6 of 39 lines shown; full file omitted):
+  L0001 | import assert from "node:assert/strict";
+  L0002 | import {createRequire} from "node:module";
+  L0003 | import {build} from "esbuild";
+  L0004 | const events:Record<string,((e:any)=>void)[]>={script:[],explosion:[]},subscribe=(key:string)=>({subscribe:(fn:any)=>events[k
+  L0005 | let unloaded=false,blockType="minecraft:stone",rays=0,releaseFn=(head:any)=>{},shotCount=3;
+  L0006 | const system={currentTick:0,afterEvents:{scriptEventReceive:subscribe("script")}};
+  [... 33 lines omitted under 17 U.S.C. § 107 transformative evidentiary scope ...]
+================================================================================

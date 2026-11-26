@@ -1,0 +1,31 @@
+================================================================================
+CRYPTOGRAPHIC FORENSIC INSPECTION CARD (17 U.S.C. §§ 102(b), 107 COMPLIANT)
+================================================================================
+Legal Notice: Full verbatim body intentionally omitted so zero executable source
+modules or complete prose documents from TazoLaTaza/Decayed-Reality are hosted.
+This record publishes strictly uncopyrightable cryptographic Git facts (§ 102(b)),
+structural symbol/heading metadata, and a bounded evidentiary excerpt (§ 107)
+establishing autonomous OpenAI Codex harness usage, CWSBP derivation, and cover-up
+deletion commits ('papoi', 'ohmama', 'beca cultural', '1b6facfdcd').
+--------------------------------------------------------------------------------
+Artifact Index           : #67
+Original Repository Path : README.md
+Exact Git Blob SHA-1     : cd209e1333c6ef9abcb0e061e53e56724779877e
+Exact Raw SHA-256        : 7338776caa51608d2039b24e83ab3b46c2439c3882f4ad25a2492f7e79408b77
+Original Byte Length     : 53 bytes (6 lines)
+Provenance / Wipe Commit : Tazo Wiped AI / Codex / Validation / Test File — fortnite (wiped RuntimeRegressionTests.ts, WitherStorm_Evolution_Investigation.md, NOTE.md)
+Forensic Marker Counts   : Codex/Harness refs=0 | CWSBP/tainted refs=0 | Em/En-dashes=0
+--------------------------------------------------------------------------------
+OFFLINE CRYPTOGRAPHIC VERIFICATION (RUN AGAINST BARE COMMIT/TREE GRAPH):
+  git log --all --full-history --stat -- "README.md"
+  # Any local clone holding blob cd209e1333c6 verifies exact bytes via:
+  git cat-file -t cd209e1333c6ef9abcb0e061e53e56724779877e && git cat-file -s cd209e1333c6ef9abcb0e061e53e56724779877e   # -> blob, 53
+--------------------------------------------------------------------------------
+DOCUMENT SECTION HEADING INVENTORY (1 headings):
+  * L1: # Decayed Reality V2.5
+--------------------------------------------------------------------------------
+BOUNDED FAIR-USE EVIDENTIARY EXCERPT (2 of 6 lines shown; full file omitted):
+  L0001 | # Decayed Reality V2.5
+  L0002 | Hii! this is a W.I.P
+  [... 4 lines omitted under 17 U.S.C. § 107 transformative evidentiary scope ...]
+================================================================================
