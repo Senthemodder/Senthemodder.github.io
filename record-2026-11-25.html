@@ -341,11 +341,78 @@
     .btn-link:hover {
       opacity: 0.9;
     }
+    .spoiler-grid-2 {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(310px, 1fr));
+      gap: 12px;
+      margin: 10px 0 12px;
+    }
+    .spoiler-shot {
+      background: #050a14;
+      border: 1.5px solid #22c55e;
+      padding: 6px;
+    }
+    .spoiler-shot img {
+      width: 100%;
+      height: auto;
+      display: block;
+      background: #ffffff;
+    }
+    .cia-circle-wrap {
+      position: relative;
+      display: block;
+    }
+    .cia-circle-ring {
+      position: absolute;
+      left: 4.2%;
+      right: 0.6%;
+      top: 81.2%;
+      height: 19.6%;
+      border: 3px solid #39ff14;
+      border-radius: 10px;
+      box-shadow: 0 0 14px #39ff14, 0 0 0 2px #050a14, inset 0 0 8px rgba(57, 255, 20, 0.25);
+      pointer-events: none;
+    }
   </style>
 </head>
 <body>
   <div class="container">
     <header>
+      <div id="nov27-sigint-update" class="corp-final-banner crypto-spoiler-box" tabindex="0" role="button" aria-expanded="false" onclick="if(!event.target.closest('a')){var r=this.classList.toggle('is-revealed');this.setAttribute('aria-expanded',r?'true':'false');}" onkeydown="if(event.key==='Enter'||event.key===' '){event.preventDefault();var r=this.classList.toggle('is-revealed');this.setAttribute('aria-expanded',r?'true':'false');}" style="margin: 0 0 18px; padding: 14px 16px; background: #0b1120; border: 2px solid #eab308; font-size: 13.6px; line-height: 1.62;">
+        <div style="display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 8px; margin-bottom: 6px;">
+          <strong style="color: #fde047; font-size: 14.8px;">NOV 27 VERDICT #3 &amp; DERIVATIVE LOCK (<code>GOOGLE LLC HTTP 403</code> &middot; <code>17 U.S.C. &sect;&sect; 106(2), 103(a), 501</code>): PARAPHRASING &amp; OWNERSHIP TRANSFER BOTH FAIL</strong>
+          <span class="spoiler-pill" style="display: inline-block; padding: 2px 8px; background: #1e293b; color: #fde047; border: 1px solid #eab308; font-size: 11px; font-weight: 700;"></span>
+        </div>
+        <span class="spoiler-lead">Three independent US corporate compliance actions are now complete, and neither direct-access paraphrasing nor transferring the repo cures infringement:</span>
+        <ul style="margin: 6px 0 10px; padding-left: 19px;">
+          <li style="margin-bottom: 4px;"><strong>Verdict #3:</strong> On <code>2026-11-27</code>, <code>Google LLC</code> globally disabled both smear Google Docs (<code>1Trq0MVi...</code> and <code>1PGNJ8yC...</code>) with <code>HTTP 403 Terms of Service</code> locks alongside <code>Strikingly NXDOMAIN</code> and <code>MediaFire errno=378</code>, while preserving <code>Tazo</code>'s AI/code confession Doc <code>1mxA1gmt...</code> live at <code>HTTP 200</code>.</li>
+          <li style="margin-bottom: 4px;"><strong>Paraphrasing Is Not Clean-Room:</strong> Under <code>17 U.S.C. &sect; 106(2)</code> (<code>Computer Associates v. Altai</code>), lawful clean-room rewrites require a coder who never saw my files; handing <code>Ijatullah [BAO]</code> (<code>github.com/TeaCup303</code>, <code>0 public repos</code>) raw source to <code>&ldquo;rewrite only her parts so they stay readable and behave the same&rdquo;</code> creates an unlawful derivative on top of <code>34,865 / 42,012</code> Codex-renamed <code>V2</code> lines (<code>82.99%</code>).</li>
+          <li style="margin-bottom: 0;"><strong>Cannot Transfer Unowned Rights:</strong> Under <code>nemo dat quod non habet</code> and <code>17 U.S.C. &sect; 501</code> strict liability, <code>TazoLaTaza</code> cannot escape enforcement by handing <code>Decayed Reality</code> to <code>&ldquo;another owner&rdquo;</code>; any successor inherits immediate DMCA strikes on Day 1.</li>
+        </ul>
+        <div class="spoiler-grid-2">
+          <div class="spoiler-shot">
+            <a href="./img/record-2026-11-25/45a_raw_nov27_gdoc_orig_403.png" target="_blank" rel="noopener">
+              <img src="./img/record-2026-11-25/45a_raw_nov27_gdoc_orig_403.png" alt="Unedited browser capture of Google Doc 1Trq0MViq7FkDYDxv2Js3IYhTfVe3iOoqzqDiJa8wiBE disabled by Google LLC for Terms of Service violation">
+            </a>
+          </div>
+          <div class="spoiler-shot">
+            <a href="./img/record-2026-11-25/45b_raw_nov27_gdoc_split2_403.png" target="_blank" rel="noopener">
+              <img src="./img/record-2026-11-25/45b_raw_nov27_gdoc_split2_403.png" alt="Unedited browser capture of Split Mirror 2 1PGNJ8yCCBfe777rcamNcez_ZY1-N-zofjpovDKbrt38 disabled by Google LLC for Terms of Service violation">
+            </a>
+          </div>
+        </div>
+        <div class="spoiler-shot" style="margin-bottom: 10px; padding-bottom: 10px;">
+          <a class="cia-circle-wrap" href="./img/record-2026-11-25/41_raw_nov26_ijatullah_bao_1200_lines_audit.png" target="_blank" rel="noopener">
+            <img src="./img/record-2026-11-25/41_raw_nov26_ijatullah_bao_1200_lines_audit.png" alt="Unedited Ijatullah BAO Discord audit confirming 1,200 lines and 6 main commits remain and proposing direct-access paraphrasing">
+            <span class="cia-circle-ring" aria-hidden="true"></span>
+          </a>
+        </div>
+        <div class="spoiler-shot">
+          <a href="./img/record-2026-11-25/46_raw_nov27_teacup303_zero_repos.png" target="_blank" rel="noopener">
+            <img src="./img/record-2026-11-25/46_raw_nov27_teacup303_zero_repos.png" alt="Unedited GitHub profile capture of TeaCup303 showing zero public repositories" style="background: #0d1117;">
+          </a>
+        </div>
+      </div>
       <div class="pwn-billboard">
         <div class="pwn-topbar">
           <span><span class="pwn-live-dot"></span>SHA-256 TRIPWIRE TRIGGERED &middot; NOV 26 @ 00:54 AM &amp; 03:16 AM &middot; CAUGHT IN 4K EDITING HIS GOOGLE DOC</span>
@@ -404,8 +471,18 @@
             <strong>A:</strong> On Nov 22, I offered <code>Tazo</code> a <strong><code>$0.00</code> one-time attribution license</strong> so players could still get the final update cleanly. <code>Tazo</code> rejected it in writing (<em>&ldquo;deal won't be taken into consideration&rdquo;</em> / <em>&ldquo;Clearly it was a no for me&rdquo;</em>) and kept distributing <strong><code>100</code> commits / <code>3,525</code> paths</strong> of my unpaid <code>V2</code> code anyway while advertising <strong>paid YouTube Channel Memberships (<code>/join</code> <em>&ldquo;for extra content and leaks!&rdquo;</em>)</strong> on his <code>V2</code> videos. He chose takedowns over a free credit block.
           </div>
           <div style="padding: 10px 13px; background: #f8fafc; border-left: 4px solid #7c3aed; border-top: 1px solid #e2e8f0; border-right: 1px solid #e2e8f0; border-bottom: 1px solid #e2e8f0;">
-            <strong style="color: #0f172a;">Q6: &ldquo;Didn't <code>Tazo</code>'s <code>08:09 AM</code> AI Doc show a hired coder removing your remaining code? And why don't you reply to DMs?&rdquo;</strong><br>
-            <strong>A:</strong> Look closely at what <code>Tazo</code> just leaked in his own <code>08:09 AM</code> Doc: while claiming <code>TeaCup303</code> (<code>44</code> painting commits) is his coder, he posted a DM from <code>Ijatullah [BAO]</code> admitting in writing that <strong><code>1,200</code> lines</strong> (<code>EnchantmentLib</code>, <code>witherShotEnchantment</code>, <code>tentacleattacks</code>, <code>fluids</code>, <code>stormCommands</code>, <code>endertownGenerator</code>, <code>beamController</code>, <code>mobflee</code>, <code>WitherCombat</code>) plus <strong><code>6</code> <code>main</code> commits</strong> of my unlicensed code are still in the repo, and offering: <em>&ldquo;I'll rewrite only her parts so they stay readable and behave the same.&rdquo;</em> Reading copyrighted source code directly and paraphrasing it so it behaves the same is textbook <strong>non-clean-room derivative infringement (<code>17 U.S.C. &sect; 106(2)</code>)</strong>. And I do not debate middlemen with zero legal authority (<code>Flowery</code> admitted <em>&ldquo;No?&rdquo;</em> when asked if speaking for <code>Tazo</code>): all facts stay on the written record.
+            <strong style="color: #0f172a;">Q6: &ldquo;Didn't <code>Tazo</code>'s <code>08:09 AM</code> AI Doc claim your code is 'only 3% / 1,200 lines' and a hired coder is removing it?&rdquo;</strong><br>
+            <strong>A:</strong> <strong>Most of the functional repository is still my authored system even after <code>Tazo</code> laundered <code>git blame</code> via bulk renaming and AI vibe-coding.</strong> On <code>2026-09-04</code>, <code>TazoLaTaza</code> ran an automated <strong><code>237</code>-file <code>.js</code>-to-<code>src/*.ts</code> delete-and-recreate rename</strong> across Codex commits <a href="./decayed-commits.html?q=458617fdf6#commit-tbody" target="_blank" rel="noopener"><code>458617fdf604</code></a> (<code>01:36:41 -0300</code>, <em>&ldquo;refactor(runtime): centralize ticking and migrate scripts to TypeScript&rdquo;</em>) and <a href="./decayed-commits.html?q=886f1d8b5c#commit-tbody" target="_blank" rel="noopener"><code>886f1d8b5c9f</code></a> (<code>02:51:57 -0300</code>, <em>&ldquo;refactor: centralize runtime scheduling and harden Bedrock API&rdquo;</em>) without Git rename tracking, and fed my <code>53</code>-commit pre-<code>v2.1</code> engine (<a href="./dump/blobs/85_1735e819d2_Decayed_Reality_BP_scripts_systems_stormAI.js.rawblob" target="_blank" rel="noopener"><code>stormAI.js</code></a> [<code>blob 1735e819d2</code>] tabular <code>SARSA</code> / <code>Q-learning</code>, <a href="./dump/blobs/84_9821134066_Decayed_Reality_BP_scripts_systems_clusterData.js.rawblob" target="_blank" rel="noopener"><code>clusterData.js</code></a>, <code>clusterPull.js</code>, <code>beam.js</code>, <code>WitherCombat.js</code>, <code>tentacleattacks.js</code>, <code>dynamicflight.js</code>, <code>ambient_storm.js</code>, <code>music_themes.js</code>, <code>dragonBehavior.js</code> in <a href="./dump/decayed_merkle_1310_commits_inventory.siglog" target="_blank" rel="noopener"><code>ceffec5a5554</code></a>, mathematically sealed inside <strong>GitHub HSM RSA PGP Key <code>0xB5690EEEBB952194</code></strong> under signed commits <a href="./decayed-commits.html?q=59ae42d265#commit-tbody" target="_blank" rel="noopener"><code>59ae42d26516db9f8a5dd1869c2015a2d23553a6</code></a> and <a href="./img/record-2026-11-25/decayed_git_raw_objects_proof.siglog" target="_blank" rel="noopener"><code>cbb6bbc036d8a2727105820384276501f60b67e2</code></a>) into ChatGPT / Codex (<code>Ponytail &amp; shortcut</code>) to split and vibe-code renamed <code>v2.5</code> files, overwriting surface <code>git blame</code> on <strong><code>34,865</code> of <code>42,012</code> lines (<code>82.99%</code> of the repo)</strong> onto <code>TazoLaTaza</code>'s name. Collaborator <code>Ijatullah [BAO]</code>'s naive post-rename check only saw the <strong><code>~1,200</code> unlaundered post-Sept-4 lines + <code>6</code> <code>main</code> commits</strong> (and offered unlawful direct-access paraphrasing: <em>&ldquo;I'll rewrite only her parts so they stay readable and behave the same&rdquo;</em>). Under <strong><code>17 U.S.C. &sect;&sect; 106(2) &amp; 103(a)</code></strong>, renaming files, converting <code>.js</code> to <code>.ts</code>, or vibe-coding AI edits on top of an author's unlicensed architecture transfers <strong>zero</strong> ownership: every renamed module and AI derivative remains 100% infringing, which is why <code>Tazo</code> himself admitted on Nov 22 that deleting my code <em>&ldquo;could break absolutely everything from the beginning of the addon and part of CWSBP.&rdquo;</em>
+            <div style="margin-top: 8px; padding: 7px 10px; background: #ede9fe; border: 1px solid #c4b5fd; font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace; font-size: 12px; line-height: 1.55; color: #1e1b4b;">
+              <strong>Direct Cryptographic Proof Links:</strong>
+              <a href="./decayed-commits.html?q=458617fdf6#commit-tbody" target="_blank" rel="noopener" style="color: #4c1d95; font-weight: 700;">[Rename Commit 458617fdf604]</a> &middot;
+              <a href="./decayed-commits.html?q=886f1d8b5c#commit-tbody" target="_blank" rel="noopener" style="color: #4c1d95; font-weight: 700;">[Rename Commit 886f1d8b5c9f]</a> &middot;
+              <a href="./dump/blobs/85_1735e819d2_Decayed_Reality_BP_scripts_systems_stormAI.js.rawblob" target="_blank" rel="noopener" style="color: #4c1d95; font-weight: 700;">[Raw stormAI.js Blob 1735e819d2]</a> &middot;
+              <a href="./img/record-2026-11-25/decayed_git_raw_objects_proof.siglog" target="_blank" rel="noopener" style="color: #4c1d95; font-weight: 700;">[Raw PGP Signatures 59ae42d26516 &amp; cbb6bbc036d8]</a> &middot;
+              <a href="./dump/github_hsm_pgp_and_cdn_authenticity.siglog" target="_blank" rel="noopener" style="color: #4c1d95; font-weight: 700;">[HSM PGP Certificate]</a> &middot;
+              <a href="./dump/decayed_merkle_1310_commits_inventory.siglog" target="_blank" rel="noopener" style="color: #4c1d95; font-weight: 700;">[Full 1,310-Commit Merkle Ledger]</a> &middot;
+              <a href="https://github.com/web-flow.gpg" target="_blank" rel="noopener" style="color: #4c1d95; font-weight: 700;">[GitHub RSA Key 0xB5690EEEBB952194]</a>
+            </div>
           </div>
           <div style="padding: 10px 13px; background: #f8fafc; border-left: 4px solid #0f172a; border-top: 1px solid #e2e8f0; border-right: 1px solid #e2e8f0; border-bottom: 1px solid #e2e8f0;">
             <strong style="color: #0f172a;">Q7: &ldquo;What new 'proof' did <code>Tazo</code> add in his <code>08:09 AM</code> <em>Expose</em> mirror (including that router app screenshot)?&rdquo;</strong><br>
@@ -414,24 +491,28 @@
         </div>
       </div>
 
-      <div class="doc-meta">Updated November 26, 2026 (08:56 AM)</div>
+      <div class="doc-meta">Updated November 27, 2026</div>
       <h1>What Actually Happened With <code>Decayed Reality</code> (60-Second Summary + Unedited Screenshots)</h1>
 
       <div style="margin: 0 0 20px; padding: 18px 20px; background: #f0fdf4; border: 3px solid #15803d; color: #0f172a;">
         <div class="corp-final-banner" style="margin: 0 0 10px; padding: 11px 14px; background: #14532d; color: #f0fdf4; border: 2px solid #16a34a; font-size: 14.1px; line-height: 1.55;">
-          <strong style="color: #fde047; display: block; font-size: 15px; margin-bottom: 3px;">DISCLAIMER: TRUST INDEPENDENT CORPORATE LEGAL TEAMS (VERDICTS FINISHED &amp; FINAL)</strong>
-          Both <strong>Strikingly, Inc.'s Corporate Legal Team</strong> (San Francisco, CA) and <strong>MediaFire's Director of Customer Support</strong> (<code>Daniel Goebel</code>, Shenandoah, TX) were provided with the complete, unredacted primary-source record (cryptographic Git <code>SHA-1</code> commit objects, <code>0xB5690EEEBB952194</code> PGP signatures, full unedited Discord logs, and <code>Tazo</code>'s own manifestos) and reviewed it thoroughly before acting. Unlike teenage Discord moderators judging off rumors and <em>&ldquo;vibes,&rdquo;</em> independent US corporate legal and compliance officers act strictly on verified statutory and contractual proof. <strong>We consider their independent verdicts finished, binding, and final.</strong>
+          <strong style="color: #fde047; display: block; font-size: 15px; margin-bottom: 3px;">DISCLAIMER: TRUST INDEPENDENT CORPORATE LEGAL TEAMS (3-0 VERDICTS FINISHED &amp; FINAL)</strong>
+          <strong>Strikingly, Inc.'s Corporate Legal Team</strong> (San Francisco, CA), <strong>MediaFire's Director of Customer Support</strong> (<code>Daniel Goebel</code>, Shenandoah, TX), and <strong>Google LLC</strong> (Mountain View, CA) were provided with the complete, unredacted primary-source record (cryptographic Git <code>SHA-1</code> commit objects, <code>0xB5690EEEBB952194</code> PGP signatures, full unedited Discord logs, and <code>Tazo</code>'s own manifestos) and reviewed it thoroughly before acting. Unlike teenage Discord moderators judging off rumors and <em>&ldquo;vibes,&rdquo;</em> independent US corporate legal and compliance officers act strictly on verified statutory and contractual proof. <strong>We consider their independent verdicts finished, binding, and final.</strong>
+        </div>
+        <div style="margin: 0 0 12px; padding: 13px 16px; background: #7f1d1d; color: #fef2f2; border: 2px solid #ef4444; font-size: 13.9px; line-height: 1.58;">
+          <strong style="color: #fde047; display: block; font-size: 15.2px; margin-bottom: 4px;">STATUTORY NOTICE ON REPOSITORY OWNERSHIP (<code>17 U.S.C. &sect;&sect; 106(2), 103(a)</code>): MOST OF THE REPO REMAINS MY CODE EVEN AFTER <code>TAZO</code> RENAMED &amp; VIBE-CODED OVER <code>GIT BLAME</code></strong>
+          Why did <code>Ijatullah [BAO]</code> think my code was <em>&ldquo;only 3% / 1,200 lines&rdquo;</em>? Because on <strong><code>2026-09-04</code></strong> (<a href="./decayed-commits.html?q=458617fdf6#commit-tbody" target="_blank" rel="noopener" style="color: #fde047; font-weight: 700;"><code>458617fdf604</code></a> &rarr; <a href="./decayed-commits.html?q=886f1d8b5c#commit-tbody" target="_blank" rel="noopener" style="color: #fde047; font-weight: 700;"><code>886f1d8b5c9f</code></a>), <code>TazoLaTaza</code> ran a bulk <strong><code>237</code>-file <code>.js</code> &rarr; <code>src/*.ts</code> delete-and-recreate rename</strong> without Git rename tracking and fed my foundational <code>53</code>-commit pre-<code>v2.1</code> engine (<a href="./dump/blobs/85_1735e819d2_Decayed_Reality_BP_scripts_systems_stormAI.js.rawblob" target="_blank" rel="noopener" style="color: #fde047; font-weight: 700;"><code>stormAI.js</code></a> tabular <code>SARSA</code> / <code>Q-learning</code>, <a href="./dump/blobs/84_9821134066_Decayed_Reality_BP_scripts_systems_clusterData.js.rawblob" target="_blank" rel="noopener" style="color: #fde047; font-weight: 700;"><code>clusterData.js</code></a>, <code>clusterPull.js</code>, <code>beam.js</code>, <code>WitherCombat.js</code>, <code>tentacleattacks.js</code>, <code>dynamicflight.js</code>, <code>ambient_storm.js</code>, <code>music_themes.js</code>, <code>dragonBehavior.js</code> in <a href="./dump/decayed_merkle_1310_commits_inventory.siglog" target="_blank" rel="noopener" style="color: #fde047; font-weight: 700;"><code>ceffec5a5554</code></a>, cryptographically locked under <a href="./img/record-2026-11-25/decayed_git_raw_objects_proof.siglog" target="_blank" rel="noopener" style="color: #fde047; font-weight: 700;">GitHub HSM RSA PGP signatures <code>59ae42d26516</code> &amp; <code>cbb6bbc036d8</code></a> via <a href="https://github.com/web-flow.gpg" target="_blank" rel="noopener" style="color: #fde047; font-weight: 700;">Key <code>0xB5690EEEBB952194</code></a>) into ChatGPT / OpenAI Codex (<code>Ponytail &amp; shortcut</code>, <code>205</code> Codex bursts) to split and vibe-code renamed <code>v2.5</code> derivatives, wiping surface <code>git blame</code> on <strong><code>34,865</code> of <code>42,012</code> lines (<code>82.99%</code> of the entire repo)</strong> onto <code>TazoLaTaza</code>'s name. Under <strong><code>17 U.S.C. &sect;&sect; 106(2) &amp; 103(a)</code></strong>, renaming files, translating <code>.js</code> to <code>.ts</code>, or feeding unlicensed code into AI transfers <strong>zero</strong> copyright title: <strong>both the <code>~1,200</code> unlaundered post-Sept-4 lines AND the renamed <code>stormAI</code> backbone + all derivative systems across the repo remain 100% my copyrighted architecture</strong> (which is why <code>Tazo</code> himself admitted on Nov 22 that removing my code <em>&ldquo;could break absolutely everything from the beginning of the addon and part of CWSBP&rdquo;</em>).
         </div>
         <div class="corp-final-banner crypto-spoiler-box" tabindex="0" role="button" aria-expanded="false" onclick="var r=this.classList.toggle('is-revealed');this.setAttribute('aria-expanded',r?'true':'false');" onkeydown="if(event.key==='Enter'||event.key===' '){event.preventDefault();var r=this.classList.toggle('is-revealed');this.setAttribute('aria-expanded',r?'true':'false');}" style="margin: 0 0 12px; padding: 11px 14px; background: #0b1120; border: 2px solid #eab308; font-size: 13.4px; line-height: 1.6;">
           <div style="display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 8px; margin-bottom: 4px;">
-            <strong style="color: #fde047; font-size: 14.4px;">LEGAL NOTICE ON CODE AUTHORSHIP (<code>17 U.S.C. &sect;&sect; 201(a), 204(a)</code>): WORDS ARE MEANINGLESS; CRYPTOGRAPHIC VERIFICATIONS ARE FINAL</strong>
+            <strong style="color: #fde047; font-size: 14.4px;">LEGAL NOTICE ON CODE AUTHORSHIP (<code>17 U.S.C. &sect;&sect; 106(2), 103(a), 201(a), 204(a)</code>): WORDS &amp; RENAMES ARE MEANINGLESS; CRYPTOGRAPHIC PROOFS ARE FINAL</strong>
             <span class="spoiler-pill" style="display: inline-block; padding: 2px 8px; background: #1e293b; color: #fde047; border: 1px solid #eab308; font-size: 11px; font-weight: 700;"></span>
           </div>
-          <span class="spoiler-lead">Discord claims, anonymous screenshots, and Google Doc spin carry zero legal weight against hardware-signed cryptographic proof of authorship:</span>
+          <span class="spoiler-lead">Discord claims, AI file-renames, and Google Doc spin carry zero legal weight against hardware-signed cryptographic proof of authorship:</span>
           <ul style="margin: 6px 0 0; padding-left: 19px;">
-            <li style="margin-bottom: 3px;"><strong>Immutable GitHub Database Identity (<code>UID 120316848</code>):</strong> Inside <code>TazoLaTaza/Decayed-Reality</code>, <strong><code>100</code> commits (<code>83</code> non-merge) touching <code>3,525</code> file paths</strong> (including <code>53</code> foundational pre-<code>v2.1</code> commits <code>a19521d65196..12d892f0fadb</code> and <code>main</code> <code>HEAD</code> <code>5c6385ef5ae0</code>) record immutable GitHub numeric user ID <code>120316848</code> (<code>api.github.com/user/120316848</code> &rarr; <code>Senthemodder</code>, the sole verified owner of <code>senthemodder.github.io</code>).</li>
+            <li style="margin-bottom: 3px;"><strong>Immutable GitHub Database Identity (<code>UID 120316848</code>):</strong> Inside <code>TazoLaTaza/Decayed-Reality</code>, <strong><code>100</code> commits (<code>83</code> non-merge) touching <code>3,525</code> file paths</strong> (including <code>53</code> foundational pre-<code>v2.1</code> commits <code>a19521d65196..12d892f0fadb</code> across <code>stormAI.js</code>, <code>clusterPull.js</code>, <code>beam.js</code>, <code>WitherCombat.js</code>, <code>tentacleattacks.js</code> and <code>main</code> <code>HEAD</code> <code>5c6385ef5ae0</code>) record immutable GitHub numeric user ID <code>120316848</code> (<code>api.github.com/user/120316848</code> &rarr; <code>Senthemodder</code>, the sole verified owner of <code>senthemodder.github.io</code>).</li>
             <li style="margin-bottom: 3px;"><strong>Sealed Under <code>304</code> GitHub, Inc. HSM RSA PGP Signatures (<code>0xB5690EEEBB952194</code>):</strong> Respondent's own signed commit <code>59ae42d26516db9f8a5dd1869c2015a2d23553a6</code> (<code>Tazo!</code>, <code>2026-02-12</code>) and <code>cbb6bbc036d8a2727105820384276501f60b67e2</code> (<code>doofus</code>, <code>2026-06-18</code>) are digitally signed by GitHub, Inc.'s private Hardware Security Module RSA key (<code>github.com/web-flow.gpg</code>). Because Git is a cryptographic Merkle DAG, every ancestor <code>SHA-1</code> commit I authored is mathematically locked inside GitHub's RSA signature; disputing my authorship is mathematically equivalent to forging GitHub Inc.'s private HSM key.</li>
-            <li style="margin-bottom: 3px;"><strong>Corroborated by Respondent's Own Repo Audit:</strong> Both <code>Tazo</code>'s PGP-sealed commit <code>ba6abcdd41</code> (<code>"refracted OMG YOUA RE COOKINGGG"</code> on <code>clusterPull.js</code>) and his hired developer <code>Ijatullah [BAO]</code>'s Nov 26 audit (<code>~1,200</code> lines + <code>6</code> <code>main</code> commits across <code>EnchantmentLib</code>, <code>tentacleattacks</code>, <code>fluids</code>, <code>stormCommands</code>, <code>endertownGenerator</code>, <code>beamController</code>, <code>mobflee</code>, <code>WitherCombat</code>) independently confirm my exact authorship inside his private repository.</li>
+            <li style="margin-bottom: 3px;"><strong><code>82.99%</code> <code>git blame</code> Laundering + Derivative Lock (<code>17 U.S.C. &sect;&sect; 106(2), 103(a)</code>):</strong> On <code>2026-09-04</code> (<code>458617fdf6..886f1d8b5c</code>), respondent deleted <code>237</code> <code>.js</code> files (including <code>stormAI.js</code>) and recreated/split them under <code>src/*.ts</code> before vibe-coding AI wrappers via ChatGPT / Codex, overwriting surface <code>git blame</code> on <code>34,865</code> of <code>42,012</code> lines (<code>82.99%</code>) while leaving <code>~1,200</code> post-Sept-4 lines + <code>6</code> <code>main</code> commits still bearing my direct blame (confirmed by <code>Ijatullah [BAO]</code>'s Nov 26 audit). Deleting only those <code>1,200</code> lines leaves the entire renamed <code>stormAI</code> backbone and every AI-generated derivative unlawful under <code>17 U.S.C. &sect; 103(a)</code>.</li>
             <li style="margin-bottom: 0;"><strong>Statutory Ownership Is Final:</strong> Under <code>17 U.S.C. &sect; 201(a)</code>, copyright vested automatically in me upon fixation (<code>git commit</code>); under <code>17 U.S.C. &sect; 204(a)</code>, zero signed transfer ever existed (<code>$0.00</code> paid), and respondent rejected a <code>$0.00</code> attribution license in writing on Nov 22.</li>
           </ul>
         </div>
@@ -528,6 +609,84 @@
             </div>
           </figcaption>
         </figure>
+
+        <figure style="margin: 12px 0 0; background: #0b1120; border: 2px solid #9333ea;">
+          <a href="./img/record-2026-11-25/36_tazo_5_stage_ai_goalpost_evolution.jpg" target="_blank" rel="noopener">
+            <img src="./img/record-2026-11-25/36_tazo_5_stage_ai_goalpost_evolution.jpg" alt="Exhibit 36: Tazo moving his AI usage goalposts 5 times in 9 days from never using AI to only fixing bugs since v2.11 to practically almost all heavily intense scripting on v2.5" style="width: 100%; display: block;">
+          </a>
+          <figcaption style="background: #ffffff; color: #0f172a; padding: 10px 13px; font-size: 13.8px; line-height: 1.55;">
+            <strong><code>Tazo</code>'s 5-Stage AI Goalpost Shift in His Own Verbatim Words:</strong> <strong>(1)</strong> Mid-Nov: <em>&ldquo;why we would never use ai&rdquo;</em> &rarr; <strong>(2)</strong> Nov 19 DM: <em>&ldquo;since v2.1... using chatgpt to help me fix bugs&rdquo;</em> &rarr; <strong>(3)</strong> Nov 25 <code>Newsletter 1</code>: shifts public start date forward to <em>&ldquo;since v2.11... using chatgpt to fix bugs&rdquo;</em> while blaming me &rarr; <strong>(4)</strong> Nov 26 (<code>08:09 AM</code> <code>Doc I</code>, lines <code>22</code> &amp; <code>42</code>): admits using ChatGPT token tools (<em>&ldquo;Ponytail and shortcut&rdquo;</em>) and having AI write <strong><em>&ldquo;commands, tentacle grabbing, beam lighting the floor and practically almost all heavily intense scripting on v2.5&rdquo;</em></strong> &rarr; <strong>(5)</strong> Still hiding Dec 15, 2025 commit <code>4c42aeab7c</code> + <code>205</code> autonomous OpenAI Codex bursts wiped under <code>&ldquo;papoi&rdquo;</code> (<code>70246d4102</code>).
+          </figcaption>
+        </figure>
+
+        <div id="raw-goalpost-screenshots" style="margin-top: 12px; padding: 14px; background: #ffffff; border: 2px solid #0f172a;">
+          <div style="display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 8px; margin-bottom: 10px; padding-bottom: 8px; border-bottom: 1.5px solid #cbd5e1;">
+            <strong style="font-size: 15.5px; color: #0f172a;">Raw Unedited One-by-One Screenshots From <code>Tazo</code>'s Own Google Docs &amp; Uploads (Zero Edits &middot; Click Any Image to Enlarge):</strong>
+            <span style="display: inline-block; padding: 2px 8px; background: #0f172a; color: #fde047; font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace; font-size: 11.5px; font-weight: 700;">10 UNEDITED PRIMARY CAPTURES</span>
+          </div>
+          <div class="compare-grid" style="margin-top: 0; align-items: start;">
+            <figure style="margin: 0; background: #ffffff; border: 1.5px solid #cbd5e1;">
+              <a href="./img/record-2026-11-25/37_raw_step1_duck_never_use_ai_doc1.png" target="_blank" rel="noopener">
+                <img src="./img/record-2026-11-25/37_raw_step1_duck_never_use_ai_doc1.png" alt="Unedited Google Doc I Page 2 capture: asked Duck to help me prepare an announcement explaining why we would never use ai">
+              </a>
+              <figcaption><strong>1. Stage 1 (Unedited <code>Doc I</code> Page 2):</strong> <code>Tazo</code> admits ordering <code>Duck</code> to prepare <em>&ldquo;an announcement explaining why we would never use ai... which is hypocritical after all.&rdquo;</em></figcaption>
+            </figure>
+            <figure style="margin: 0; background: #ffffff; border: 1.5px solid #cbd5e1;">
+              <a href="./img/record-2026-11-25/38_raw_step2_nov19_internal_confession_v2_1.png" target="_blank" rel="noopener">
+                <img src="./img/record-2026-11-25/38_raw_step2_nov19_internal_confession_v2_1.png" alt="Unedited byte-identical image3.png uploaded by Tazo: 19/11/26 20:32 since v2.1 using chatgpt to help me fix bugs">
+              </a>
+              <figcaption><strong>2. Stage 2 (<code>Tazo</code>'s Own Byte-Identical <code>image3.png</code>, <code>19/11/26, 20:32</code>):</strong> Tells the internal team he started <em>&ldquo;since v2.1... using chatgpt to help me fix and work on the addon.&rdquo;</em></figcaption>
+            </figure>
+            <figure style="margin: 0; background: #ffffff; border: 1.5px solid #cbd5e1;">
+              <a href="./img/record-2026-11-25/39_raw_step3_nov25_newsletter1_since_v2_11.png" target="_blank" rel="noopener">
+                <img src="./img/record-2026-11-25/39_raw_step3_nov25_newsletter1_since_v2_11.png" alt="Unedited Newsletter 1 24/11/2026 Page 1 capture: Now, since v2.11, when developing v2.2 I've been using chatgpt to fix bugs">
+              </a>
+              <figcaption><strong>3. Stage 3 (Unedited <code>Newsletter 1</code> Page 1, <code>24/11/2026</code>):</strong> Shifts his public start date forward to <em>&ldquo;since v2.11... using chatgpt to fix bugs&rdquo;</em> + <em>&ldquo;banning all AI art including AI generated memes.&rdquo;</em></figcaption>
+            </figure>
+            <figure style="margin: 0; background: #ffffff; border: 1.5px solid #dc2626;">
+              <a href="./img/record-2026-11-25/40a_raw_step4_nov26_ponytail_and_shortcut_doc1_p1.png" target="_blank" rel="noopener">
+                <img src="./img/record-2026-11-25/40a_raw_step4_nov26_ponytail_and_shortcut_doc1_p1.png" alt="Unedited Google Doc I Page 1 capture: Duck and Fakest saw that I used Ponytail and shortcut">
+              </a>
+              <figcaption><strong>4A. Stage 4, Part 1 (Unedited <code>Doc I</code> Page 1, <code>26/11/2026</code>):</strong> Admits <code>Duck</code> &amp; <code>Fakest</code> caught him using <em>&ldquo;Ponytail and shortcut [so ChatGPT tokens don't get shortened]&rdquo;</em> + <em>&ldquo;creating very advanced things... not being within my range of knowledge, like...&rdquo;</em></figcaption>
+            </figure>
+            <figure style="margin: 0; background: #ffffff; border: 1.5px solid #dc2626;">
+              <a href="./img/record-2026-11-25/40b_raw_step4_nov26_almost_all_v2_5_scripting_doc1_p2.png" target="_blank" rel="noopener">
+                <img src="./img/record-2026-11-25/40b_raw_step4_nov26_almost_all_v2_5_scripting_doc1_p2.png" alt="Unedited Google Doc I Page 2 capture: commands, tentacle grabbing, beam lighting the floor and practically almost all heavily intense scripting on v2.5">
+              </a>
+              <figcaption><strong>4B. Stage 4, Part 2 (Unedited <code>Doc I</code> Page 2 Top, <code>26/11/2026</code>):</strong> <strong><em>&ldquo;...commands, tentacle grabbing, beam lighting the floor and practically almost all heavily intense scripting on v2.5.&rdquo;</em></strong></figcaption>
+            </figure>
+            <figure style="margin: 0; background: #ffffff; border: 1.5px solid #dc2626;">
+              <a href="./img/record-2026-11-25/41_raw_nov26_ijatullah_bao_1200_lines_audit.png" target="_blank" rel="noopener">
+                <img src="./img/record-2026-11-25/41_raw_nov26_ijatullah_bao_1200_lines_audit.png" alt="Unedited byte-identical image2.png uploaded by Tazo: Ijatullah BAO confirming 1,200 lines and 6 main commits remain in repo">
+              </a>
+              <figcaption><strong>5. Unedited <code>Ijatullah [BAO]</code> Audit (<code>Tazo</code>'s Byte-Identical <code>image2.png</code>):</strong> Confirms <code>~1,200</code> lines &amp; <code>6</code> <code>main</code> commits remain in repo + proposes non-clean-room <em>&ldquo;rewrite only her parts so they stay readable and behave the same.&rdquo;</em></figcaption>
+            </figure>
+            <figure style="margin: 0; background: #ffffff; border: 1.5px solid #cbd5e1;">
+              <a href="./img/record-2026-11-25/42_raw_nov26_ex_portfolio_and_rust_ai_doc2.png" target="_blank" rel="noopener">
+                <img src="./img/record-2026-11-25/42_raw_nov26_ex_portfolio_and_rust_ai_doc2.png" alt="Unedited Doc II Page 12 capture: claiming Ex-Contractor and Ex-Developer badges mean multiple teams kicked her out">
+              </a>
+              <figcaption><strong>6A. Unedited <code>Doc II</code> Page 12:</strong> Claims standard <code>Ex-Contractor</code> / <code>Ex-Developer</code> resume tags prove <em>&ldquo;multiple teams kicked her out&rdquo;</em> + <em>&ldquo;having rust as a proper technical skill.&rdquo;</em></figcaption>
+            </figure>
+            <figure style="margin: 0; background: #ffffff; border: 1.5px solid #cbd5e1;">
+              <a href="./img/record-2026-11-25/42b_raw_nov26_rust_popularized_by_ai_and_gullibles_doc2.png" target="_blank" rel="noopener">
+                <img src="./img/record-2026-11-25/42b_raw_nov26_rust_popularized_by_ai_and_gullibles_doc2.png" alt="Unedited Doc II Page 13 capture: claiming Rust was popularized by AI programming and screenshotting Senthemodder aquarium-of-gullibles honeypot">
+              </a>
+              <figcaption><strong>6B. Unedited <code>Doc II</code> Page 13:</strong> Claims <code>Rust</code> (2006) was <em>&ldquo;popularized really recently as well with the rise of AI programming&rdquo;</em> &amp; walks straight into <strong><code># aquarium-of-gullibles</code></strong> (<code>[CERTIFIED BOT: I CONSUME API TOKENS]</code>).</figcaption>
+            </figure>
+            <figure style="margin: 0; background: #ffffff; border: 1.5px solid #cbd5e1;">
+              <a href="./img/record-2026-11-25/43_raw_nov26_cwsm_direct_java_script_code_doc2.png" target="_blank" rel="noopener">
+                <img src="./img/record-2026-11-25/43_raw_nov26_cwsm_direct_java_script_code_doc2.png" alt="Unedited Doc II Page 19 capture: she used CWSM direct Java Script code into CWSBP">
+              </a>
+              <figcaption><strong>7. Unedited <code>Doc II</code> Page 19:</strong> Right below <code>Vi [BCC]</code> saying <em>&ldquo;yeah that's what 'port' means,&rdquo;</em> <code>Tazo</code> calls Java Forge mod <code>CWSM</code> <strong><em>&ldquo;CWSM direct Java Script code.&rdquo;</em></strong></figcaption>
+            </figure>
+            <figure style="margin: 0; background: #ffffff; border: 1.5px solid #cbd5e1;">
+              <a href="./img/record-2026-11-25/44_raw_nov26_zero_client_2500_is_scamming_doc2.png" target="_blank" rel="noopener">
+                <img src="./img/record-2026-11-25/44_raw_nov26_zero_client_2500_is_scamming_doc2.png" alt="Unedited Doc II Page 46 capture: Regardless if the person wasn't her client, commissions raising up to 2500 $ IS scamming">
+              </a>
+              <figcaption><strong>8. Unedited <code>Doc II</code> Final Page:</strong> Admits <strong><em>&ldquo;Regardless if the person wasn't her client&rdquo;</em></strong> (<code>$0.00</code> paid), then redefines <em>&ldquo;scamming&rdquo;</em> as listing <code>$2,500</code> B2B rates with zero defrauded customers.</figcaption>
+            </figure>
+          </div>
+        </div>
       </div>
 
       <div style="margin: 14px 0 20px; padding: 18px 20px; background: #ffffff; border: 2px solid #0f172a;">
@@ -1319,7 +1478,13 @@ git cat-file -p 5c6385ef5ae05f1575dc21f9a1485d64869f36fe   # main HEAD: Designat
         <figcaption><strong>Exhibit 35 (Nov 26 <code>08:09 AM</code> Split Google Docs Summary):</strong> Respondent's own uploads proving live copyright infringement (<code>1,200+</code> lines &amp; <code>6</code> <code>main</code> commits), non-clean-room derivative paraphrasing (<code>17 U.S.C. &sect; 106(2)</code>), mistaking <code>Ex-Developer</code> for <em>"kicked out,"</em> claiming <code>Rust</code> (2006) was popularized by AI, falling into Honeypot #2 (<code>Senthemodder/aquarium-of-gullibles</code>), and calling <code>CWSM</code> Java code <em>"Java Script."</em></figcaption>
       </figure>
 
-      <h3>13A. Document I (<code>"Tazo's Usage on AI"</code>, Lines <code>1-82</code> &amp; Images <code>1-3</code>): Every Paragraph &amp; Image Answered</h3>
+      <h3>13A. Document I (<code>"Tazo's Usage on AI"</code>, Lines <code>1-82</code> &amp; Images <code>1-3</code>): Every Paragraph, Image, &amp; Goalpost Shift Answered</h3>
+      <figure style="margin: 12px 0 16px;">
+        <a href="./img/record-2026-11-25/36_tazo_5_stage_ai_goalpost_evolution.jpg" target="_blank" rel="noopener">
+          <img src="./img/record-2026-11-25/36_tazo_5_stage_ai_goalpost_evolution.jpg" alt="Exhibit 36: 5-stage verbatim progression of Tazo's AI story across 9 days">
+        </a>
+        <figcaption><strong>Exhibit 36 (Trickle-Truth Timeline):</strong> Every verbatim revision of respondent's own AI narrative from <em>"why we would never use ai"</em> to <em>"only fixing bugs since v2.11"</em> to <em>"Ponytail and shortcut + practically almost all heavily intense scripting on v2.5"</em> (while still concealing <code>205</code> OpenAI Codex container commits and Dec 2025 AI usage).</figcaption>
+      </figure>
       <ol>
         <li><strong>Lines <code>19-39</code> &amp; Doc I <code>image3.png</code> (<em>"Duck and Fakest confronted me privately... They saw that I used Ponytail and shortcut"</em>):</strong>
           <ul>
